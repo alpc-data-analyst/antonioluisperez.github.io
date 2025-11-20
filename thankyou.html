@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu descarga!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="section thankyou-section">
+    <div class="container thankyou-content">
+        
+        <h1>Thank you for downloading my CV!</h1>
+        <p class="subtitle">I appreciate your interest. I hope you enjoy my work.</p>
+        
+        <a id="download-link" href="cv-antonio-perez.pdf" download style="display:none;"></a>
+        
+        <a href="index.html#portfolio" class="btn-gradient">View More Projects</a>
+    
+    </div>
+    </section>
+
+    <script>
+        // Script para lanzar la descarga automáticamente
+        window.onload = function() {
+            // Lanza el click automático en el enlace de descarga
+            document.getElementById('download-link').click();
+        };
+    </script>
+</body>
+</html>
