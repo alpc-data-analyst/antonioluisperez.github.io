@@ -22,19 +22,24 @@
     </nav>
 
     <header id="home" class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <span class="small-intro hidden">I am</span>
-                <h1>Antonio Luis Pérez</h1>
-                <p class="subtitle">Data Analyst & Data Science. Inspired by tough problems.</p>
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <span class="small-intro hidden">I am</span>
+            <h1>Antonio Luis Pérez</h1>
+            <p class="subtitle">Data Analyst & Data Science. Inspired by tough problems.</p>
+            
+            <div class="hero-buttons">
                 <a href="#portfolio" class="btn-gradient">My Projects</a>
-                <a href="thankyou.html" class="btn-secondary hidden">My CV</a>
+                <a href="thankyou.html" class="btn-secondary">My CV</a>
+                <a href="thankyou.html" class="btn-secondary">My CV English</a>
             </div>
-            <div class="hero-image-container">
-                <img src="perfil.jpg" alt="Foto de Antonio" class="profile-pic">
-            </div>
+            
         </div>
-    </header>
+        <div class="hero-image-container">
+            <img src="perfil.jpg" alt="Foto de Antonio" class="profile-pic">
+        </div>
+    </div>
+</header>
 
     <section id="interests" class="section">
         <div class="container">
@@ -84,27 +89,27 @@
             <article class="project-card hidden">
                 <div class="project-img" style="background-image: url('proyecto-aws.jpg');"></div>
                 <div class="project-content">
-                    <span class="date">Jan 20, 2024</span>
-                    <h3>AUTOMATING AWS EC2</h3>
-                    <p>A helpful tutorial on how to set up a Bash script using AWS CLI.</p>
+                    <span class="date">-</span>
+                    <h3>In Progress...</h3>
+                    <p>Working on it!</p>
                 </div>
             </article>
 
             <article class="project-card hidden">
                 <div class="project-img" style="background-image: url('proyecto-rnns-lstms.jpg');"></div>
                 <div class="project-content">
-                    <span class="date">Dec 10, 2023</span>
-                    <h3>RNNS & LSTMS MODELS</h3>
-                    <p>Tested the use of Word2Vec embeddings with deep learning models.</p>
+                    <span class="date">-</span>
+                    <h3>In Progress...</h3>
+                    <p>Working on it!</p>
                 </div>
             </article>
 
             <article class="project-card hidden">
                 <div class="project-img" style="background-image: url('proyecto-bbdd.jpg');"></div>
                 <div class="project-content">
-                    <span class="date">Dec 02, 2023</span>
-                    <h3>CUSTOM DATABASE (PYTHON)</h3>
-                    <p>A fully functional, SQL-compliant database implemented from scratch.</p>
+                    <span class="date">-</span>
+                    <h3>In Progress...</h3>
+                    <p>Working on it!</p>
                 </div>
             </article>
             
@@ -193,34 +198,23 @@
     </div>
 </footer>
 
-<script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+<div id="exit-popup" class="popup-overlay hidden-popup">
+    <div class="popup-content">
+        <button id="close-popup" class="close-btn">&times;</button>
+        <h3 class="popup-title"> Wait, Don't Be Shy! 😉</h3>
+        <p class="popup-text">Leaving already? You haven't hired me yet!</p>
+        <a href="thankyou.html" class="btn-gradient popup-cta">YES, Send Me the Good Stuff!</a>
+        <small class="no-thanks" id="no-thanks-link">No, thanks. I guess I'm a loser who walks away from talent.</small>
+    </div>
+</div>
 
-</body>
-<script>
-    // Selecciona todos los elementos que tienen la clase 'hidden'
-    const hiddenElements = document.querySelectorAll('.hidden');
+<script src="script.js" defer></script> 
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                // Si el elemento entra en la vista (scroll), le quitamos la clase 'hidden'
-                entry.target.classList.remove('hidden');
-                entry.target.classList.add('fade-in'); // Opcional: añade una clase de animación
-            }
-        });
-    }, {
-        threshold: 0.2 // Se dispara cuando el 20% del elemento es visible
-    });
-
-    // Observa cada uno de los elementos
-    hiddenElements.forEach((el) => observer.observe(el));
-</script>
 <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis,%20vi%20tu%20portafolio%20y%20me%20gustaría%20saber%20más." 
    class="whatsapp-float" 
    target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
+
     </body> 
 </html>

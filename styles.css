@@ -59,6 +59,7 @@ ul { list-style: none; }
     gap: 4rem;
 }
 
+
 .small-intro { font-weight: 600; color: #555; display: block; margin-bottom: 0.5rem; }
 .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
 .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 2rem; max-width: 400px; }
@@ -218,6 +219,56 @@ ul { list-style: none; }
     align-items: center;
     gap: 4rem;
 }
+/* Bloque CLAVE: Contenedor de Botones */
+.hero-buttons {
+    display: flex; /* Esto los pone en fila */
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 25px; /* Separación del subtítulo */
+    align-items: center; /* Alineación vertical para que se vean parejos */
+}
+/* --- Estilo para el Botón Principal (Degradado) --- */
+.btn-gradient {
+    display: inline-block;
+    background: var(--button-blue);
+    color: white;
+    /* CLAVE: Padding ajustado a 0.7rem y 2rem */
+    padding: 0.7rem 2rem; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    border-radius: 4px; /* Añadimos redondez para que coincida con .btn-secondary */
+}
+.btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6); }
+
+
+/* --- Estilo para el Botón Secundario (CV) --- */
+.btn-secondary {
+    display: inline-block;
+    background: transparent; /* Fondo transparente */
+    color: var(--text-color); /* Color de texto gris oscuro */
+    border: 2px solid #ccc; /* Borde gris claro */
+    /* CLAVE: Padding idéntico al .btn-gradient */
+    padding: 0.7rem 2rem; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* CLAVE: Eliminados los márgenes que rompían la alineación */
+    margin-top: 0; 
+    margin-left: 0; 
+    transition: 0.3s;
+    border-radius: 4px; /* Un poco de redondez */
+    font-size: 0.9rem; /* Un poco más pequeño que el principal */
+}
+
+/* Efecto al pasar el ratón */
+.btn-secondary:hover {
+    background: #f0f0f0; /* Se rellena de gris claro al pasar el ratón */
+    border-color: #999;
+}
+.small-intro { font-weight: 600; color: #555; display: block; margin-bottom: 0.5rem; }
+.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
+.subtitle { font-size: 1.1rem; color: #666; margin-bottom: 2rem; max-width: 400px; }
 
 .small-intro { font-weight: 600; color: #555; display: block; margin-bottom: 0.5rem; }
 .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
@@ -709,4 +760,84 @@ body {
 .cta-contact .btn-gradient {
     padding: 1rem 3rem; 
     font-size: 1.1rem;
+}
+/* --- Estilos para el Pop-up de Intención de Salida --- */
+
+/* La capa oscura de fondo que cubre toda la pantalla */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente y oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Clase para esconder el pop-up por defecto */
+.hidden-popup {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* El contenedor principal del contenido del pop-up */
+.popup-content {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Animación simple de entrada */
+    transform: scale(1);
+    transition: transform 0.3s ease-out;
+}
+
+/* Título y texto */
+.popup-title {
+    color: var(--title-color);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.popup-text {
+    margin-bottom: 25px;
+    line-height: 1.4;
+    color: #555;
+}
+
+/* Botón de cierre (la 'x') */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--title-color);
+}
+
+/* Enlace "No, gracias" */
+.no-thanks {
+    display: block;
+    margin-top: 20px;
+    color: #888;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
