@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias por tu descarga!</title>
+    <title>¡Gracias por tu solicitud!</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <section class="section thankyou-section">
-    <div class="container thankyou-content">
-        
-        <h1>Thank you for downloading my CV!</h1>
-        <p class="subtitle">I appreciate your interest. I hope you enjoy my work.</p>
-        
-        <a id="download-link" href="cv-antonio-perez.pdf" download style="display:none;"></a>
-        
-        <a href="index.html#portfolio" class="btn-gradient">View More Projects</a>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
-    </div>
+    <section class="section thankyou-section">
+        <div class="container thankyou-content">
+            <h1 data-i18n="thankyou_title">Thank you for downloading my CV!</h1>
+            <p data-i18n="thankyou_subtitle">I appreciate your interest. I hope you enjoy my work.</p>
+
+            <a id="download-link" href="cv-antonio-perez.pdf" download style="display:none;"></a>
+
+            <a href="index.html#portfolio" class="btn-gradient" data-i18n="thankyou_btn">View More Projects</a>
+        </div>
     </section>
 
+    <script src="script.js"></script>
+
     <script>
-        // Script para lanzar la descarga automáticamente
+        // Script para lanzar la descarga automáticamente y traducir
         window.onload = function() {
             // Lanza el click automático en el enlace de descarga
             document.getElementById('download-link').click();
+            
+            // Llama a la función de traducción al cargar la página
+            const currentLang = localStorage.getItem('lang') || 'en';
+            setLanguage(currentLang);
         };
     </script>
 </body>
