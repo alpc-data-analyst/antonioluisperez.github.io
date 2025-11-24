@@ -1,52 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const POPUP_SEEN_KEY = 'AntonioPerezPopupShown';
-    
-    const popup = document.getElementById('exit-popup');
-    const closeBtn = document.getElementById('close-popup');
-    const noThanksLink = document.getElementById('no-thanks-link');
-    
-    
-    
-    // 1. Persistencia
-    let hasShownPopup = localStorage.getItem(POPUP_SEEN_KEY) === 'true';
-
-    if (!popup) { return; } 
-
-    // Funciones
-    const showPopup = () => {
-        if (!hasShownPopup) {
-            popup.classList.remove('hidden-popup');
-            hasShownPopup = true;
-            localStorage.setItem(POPUP_SEEN_KEY, 'true'); 
-        }
-    };
-
-    const hidePopup = () => {
-        popup.classList.add('hidden-popup');
-    };
-
-    // 2. Detección de Intención de Salida (Exit-Intent)
-    document.addEventListener('mouseout', (e) => {
-        // Opción que ha funcionado (la más estable):
-        if (e.clientY < 50) { 
-         showPopup();
-        }
-    });
-    
-    // 3. Cierre del Pop-up
-    closeBtn.addEventListener('click', hidePopup);
-    noThanksLink.addEventListener('click', hidePopup);
-    
-    // Cierra con la tecla ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            hidePopup();
-        }
-    });
-    
-
-});
 // --- FUNCIONALIDAD DE IDIOMA ---
 
 // Seleccionamos los dos "botones" de texto
@@ -114,7 +65,7 @@ const translations = {
         'btn_projects': 'Mis Proyectos',
         'btn_cv': 'Mi CV',
         'section_interests': 'Áreas de Interés',
-        'section_projects_sub': 'Echa un vistazo a las cosas en las que me encanta trabajar.',
+        'section_interests_sub': 'Echa un vistazo a las cosas en las que me encanta trabajar.',
         'int_cloud': 'Cloud Compute',
         'desc_cloud': 'Mantengo servidores para almacenamiento de bases de datos, entrenamiento y despliegue de modelos.',
         'desc_nlp': 'Aplico técnicas de NLP para entender las motivaciones detrás de las interacciones humanas.',
@@ -145,19 +96,20 @@ const translations = {
         'popup_text': '¿Ya te vas? ¡Pero si aún no me has contratado!',
         'popup_cta': '¡SÍ, envíame lo bueno!',
         'popup_no': 'No, gracias. Dejaré escapar el talento.'
-        // --- NUEVOS TEXTOS DE THANK YOU PAGE (ESPAÑOL) ---
-
+        // (Añadir aquí si hay textos de thankyou.html)
     }
 };
 
 // Función para actualizar el estilo visual (Negrita y color)
 function updateLanguageUI(language) {
-    if (language === 'es') {
-        btnEs.classList.add('active-lang');
-        btnEn.classList.remove('active-lang');
-    } else {
-        btnEn.classList.add('active-lang');
-        btnEs.classList.remove('active-lang');
+    if (btnEs && btnEn) {
+        if (language === 'es') {
+            btnEs.classList.add('active-lang');
+            btnEn.classList.remove('active-lang');
+        } else {
+            btnEn.classList.add('active-lang');
+            btnEs.classList.remove('active-lang');
+        }
     }
 }
 
@@ -167,7 +119,7 @@ function setLanguage(language) {
     
     elements.forEach(element => {
         const translationKey = element.getAttribute('data-i18n');
-        if(translations[language][translationKey]) {
+        if(translations[language] && translations[language][translationKey]) {
             element.textContent = translations[language][translationKey];
         }
     });
@@ -176,23 +128,86 @@ function setLanguage(language) {
 }
 
 // Evento Click para ESPAÑOL
-btnEs.addEventListener('click', () => {
-    lang = 'es';
-    setLanguage(lang);
-    localStorage.setItem('lang', lang);
-});
+if (btnEs) {
+    btnEs.addEventListener('click', () => {
+        lang = 'es';
+        setLanguage(lang);
+        localStorage.setItem('lang', lang);
+    });
+}
 
 // Evento Click para INGLÉS
-btnEn.addEventListener('click', () => {
-    lang = 'en';
-    setLanguage(lang);
-    localStorage.setItem('lang', lang);
-});
+if (btnEn) {
+    btnEn.addEventListener('click', () => {
+        lang = 'en';
+        setLanguage(lang);
+        localStorage.setItem('lang', lang);
+    });
+}
 
-// Al cargar la página
+// --- CÓDIGO DEL POPUP (MODIFICADO CON PERSISTENCIA TEMPORAL) ---
+const popup = document.getElementById('exit-popup');
+const closeBtn = document.getElementById('close-popup');
+const noThanksLink = document.getElementById('no-thanks-link');
+
+// Constante para el key de localStorage
+const POPUP_LAST_SHOWN = 'AntonioPerezPopupLastShown';
+// Tiempo de expiración: 30 minutos en milisegundos (30 * 60 * 1000)
+const POPUP_EXPIRY_MS = 30 * 60 * 1000; 
+
+if (popup) {
+    
+    // Función central de lógica del Pop-up
+    const showPopup = () => {
+        const lastShown = localStorage.getItem(POPUP_LAST_SHOWN);
+        const now = new Date().getTime();
+
+        // 1. Si no se ha mostrado NUNCA o si ha pasado el tiempo de expiración
+        if (!lastShown || (now - lastShown) > POPUP_EXPIRY_MS) {
+            
+            // Mostrar Pop-up
+            popup.classList.remove('hidden-popup');
+            document.body.style.overflow = 'hidden';
+
+            // 2. Actualizar la marca de tiempo de la última vez que se mostró
+            localStorage.setItem(POPUP_LAST_SHOWN, now);
+        }
+    };
+
+    const hidePopup = () => {
+        popup.classList.add('hidden-popup');
+        document.body.style.overflow = 'auto';
+    };
+
+    // Detección de Intención de Salida (Exit-Intent)
+    document.addEventListener('mouseout', (e) => {
+        // Solo si el ratón está cerca del borde superior
+        if (e.clientY < 50) { 
+           // Usamos un pequeño retraso antes de llamar a la lógica de mostrar
+           setTimeout(showPopup, 100); 
+        }
+    });
+
+    // 3. Cierre del Pop-up
+    closeBtn.addEventListener('click', hidePopup);
+    noThanksLink.addEventListener('click', hidePopup);
+    
+    // Cierra con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            hidePopup();
+        }
+    });
+}
+// ----------------------------------------------------------------------
+
+
+// Al cargar la página (se ejecuta al final)
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    // Aseguramos que el año se actualice, solo si existe el elemento
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
 });
-
-// (Aquí debajo puedes pegar el código del Popup si lo tienes)

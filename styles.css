@@ -43,8 +43,9 @@ ul { list-style: none; }
     justify-content: space-between;
     align-items: center;
     padding: 2rem 5%;
-    background: var(--bg-white); /* Ahora usa el fondo oscuro */
-    border-bottom: 1px solid var(--border-color); /* Línea sutil abajo */
+    background-color: none  !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
@@ -171,10 +172,36 @@ ul { list-style: none; }
     text-align: center;
 }
 
-.interest-icon { font-size: 2.5rem; margin-bottom: 1rem; color: #ccc; } /* Iconos gris claro */
+.interest-item {
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    background-color: var(--bg-card); /* Base background for separation */
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease-in-out; /* Add transition for smoothness */
+}
+
+/* Hover effect for the entire card */
+.interest-item:hover {
+    transform: translateY(-5px); /* Lift the card */
+    background-color: #2a2a2a; /* Slightly lighter background on hover */
+    border-color: #6a82fb; /* Change border color to a lighter accent */
+    box-shadow: 0 10px 20px rgba(106, 130, 251, 0.2); /* Soft glow */
+}
+
+.interest-icon { 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem; 
+    color: #ccc; /* Iconos gris claro base */
+    transition: color 0.3s ease;
+} 
+
+/* Hover effect specifically for the icon inside the card */
+.interest-item:hover .interest-icon {
+    color: #fc5c7d; /* Change icon color to the pink/red accent */
+}
+
 .interest-item h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--title-color); }
 .interest-item p { font-size: 0.9rem; color: #aaa; padding: 0 1rem; }
-
 /* --- Portfolio Grid --- */
 .projects-grid {
     display: grid;
@@ -183,13 +210,22 @@ ul { list-style: none; }
 }
 
 .project-card { 
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* AÑADIDO box-shadow al transition */
     background-color: var(--bg-card); /* Fondo tarjeta */
     border-radius: 8px;
     overflow: hidden; /* Para que la imagen respete el borde */
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* BOX-SHADOW BASE */
 }
-.project-card:hover { transform: translateY(-5px); border-color: #667eea; }
+
+/* Modifica el hover existente */
+.project-card:hover { 
+    transform: translateY(-8px); /* Aumento el lift para más impacto */
+    border-color: #667eea; 
+    /* AÑADIDO: Nuevo box-shadow para el efecto "glow" o "lift" */
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3), /* Sombra principal con color del acento */
+                0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más oscura para el fondo */
+}
 
 .project-img {
     height: 200px;
@@ -402,4 +438,68 @@ input:focus, textarea:focus {
 @media (max-width: 600px) {
     .contact-methods { flex-direction: column; align-items: center; gap: 1.5rem; }
     .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 24px; }
+}
+/* --- Carrusel Infinito de Logos (Marquesina) --- */
+
+.logo-slider-section {
+    background-color: #1a1a1a; /* Fondo oscuro para que se integre bien */
+    padding: 2.5rem 0;
+    overflow: hidden; /* CLAVE: Oculta el contenido fuera del contenedor */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    width: 100%;
+}
+
+.logo-slider {
+    max-width: none; 
+    padding: 0;
+}
+
+.logo-slide-track {
+    width: max-content; 
+    display: flex;
+    animation: scroll 30s linear infinite; 
+}
+.slide {
+    /* Define el tamaño de cada logo */
+    width: 120px; 
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; 
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%) invert(100%); /* Los logos en blanco/gris para el fondo oscuro */
+    opacity: 0.4; /* Sutiles */
+    transition: opacity 0.3s;
+}
+
+.slide img:hover {
+    opacity: 0.8;
+}
+
+@keyframes scroll {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(-50%); 
+        
+    } 
+}
+
+@media (max-width: 768px) {
+    .slide {
+        width: 120px; 
+        margin: 0 20px;
+    }
+    .logo-slider-section {
+        padding: 1.5rem 0;
+    }
+    .logo-slide-track {
+        animation: scroll 20s linear infinite; 
+    }
 }
