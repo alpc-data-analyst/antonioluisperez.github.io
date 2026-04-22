@@ -1,0 +1,15 @@
+# Claude Code local context & settings (don't publish)
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
