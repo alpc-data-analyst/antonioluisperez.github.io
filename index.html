@@ -414,7 +414,7 @@
             </header>
 
             <div class="tools-grid">
-                <article class="tool-card reveal">
+                <article class="tool-card tool-card--featured reveal">
                     <div class="tool-card__body">
                         <div class="tool-card__head">
                             <span class="tool-card__badge">
@@ -464,18 +464,59 @@
                     </div>
                 </article>
 
-                <article class="tool-card tool-card--soon reveal" data-reveal-delay="120">
-                    <div class="tool-card__body tool-card__body--center">
-                        <span class="tool-card__badge tool-card__badge--muted">
-                            <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
-                            <span data-i18n="tool_soon_badge">In the workshop</span>
-                        </span>
-                        <h3 class="tool-card__title" data-i18n="tool_soon_title">Next one is cooking.</h3>
-                        <p class="tool-card__text" data-i18n="tool_soon_text">Got an idea for something small, useful and privacy-friendly? Ping me, I build them fast.</p>
-                        <a href="#contact" class="btn btn--ghost" data-magnetic>
-                            <span data-i18n="tool_soon_cta">Suggest a tool</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
+                <article class="tool-card reveal" data-reveal-delay="120">
+                    <div class="tool-card__body">
+                        <div class="tool-card__head">
+                            <span class="tool-card__badge">
+                                <span class="tool-card__dot" aria-hidden="true"></span>
+                                <span data-i18n="tool_live">Live</span>
+                            </span>
+                            <span class="tool-card__kind" data-i18n="tool_kind_web">Web app</span>
+                        </div>
+                        <h3 class="tool-card__title">UTM Builder</h3>
+                        <p class="tool-card__tagline" data-i18n="tool_utm_tagline">Build consistent UTM URLs and validate the ones you already have.</p>
+                        <p class="tool-card__text" data-i18n="tool_utm_text">Form with channel templates, live preview, and validation that catches missing params, spaces, casing and out-of-convention values. Bulk mode to generate many URLs at once from CSV. Local history, zero uploads.</p>
+                        <ul class="chips">
+                            <li data-i18n="tool_chip_local">100% local</li>
+                            <li data-i18n="tool_utm_chip_combo">Builder + Validator</li>
+                            <li data-i18n="tool_utm_chip_templates">Channel templates</li>
+                            <li data-i18n="tool_utm_chip_bulk">Bulk mode</li>
+                            <li data-i18n="tool_chip_notrack">No tracking</li>
+                        </ul>
+                        <div class="tool-card__actions">
+                            <a href="https://alpc-data-analyst.github.io/utm-builder/" target="_blank" rel="noopener" class="btn btn--primary" data-magnetic>
+                                <span data-i18n="tool_utm_cta">Open UTM Builder</span>
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card reveal" data-reveal-delay="200">
+                    <div class="tool-card__body">
+                        <div class="tool-card__head">
+                            <span class="tool-card__badge">
+                                <span class="tool-card__dot" aria-hidden="true"></span>
+                                <span data-i18n="tool_live">Live</span>
+                            </span>
+                            <span class="tool-card__kind" data-i18n="tool_kind_risk">Risk analytics</span>
+                        </div>
+                        <h3 class="tool-card__title">Bankroll Tool</h3>
+                        <p class="tool-card__tagline" data-i18n="tool_bank_tagline">Turn messy betting tracking into a cold, quantitative view.</p>
+                        <p class="tool-card__text" data-i18n="tool_bank_text">Bet log, EV per entry, fractional Kelly Criterion, equity curve with drawdown, and risk alerts when a stake crosses 5% of bankroll or an entry has negative expected value. A discipline tool, not a tipster.</p>
+                        <ul class="chips">
+                            <li data-i18n="tool_chip_local">100% local</li>
+                            <li data-i18n="tool_bank_chip_ev">EV + Kelly</li>
+                            <li data-i18n="tool_bank_chip_equity">Equity curve</li>
+                            <li data-i18n="tool_bank_chip_alerts">Risk alerts</li>
+                            <li data-i18n="tool_bank_chip_bilingual">Bilingual</li>
+                        </ul>
+                        <div class="tool-card__actions">
+                            <a href="https://alpc-data-analyst.github.io/bankroll-tool/" target="_blank" rel="noopener" class="btn btn--primary" data-magnetic>
+                                <span data-i18n="tool_bank_cta">Open Bankroll Tool</span>
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
                 </article>
             </div>
