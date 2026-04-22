@@ -1,46 +1,141 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias por tu solicitud!</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Antonio Luis Pérez · Thanks for the download</title>
+    <meta name="description" content="Thanks for downloading the CV. Back to the portfolio, or keep browsing recent projects." />
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2300d4ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Cpath d='M12 48 L22 30 L32 38 L44 18 L54 34' stroke='url(%23g)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='54' cy='34' r='3' fill='%2300d4ff'/%3E%3C/svg%3E" />
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        .ty {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+        .ty__inner {
+            max-width: 560px;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--r-xl);
+            background: var(--surface-1);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        .ty__inner::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: var(--grad);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .ty__icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 1.25rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--grad);
+            color: #fff;
+            font-size: 1.75rem;
+            box-shadow: var(--glow-md);
+        }
+        .ty__title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            margin-bottom: 0.75rem;
+        }
+        .ty__sub {
+            color: var(--text-mute);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .ty__actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .ty__retry {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .ty__retry:hover { color: var(--text); }
+    </style>
 </head>
 
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <section class="section thankyou-section">
-        <div class="container thankyou-content">
-            <h1 data-i18n="thankyou_title">Thank you for downloading my CV!</h1>
-            <p data-i18n="thankyou_subtitle">I appreciate your interest. I hope you enjoy my work.</p>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-            <a id="download-link" href="cv-antonio-perez.pdf" download style="display:none;"></a>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-noise"></div>
+    </div>
 
-            <a href="index.html#portfolio" class="btn-gradient" data-i18n="thankyou_btn">View More Projects</a>
+    <main class="ty">
+        <div class="ty__inner">
+            <div class="ty__icon"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <h1 class="ty__title" data-i18n="thankyou_title">Thanks for downloading my CV!</h1>
+            <p class="ty__sub" data-i18n="thankyou_sub">Your download should start automatically. While you wait, take a look at the rest of the portfolio.</p>
+
+            <div class="ty__actions">
+                <a href="index.html#projects" class="btn btn--primary">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <span data-i18n="thankyou_cta">Back to portfolio</span>
+                </a>
+                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener" class="btn btn--ghost">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+
+            <a id="download-link" href="cv-antonio-perez.pdf" download class="ty__retry" data-i18n="thankyou_retry">Download didn't start? Click here.</a>
         </div>
-    </section>
+    </main>
 
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script>
     <script>
-        // Script para lanzar la descarga automáticamente y traducir
-        window.onload = function() {
-            // Lanza el click automático en el enlace de descarga
-            document.getElementById('download-link').click();
-            
-            // Llama a la función de traducción al cargar la página
-            const currentLang = localStorage.getItem('lang') || 'en';
-            setLanguage(currentLang);
-        };
+        window.addEventListener('load', () => {
+            const a = document.getElementById('download-link');
+            if (a) a.click();
+        });
     </script>
 </body>
 </html>

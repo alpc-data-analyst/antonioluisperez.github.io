@@ -1,252 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Antonio Luis Pérez · Data Analyst & Data Scientist</title>
+    <meta name="description" content="Portfolio of Antonio Luis Pérez, Data Analyst & Data Scientist based in Málaga. Python, SQL, AWS and Machine Learning. Turning complexity into clarity." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <meta name="keywords" content="Data Analyst, Data Scientist, Python, SQL, AWS, Machine Learning, Málaga, Portfolio, Antonio Pérez" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Antonio Luis Pérez · Data Analyst & Data Scientist" />
+    <meta property="og:description" content="Turning data into decisions. Python · SQL · AWS · Machine Learning. Based in Málaga." />
+    <meta property="og:image" content="perfil.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Antonio Luis Pérez · Data Analyst & Data Scientist" />
+    <meta name="twitter:description" content="Turning data into decisions. Python · SQL · AWS · Machine Learning." />
+    <meta name="twitter:image" content="perfil.jpg" />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2300d4ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Cpath d='M12 48 L22 30 L32 38 L44 18 L54 34' stroke='url(%23g)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='54' cy='34' r='3' fill='%2300d4ff'/%3E%3C/svg%3E" />
+
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
-    <title>Antonio Pérez - Data Analyst & Data Scientist Portfolio</title>
-    
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <nav class="navbar">
-        <div class="logo">A.Pérez</div>
-        <ul class="nav-links">
-            <li><a href="#home" data-i18n="nav_home">Home</a></li>
-            <li><a href="#about" data-i18n="nav_about">About</a></li>
-            <li><a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a></li>
-            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-            <li class="language-switch">
-                <span id="btn-es" class="lang-option">ES</span> 
-                <span class="separator">|</span> 
-                <span id="btn-en" class="lang-option">EN</span>
-            </li>
-            <li><a href="thankyou.html" class="btn-resume" data-i18n="nav_resume">Resume</a></li>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Skip to content</a>
+
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+    <div class="bg-layer" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#home" class="nav__brand" aria-label="Antonio Pérez, Home">
+            <span class="nav__brand-mark">A·P</span>
+            <span class="nav__brand-pulse" aria-hidden="true"></span>
+        </a>
+
+        <ul class="nav__links" id="nav-links">
+            <li><a href="#about" class="nav__link" data-i18n="nav_about">About</a></li>
+            <li><a href="#stack" class="nav__link" data-i18n="nav_stack">Stack</a></li>
+            <li><a href="#projects" class="nav__link" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#tools" class="nav__link" data-i18n="nav_tools">Tools</a></li>
+            <li><a href="#contact" class="nav__link" data-i18n="nav_contact">Contact</a></li>
         </ul>
+
+        <div class="nav__actions">
+            <div class="lang-switch" role="group" aria-label="Language switch">
+                <button id="btn-es" class="lang-switch__btn" type="button" aria-pressed="false">ES</button>
+                <span class="lang-switch__divider" aria-hidden="true">/</span>
+                <button id="btn-en" class="lang-switch__btn is-active" type="button" aria-pressed="true">EN</button>
+            </div>
+            <a href="cv-antonio-perez.pdf" class="nav__cta" download data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Download CV">
+                <span>CV</span>
+                <i class="fas fa-arrow-down" aria-hidden="true"></i>
+            </a>
+            <button class="nav__burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
-    <header id="home" class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <span class="small-intro hidden" data-i18n="hero_intro">I am</span>
-                <h1>Antonio Luis Pérez</h1>
-                <p class="subtitle" data-i18n="hero_subtitle">Data Analyst & Data Science. Inspired by tough problems.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn-gradient" data-i18n="btn_projects">My Projects</a>
-                    <a href="thankyou.html" class="btn-secondary" data-i18n="btn_cv">My CV</a>
+    <header id="home" class="hero">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <span class="eyebrow reveal" data-reveal-delay="0">
+                    <span class="eyebrow__dot" aria-hidden="true"></span>
+                    <span data-i18n="hero_status">Available for new projects</span>
+                </span>
+
+                <h1 class="hero__title">
+                    <span class="reveal" data-reveal-delay="60" data-i18n="hero_hi">Hi, I'm</span>
+                    <span class="hero__name reveal" data-reveal-delay="120">Antonio&nbsp;Luis</span>
+                    <span class="hero__role reveal" data-reveal-delay="180" data-i18n="hero_role">Data Analyst &amp; Data Scientist</span>
+                </h1>
+
+                <p class="hero__sub reveal" data-reveal-delay="240" data-i18n="hero_sub">I turn raw data into decisions that move the business, from messy SQL to deployed ML on AWS.</p>
+
+                <div class="hero__actions reveal" data-reveal-delay="300">
+                    <a href="#projects" class="btn btn--primary" data-magnetic>
+                        <span data-i18n="hero_cta_projects">See my projects</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#contact" class="btn btn--ghost" data-magnetic>
+                        <span data-i18n="hero_cta_contact">Let's talk</span>
+                    </a>
+                </div>
+
+                <dl class="hero__stats reveal" data-reveal-delay="360">
+                    <div class="stat">
+                        <dt class="stat__label" data-i18n="stat_focus">Focus</dt>
+                        <dd class="stat__value">Analytics · ML · Cloud</dd>
+                    </div>
+                    <div class="stat">
+                        <dt class="stat__label" data-i18n="stat_stack">Main stack</dt>
+                        <dd class="stat__value">Python · SQL · AWS</dd>
+                    </div>
+                    <div class="stat">
+                        <dt class="stat__label" data-i18n="stat_based">Based in</dt>
+                        <dd class="stat__value">Málaga · ES</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="hero__visual reveal" data-reveal-delay="200">
+                <div class="hero__photo" data-tilt>
+                    <div class="hero__ring" aria-hidden="true"></div>
+                    <img src="perfil.jpg" alt="Portrait of Antonio Luis Pérez" class="hero__img" width="480" height="560" fetchpriority="high" decoding="async" />
+                    <span class="hero__badge">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Málaga, ES</span>
+                    </span>
+                    <span class="hero__chip hero__chip--1" aria-hidden="true"><i class="fab fa-python"></i> Python</span>
+                    <span class="hero__chip hero__chip--2" aria-hidden="true"><i class="fas fa-database"></i> SQL</span>
+                    <span class="hero__chip hero__chip--3" aria-hidden="true"><i class="fab fa-aws"></i> AWS</span>
                 </div>
             </div>
-            <div class="hero-image-container">
-                <img src="perfil.jpg" alt="Foto de Antonio" class="profile-pic">
-            </div>
         </div>
-        
+
+        <a href="#about" class="hero__scroll" aria-label="Scroll to about">
+            <span class="hero__scroll-wheel"></span>
+            <small data-i18n="hero_scroll">Scroll</small>
+        </a>
     </header>
-    <section class="logo-slider-section">
-    <div class="container logo-slider">
-        <div class="logo-slide-track">
-            <div class="slide"><img src="python.png" alt="Company Log 1"></div>
-            <div class="slide"><img src="tagmanager.png" alt="Company Log 2"></div>
-            <div class="slide"><img src="javascript.png" alt="Company Log 3"></div>
-            <div class="slide"><img src="sql.png" alt="Company Log 4"></div>
-            <div class="slide"><img src="looker.png" alt="Company Log 5"></div>
-            <div class="slide"><img src="html.png" alt="Company Log 6"></div>
-            <div class="slide"><img src="adobe.png" alt="Company Log 7"></div>
-            <div class="slide"><img src="analytics.png" alt="Company Log 8"></div>
 
-            
-            <div class="slide"><img src="python.png" alt="Company Log 1"></div>
-            <div class="slide"><img src="tagmanager.png" alt="Company Log 2"></div>
-            <div class="slide"><img src="javascript.png" alt="Company Log 3"></div>
-            <div class="slide"><img src="sql.png" alt="Company Log 4"></div>
-            <div class="slide"><img src="looker.png" alt="Company Log 5"></div>
-            <div class="slide"><img src="html.png" alt="Company Log 6"></div>
-            <div class="slide"><img src="adobe.png" alt="Company Log 7"></div>
-            <div class="slide"><img src="analytics.png" alt="Company Log 8"></div>
-        </div>
-    </div>
-</section>  
-    <section id="interests" class="section">
-        <div class="container">
-            <h2 class="section-title hidden" data-i18n="section_interests">Areas of Interest</h2>
-            <p class="section-subtitle hidden" data-i18n="section_interests_sub">Take a look at some of the things I love working on.</p>
-            
-            <div class="interests-grid">
-                <div class="interest-item">
-                    <i class="fas fa-cloud interest-icon"></i>
-                    <h3 data-i18n="int_cloud">Cloud Compute</h3>
-                    <p data-i18n="desc_cloud">I maintain servers for database storage, model training, and model deployment.</p>
+    <section class="marquee" aria-label="Tech stack logos">
+        <div class="marquee__mask">
+            <div class="marquee__track">
+                <div class="marquee__group">
+                    <div class="marquee__item"><img src="python.png" alt="Python" decoding="async" /></div>
+                    <div class="marquee__item"><img src="sql.png" alt="SQL" decoding="async" /></div>
+                    <div class="marquee__item"><img src="javascript.png" alt="JavaScript" decoding="async" /></div>
+                    <div class="marquee__item"><img src="html.png" alt="HTML" decoding="async" /></div>
+                    <div class="marquee__item"><img src="looker.png" alt="Looker" decoding="async" /></div>
+                    <div class="marquee__item"><img src="tagmanager.png" alt="Google Tag Manager" decoding="async" /></div>
+                    <div class="marquee__item"><img src="analytics.png" alt="Google Analytics" decoding="async" /></div>
+                    <div class="marquee__item"><img src="adobe.png" alt="Adobe Analytics" decoding="async" /></div>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-comments interest-icon"></i>
-                    <h3>NLP</h3>
-                    <p data-i18n="desc_nlp">Applying NLP techniques to make sense of the motivations behind human interactions.</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-graduation-cap interest-icon"></i>
-                    <h3>Machine Learning</h3>
-                    <p data-i18n="desc_ml">I love the math and theory behind algorithms as well as the implementation.</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-layer-group interest-icon"></i>
-                    <h3 data-i18n="int_parallel">Parallel Computing</h3>
-                    <p data-i18n="desc_parallel">Extracting data from Hadoop databases using the HIVE framework.</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-laptop-code interest-icon"></i>
-                    <h3 data-i18n="int_deploy">Model Deployment</h3>
-                    <p data-i18n="desc_deploy">Implementing machine learning models in real world production systems.</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-chart-bar interest-icon"></i>
-                    <h3 data-i18n="int_analytics">Data Analytics</h3>
-                    <p data-i18n="desc_analytics">I love telling a story. Making a beautiful and compelling presentation.</p>
+                <div class="marquee__group" aria-hidden="true">
+                    <div class="marquee__item"><img src="python.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="sql.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="javascript.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="html.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="looker.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="tagmanager.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="analytics.png" alt="" decoding="async" /></div>
+                    <div class="marquee__item"><img src="adobe.png" alt="" decoding="async" /></div>
                 </div>
             </div>
         </div>
-    </section> <section id="portfolio" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title hidden" data-i18n="section_projects">My Latest Projects</h2>
-            <p class="section-subtitle hidden" data-i18n="section_projects_sub">Take a look at my recent work.</p>
-
-            <div class="projects-grid"> 
-                <article class="project-card hidden">
-                    <div class="project-img" style="background-image: url('proyecto-aws.jpg');"></div>
-                    <div class="project-content">
-                        <span class="date">-</span>
-                        <h3 data-i18n="proj_progress">Proyecto Anti-Fraude</h3>
-                        <p data-i18n="proj_working">How can we prevent fraudulent transactions?</p>
-                    </div>
-                </article>
-
-                <article class="project-card hidden">
-                    <div class="project-img" style="background-image: url('proyecto-rnns-lstms.jpg');"></div>
-                    <div class="project-content">
-                        <span class="date">-</span>
-                        <h3 data-i18n="proj_progress">In Progress...</h3>
-                        <p data-i18n="proj_working">Working on it!</p>
-                    </div>
-                </article>
-
-                <article class="project-card hidden">
-                    <div class="project-img" style="background-image: url('proyecto-bbdd.jpg');"></div>
-                    <div class="project-content">
-                        <span class="date">-</span>
-                        <h3 data-i18n="proj_progress">In Progress...</h3>
-                        <p data-i18n="proj_working">Working on it!</p>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="cta-contact">
-                <p data-i18n="cta_text">Impressed by my work?</p>
-                <a href="#contact" class="btn-gradient" data-i18n="cta_btn">Let's Talk!</a>
-            </div>
-        </div> 
     </section>
 
     <section id="about" class="section">
-        <div class="container about-grid">
-            <div class="about-text">
-                <h2 class="section-title" data-i18n="about_title">About Me</h2>
-                <p class="about-subtitle" data-i18n="about_subtitle">Data Analyst & Data Scientist from Málaga, Spain.</p>
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__tag" data-i18n="about_tag">01 / About</span>
+                <h2 class="section__title" data-i18n="about_title">A curious mind with a critical business eye.</h2>
+                <p class="section__lead" data-i18n="about_lead">I'm Antonio Luis, and I spend my days moving data from raw to useful. My stack is Python and SQL, my habit is asking "why", and my goal is every insight ending in a decision.</p>
+            </header>
 
-                <p class="bio-paragraph" data-i18n="about_bio_1">
-                    I'm Antonio Luis Pérez, a professional driven by a passion for converting large volumes of data into actionable insights. 
-                    My approach combines strong technical skills in Python and SQL with a critical business mindset, ensuring every analysis drives strategic decisions and tangible results.
-                </p>
-
-                <p class="bio-paragraph" data-i18n="about_bio_2">
-                    I have hands-on experience developing Machine Learning models (RNNs, LSTMs) and automating cloud infrastructure (AWS EC2). 
-                    I am constantly seeking new challenges and projects that allow me to further grow in the fields of AI and Big Data.
-                </p>
-
-                <div class="cv-button-container">
-                    <a href="cv-antonio-perez.pdf" class="btn-gradient" download data-i18n="btn_download_cv">Download CV</a>
-                </div>
+            <div class="about__grid">
+                <article class="card card--about reveal">
+                    <i class="fas fa-compass card__icon" aria-hidden="true"></i>
+                    <h3 class="card__title" data-i18n="about_h1">What I do</h3>
+                    <p class="card__text" data-i18n="about_p1">Data analysis and ML modeling end-to-end: from ingestion and cleaning in SQL to experiments in Python and deployment on AWS EC2.</p>
+                </article>
+                <article class="card card--about reveal" data-reveal-delay="80">
+                    <i class="fas fa-chart-line card__icon" aria-hidden="true"></i>
+                    <h3 class="card__title" data-i18n="about_h2">How I work</h3>
+                    <p class="card__text" data-i18n="about_p2">Honest metrics, simple models first, clean code and dashboards that tell a story. If it doesn't drive a decision, it doesn't ship.</p>
+                </article>
+                <article class="card card--about reveal" data-reveal-delay="160">
+                    <i class="fas fa-rocket card__icon" aria-hidden="true"></i>
+                    <h3 class="card__title" data-i18n="about_h3">What I'm into</h3>
+                    <p class="card__text" data-i18n="about_p3">Applied ML (RNNs, LSTMs), NLP, cloud automation and finding the one chart that makes the room go quiet.</p>
+                </article>
             </div>
-            
-            <div class="about-skills">
-                <h3 class="skills-title" data-i18n="skills_title">My Technical Stack</h3>
-                <ul class="skills-list">
-                    <li>Python (Pandas, Scikit-learn, PyTorch)</li>
-                    <li>SQL (PostgreSQL, MySQL)</li>
-                    <li>Cloud & DevOps (AWS EC2, Bash, Git)</li>
-                    <li>Data Visualization (Tableau, Matplotlib)</li>
-                    <li>Databases (Custom SQL/NoSQL Implementations)</li>
-                </ul>
+
+            <div class="about__cta reveal">
+                <a href="cv-antonio-perez.pdf" class="btn btn--primary" download data-magnetic>
+                    <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+                    <span data-i18n="about_cv">Download CV (PDF)</span>
+                </a>
+                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener" class="btn btn--ghost" data-magnetic>
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <span data-i18n="about_linkedin">See LinkedIn</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-light">
+    <section id="stack" class="section">
         <div class="container">
-            <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">Have a question or want to collaborate? You can reach me directly here:</p>
-            
-            <div class="contact-methods">
-                <a href="mailto:alpcmalaga@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <span>alpcmalaga@gmail.com</span>
-                </a>
-                
-                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin contact-icon"></i>
-                    <span>My Linkedin</span>
-                </a>
+            <header class="section__header reveal">
+                <span class="section__tag" data-i18n="stack_tag">02 / Stack</span>
+                <h2 class="section__title" data-i18n="stack_title">Tools I reach for every day.</h2>
+                <p class="section__lead" data-i18n="stack_lead">A pragmatic stack for analytics and ML, picked for what ships, not what sounds cool.</p>
+            </header>
 
-                <a href="URL_DE_TU_GITHUB" target="_blank" class="contact-link">
-                    <i class="fab fa-github contact-icon"></i>
-                    <span data-i18n="contact_github">My GitHub Profile</span>
+            <div class="bento bento--stack">
+                <article class="bento__cell bento__cell--hero reveal">
+                    <div class="bento__head">
+                        <span class="bento__kicker">Core</span>
+                        <i class="fab fa-python bento__glyph" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="bento__title" data-i18n="stack_core_title">Python &amp; SQL</h3>
+                    <p class="bento__text" data-i18n="stack_core_text">Pandas, NumPy, Scikit-learn, PyTorch. PostgreSQL and MySQL for anything that breathes data.</p>
+                    <ul class="chips">
+                        <li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>PyTorch</li><li>PostgreSQL</li><li>MySQL</li>
+                    </ul>
+                </article>
+
+                <article class="bento__cell reveal" data-reveal-delay="80">
+                    <i class="fas fa-cloud bento__glyph" aria-hidden="true"></i>
+                    <h3 class="bento__title" data-i18n="stack_cloud_title">Cloud &amp; DevOps</h3>
+                    <p class="bento__text" data-i18n="stack_cloud_text">AWS EC2 for training and serving. Bash and Git for everything in between.</p>
+                    <ul class="chips">
+                        <li>AWS EC2</li><li>Bash</li><li>Git</li>
+                    </ul>
+                </article>
+
+                <article class="bento__cell reveal" data-reveal-delay="160">
+                    <i class="fas fa-brain bento__glyph" aria-hidden="true"></i>
+                    <h3 class="bento__title" data-i18n="stack_ml_title">Machine Learning</h3>
+                    <p class="bento__text" data-i18n="stack_ml_text">Classical ML to deep learning: RNNs, LSTMs and applied NLP.</p>
+                    <ul class="chips">
+                        <li>RNN · LSTM</li><li>NLP</li><li>Scikit-learn</li>
+                    </ul>
+                </article>
+
+                <article class="bento__cell reveal" data-reveal-delay="120">
+                    <i class="fas fa-chart-column bento__glyph" aria-hidden="true"></i>
+                    <h3 class="bento__title" data-i18n="stack_viz_title">Analytics &amp; Viz</h3>
+                    <p class="bento__text" data-i18n="stack_viz_text">Looker, GA4, Tag Manager, Adobe Analytics. Matplotlib for the quick "aha".</p>
+                    <ul class="chips">
+                        <li>Looker</li><li>GA4</li><li>GTM</li><li>Adobe</li><li>Matplotlib</li>
+                    </ul>
+                </article>
+
+                <article class="bento__cell bento__cell--wide reveal" data-reveal-delay="200">
+                    <i class="fas fa-diagram-project bento__glyph" aria-hidden="true"></i>
+                    <h3 class="bento__title" data-i18n="stack_data_title">Data plumbing</h3>
+                    <p class="bento__text" data-i18n="stack_data_text">Custom SQL &amp; NoSQL implementations, Hadoop extraction with HIVE, clean pipelines that don't wake you up at 3 AM.</p>
+                    <ul class="chips">
+                        <li>HIVE</li><li>Hadoop</li><li>NoSQL</li><li>Data pipelines</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__tag" data-i18n="proj_tag">03 / Projects</span>
+                <h2 class="section__title" data-i18n="proj_title">Recent work &amp; case studies.</h2>
+                <p class="section__lead" data-i18n="proj_lead">A snapshot of what I've been building. Detailed write-ups landing soon. In the meantime, happy to walk you through any of them.</p>
+            </header>
+
+            <div class="bento bento--projects">
+                <article class="project project--featured reveal">
+                    <div class="project__media">
+                        <img src="proyecto-aws.jpg" alt="Fraud detection project cover" loading="lazy" decoding="async" />
+                        <div class="project__media-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project__body">
+                        <div class="project__meta">
+                            <span class="tag tag--accent" data-i18n="proj_featured">Featured</span>
+                            <span class="tag">Python</span><span class="tag">Gradient Boosting</span><span class="tag">IEEE-CIS</span>
+                        </div>
+                        <h3 class="project__title" data-i18n="proj_fraud_title">Bank fraud detection with ML</h3>
+                        <p class="project__text" data-i18n="proj_fraud_text">End-to-end model on 590K real transactions from the IEEE-CIS dataset. 434 features across transactions and identity signals (device, email domain, geolocation, time of day) feeding a Gradient Boosting classifier with 500 trees. The key move: at the default 0.5 threshold the model was too polite and let more fraud through than it caught. Dropping to 0.1 flips the trade-off and catches 60% of all fraud while only adding a verification step for 0.46% of legitimate users.</p>
+                        <ul class="metrics">
+                            <li><strong>590K</strong><span data-i18n="proj_fraud_m1">transactions</span></li>
+                            <li><strong>434</strong><span data-i18n="proj_fraud_m2">features</span></li>
+                            <li><strong>0.92</strong><span>ROC-AUC</span></li>
+                            <li><strong>60%</strong><span data-i18n="proj_fraud_m4">fraud caught</span></li>
+                        </ul>
+                        <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener" class="project__cta" data-i18n="proj_fraud_cta">Read on LinkedIn →</a>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-reveal-delay="120">
+                    <div class="project__media">
+                        <img src="proyecto-rnns-lstms.jpg" alt="Neural network sequence model preview" loading="lazy" decoding="async" />
+                        <div class="project__media-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project__body">
+                        <div class="project__meta">
+                            <span class="tag">Deep Learning</span><span class="tag">PyTorch</span>
+                        </div>
+                        <h3 class="project__title" data-i18n="proj_rnn_title">Sequence modeling with RNNs &amp; LSTMs</h3>
+                        <p class="project__text" data-i18n="proj_rnn_text">Time-series forecasting and pattern detection on sequential data. Training, evaluation and honest benchmarks against simpler baselines.</p>
+                        <a href="#contact" class="project__cta" data-i18n="proj_cta">Request case study →</a>
+                    </div>
+                </article>
+
+                <article class="project reveal" data-reveal-delay="200">
+                    <div class="project__media">
+                        <img src="proyecto-bbdd.jpg" alt="Database architecture preview" loading="lazy" decoding="async" />
+                        <div class="project__media-overlay" aria-hidden="true"></div>
+                    </div>
+                    <div class="project__body">
+                        <div class="project__meta">
+                            <span class="tag">SQL</span><span class="tag">NoSQL</span><span class="tag">Data modeling</span>
+                        </div>
+                        <h3 class="project__title" data-i18n="proj_db_title">Custom SQL / NoSQL implementation</h3>
+                        <p class="project__text" data-i18n="proj_db_text">Hybrid database layer designed for analytics workloads. Schema trade-offs, query patterns and the boring wins that make dashboards feel instant.</p>
+                        <a href="#contact" class="project__cta" data-i18n="proj_cta">Request case study →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="section">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__tag" data-i18n="tools_tag">04 / Tools</span>
+                <h2 class="section__title" data-i18n="tools_title">Small tools I ship when nothing off-the-shelf fits.</h2>
+                <p class="section__lead" data-i18n="tools_lead">A growing set of utilities I build for myself and release publicly. Privacy-first, no accounts, no tracking.</p>
+            </header>
+
+            <div class="tools-grid">
+                <article class="tool-card reveal">
+                    <div class="tool-card__body">
+                        <div class="tool-card__head">
+                            <span class="tool-card__badge">
+                                <span class="tool-card__dot" aria-hidden="true"></span>
+                                <span data-i18n="tool_live">Live</span>
+                            </span>
+                            <span class="tool-card__kind" data-i18n="tool_kind_web">Web app</span>
+                        </div>
+                        <h3 class="tool-card__title">Blurr Tool</h3>
+                        <p class="tool-card__tagline" data-i18n="tool_blurr_tagline">Redact sensitive data without it leaving your machine.</p>
+                        <p class="tool-card__text" data-i18n="tool_blurr_text">Most data leaks aren't hacks. They happen when someone uploads a screenshot with emails, user IDs or transaction IDs to the first "blur online" site they find. Blurr Tool runs entirely in your browser: drop an image or a PDF, draw rectangles over the sensitive bits, download. Zero uploads, zero tracking, zero fine print.</p>
+                        <ul class="chips">
+                            <li data-i18n="tool_chip_local">100% local</li>
+                            <li data-i18n="tool_chip_formats">Images + PDF</li>
+                            <li data-i18n="tool_chip_modes">Pixelate or Blur</li>
+                            <li data-i18n="tool_chip_os">Open source</li>
+                            <li data-i18n="tool_chip_notrack">No tracking</li>
+                        </ul>
+                        <div class="tool-card__actions">
+                            <a href="https://alpc-data-analyst.github.io/blurr-tool/" target="_blank" rel="noopener" class="btn btn--primary" data-magnetic>
+                                <span data-i18n="tool_blurr_cta">Open Blurr Tool</span>
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tool-card__visual" aria-hidden="true">
+                        <div class="tool-preview">
+                            <div class="tool-preview__bar">
+                                <span class="tool-preview__dot"></span>
+                                <span class="tool-preview__dot"></span>
+                                <span class="tool-preview__dot"></span>
+                                <span class="tool-preview__path">dashboard.png</span>
+                            </div>
+                            <div class="tool-preview__doc">
+                                <span class="tool-preview__line"></span>
+                                <span class="tool-preview__line tool-preview__line--short"></span>
+                                <div class="tool-preview__redact tool-preview__redact--pixel">
+                                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <span class="tool-preview__line"></span>
+                                <div class="tool-preview__redact tool-preview__redact--blur"></div>
+                                <span class="tool-preview__line tool-preview__line--short"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card tool-card--soon reveal" data-reveal-delay="120">
+                    <div class="tool-card__body tool-card__body--center">
+                        <span class="tool-card__badge tool-card__badge--muted">
+                            <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                            <span data-i18n="tool_soon_badge">In the workshop</span>
+                        </span>
+                        <h3 class="tool-card__title" data-i18n="tool_soon_title">Next one is cooking.</h3>
+                        <p class="tool-card__text" data-i18n="tool_soon_text">Got an idea for something small, useful and privacy-friendly? Ping me, I build them fast.</p>
+                        <a href="#contact" class="btn btn--ghost" data-magnetic>
+                            <span data-i18n="tool_soon_cta">Suggest a tool</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <header class="section__header reveal">
+                <span class="section__tag" data-i18n="contact_tag">05 / Contact</span>
+                <h2 class="section__title" data-i18n="contact_title">Got a data problem? Let's trade ideas.</h2>
+                <p class="section__lead" data-i18n="contact_lead">Full-time, freelance or "can I pick your brain for 20 minutes". All fair game.</p>
+            </header>
+
+            <div class="contact reveal">
+                <a href="mailto:alpcmalaga@gmail.com" class="contact__card" data-magnetic>
+                    <i class="fas fa-envelope contact__icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="contact__label" data-i18n="contact_email">Email</span>
+                        <span class="contact__value">alpcmalaga@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener" class="contact__card" data-magnetic>
+                    <i class="fab fa-linkedin contact__icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="contact__label">LinkedIn</span>
+                        <span class="contact__value">/in/antonio-luis-perez-carmona</span>
+                    </div>
+                </a>
+                <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener" class="contact__card" data-magnetic>
+                    <i class="fab fa-github contact__icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="contact__label">GitHub</span>
+                        <span class="contact__value">/alpc-data-analyst</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis,%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" class="contact__card" data-magnetic>
+                    <i class="fab fa-whatsapp contact__icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="contact__label">WhatsApp</span>
+                        <span class="contact__value">+34 601 427 159</span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; <span id="current-year"></span> Antonio Luis Pérez. Data Analyst.</p>
-            
-            <div class="footer-links">
-                <a href="#about" data-i18n="nav_about">About Me</a>
-                <a href="#portfolio" data-i18n="nav_portfolio">Projects</a>
-                <a href="#contact" data-i18n="nav_contact">Contact</a>
+        <div class="container footer__grid">
+            <div class="footer__brand">
+                <div class="footer__logo">
+                    <span class="footer__logo-mark">A·P</span>
+                    <span class="footer__logo-name">Antonio Luis Pérez</span>
+                </div>
+                <p class="footer__tagline" data-i18n="footer_tagline">Data Analyst &amp; Data Scientist · Málaga, ES.</p>
             </div>
-            
-            <p class="love-note">Created with &hearts; from Málaga.</p>
+            <nav class="footer__nav" aria-label="Footer">
+                <a href="#about" data-i18n="nav_about">About</a>
+                <a href="#stack" data-i18n="nav_stack">Stack</a>
+                <a href="#projects" data-i18n="nav_projects">Projects</a>
+                <a href="#tools" data-i18n="nav_tools">Tools</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="footer__meta">
+                <p>&copy; <span id="current-year">2025</span> Antonio Luis Pérez.</p>
+                <p class="footer__love" data-i18n="footer_love">Built with care from Málaga.</p>
+            </div>
         </div>
     </footer>
 
-    <div id="exit-popup" class="popup-overlay hidden-popup">
-        <div class="popup-content">
-            <button id="close-popup" class="close-btn">&times;</button>
-            <h3 class="popup-title" data-i18n="popup_title"> Wait, Don't Be Shy! 😉</h3>
-            <p class="popup-text" data-i18n="popup_text">Leaving already? You haven't hired me yet!</p>
-            <a href="thankyou.html" class="btn-gradient popup-cta" data-i18n="popup_cta">YES, Send Me the Good Stuff!</a>
-            <small class="no-thanks" id="no-thanks-link" data-i18n="popup_no">No, thanks. I guess I'm a loser who walks away from talent.</small>
-        </div>
-    </div> 
-
-    <script src="script.js" defer></script> 
-
-    <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis,%20vi%20tu%20portafolio%20y%20me%20gustaría%20saber%20más." 
-       class="whatsapp-float" 
-       target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis,%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-</body> 
+    <script src="script.js" defer></script>
+</body>
 </html>
