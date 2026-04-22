@@ -441,6 +441,7 @@ body.cursor-ready .cursor-glow { opacity: 1; }
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -707,8 +708,6 @@ body.cursor-ready .cursor-glow { opacity: 1; }
 .section {
     position: relative;
     padding: clamp(4rem, 9vw, 7rem) 0;
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
 }
 
 .section__header {
