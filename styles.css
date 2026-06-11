@@ -335,7 +335,7 @@ button {
 
 .journey__item {
     display: grid;
-    grid-template-columns: 220px minmax(0, var(--measure)) minmax(150px, 1fr);
+    grid-template-columns: 220px minmax(0, var(--measure));
     gap: 20px clamp(28px, 5vw, 72px);
 }
 
@@ -371,51 +371,6 @@ button {
     font-size: 0.95rem;
     color: var(--gray-text);
     margin-top: 14px;
-}
-
-/* Fotos de cada etapa: pila de instantáneas en B/N que
-   recuperan el color al pasar por encima */
-.journey__photos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 6px;
-}
-
-.journey__photos img {
-    --tilt: -3deg;
-    width: min(100%, 175px);
-    height: auto;
-    position: relative;
-    transform: rotate(var(--tilt));
-    filter: grayscale(1);
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.journey__photos img + img {
-    --tilt: 2.5deg;
-    margin-top: -14%;
-}
-
-.journey__item:nth-child(odd) .journey__photos img {
-    --tilt: 2.5deg;
-}
-
-.journey__item:nth-child(odd) .journey__photos img + img {
-    --tilt: -3.5deg;
-}
-
-.journey__photos img:hover,
-.journey__photos img:active {
-    transform: rotate(0deg) scale(1.05);
-    filter: grayscale(0);
-    z-index: 2;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .journey__photos img {
-        transition: none;
-    }
 }
 
 .about__cta {
@@ -806,23 +761,6 @@ button {
 
     .journey__date {
         padding-top: 0;
-    }
-
-    .journey__photos {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 18px;
-        padding-top: 0;
-        margin-top: 18px;
-    }
-
-    .journey__photos img {
-        width: min(42%, 165px);
-    }
-
-    .journey__photos img + img {
-        margin-top: 0;
     }
 }
 
