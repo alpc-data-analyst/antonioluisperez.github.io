@@ -13,3 +13,6 @@ desktop.ini
 .idea/
 *.swp
 *~
+
+# Originales de fotos (versiones web optimizadas en la raíz)
+FOTOS/
