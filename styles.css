@@ -515,6 +515,19 @@ button {
     color: #2b1d05;
 }
 
+/* La insignia que falta por ganar, como a Russell */
+.sash__circle--soon {
+    background: transparent;
+    border-style: dashed;
+    border-color: rgba(43, 29, 5, 0.55);
+    color: rgba(43, 29, 5, 0.65);
+    box-shadow: none;
+}
+
+.sash__name--soon {
+    color: rgba(43, 29, 5, 0.65);
+}
+
 /* -------- Projects ------------------------------------------------------- */
 .work {
     margin-top: clamp(70px, 11vw, 140px);
