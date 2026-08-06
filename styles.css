@@ -150,10 +150,15 @@ button {
     letter-spacing: 0.01em;
 }
 
+.consent__lang {
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
 .consent__cat {
-    width: clamp(140px, 34vw, 180px);
+    width: clamp(96px, 24vw, 128px);
     height: auto;
-    margin: 22px auto 0;
+    margin: 20px auto 0;
 }
 
 .consent__text {

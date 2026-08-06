@@ -131,6 +131,11 @@
 
     <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
         <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
             <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
             <img class="consent__cat" src="cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
             <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
@@ -154,9 +159,9 @@
 
         <div class="topbar__aside">
             <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
-                <button id="btn-es" class="lang-switch__btn is-active" type="button" aria-pressed="true">ES</button>
+                <button id="btn-es" class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
                 <span aria-hidden="true">/</span>
-                <button id="btn-en" class="lang-switch__btn" type="button" aria-pressed="false">EN</button>
+                <button id="btn-en" class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
             <a href="thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="topbar">CV ↓</a>
         </div>
