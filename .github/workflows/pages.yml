@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+# Por qué existe este fichero.
+#
+# El 16 jun 2026 GitHub pasó los runners a Node 24 por defecto. El último
+# despliegue correcto de este sitio fue el 11 jun 2026, cinco días antes.
+# Desde entonces, todo intento de desplegar muere con "Timeout reached,
+# aborting!" a los 600 segundos exactos: el artefacto se construye y se
+# sube bien, pero la confirmación de Pages no llega nunca.
+#
+# Probado y descartado: subir las acciones a sus últimas versiones
+# (deploy-pages v5 sobre Node 24) falla igual. El problema no es la versión
+# de la acción, es el runtime.
+#
+# ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION devuelve los runners a Node 20,
+# que es como funcionaba en junio. Es la vía de escape que documenta el
+# propio changelog de GitHub y solo puede ponerse en un workflow propio,
+# porque el implícito de Pages no es editable. Por eso hace falta que
+# Settings > Pages > Source esté en "GitHub Actions".
+#
+# CADUCA: GitHub retira Node 20 de los runners en otoño de 2026. Antes de
+# esa fecha hay que quitar la variable y comprobar que el despliegue sigue
+# funcionando sobre Node 24. Si vuelve a fallar, es un bug de Pages y toca
+# abrir ticket en https://support.github.com/
+#
+# Referencia: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: "true"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # Sin Jekyll: el sitio es HTML, CSS y JS planos y no necesita build.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
