@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+# El workflow implicito de GitHub usa actions/deploy-pages@v4, que es una
+# accion de Node 20 y desde la deprecacion se fuerza sobre Node 24. Su bucle
+# de espera se cuelga y el despliegue muere con "Timeout reached, aborting!".
+# Este workflow hace lo mismo con las versiones actuales y sin Jekyll, que
+# aqui no hace falta: el sitio es HTML, CSS y JS planos.
+#
+# Requiere que Settings > Pages > Source este en "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
