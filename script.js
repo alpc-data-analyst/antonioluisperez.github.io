@@ -339,14 +339,13 @@
             });
         });
 
-        const btnEs = document.getElementById('btn-es');
-        const btnEn = document.getElementById('btn-en');
-        if (btnEs && btnEn) {
-            btnEs.classList.toggle('is-active', lang === 'es');
-            btnEn.classList.toggle('is-active', lang === 'en');
-            btnEs.setAttribute('aria-pressed', String(lang === 'es'));
-            btnEn.setAttribute('aria-pressed', String(lang === 'en'));
-        }
+        // Hay más de un selector de idioma (el de la barra y el del banner de
+        // cookies), así que se marcan todos por data-lang en vez de por id.
+        document.querySelectorAll('[data-lang]').forEach((btn) => {
+            const on = btn.getAttribute('data-lang') === lang;
+            btn.classList.toggle('is-active', on);
+            btn.setAttribute('aria-pressed', String(on));
+        });
     };
 
     const setLang = (lang) => {
@@ -392,19 +391,23 @@
         const reject = document.getElementById('consent-reject');
         if (!accept || !reject) return;
 
-        const focusables = [accept, reject];
+        // Se calcula al vuelo porque dentro del diálogo también viven los dos
+        // botones de idioma, y todos tienen que entrar en la trampa de foco.
+        const focusables = () => Array.prototype.slice.call(box.querySelectorAll('button'));
         let lastFocus = null;
 
         const onKeydown = (e) => {
             if (e.key !== 'Tab') return;
-            // Encierra el foco entre los dos botones: sin decisión no se
-            // puede tabular hasta el contenido de debajo.
+            // Encierra el foco dentro del diálogo: sin decisión no se puede
+            // tabular hasta el contenido de debajo.
             e.preventDefault();
-            const i = focusables.indexOf(document.activeElement);
+            const f = focusables();
+            if (!f.length) return;
+            const i = f.indexOf(document.activeElement);
             const next = e.shiftKey
-                ? (i <= 0 ? focusables.length - 1 : i - 1)
-                : (i === focusables.length - 1 ? 0 : i + 1);
-            focusables[next].focus();
+                ? (i <= 0 ? f.length - 1 : i - 1)
+                : (i === f.length - 1 ? 0 : i + 1);
+            f[next].focus();
         };
 
         const close = (state) => {
@@ -503,10 +506,13 @@
     const boot = () => {
         applyTranslations(detectLang());
 
-        const btnEs = document.getElementById('btn-es');
-        const btnEn = document.getElementById('btn-en');
-        if (btnEs) btnEs.addEventListener('click', () => { setLang('es'); track('language_switched', { language_to: 'es' }); });
-        if (btnEn) btnEn.addEventListener('click', () => { setLang('en'); track('language_switched', { language_to: 'en' }); });
+        document.querySelectorAll('[data-lang]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const to = btn.getAttribute('data-lang');
+                setLang(to);
+                track('language_switched', { language_to: to });
+            });
+        });
 
         const year = document.getElementById('current-year');
         if (year) year.textContent = new Date().getFullYear();
