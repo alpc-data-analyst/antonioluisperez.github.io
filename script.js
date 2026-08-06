@@ -127,6 +127,7 @@
 
             footer_love: 'Hecho a mano con HTML, CSS y JS planos. Sin plantilla.',
             footer_updated: 'Última actualización: ago 2026',
+            footer_cookies: 'Preferencias de cookies',
 
             consent_title: 'Cookies',
             consent_text: 'Uso Google Analytics para saber qué se lee de esta web y qué no. Ni publicidad, ni venta de datos, ni perfilado. Si prefieres que no mida, no mido y aquí no pasa nada.',
@@ -261,6 +262,7 @@
 
             footer_love: 'Hand-built with plain HTML, CSS and JS. No template.',
             footer_updated: 'Last updated: Aug 2026',
+            footer_cookies: 'Cookie preferences',
 
             consent_title: 'Cookies',
             consent_text: 'I use Google Analytics to know what gets read on this site and what does not. No ads, no data selling, no profiling. If you would rather I did not measure, I will not, and nothing here breaks.',
@@ -386,20 +388,12 @@
         // Sin GTM en la página no hay nada que consentir (por ejemplo el 404).
         if (typeof window.gtag !== 'function') return;
 
-        // A los rastreadores no se les tapa el contenido con un overlay: no
-        // guardan cookies, no deciden nada, y Google no tiene por qué ver la
-        // página con un interstitial encima.
-        if (isCrawler()) return;
-
-        // Ya decidió antes: el <head> restauró la decisión, no molestamos.
-        if (readConsent()) return;
-
         const accept = document.getElementById('consent-accept');
         const reject = document.getElementById('consent-reject');
         if (!accept || !reject) return;
 
         const focusables = [accept, reject];
-        const lastFocus = document.activeElement;
+        let lastFocus = null;
 
         const onKeydown = (e) => {
             if (e.key !== 'Tab') return;
@@ -430,13 +424,37 @@
             if (lastFocus && lastFocus.focus) lastFocus.focus();
         };
 
+        const open = () => {
+            lastFocus = document.activeElement;
+            box.hidden = false;
+            document.body.classList.add('consent-open');
+            document.addEventListener('keydown', onKeydown, true);
+            accept.focus();
+        };
+
         accept.addEventListener('click', () => close('granted'));
         reject.addEventListener('click', () => close('denied'));
-        document.addEventListener('keydown', onKeydown, true);
 
-        box.hidden = false;
-        document.body.classList.add('consent-open');
-        accept.focus();
+        // Cambiar de opinión tiene que ser tan fácil como consentir, así que
+        // cualquier elemento con data-consent-reopen vuelve a abrir el panel.
+        // Se engancha ANTES de comprobar la cookie: quien ya decidió es
+        // precisamente quien necesita el enlace.
+        document.querySelectorAll('[data-consent-reopen]').forEach((el) => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                open();
+            });
+        });
+
+        // A los rastreadores no se les tapa el contenido con un overlay: no
+        // guardan cookies, no deciden nada, y Google no tiene por qué ver la
+        // página con un interstitial encima.
+        if (isCrawler()) return;
+
+        // Ya decidió antes: el <head> restauró la decisión, no molestamos.
+        if (readConsent()) return;
+
+        open();
     };
 
     /* ---------- Eventos de interacción ---------- */
