@@ -130,7 +130,7 @@
             footer_cookies: 'Preferencias de cookies',
 
             consent_title: 'Cookies',
-            consent_text: 'Uso Google Analytics para saber qué se lee de esta web y qué no. Ni publicidad, ni venta de datos, ni perfilado. Si prefieres que no mida, no mido y aquí no pasa nada.',
+            consent_text: 'Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.',
             consent_accept: 'Aceptar',
             consent_reject: 'Rechazar',
 
@@ -265,7 +265,7 @@
             footer_cookies: 'Cookie preferences',
 
             consent_title: 'Cookies',
-            consent_text: 'I use Google Analytics to know what gets read on this site and what does not. No ads, no data selling, no profiling. If you would rather I did not measure, I will not, and nothing here breaks.',
+            consent_text: 'Alright, the same old song: cookies and consent. Sorry, I am a data analyst, a good one, and I need everything measured and under control.',
             consent_accept: 'Accept',
             consent_reject: 'Reject',
 
@@ -429,7 +429,10 @@
             box.hidden = false;
             document.body.classList.add('consent-open');
             document.addEventListener('keydown', onKeydown, true);
-            accept.focus();
+            // Se enfoca el diálogo, no "Aceptar": enfocar un botón le dibuja
+            // el anillo de foco y lo haría parecer el destacado, que es justo
+            // lo que no puede pasar aquí.
+            box.focus();
         };
 
         accept.addEventListener('click', () => close('granted'));

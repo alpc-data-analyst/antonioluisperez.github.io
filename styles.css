@@ -132,6 +132,10 @@ button {
     display: none;
 }
 
+.consent:focus {
+    outline: none;
+}
+
 .consent__box {
     max-width: 520px;
     text-align: center;
@@ -146,10 +150,18 @@ button {
     letter-spacing: 0.01em;
 }
 
+.consent__cat {
+    width: clamp(140px, 34vw, 180px);
+    height: auto;
+    margin: 22px auto 0;
+}
+
 .consent__text {
-    font-size: 0.95rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
     color: var(--gray-text);
-    margin-top: 24px;
+    max-width: 40ch;
+    margin: 20px auto 0;
 }
 
 .consent__actions {
