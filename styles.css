@@ -1,7 +1,7 @@
 /* =============================================================
    Antonio Luis Pérez · Portfolio
    Póster tipográfico: blanco, negro y gris. La jerarquía la
-   hacen la escala y el espacio — sin marcos, sin reglas,
+   hacen la escala y el espacio, sin marcos, sin reglas,
    sin cajas, sin sombras.
    ============================================================= */
 
@@ -231,6 +231,24 @@ button {
     letter-spacing: 0.01em;
     color: var(--gray-ghost);
     margin-top: clamp(14px, 3vh, 36px);
+}
+
+.hero__owner {
+    margin-top: clamp(20px, 3.5vh, 40px);
+}
+
+.hero__owner a {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 4px;
+}
+
+.hero__owner a:hover {
+    color: var(--gray-meta);
+    border-color: var(--gray-meta);
 }
 
 .hero__intro {
