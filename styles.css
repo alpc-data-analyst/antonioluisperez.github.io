@@ -113,6 +113,73 @@ button {
     color: var(--bg);
 }
 
+/* -------- Consentimiento de cookies ---------------------------- */
+/* Fondo opaco a pantalla completa: mientras no haya decisión, no hay web
+   debajo con la que interactuar. Los dos botones son idénticos a propósito,
+   aceptar no puede ser más fácil que rechazar. */
+.consent {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--pad);
+    background: var(--bg);
+}
+
+.consent[hidden] {
+    display: none;
+}
+
+.consent__box {
+    max-width: 520px;
+    text-align: center;
+}
+
+.consent__title {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2.6rem, 11vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: 0.01em;
+}
+
+.consent__text {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    margin-top: 24px;
+}
+
+.consent__actions {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.consent__btn {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--black);
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 4px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.consent__btn:hover {
+    color: var(--gray-meta);
+    border-color: var(--gray-meta);
+}
+
+body.consent-open {
+    overflow: hidden;
+}
+
 /* -------- Top bar ---------------------------------------------- */
 .topbar {
     display: flex;

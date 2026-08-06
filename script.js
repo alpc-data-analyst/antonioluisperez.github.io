@@ -128,6 +128,11 @@
             footer_love: 'Hecho a mano con HTML, CSS y JS planos. Sin plantilla.',
             footer_updated: 'Última actualización: ago 2026',
 
+            consent_title: 'Cookies',
+            consent_text: 'Uso Google Analytics para saber qué se lee de esta web y qué no. Ni publicidad, ni venta de datos, ni perfilado. Si prefieres que no mida, no mido y aquí no pasa nada.',
+            consent_accept: 'Aceptar',
+            consent_reject: 'Rechazar',
+
             nf_title: 'Aquí no hay datos.',
             nf_text: 'Esta página no existe, o existió y ya no. Lo mejor que puedo ofrecerte es volver al principio, que ahí sí hay cosas.',
             nf_back: 'Volver al portfolio',
@@ -257,6 +262,11 @@
             footer_love: 'Hand-built with plain HTML, CSS and JS. No template.',
             footer_updated: 'Last updated: Aug 2026',
 
+            consent_title: 'Cookies',
+            consent_text: 'I use Google Analytics to know what gets read on this site and what does not. No ads, no data selling, no profiling. If you would rather I did not measure, I will not, and nothing here breaks.',
+            consent_accept: 'Accept',
+            consent_reject: 'Reject',
+
             nf_title: 'No data here.',
             nf_text: 'This page does not exist, or it did and no longer does. The best I can offer is going back to the start, where there is actually something.',
             nf_back: 'Back to portfolio',
@@ -348,6 +358,87 @@
     // Expuesto para la página de gracias
     window.setLanguage = setLang;
 
+    /* ---------- Consentimiento ---------- */
+    // La preferencia va en cookie, no en localStorage, porque el snippet del
+    // <head> la lee antes de que cargue GTM para restaurar la decisión previa,
+    // y ahí todavía no se ha ejecutado este fichero.
+    const CONSENT_COOKIE = 'alpc_consent';
+    const CONSENT_DAYS = 180;
+
+    const readConsent = () => {
+        const m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        return m ? decodeURIComponent(m[1]) : null;
+    };
+
+    const writeConsent = (value) => {
+        const d = new Date();
+        d.setTime(d.getTime() + CONSENT_DAYS * 86400000);
+        document.cookie = CONSENT_COOKIE + '=' + encodeURIComponent(value) +
+            '; expires=' + d.toUTCString() +
+            '; path=/; SameSite=Lax' +
+            (location.protocol === 'https:' ? '; Secure' : '');
+    };
+
+    const initConsent = () => {
+        const box = document.getElementById('consent');
+        if (!box) return;
+
+        // Sin GTM en la página no hay nada que consentir (por ejemplo el 404).
+        if (typeof window.gtag !== 'function') return;
+
+        // A los rastreadores no se les tapa el contenido con un overlay: no
+        // guardan cookies, no deciden nada, y Google no tiene por qué ver la
+        // página con un interstitial encima.
+        if (isCrawler()) return;
+
+        // Ya decidió antes: el <head> restauró la decisión, no molestamos.
+        if (readConsent()) return;
+
+        const accept = document.getElementById('consent-accept');
+        const reject = document.getElementById('consent-reject');
+        if (!accept || !reject) return;
+
+        const focusables = [accept, reject];
+        const lastFocus = document.activeElement;
+
+        const onKeydown = (e) => {
+            if (e.key !== 'Tab') return;
+            // Encierra el foco entre los dos botones: sin decisión no se
+            // puede tabular hasta el contenido de debajo.
+            e.preventDefault();
+            const i = focusables.indexOf(document.activeElement);
+            const next = e.shiftKey
+                ? (i <= 0 ? focusables.length - 1 : i - 1)
+                : (i === focusables.length - 1 ? 0 : i + 1);
+            focusables[next].focus();
+        };
+
+        const close = (state) => {
+            writeConsent(state);
+            const granted = state === 'granted';
+            window.gtag('consent', 'update', {
+                ad_storage: granted ? 'granted' : 'denied',
+                ad_user_data: granted ? 'granted' : 'denied',
+                ad_personalization: granted ? 'granted' : 'denied',
+                analytics_storage: granted ? 'granted' : 'denied'
+            });
+            track('consent_decision', { consent_state: state });
+
+            box.hidden = true;
+            document.body.classList.remove('consent-open');
+            document.removeEventListener('keydown', onKeydown, true);
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        };
+
+        accept.addEventListener('click', () => close('granted'));
+        reject.addEventListener('click', () => close('denied'));
+        document.addEventListener('keydown', onKeydown, true);
+
+        box.hidden = false;
+        document.body.classList.add('consent-open');
+        accept.focus();
+    };
+
     /* ---------- Eventos de interacción ---------- */
     const initTracking = () => {
         // Clics marcados a mano con data-track (CV, contacto, Roometrics...)
@@ -400,6 +491,7 @@
         if (year) year.textContent = new Date().getFullYear();
 
         initTracking();
+        initConsent();
     };
 
     if (document.readyState === 'loading') {
