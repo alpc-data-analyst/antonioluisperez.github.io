@@ -267,6 +267,28 @@ button {
     margin-top: 14px;
 }
 
+.hero__cta {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.hero__cta a {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 4px;
+}
+
+.hero__cta a:hover {
+    color: var(--gray-meta);
+    border-color: var(--gray-meta);
+}
+
 .hero__meta {
     font-size: 0.7rem;
     font-weight: 600;
