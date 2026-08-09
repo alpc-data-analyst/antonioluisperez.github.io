@@ -549,7 +549,7 @@
     // pantalla, en vez de aparecer de golpe. Se calcula sobre el centro del
     // elemento: 0 cuando entra por abajo, 1 cuando llega a media pantalla.
     const initScrollUnderline = () => {
-        const marks = document.querySelectorAll('.underline-scroll');
+        const marks = document.querySelectorAll('.mark-scroll');
         if (!marks.length) return;
 
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
