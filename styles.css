@@ -13,6 +13,12 @@
     --gray-meta: #969696;
     --gray-ghost: #d9d9d9;
 
+    /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
+       Sobre blanco el #2cff05 puro no llega a contraste AA, asi que el texto
+       usa la version oscurecida y el puro queda para fondos y trazos. */
+    --neon: #2cff05;
+    --neon-edge: #1f8c05;
+
     --display: 'Anton', 'Arial Narrow', sans-serif;
     --sans: 'Archivo', Helvetica, Arial, sans-serif;
 
@@ -82,8 +88,12 @@ button {
 }
 
 ::selection {
-    background: var(--black);
-    color: var(--bg);
+    background: var(--neon);
+    color: var(--black);
+}
+
+:focus-visible {
+    outline-color: var(--neon-edge);
 }
 
 /* -------- Type helpers --------------------------------------- */
@@ -204,7 +214,7 @@ body.consent-open {
 }
 
 .footer__cookies:hover {
-    color: var(--black);
+    color: var(--neon-edge);
 }
 
 /* -------- Top bar ---------------------------------------------- */
@@ -246,7 +256,7 @@ body.consent-open {
 
 .topbar__nav a:hover,
 .topbar__cv:hover {
-    color: var(--black);
+    color: var(--neon-edge);
 }
 
 .topbar__cv {
@@ -254,7 +264,7 @@ body.consent-open {
 }
 
 .topbar__cv:hover {
-    color: var(--gray-meta);
+    color: var(--neon-edge);
 }
 
 .topbar__aside {
@@ -280,7 +290,7 @@ body.consent-open {
 }
 
 .lang-switch__btn:hover {
-    color: var(--black);
+    color: var(--neon-edge);
 }
 
 .lang-switch__btn.is-active {
@@ -336,13 +346,13 @@ body.consent-open {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    border-bottom: 2px solid var(--black);
+    border-bottom: 3px solid var(--neon);
     padding-bottom: 4px;
 }
 
 .hero__owner a:hover {
-    color: var(--gray-meta);
-    border-color: var(--gray-meta);
+    background: var(--neon);
+    border-color: var(--neon);
 }
 
 .hero__intro {
@@ -482,8 +492,13 @@ body.consent-open {
     padding-top: 6px;
 }
 
+/* Subrayado fluorescente: marca lo que esta vivo ahora mismo */
 .journey__now {
+    display: inline-block;
+    background: var(--neon);
     color: var(--black);
+    padding: 1px 7px;
+    font-weight: 700;
 }
 
 .journey__body h4 {
@@ -553,7 +568,7 @@ body.consent-open {
     margin-top: 10px;
 }
 
-/* -------- Certificaciones: la banda de Russell ------------------------------ */
+/* -------- Certificaciones ---------------------------------------------------- */
 .certs {
     margin-top: clamp(72px, 10vw, 120px);
 }
@@ -566,100 +581,94 @@ body.consent-open {
     max-width: var(--measure);
 }
 
-.sash {
-    --sash: #e3a23c;
-    --sash-edge: #c08326;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-top: clamp(56px, 7vw, 90px);
-    margin-bottom: clamp(28px, 4vw, 48px);
-    transform: rotate(-4deg);
-    background: var(--sash);
-    border-top: 8px solid var(--sash-edge);
-    border-bottom: 8px solid var(--sash-edge);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(18px, 4vw, 56px);
-    padding: clamp(26px, 3.5vw, 40px) var(--pad);
+.certs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: clamp(30px, 4vw, 52px) clamp(20px, 3vw, 40px);
+    margin-top: clamp(44px, 6vw, 72px);
+    max-width: 940px;
 }
 
-.sash__badge {
-    display: flex;
-    flex-direction: column;
+.cert {
+    display: grid;
+    grid-template-rows: clamp(78px, 8.5vw, 104px) auto;
+    justify-items: center;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px;
-    width: 120px;
+    gap: 14px;
 }
 
-.sash__img {
-    width: clamp(108px, 11vw, 148px);
-    height: auto;
-    margin-bottom: -8px;
-    filter: drop-shadow(0 3px 6px rgba(43, 29, 5, 0.25));
-    transition: transform 0.2s ease;
+/* Las insignias vienen en colores de nueve marcas distintas. En gris se
+   integran en el poster; el color aparece solo al pasar por encima. */
+/* Las nueve insignias vienen con proporciones distintas. Se les da la misma
+   altura y se ajustan por dentro, si no las etiquetas bailan de una a otra. */
+.cert__img,
+.cert__photo {
+    width: auto;
+    max-width: 100%;
+    height: clamp(78px, 8.5vw, 104px);
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.75;
+    transition: filter 0.25s ease, opacity 0.25s ease;
 }
 
-.sash__badge:first-child .sash__img {
-    width: clamp(122px, 12.5vw, 168px);
-    margin-bottom: -16px;
-}
-
-.sash__photo {
-    width: clamp(96px, 10vw, 128px);
-    height: clamp(96px, 10vw, 128px);
+.cert__photo {
+    width: clamp(78px, 8.5vw, 104px);
     border-radius: 50%;
     object-fit: cover;
-    background: #fff;
-    border: 2px solid var(--black);
-    box-shadow: 0 0 0 5px rgba(255, 253, 247, 0.35);
-    transition: transform 0.2s ease;
 }
 
-.sash__circle {
-    width: clamp(76px, 8vw, 104px);
-    height: clamp(76px, 8vw, 104px);
+.cert:hover .cert__img,
+.cert:hover .cert__photo {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Las que no tienen imagen se dibujan con tipografia, como el resto del sitio */
+.cert__mark {
+    width: clamp(78px, 8.5vw, 104px);
+    height: clamp(78px, 8.5vw, 104px);
     border-radius: 50%;
-    background: #fffdf7;
     border: 2px solid var(--black);
-    box-shadow: 0 0 0 5px rgba(255, 253, 247, 0.35);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--display);
-    font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+    font-size: clamp(1rem, 1.5vw, 1.35rem);
     letter-spacing: 0.02em;
-    transition: transform 0.2s ease;
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
-.sash__badge:hover .sash__circle,
-.sash__badge:hover .sash__img,
-.sash__badge:hover .sash__photo {
-    transform: rotate(-8deg) scale(1.06);
+.cert:hover .cert__mark {
+    background: var(--black);
+    color: var(--bg);
 }
 
-.sash__name {
-    font-size: 0.58rem;
+.cert__name {
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     text-align: center;
     line-height: 1.5;
-    color: #2b1d05;
+    color: var(--gray-text);
 }
 
-/* La insignia que falta por ganar, como a Russell */
-.sash__circle--soon {
-    background: transparent;
+/* La que aun no esta ganada */
+.cert__mark--soon {
     border-style: dashed;
-    border-color: rgba(43, 29, 5, 0.55);
-    color: rgba(43, 29, 5, 0.65);
-    box-shadow: none;
+    border-color: var(--neon-edge);
+    color: var(--neon-edge);
 }
 
-.sash__name--soon {
-    color: rgba(43, 29, 5, 0.65);
+.cert:hover .cert__mark--soon {
+    background: var(--neon);
+    border-color: var(--neon);
+    color: var(--black);
+}
+
+.cert__name--soon {
+    color: var(--neon-edge);
 }
 
 /* -------- Projects ------------------------------------------------------- */
@@ -735,7 +744,7 @@ body.consent-open {
 }
 
 .work__links a:hover {
-    color: var(--gray-meta);
+    color: var(--neon-edge);
 }
 
 /* -------- Tools ------------------------------------------------------------ */
@@ -755,7 +764,7 @@ body.consent-open {
 }
 
 .tool__title a:hover {
-    color: var(--gray-meta);
+    color: var(--neon-edge);
 }
 
 .tool__tagline {
@@ -829,7 +838,7 @@ body.consent-open {
 }
 
 .contact__channels a:hover {
-    color: var(--black);
+    color: var(--neon-edge);
 }
 
 .contact__note {
@@ -879,12 +888,12 @@ body.consent-open {
         gap: 32px;
     }
 
-    .sash {
+    .certs__grid {
         transform: rotate(-2.5deg);
         gap: 20px 22px;
     }
 
-    .sash__badge {
+    .cert {
         width: 96px;
     }
 
@@ -899,6 +908,25 @@ body.consent-open {
 }
 
 @media (max-width: 640px) {
+    /* Anton es muy condensada. A tamaños grandes en pantallas anchas respira,
+       pero en móvil los caracteres se apelmazan y el título se lee como un
+       bloque. Se abre el interletraje solo aquí. */
+    .hero__name,
+    .hero__role,
+    .section__title,
+    .work__title,
+    .tool__title,
+    .journey__title,
+    .consent__title,
+    .contact__title,
+    .stack__row h3 {
+        letter-spacing: 0.045em;
+    }
+
+    .hero__name {
+        line-height: 1.04;
+    }
+
     .topbar__nav {
         order: 3;
         width: 100%;
