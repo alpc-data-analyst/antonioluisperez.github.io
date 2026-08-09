@@ -122,6 +122,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
 </head>
 
 <body>
@@ -190,7 +191,7 @@
         </section>
 
         <section class="intro">
-            <div class="hero__intro">
+            <div class="reveal hero__intro">
                 <p class="hero__dek" data-i18n="hero_dek">Data Analyst con experiencia en marketing y negocio.</p>
                 <p class="hero__sub" data-i18n="hero_sub">Analista digital en Paraty Tech.</p>
                 <p class="hero__spec" data-i18n="hero_spec">Especialidades: Web Analyst, Ecommerce Analyst y Data Science (modelos de ML e IA)</p>
@@ -204,32 +205,32 @@
         </section>
 
         <section id="about" class="section">
-            <p class="section__label" data-i18n="about_tag">01 · Sobre mí</p>
-            <h2 class="section__title underline-scroll" data-i18n="about_title">Que decida el dato, no la opinión.</h2>
+            <p class="reveal section__label" data-i18n="about_tag">01 · Sobre mí</p>
+            <h2 class="reveal section__title underline-scroll" data-i18n="about_title">Que decida el dato, no la opinión.</h2>
 
-            <p class="about__lead" data-i18n="about_lead">Mi nombre es Antonio y me paso el día ordenando datos que llegan hechos un desastre. Lo que persigo es que en la empresa se decida a partir de lo que encuentro, y no de lo que a alguien le parece esa mañana.</p>
+            <p class="reveal about__lead" data-i18n="about_lead">Mi nombre es Antonio y me paso el día ordenando datos que llegan hechos un desastre. Lo que persigo es que en la empresa se decida a partir de lo que encuentro, y no de lo que a alguien le parece esa mañana.</p>
 
             <div class="threecol">
-                <div class="threecol__col">
+                <div class="reveal threecol__col" style="--d:0ms">
                     <h3 data-i18n="about_h1">Qué hago</h3>
                     <p data-i18n="about_p1">Me encargo del proceso entero. Saco los datos con SQL, los limpio, pruebo modelos en Python y los dejo funcionando en cloud.</p>
                 </div>
-                <div class="threecol__col">
+                <div class="reveal threecol__col" style="--d:90ms">
                     <h3 data-i18n="about_h2">Cómo trabajo</h3>
                     <p data-i18n="about_p2">Empiezo por el modelo más tonto que pueda funcionar. Si ese gana, ya está. Y si un dashboard no cambia lo que alguien va a hacer mañana, sobra.</p>
                 </div>
-                <div class="threecol__col">
+                <div class="reveal threecol__col" style="--d:180ms">
                     <h3 data-i18n="about_h3">Qué me mueve</h3>
                     <p data-i18n="about_p3">El ML aplicado, el NLP y encontrar ese gráfico que hace callar a toda la sala.</p>
                 </div>
             </div>
 
             <div class="journey">
-                <p class="section__label" data-i18n="timeline_tag">Trayectoria</p>
-                <h3 class="journey__title underline-scroll" data-i18n="timeline_title">Cómo llegué aquí.</h3>
+                <p class="reveal section__label" data-i18n="timeline_tag">Trayectoria</p>
+                <h3 class="reveal journey__title underline-scroll" data-i18n="timeline_title">Cómo llegué aquí.</h3>
 
                 <ol class="journey__list">
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:0ms">
                         <p class="journey__date">Sep 2020 → Jun 2024</p>
                         <div class="journey__body">
                             <h4>Universidad de Málaga</h4>
@@ -238,7 +239,7 @@
                         </div>
                     </li>
 
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:70ms">
                         <p class="journey__date" data-i18n="tl_taco_date">Sep 2022 → Abr 2025</p>
                         <div class="journey__body">
                             <h4>Taco Bell</h4>
@@ -247,7 +248,7 @@
                         </div>
                     </li>
 
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:140ms">
                         <p class="journey__date" data-i18n="tl_windup_date">Sep 2024 → Abr 2025</p>
                         <div class="journey__body">
                             <h4>Windup Training</h4>
@@ -256,7 +257,7 @@
                         </div>
                     </li>
 
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:210ms">
                         <p class="journey__date">2025 <span class="journey__now">Top 25</span></p>
                         <div class="journey__body">
                             <h4>TalentLab Málaga</h4>
@@ -265,7 +266,7 @@
                         </div>
                     </li>
 
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:280ms">
                         <p class="journey__date"><span data-i18n="tl_paraty_date">Mar 2025 → Actualmente</span> <span class="journey__now" data-i18n="tl_current">Actual</span></p>
                         <div class="journey__body">
                             <h4>Paraty Tech</h4>
@@ -274,7 +275,7 @@
                         </div>
                     </li>
 
-                    <li class="journey__item">
+                    <li class="reveal journey__item" style="--d:350ms">
                         <p class="journey__date">Nov 2025 → Jun 2026 <span class="journey__now" data-i18n="tl_done">Completado</span></p>
                         <div class="journey__body">
                             <h4>BIG School</h4>
@@ -285,80 +286,80 @@
                 </ol>
             </div>
 
-            <p class="about__cta">
+            <p class="reveal about__cta">
                 <a href="thankyou.html" data-i18n="about_cv" data-track="cv_intent_click" data-track-location="about">Descargar CV (PDF)</a>
                 <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener" data-i18n="about_linkedin">Ver LinkedIn</a>
             </p>
         </section>
 
         <section id="stack" class="section">
-            <p class="section__label" data-i18n="stack_tag">02 · Stack</p>
-            <h2 class="section__title underline-scroll" data-i18n="stack_title">Las herramientas con las que me muevo cada día.</h2>
+            <p class="reveal section__label" data-i18n="stack_tag">02 · Stack</p>
+            <h2 class="reveal section__title underline-scroll" data-i18n="stack_title">Las herramientas con las que me muevo cada día.</h2>
 
             <ul class="stack">
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:0ms">
                     <h3 data-i18n="stack_core_title">Python y SQL</h3>
                     <p class="stack__tools">Pandas · NumPy · Scikit-learn · PyTorch · PostgreSQL · MySQL · BigQuery</p>
                 </li>
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:55ms">
                     <h3 data-i18n="stack_viz_title">Analítica y Viz</h3>
                     <p class="stack__tools">GA4 · GTM Web + Server Side · Looker Studio · Power BI · Tableau · Adobe Analytics · Matomo · Microsoft Clarity</p>
                 </li>
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:110ms">
                     <h3 data-i18n="stack_meas_title">Medición y privacidad</h3>
                     <p class="stack__tools" data-i18n="stack_meas_tools">DataLayer · Consent Mode · GDPR · Meta CAPI · Conversiones mejoradas · Tests A/B · CRO</p>
                 </li>
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:165ms">
                     <h3 data-i18n="stack_ml_title">Machine Learning</h3>
                     <p class="stack__tools">RNN · LSTM · NLP · Scikit-learn · Azure ML</p>
                 </li>
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:220ms">
                     <h3 data-i18n="stack_cloud_title">Cloud y DevOps</h3>
                     <p class="stack__tools">AWS · GCP · Bash · Git</p>
                 </li>
-                <li class="stack__row">
+                <li class="reveal stack__row" style="--d:275ms">
                     <h3 data-i18n="stack_data_title">Ingeniería de datos</h3>
                     <p class="stack__tools">ETL · APIs · Airflow · HIVE · Hadoop · NoSQL · Pipelines</p>
                 </li>
             </ul>
 
             <div class="certs">
-                <p class="section__label" data-i18n="stack_certs">Certificaciones</p>
+                <p class="reveal section__label" data-i18n="stack_certs">Certificaciones</p>
 
                 <ul class="certs__grid" aria-label="Insignias de certificación" data-i18n-attr="aria-label:certs_aria">
-                    <li class="cert" title="Google Data Analytics Professional Certificate">
+                    <li class="reveal cert" title="Google Data Analytics Professional Certificate">
                         <img class="cert__img" src="badges/google-data-analytics.png" alt="Google Data Analytics Professional Certificate" width="340" height="340" loading="lazy" decoding="async" />
                         <span class="cert__name">Google Data Analytics</span>
                     </li>
-                    <li class="cert" title="IBM SkillsBuild Data Analytics Certificate">
+                    <li class="reveal cert" title="IBM SkillsBuild Data Analytics Certificate">
                         <img class="cert__img" src="badges/ibm-skillsbuild.webp" alt="IBM SkillsBuild Data Analytics Certificate" width="600" height="600" loading="lazy" decoding="async" />
                         <span class="cert__name">IBM SkillsBuild Data Analytics</span>
                     </li>
-                    <li class="cert" title="Google Analytics Certification">
+                    <li class="reveal cert" title="Google Analytics Certification">
                         <img class="cert__photo" src="badges/google-analytics.jpg" alt="Google Analytics Certification" width="400" height="400" loading="lazy" decoding="async" />
                         <span class="cert__name">Google Analytics</span>
                     </li>
-                    <li class="cert" title="SQL (Advanced) Certificate">
+                    <li class="reveal cert" title="SQL (Advanced) Certificate">
                         <img class="cert__photo" src="badges/sql-advanced.jpg" alt="SQL (Advanced) Certificate, HackerRank" width="575" height="434" loading="lazy" decoding="async" />
                         <span class="cert__name">SQL Advanced</span>
                     </li>
-                    <li class="cert" title="HubSpot Marketing Hub Software Certified">
+                    <li class="reveal cert" title="HubSpot Marketing Hub Software Certified">
                         <img class="cert__img" src="badges/hubspot.webp" alt="HubSpot Marketing Hub Software Certified" loading="lazy" decoding="async" />
                         <span class="cert__name">HubSpot Marketing Hub</span>
                     </li>
-                    <li class="cert" title="Microsoft AI-900 Training · Windup Training, 2024">
+                    <li class="reveal cert" title="Microsoft AI-900 Training · Windup Training, 2024">
                         <span class="cert__mark" aria-hidden="true">AI</span>
                         <span class="cert__name">Microsoft AI-900</span>
                     </li>
-                    <li class="cert" title="GA4 Mastery · Optimize Smart, 2025">
+                    <li class="reveal cert" title="GA4 Mastery · Optimize Smart, 2025">
                         <span class="cert__mark" aria-hidden="true">GA4</span>
                         <span class="cert__name">GA4 Mastery · Optimize Smart</span>
                     </li>
-                    <li class="cert" title="Aptis · British Council">
+                    <li class="reveal cert" title="Aptis · British Council">
                         <img class="cert__img" src="badges/aptis.png" alt="Aptis, British Council" width="1080" height="1080" loading="lazy" decoding="async" />
                         <span class="cert__name" data-i18n="stack_lang">Inglés · B2 First</span>
                     </li>
-                    <li class="cert" title="Microsoft Azure Fundamentals (AZ-900)">
+                    <li class="reveal cert" title="Microsoft Azure Fundamentals (AZ-900)">
                         <span class="cert__mark cert__mark--soon" aria-hidden="true">AZ</span>
                         <span class="cert__name cert__name--soon" data-i18n="stack_az">Azure AZ-900 · en curso</span>
                     </li>
@@ -367,10 +368,10 @@
         </section>
 
         <section id="projects" class="section">
-            <p class="section__label" data-i18n="proj_tag">03 · Proyectos</p>
-            <h2 class="section__title underline-scroll" data-i18n="proj_title">En lo que estoy trabajando personalmente.</h2>
+            <p class="reveal section__label" data-i18n="proj_tag">03 · Proyectos</p>
+            <h2 class="reveal section__title underline-scroll" data-i18n="proj_title">En lo que estoy trabajando personalmente.</h2>
 
-            <article class="work">
+            <article class="reveal work">
                 <p class="work__meta">Python · Gradient Boosting · IEEE-CIS · 2026</p>
                 <h3 class="work__title underline-scroll" data-i18n="proj_fraud_title">Detección de fraude bancario con ML</h3>
                 <p class="work__text" data-i18n="proj_fraud_text">Modelo end-to-end sobre 590K transacciones reales del dataset IEEE-CIS, con 434 variables entre datos de transacción y señales de identidad como el dispositivo, el dominio de correo o la geolocalización. Un Gradient Boosting de 500 árboles hace el trabajo. El hallazgo está en el umbral. Con el 0.5 por defecto se escapaba más fraude del que se cazaba, y al bajarlo a 0.1 el modelo pasa a capturar el 60% de todo el fraude molestando solo al 0.46% de usuarios legítimos.</p>
@@ -400,7 +401,7 @@
                 </p>
             </article>
 
-            <article class="work">
+            <article class="reveal work">
                 <p class="work__meta">SaaS · Cookieless · JavaScript · 2026</p>
                 <h3 class="work__title underline-scroll" data-i18n="proj_rm_title">Roometrics, analítica web sin cookies</h3>
                 <p class="work__text" data-i18n="proj_rm_text">Mi producto, y está en producción. Analítica web que no pone cookies ni guarda IPs, así que tampoco necesita banner. Cada visita se convierte en un código anónimo con claves que rotan cada día: no queda nada que consentir. Se instala en dos líneas o desde GTM, y los datos no salen de Europa. Salió de una frase que me da rabia precisamente porque es verdad: cuando algo es gratis, el producto eres tú.</p>
@@ -433,26 +434,26 @@
         </section>
 
         <section id="tools" class="section">
-            <p class="section__label" data-i18n="tools_tag">04 · Herramientas</p>
-            <h2 class="section__title underline-scroll" data-i18n="tools_title">Herramientas que monto cuando lo de fuera no encaja.</h2>
-            <p class="section__lead" data-i18n="tools_lead">Cosas que me hacían falta y no existían, o existían mal. Las uso yo y las dejo publicadas. Sin cuentas y sin que tus datos salgan de tu navegador.</p>
+            <p class="reveal section__label" data-i18n="tools_tag">04 · Herramientas</p>
+            <h2 class="reveal section__title underline-scroll" data-i18n="tools_title">Herramientas que monto cuando lo de fuera no encaja.</h2>
+            <p class="reveal section__lead" data-i18n="tools_lead">Cosas que me hacían falta y no existían, o existían mal. Las uso yo y las dejo publicadas. Sin cuentas y sin que tus datos salgan de tu navegador.</p>
 
             <div class="tool-list">
-                <article class="tool">
+                <article class="reveal tool">
                     <h3 class="tool__title"><a href="https://alpc-data-analyst.github.io/blurr-tool/" target="_blank" rel="noopener">Blurr Tool ↗</a></h3>
                     <p class="tool__tagline" data-i18n="tool_blurr_tagline">Tacha datos sensibles sin que salgan de tu equipo.</p>
                     <p class="tool__text" data-i18n="tool_blurr_text">La mayoría de filtraciones de datos no son hackeos. Pasan cuando alguien sube un pantallazo con emails o IDs de usuario a la primera web de «blur online» que encuentra. Blurr Tool funciona 100% en tu navegador. Sueltas una imagen o un PDF, tachas lo sensible y descargas. Cero uploads, cero tracking, cero letra pequeña.</p>
                     <p class="tool__chips"><span data-i18n="tool_chip_local">100% local</span> · <span data-i18n="tool_chip_formats">Imágenes + PDF</span> · <span data-i18n="tool_chip_modes">Pixelar o Blur</span> · <span data-i18n="tool_chip_os">Open source</span> · <span data-i18n="tool_chip_notrack">Sin tracking</span></p>
                 </article>
 
-                <article class="tool">
+                <article class="reveal tool">
                     <h3 class="tool__title"><a href="https://alpc-data-analyst.github.io/utm-builder/" target="_blank" rel="noopener">UTM Builder ↗</a></h3>
                     <p class="tool__tagline" data-i18n="tool_utm_tagline">Construye URLs con UTMs consistentes y valida los que ya tienes.</p>
                     <p class="tool__text" data-i18n="tool_utm_text">Formulario con plantillas por canal, preview en vivo y validación que caza params faltantes, espacios, mayúsculas y valores fuera de convención. Modo bulk para generar muchas URLs a la vez desde CSV. Historial local y cero uploads.</p>
                     <p class="tool__chips"><span data-i18n="tool_chip_local">100% local</span> · <span data-i18n="tool_utm_chip_combo">Builder + Validador</span> · <span data-i18n="tool_utm_chip_templates">Plantillas por canal</span> · <span data-i18n="tool_utm_chip_bulk">Modo bulk</span> · <span data-i18n="tool_chip_notrack">Sin tracking</span></p>
                 </article>
 
-                <article class="tool">
+                <article class="reveal tool">
                     <h3 class="tool__title"><a href="https://alpc-data-analyst.github.io/bankroll-tool/" target="_blank" rel="noopener">Bankroll Tool ↗</a></h3>
                     <p class="tool__tagline" data-i18n="tool_bank_tagline">Pon números fríos donde antes había corazonadas.</p>
                     <p class="tool__text" data-i18n="tool_bank_text">Log de apuestas, EV por operación, Kelly fraccionado y curva de equity con drawdown. Avisa cuando un stake supera el 5% de la banca o una apuesta tiene valor esperado negativo. Herramienta de disciplina, no de tipster.</p>
@@ -462,19 +463,19 @@
         </section>
 
         <section id="contact" class="section section--contact">
-            <p class="section__label" data-i18n="contact_tag">05 · Contacto</p>
-            <h2 class="contact__title underline-scroll" data-i18n="contact_title">¿Hablamos?</h2>
+            <p class="reveal section__label" data-i18n="contact_tag">05 · Contacto</p>
+            <h2 class="reveal contact__title underline-scroll" data-i18n="contact_title">¿Hablamos?</h2>
 
-            <a class="contact__email" href="mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio" data-track="contact_intent_click" data-track-location="contact_email">alpcmalaga@gmail.com</a>
+            <a class="reveal contact__email" href="mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio" data-track="contact_intent_click" data-track-location="contact_email">alpcmalaga@gmail.com</a>
 
-            <p class="contact__channels">
+            <p class="reveal contact__channels">
                 <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
                 <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener">GitHub ↗</a>
                 <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="contact_whatsapp">WhatsApp ↗</a>
                 <a href="thankyou.html" data-track="cv_intent_click" data-track-location="contact"><span data-i18n="contact_cv">CV en PDF</span> ↓</a>
             </p>
 
-            <p class="contact__note" data-i18n="contact_reply">Suelo responder en el día.</p>
+            <p class="reveal contact__note" data-i18n="contact_reply">Suelo responder en el día.</p>
         </section>
     </main>
 
