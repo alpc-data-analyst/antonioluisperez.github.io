@@ -517,6 +517,33 @@
         else window.addEventListener('resize', medir, { passive: true });
     };
 
+    /* ---------- Aparicion al entrar en pantalla ---------- */
+    const initReveal = () => {
+        const els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
+
+        const mostrarTodo = () => els.forEach((el) => el.classList.add('is-visible'));
+
+        if (!('IntersectionObserver' in window) ||
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            mostrarTodo();
+            return;
+        }
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (!e.isIntersecting) return;
+                e.target.classList.add('is-visible');
+                io.unobserve(e.target); // una vez visto, no se vuelve a esconder
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+
+        els.forEach((el) => io.observe(el));
+
+        // Red de seguridad: si algo fallara, a los 3s se muestra todo igual
+        window.setTimeout(mostrarTodo, 3000);
+    };
+
     /* ---------- Subrayado que se dibuja con el scroll ---------- */
     // El trazo verde crece de izquierda a derecha según el titular sube por la
     // pantalla, en vez de aparecer de golpe. Se calcula sobre el centro del
@@ -589,6 +616,7 @@
         initTopbarHeight();
         initTracking();
         initConsent();
+        initReveal();
         initScrollUnderline();
 
         // Los tres caminos todavía no llevan a ninguna página, pero sí miden.

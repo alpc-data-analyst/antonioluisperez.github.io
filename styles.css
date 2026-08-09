@@ -19,6 +19,9 @@
     --neon: #2cff05;
     --neon-edge: #1f8c05;
 
+    /* Silueta del trazo de rotulador, usada como mascara del subrayado */
+    --brush: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 90' preserveAspectRatio='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M8 26c46-13 104-19 176-21 74-2 140 7 214 4 56-2 110-10 164-6l-4 62c-52 6-108-1-164 3-76 5-148-3-222 1-58 3-110 9-160 19l-4-62zm348 12c62-4 118-9 176-6l1 9c-58-2-114 3-177 6zM70 62c54-7 110-10 172-11l1 8c-62 1-118 4-172 11z'/%3E%3C/svg%3E");
+
     --display: 'Anton', 'Arial Narrow', sans-serif;
     --sans: 'Archivo', Helvetica, Arial, sans-serif;
 
@@ -96,33 +99,66 @@ button {
     outline-color: var(--neon-edge);
 }
 
-/* -------- Subrayado que crece con el scroll -------------------- */
-/* El trazo se dibuja de izquierda a derecha segun el titular sube por la
-   pantalla. --u lo escribe script.js en cada fotograma, de 0 a 1. */
+/* -------- Trazo de rotulador que crece con el scroll ------------ */
+/* Es un rectangulo verde al que se le aplica de mascara la silueta de un
+   trazo de rotulador, con los bordes mordidos y un par de vetas claras.
+   Se revela con clip-path en vez de escalarlo: escalando, la silueta se
+   estiraria y perderia la textura. --u lo escribe script.js, de 0 a 1. */
+/* El hueco inferior tiene que ser mayor que el trazo, si no el rotulador se
+   come la ultima linea del titular. Se deja un solape minimo a proposito,
+   que es lo que hace que parezca pintado encima y no una linea aparte. */
 .underline-scroll {
     position: relative;
     display: inline-block;
-    padding-bottom: 0.14em;
+    padding-bottom: 0.34em;
 }
 
 .underline-scroll::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0.1em;
-    min-height: 4px;
+    left: -0.03em;
+    bottom: 0.01em;
+    width: calc(100% + 0.06em);
+    height: 0.38em;
     background: var(--neon);
-    transform: scaleX(var(--u, 0));
-    transform-origin: left center;
-    will-change: transform;
+    -webkit-mask-image: var(--brush);
+    mask-image: var(--brush);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    clip-path: inset(0 calc(100% - var(--u, 0) * 100%) 0 0);
+    will-change: clip-path;
+    pointer-events: none;
 }
 
-/* Sin JS o sin movimiento, el trazo aparece entero y no se pierde nada */
+/* Sin movimiento el trazo aparece entero y no se pierde nada */
 @media (prefers-reduced-motion: reduce) {
     .underline-scroll::after {
-        transform: scaleX(1);
+        clip-path: none;
+    }
+}
+
+/* -------- Aparicion al hacer scroll ---------------------------- */
+/* Solo se ocultan si hay JS. Sin JS, .has-js nunca se añade y el contenido
+   se ve entero: nadie se queda mirando una pagina en blanco. */
+.has-js .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+}
+
+.has-js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .has-js .reveal {
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -980,8 +1016,7 @@ body.consent-open {
     }
 
     .certs__grid {
-        transform: rotate(-2.5deg);
-        gap: 20px 22px;
+        gap: 26px 22px;
     }
 
     .cert {
