@@ -101,28 +101,37 @@ button {
 }
 
 /* -------- Rotulador que se pinta con el scroll ------------------ */
-/* El trazo va de fondo del texto, no debajo, asi que el titular queda
-   resaltado como con un marcador.
-   Va en un <span> dentro del titular, no en el propio <h2>. Cuando estaba en
-   el titular obligaba a display:inline-block y en Contacto el titular y el
-   email, tambien inline-block, acababan uno al lado del otro.
-   box-decoration-break: clone hace que cada linea reciba su propio trazo, en
-   vez de un unico bloque verde cubriendo el titular entero.
+/* Trazo justo debajo del titular. Va dentro de un <span>, no en el propio
+   <h2>: si el inline-block cae sobre el titular, en Contacto ese titular y el
+   email se colocan uno al lado del otro y la seccion se rompe.
+   Se revela recortando y no escalando, porque al escalar la silueta se
+   estira y pierde la textura de rotulador.
    --u lo escribe script.js en cada fotograma, de 0 a 1. */
 .mark-scroll {
-    display: inline;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.34em;
+}
+
+.mark-scroll::after {
+    content: "";
+    position: absolute;
+    left: -0.03em;
+    bottom: 0.01em;
+    width: calc(100% + 0.06em);
+    height: 0.38em;
     background-image: var(--brush);
     background-repeat: no-repeat;
-    background-position: -0.02em 0.32em;
-    background-size: calc(var(--u, 0) * 101%) 0.66em;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    background-size: 100% 100%;
+    clip-path: inset(0 calc(100% - var(--u, 0) * 100%) 0 0);
+    will-change: clip-path;
+    pointer-events: none;
 }
 
 /* Sin movimiento el trazo aparece entero y no se pierde nada */
 @media (prefers-reduced-motion: reduce) {
-    .mark-scroll {
-        background-size: 101% 0.66em;
+    .mark-scroll::after {
+        clip-path: none;
     }
 }
 
