@@ -27,13 +27,18 @@
             hero_cta_cv: 'Descargar CV',
             hero_cta_contact: 'Hablemos',
             hero_dek: 'Llegué por el marketing y me quedé por los datos.',
-            hero_sub: 'Analista digital en Paraty Tech, con un máster de Data Science e IA recién terminado. Me paso el día midiendo bien y peleándome para que los datos acaben en una decisión y no en un PDF que nadie abre.',
+            hero_sub: 'Analista digital en Paraty Tech.',
+            hero_spec: 'Especialidades: Web Analyst, Ecommerce Analyst y Data Science (modelos de ML e IA)',
+            paths_label: '¿Qué te interesa?',
+            path_web: 'Ecommerce / Web Analyst',
+            path_ds: 'Data Science',
+            path_da: 'Data Analyst',
 
             about_tag: '01 · Sobre mí',
-            about_title: 'Vengo del marketing y se me nota.',
-            about_lead: 'Soy Antonio Luis. Me paso el día ordenando datos que llegan hechos un desastre para que alguien pueda decidir algo con ellos. Pregunto «por qué» más de la cuenta y no cierro un análisis hasta que sirve para algo.',
+            about_title: 'Que decida el dato, no la opinión.',
+            about_lead: 'Mi nombre es Antonio y me paso el día ordenando datos que llegan hechos un desastre. Lo que persigo es que en la empresa se decida a partir de lo que encuentro, y no de lo que a alguien le parece esa mañana.',
             about_h1: 'Qué hago',
-            about_p1: 'Monto la tubería entera. Saco los datos con SQL, los limpio, pruebo modelos en Python y los dejo corriendo en cloud.',
+            about_p1: 'Me encargo del proceso entero. Saco los datos con SQL, los limpio, pruebo modelos en Python y los dejo funcionando en cloud.',
             about_h2: 'Cómo trabajo',
             about_p2: 'Empiezo por el modelo más tonto que pueda funcionar. Si ese gana, ya está. Y si un dashboard no cambia lo que alguien va a hacer mañana, sobra.',
             about_h3: 'Qué me mueve',
@@ -47,7 +52,7 @@
             tl_uma_text: 'Cuatro años de grado intentando ser un crack del marketing, para acabar descubriendo que lo que me enganchaba de verdad no eran las campañas bonitas sino los datos que venían detrás. Plot twist aceptado.',
             tl_taco_date: 'Sep 2022 → Abr 2025',
             tl_taco_role: 'De cocinero de línea a Shift Leader',
-            tl_taco_text: 'Empecé friendo y acabé llevando turnos enteros como shift leader. Suena a anécdota de CV, pero ahí aprendí a gestionar equipos, controlar inventario y decidir bajo presión real. El MBA de la freidora, y no lo cambio.',
+            tl_taco_text: 'Empecé friendo tacos y acabé llevando turnos enteros como shift leader. Suena a anécdota de CV, pero ahí aprendí a gestionar equipos, controlar inventario y decidir bajo presión real. El MBA de la freidora, y no lo cambio.',
             tl_windup_date: 'Sep 2024 → Abr 2025',
             tl_windup_role: 'Máster en Marketing Digital + Digital Analytics Junior',
             tl_windup_text: 'Máster de 532h en marketing digital mientras trabajaba como Digital Analytics Junior. Mi primer asalto a la analítica real, con GA4, GTM, DataLayer, dashboards y auditorías de tracking junto a equipos de Paid, SEO y CRO. El momento «ah, esto es lo que quiero hacer».',
@@ -71,13 +76,11 @@
             stack_data_title: 'Ingeniería de datos',
             stack_certs: 'Certificaciones',
             certs_aria: 'Insignias de certificación',
-            stack_certs_joke: 'Mis amigos dicen que colecciono certificados como Russell el de Up. No les falta razón.',
             stack_lang: 'Inglés · B2 First',
             stack_az: 'Azure AZ-900 · en curso',
 
             proj_tag: '03 · Proyectos',
-            proj_title: 'En lo que ando metido.',
-            proj_cta: 'Pedir el case study',
+            proj_title: 'En lo que estoy trabajando personalmente.',
             proj_fraud_title: 'Detección de fraude bancario con ML',
             proj_fraud_text: 'Modelo end-to-end sobre 590K transacciones reales del dataset IEEE-CIS, con 434 variables entre datos de transacción y señales de identidad como el dispositivo, el dominio de correo o la geolocalización. Un Gradient Boosting de 500 árboles hace el trabajo. El hallazgo está en el umbral. Con el 0.5 por defecto se escapaba más fraude del que se cazaba, y al bajarlo a 0.1 el modelo pasa a capturar el 60% de todo el fraude molestando solo al 0.46% de usuarios legítimos.',
             proj_fraud_m1: 'transacciones',
@@ -92,11 +95,6 @@
             proj_rm_m4_val: 'UE',
             proj_rm_m4: 'servidores',
             proj_rm_cta: 'Ver Roometrics en vivo',
-            proj_rnn_title: 'Modelado secuencial con RNNs y LSTMs',
-            proj_rnn_text: 'Forecasting de series temporales y detección de patrones sobre datos secuenciales. Entrenamiento, evaluación y benchmarks honestos contra baselines más simples.',
-            proj_db_title: 'Implementación SQL / NoSQL a medida',
-            proj_db_text: 'Capa de base de datos híbrida pensada para cargas analíticas. Trade-offs de esquema, patrones de consulta y esas victorias aburridas que hacen que los dashboards vuelen.',
-
             tools_tag: '04 · Herramientas',
             tools_title: 'Herramientas que monto cuando lo de fuera no encaja.',
             tools_lead: 'Cosas que me hacían falta y no existían, o existían mal. Las uso yo y las dejo publicadas. Sin cuentas y sin que tus datos salgan de tu navegador.',
@@ -162,13 +160,18 @@
             hero_cta_cv: 'Download CV',
             hero_cta_contact: "Let's talk",
             hero_dek: 'Came for the marketing, stayed for the data.',
-            hero_sub: "Digital analyst at Paraty Tech, with a master's in Data Science & AI just wrapped up. I spend my days measuring things properly and fighting to get the data into an actual decision instead of a PDF nobody opens.",
+            hero_sub: 'Digital analyst at Paraty Tech.',
+            hero_spec: 'Specialties: Web Analyst, Ecommerce Analyst and Data Science (ML & AI models)',
+            paths_label: 'What are you looking for?',
+            path_web: 'Ecommerce / Web Analyst',
+            path_ds: 'Data Science',
+            path_da: 'Data Analyst',
 
             about_tag: '01 · About',
-            about_title: 'I came from marketing and it shows.',
-            about_lead: "I'm Antonio Luis. I spend my days sorting out data that arrives in a mess so somebody can decide something with it. I ask \"why\" more than I probably should, and I don't close an analysis until it is useful for something.",
+            about_title: 'Let the data decide, not the opinion.',
+            about_lead: "My name is Antonio and I spend my days sorting out data that arrives in a mess. What I am after is that the company decides based on what I find, and not on whatever somebody reckons that morning.",
             about_h1: 'What I do',
-            about_p1: 'I build the whole pipeline. Pull the data with SQL, clean it, try models in Python and leave them running in the cloud.',
+            about_p1: 'I handle the whole process. Pull the data with SQL, clean it, try models in Python and leave them running in the cloud.',
             about_h2: 'How I work',
             about_p2: 'I start with the dumbest model that could work. If that one wins, done. And if a dashboard does not change what someone does tomorrow, it should not exist.',
             about_h3: "What I'm into",
@@ -182,7 +185,7 @@
             tl_uma_text: "Four years chasing a marketing career, only to find out what really hooked me wasn't the pretty campaigns but the data behind them. Plot twist accepted.",
             tl_taco_date: 'Sep 2022 → Apr 2025',
             tl_taco_role: 'From line cook to Shift Leader',
-            tl_taco_text: "Started on the fryers and ended up running entire shifts as a shift leader. Sounds like a CV anecdote, but that's where I learned to manage teams, keep inventory in check and make calls under real pressure. The fryer-side MBA, and I'd do it again.",
+            tl_taco_text: "Started frying tacos and ended up running entire shifts as a shift leader. Sounds like a CV anecdote, but that's where I learned to manage teams, keep inventory in check and make calls under real pressure. The fryer-side MBA, and I'd do it again.",
             tl_windup_date: 'Sep 2024 → Apr 2025',
             tl_windup_role: 'Master in Digital Marketing + Digital Analytics Junior',
             tl_windup_text: "A 532h digital marketing master while working as a Digital Analytics Junior. My first real dive into analytics, with GA4, GTM, DataLayer, dashboards and tracking audits alongside Paid, SEO and CRO teams. The 'yeah, this is what I want to do' moment.",
@@ -206,13 +209,11 @@
             stack_data_title: 'Data engineering',
             stack_certs: 'Certifications',
             certs_aria: 'Certification badges',
-            stack_certs_joke: "My friends say I collect certificates like Russell from Up. They're not wrong.",
             stack_lang: 'English · B2 First',
             stack_az: 'Azure AZ-900 · in progress',
 
             proj_tag: '03 · Projects',
-            proj_title: 'What I have been up to.',
-            proj_cta: 'Request the case study',
+            proj_title: 'What I am building on my own.',
             proj_fraud_title: 'Bank fraud detection with ML',
             proj_fraud_text: 'End-to-end model on 590K real transactions from the IEEE-CIS dataset, with 434 features across transaction data and identity signals like device, email domain or geolocation. A 500-tree Gradient Boosting does the work. The real finding was the threshold. At the default 0.5 more fraud slipped through than got caught, and dropping it to 0.1 the model captures 60% of all fraud while bothering only 0.46% of legitimate users.',
             proj_fraud_m1: 'transactions',
@@ -227,11 +228,6 @@
             proj_rm_m4_val: 'EU',
             proj_rm_m4: 'servers',
             proj_rm_cta: 'See Roometrics live',
-            proj_rnn_title: 'Sequence modeling with RNNs & LSTMs',
-            proj_rnn_text: 'Time-series forecasting and pattern detection on sequential data. Training, evaluation and honest benchmarks against simpler baselines.',
-            proj_db_title: 'Custom SQL / NoSQL implementation',
-            proj_db_text: 'Hybrid database layer designed for analytics workloads. Schema trade-offs, query patterns and the boring wins that make dashboards feel instant.',
-
             tools_tag: '04 · Tools',
             tools_title: 'Small tools I ship when nothing off-the-shelf fits.',
             tools_lead: 'Things I needed that did not exist, or existed badly. I use them myself and leave them published. No accounts, and your data never leaves your browser.',
@@ -502,6 +498,60 @@
         }
     };
 
+    /* ---------- Subrayado que se dibuja con el scroll ---------- */
+    // El trazo verde crece de izquierda a derecha según el titular sube por la
+    // pantalla, en vez de aparecer de golpe. Se calcula sobre el centro del
+    // elemento: 0 cuando entra por abajo, 1 cuando llega a media pantalla.
+    const initScrollUnderline = () => {
+        const marks = document.querySelectorAll('.underline-scroll');
+        if (!marks.length) return;
+
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (reduce.matches) {
+            marks.forEach((el) => el.style.setProperty('--u', '1'));
+            return;
+        }
+
+        // Solo se recalculan los titulares que están en pantalla
+        const visibles = new Set();
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e) => {
+                    if (e.isIntersecting) visibles.add(e.target);
+                    else visibles.delete(e.target);
+                });
+                pintar();
+            }, { rootMargin: '10% 0px 10% 0px' });
+            marks.forEach((el) => io.observe(el));
+        } else {
+            marks.forEach((el) => visibles.add(el));
+        }
+
+        let pendiente = false;
+        const pintar = () => {
+            const vh = window.innerHeight || 1;
+            const inicio = vh * 0.92;   // empieza a dibujarse casi al asomar
+            const fin = vh * 0.48;      // acaba al llegar a media pantalla
+            visibles.forEach((el) => {
+                const r = el.getBoundingClientRect();
+                const centro = r.top + r.height / 2;
+                let p = (inicio - centro) / (inicio - fin);
+                p = p < 0 ? 0 : (p > 1 ? 1 : p);
+                el.style.setProperty('--u', p.toFixed(3));
+            });
+        };
+
+        const alScroll = () => {
+            if (pendiente) return;
+            pendiente = true;
+            requestAnimationFrame(() => { pintar(); pendiente = false; });
+        };
+
+        window.addEventListener('scroll', alScroll, { passive: true });
+        window.addEventListener('resize', alScroll, { passive: true });
+        pintar();
+    };
+
     /* ---------- Boot ---------- */
     const boot = () => {
         applyTranslations(detectLang());
@@ -519,6 +569,15 @@
 
         initTracking();
         initConsent();
+        initScrollUnderline();
+
+        // Los tres caminos todavía no llevan a ninguna página, pero sí miden.
+        // Saber cuál pulsan los recruiters decide cuál merece construirse antes.
+        document.querySelectorAll('[data-path]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                track('path_interest_click', { path_id: btn.getAttribute('data-path') });
+            });
+        });
     };
 
     if (document.readyState === 'loading') {
