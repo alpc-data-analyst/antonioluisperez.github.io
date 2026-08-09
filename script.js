@@ -26,7 +26,7 @@
             hero_owner: 'Owner de Roometrics.es',
             hero_cta_cv: 'Descargar CV',
             hero_cta_contact: 'Hablemos',
-            hero_dek: 'Llegué por el marketing y me quedé por los datos.',
+            hero_dek: 'Data Analyst con experiencia en marketing y negocio.',
             hero_sub: 'Analista digital en Paraty Tech.',
             hero_spec: 'Especialidades: Web Analyst, Ecommerce Analyst y Data Science (modelos de ML e IA)',
             paths_label: '¿Qué te interesa?',
@@ -159,7 +159,7 @@
             hero_owner: 'Owner of Roometrics.es',
             hero_cta_cv: 'Download CV',
             hero_cta_contact: "Let's talk",
-            hero_dek: 'Came for the marketing, stayed for the data.',
+            hero_dek: 'Data Analyst with a marketing and business background.',
             hero_sub: 'Digital analyst at Paraty Tech.',
             hero_spec: 'Specialties: Web Analyst, Ecommerce Analyst and Data Science (ML & AI models)',
             paths_label: 'What are you looking for?',
@@ -498,6 +498,25 @@
         }
     };
 
+    /* ---------- Altura real de la barra superior ---------- */
+    // El hero se dimensiona restando la barra a la altura de pantalla, pero esa
+    // barra no mide siempre igual: en móvil el menú salta de línea y pasa de
+    // 74px a 144px. Con un número fijo, los tres caminos se salían del primer
+    // pantallazo justo en las pantallas donde más importa.
+    const initTopbarHeight = () => {
+        const bar = document.querySelector('.topbar');
+        if (!bar) return;
+
+        const medir = () => {
+            const alto = Math.round(bar.getBoundingClientRect().height);
+            if (alto > 0) document.documentElement.style.setProperty('--topbar-h', alto + 'px');
+        };
+
+        medir();
+        if ('ResizeObserver' in window) new ResizeObserver(medir).observe(bar);
+        else window.addEventListener('resize', medir, { passive: true });
+    };
+
     /* ---------- Subrayado que se dibuja con el scroll ---------- */
     // El trazo verde crece de izquierda a derecha según el titular sube por la
     // pantalla, en vez de aparecer de golpe. Se calcula sobre el centro del
@@ -567,6 +586,7 @@
         const year = document.getElementById('current-year');
         if (year) year.textContent = new Date().getFullYear();
 
+        initTopbarHeight();
         initTracking();
         initConsent();
         initScrollUnderline();
