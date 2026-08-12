@@ -1137,10 +1137,14 @@ body.consent-open {
     }
 }
 
-/* Pantallas bajas: portatiles de 13 pulgadas, moviles pequenos y cualquiera
-   con el navegador a media altura. Se comprime el hero para que los tres
-   caminos sigan cayendo dentro del primer pantallazo. */
-@media (max-height: 800px) {
+/* Hero compacto. Dos puertas de entrada:
+   1. Moviles, por ANCHO (max-width 640px). Nunca por altura: los navegadores
+      internos (LinkedIn, Instagram) colapsan sus barras al hacer scroll y la
+      altura del viewport cruza el umbral, encendiendo y apagando la media
+      query. Con el ancho como condicion, el layout no baila.
+   2. Portatiles de pantalla baja, por altura PERO solo con ancho de
+      escritorio, donde no existe ese colapso de barras. */
+@media (max-height: 800px) and (min-width: 641px), (max-width: 640px) {
     .hero__name {
         font-size: clamp(2.4rem, 8.5vw, 6rem);
         margin-top: clamp(14px, 3vh, 40px);
