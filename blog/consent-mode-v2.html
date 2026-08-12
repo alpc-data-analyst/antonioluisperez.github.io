@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Implementar Consent Mode v2: guía sin humo</title>
+    <meta name="description" content="Guía práctica de Consent Mode v2: qué cambia con las señales nuevas, Basic o Advanced, el orden de carga correcto y cómo validar los cuatro escenarios de consentimiento." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/blog/consent-mode-v2.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/blog/consent-mode-v2.html" />
+    <meta property="og:title" content="Implementar Consent Mode v2: guía sin humo" />
+    <meta property="og:description" content="Basic o Advanced, el orden de carga correcto y los errores que veo en cuentas reales." />
+    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content="2026-08-12" />
+    <meta property="article:author" content="Antonio Luis Pérez Carmona" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://antonioluisperez.com/blog/consent-mode-v2.html#article",
+                "mainEntityOfPage": "https://antonioluisperez.com/blog/consent-mode-v2.html",
+                "headline": "Implementar Consent Mode v2: guía sin humo",
+                "description": "Guía práctica de Consent Mode v2: qué cambia con las señales nuevas, Basic o Advanced, el orden de carga correcto y cómo validar los cuatro escenarios de consentimiento.",
+                "inLanguage": "es",
+                "datePublished": "2026-08-12",
+                "dateModified": "2026-08-12",
+                "image": "https://antonioluisperez.com/og-image.png",
+                "author": { "@id": "https://antonioluisperez.com/#person" },
+                "publisher": { "@id": "https://antonioluisperez.com/#person" },
+                "isPartOf": { "@id": "https://antonioluisperez.com/blog/#blog" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://antonioluisperez.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
+                    { "@type": "ListItem", "position": 3, "name": "Consent Mode v2" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+            <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+            <a href="./" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="blog_post_topbar">CV ↓</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="./" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <article class="post">
+            <p class="post__meta">Blog · Consent Mode · 12 ago 2026</p>
+            <h1 class="post__title">Implementar Consent Mode v2: guía sin humo</h1>
+            <p class="post__byline">Por <a href="../index.html#about">Antonio Luis Pérez Carmona</a>, analista digital. Configuro Consent Mode en webs de hotel a diario y lo audito en ecommerce.</p>
+
+            <p><strong>Consent Mode v2 es el mecanismo con el que tus etiquetas de Google respetan la decisión de cookies de cada visitante.</strong> Añade dos señales sobre la versión anterior, ad_user_data y ad_personalization, obligatorias desde marzo de 2024 para usar audiencias y remarketing de Google en Europa. La implementación se decide en un detalle que casi todo el mundo hace mal: el orden de carga.</p>
+
+            <p>Esta guía cubre el montaje correcto, la elección entre Basic y Advanced y la validación de los cuatro escenarios de consentimiento. Todo sale de cuentas reales que audito, con sus fallos incluidos.</p>
+
+            <h2>Qué cambia con la versión 2</h2>
+            <p>La versión 1 gestionaba dos estados: analytics_storage para medición y ad_storage para publicidad. La v2 suma dos señales que viajan con cada hit:</p>
+            <ul>
+                <li><strong>ad_user_data</strong>: el usuario acepta que sus datos se envíen a Google con fines publicitarios.</li>
+                <li><strong>ad_personalization</strong>: el usuario acepta remarketing y personalización de anuncios.</li>
+            </ul>
+            <p>Sin estas señales en granted, Google Ads descarta ese tráfico para audiencias y conversiones avanzadas. Tu campaña sigue gastando; tu lista de remarketing deja de crecer. El aviso llega meses después, cuando alguien pregunta por qué la audiencia de compradores tiene 40 personas.</p>
+
+            <h2>Basic o Advanced: elige sabiendo qué firmas</h2>
+            <p>Existen dos formas de montar Consent Mode y la diferencia pesa en lo legal y en lo estadístico:</p>
+            <table>
+                <tr><th></th><th>Basic</th><th>Advanced</th></tr>
+                <tr><td>Sin consentimiento</td><td>Las etiquetas no cargan. Silencio total.</td><td>Las etiquetas cargan y envían pings sin cookies, anónimos.</td></tr>
+                <tr><td>Datos que recibes</td><td>Solo de quien acepta.</td><td>De quien acepta, más conversiones modeladas del resto.</td></tr>
+                <tr><td>Postura RGPD</td><td>La más conservadora.</td><td>Defendible, con debate abierto sobre los pings previos al consentimiento.</td></tr>
+                <tr><td>Para quién</td><td>Sectores sensibles, aversión al riesgo.</td><td>Ecommerce con inversión en Ads que necesita el modelado.</td></tr>
+            </table>
+            <p>Mi criterio: Advanced cuando la inversión en Google Ads justifica el modelado y el DPO está informado de qué se envía antes del consentimiento. Basic para el resto. La elección por defecto de la agencia suele ser Advanced sin que nadie haya leído qué contiene un ping.</p>
+
+            <h2>El orden de carga decide si cumples</h2>
+            <p>La secuencia correcta tiene tres pasos y el primero va <strong>antes de GTM en el código de la página</strong>, con etiqueta de plantilla o a mano en el head:</p>
+            <ol>
+                <li><strong>Default denegado</strong>: fijas los cuatro estados en denied antes de que cargue ninguna etiqueta. Si el visitante ya decidió en una visita anterior, restauras su decisión aquí, leyendo tu cookie.</li>
+                <li><strong>El banner actualiza</strong>: cuando el usuario decide, el CMP empuja un consent update con los estados que correspondan.</li>
+                <li><strong>Las etiquetas responden</strong>: GTM reevalúa y dispara lo que el consentimiento permite.</li>
+            </ol>
+            <p>El fallo que encuentro en la mayoría de auditorías: GTM carga primero, dispara etiquetas en los milisegundos previos al default, y el banner llega tarde. El resultado son datos recogidos sin base legal que ninguna captura de pantalla del banner va a justificar. En DebugView se detecta en un minuto: si el primer evento llega con consentimiento granted sin que nadie haya clicado nada, tienes este problema.</p>
+
+            <h2>Errores que veo en cuentas reales</h2>
+            <ul>
+                <li><strong>El default llega después de GTM.</strong> El clásico. Revisa el orden de los scripts en el head, no en la documentación del CMP.</li>
+                <li><strong>El banner solo actualiza analytics_storage y ad_storage.</strong> Configuración heredada de la v1. Las señales nuevas se quedan en denied para siempre y Google Ads trabaja a ciegas.</li>
+                <li><strong>El CMP y GTM no se hablan.</strong> El banner guarda la decisión en su propia cookie y nadie la traduce a consent update. El usuario acepta; las etiquetas ni se enteran.</li>
+                <li><strong>url_passthrough sin activar.</strong> Sin cookies, los parámetros de clic (gclid) se pierden entre páginas. Esta opción los pasa por URL y salva la atribución de quien rechaza.</li>
+                <li><strong>Solo se prueba el camino feliz.</strong> Todo el mundo prueba aceptar. Rechazar, la decisión granular y no decidir quedan sin probar, y ahí viven los fallos.</li>
+            </ul>
+
+            <h2>Cómo validar los cuatro escenarios</h2>
+            <p>Una implementación se da por buena cuando pasa esta tabla, y no antes:</p>
+            <table>
+                <tr><th>Escenario</th><th>Qué comprobar</th></tr>
+                <tr><td>Acepta todo</td><td>Los cuatro estados en granted, cookies creadas, eventos en DebugView con el icono de consentimiento en verde.</td></tr>
+                <tr><td>Rechaza todo</td><td>Cero cookies de Google. En Basic, silencio; en Advanced, pings sin identificador. Las conversiones siguen llegando modeladas, con retraso de días.</td></tr>
+                <tr><td>Decisión granular</td><td>Acepta medición y rechaza publicidad: analytics_storage granted, el resto denied, y las etiquetas de Ads bloqueadas.</td></tr>
+                <tr><td>No decide</td><td>Nada carga más allá de lo que permita el default. Navega tres páginas y confirma que sigue igual.</td></tr>
+            </table>
+            <p>Herramientas: el modo Preview de GTM muestra el estado de consentimiento por etiqueta, y Tag Assistant marca qué disparó y con qué señales. Media hora de pruebas te ahorra una migración de datos contaminados.</p>
+
+            <h2>Lo que pierdes y lo que recuperas</h2>
+            <p>Con el banner bien montado, tu tráfico medible baja. La cifra depende del sector y del diseño del banner; en los ecommerce que audito, la tasa de aceptación ronda el 60 al 85%. El modelado de Google recupera parte de las conversiones perdidas si usas Advanced y tienes volumen: por debajo de unos cientos de conversiones al mes, el modelado apenas aporta.</p>
+            <p>El error de interpretación típico llega la semana siguiente: alguien mira el informe y anuncia que el tráfico cayó. El tráfico sigue ahí. La medición ahora refleja solo a quien aceptó, y ese recorte es el estado legal correcto, no una avería.</p>
+
+            <h2>Autodiagnóstico en cinco minutos</h2>
+            <p>Sin instalar nada, con tu web en una ventana de incógnito:</p>
+            <ol>
+                <li>Abre las herramientas de desarrollo, pestaña de red, filtra por "collect" y carga tu home. Un hit hacia Google antes de tocar el banner con parámetros de cliente te delata el default tardío.</li>
+                <li>Rechaza las cookies y revisa el almacenamiento: una cookie _ga viva después del rechazo significa que el banner decora.</li>
+                <li>Acepta en otra sesión y busca en el hit el parámetro gcs o gcd: codifican el estado de consentimiento que Google recibe. Sin ellos, Consent Mode no está operativo por mucho banner que veas.</li>
+            </ol>
+            <p>Cualquiera de las tres pruebas en rojo justifica una revisión seria. Las tres en verde descartan lo grueso; los matices, la deduplicación y las señales v2 piden una auditoría completa.</p>
+
+            <h2>Preguntas frecuentes</h2>
+            <h3>¿Consent Mode v2 es obligatorio?</h3>
+            <p>Para usar audiencias, remarketing y conversiones avanzadas de Google en el Espacio Económico Europeo, sí, desde marzo de 2024. Para medir con GA4 sin funciones publicitarias, la obligación real es el RGPD de siempre: consentimiento previo para cookies no esenciales.</p>
+            <h3>¿Necesito una CMP certificada por Google?</h3>
+            <p>Para servir anuncios personalizados en el EEE, Google exige un CMP certificado integrado con el TCF. Para una web sin publicidad programática, un banner propio bien montado cumple, y de hecho el de mi portfolio está hecho a mano.</p>
+            <h3>¿Advanced me permite medir a quien rechaza?</h3>
+            <p>Mide pings anónimos y modela conversiones a partir de ellos. Datos individuales de quien rechazó, no: quien te venda eso te está vendiendo una sanción con plazo de entrega.</p>
+
+            <div class="post__cta">
+                <p><strong>¿Tu banner y tu medición van cada uno por su lado?</strong> Audito e implemento Consent Mode v2, GA4 y GTM. Me cuentas qué tienes montado y te digo qué corregiría, sin compromiso.</p>
+                <a href="../ecommerce-web.html" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de analítica web →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
