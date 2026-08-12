@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>GTM server side: cuándo compensa y cuándo no</title>
+    <meta name="description" content="Qué arregla el server side tagging, qué sigue igual, cuánto cuesta al mes de verdad y el criterio para decidir si te compensa. De quien lo monta y lo mantiene." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/blog/gtm-server-side.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/blog/gtm-server-side.html" />
+    <meta property="og:title" content="GTM server side: cuándo compensa y cuándo no" />
+    <meta property="og:description" content="Lo que arregla, lo que sigue igual y los costes que casi ningún vendedor menciona." />
+    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content="2026-08-12" />
+    <meta property="article:author" content="Antonio Luis Pérez Carmona" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://antonioluisperez.com/blog/gtm-server-side.html#article",
+                "mainEntityOfPage": "https://antonioluisperez.com/blog/gtm-server-side.html",
+                "headline": "GTM server side: cuándo compensa y cuándo no",
+                "description": "Qué arregla el server side tagging, qué sigue igual, cuánto cuesta al mes de verdad y el criterio para decidir si te compensa. De quien lo monta y lo mantiene.",
+                "inLanguage": "es",
+                "datePublished": "2026-08-12",
+                "dateModified": "2026-08-12",
+                "image": "https://antonioluisperez.com/og-image.png",
+                "author": { "@id": "https://antonioluisperez.com/#person" },
+                "publisher": { "@id": "https://antonioluisperez.com/#person" },
+                "isPartOf": { "@id": "https://antonioluisperez.com/blog/#blog" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://antonioluisperez.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
+                    { "@type": "ListItem", "position": 3, "name": "GTM server side" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+            <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+            <a href="./" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="blog_post_topbar">CV ↓</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="./" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <article class="post">
+            <p class="post__meta">Blog · GTM · 12 ago 2026</p>
+            <h1 class="post__title">GTM server side: cuándo compensa y cuándo no</h1>
+            <p class="post__byline">Por <a href="../index.html#about">Antonio Luis Pérez Carmona</a>, analista digital. Trabajo con medición web y server side sobre más de 1300 webs de hotel.</p>
+
+            <p><strong>El server side tagging traslada parte de tu medición del navegador a un servidor bajo tu control.</strong> El navegador envía un único hit a un subdominio tuyo y el contenedor del servidor lo transforma y lo reparte a GA4, Google Ads o Meta. Compensa cuando inviertes en publicidad y pierdes señal por navegadores y bloqueadores. Con la medición web rota, añade una capa de coste encima de un problema sin resolver.</p>
+
+            <p>Me toca montarlo, mantenerlo y también desaconsejarlo. Este artículo reúne el criterio que uso para decidir, con los costes reales que casi ningún vendedor menciona.</p>
+
+            <h2>Cómo funciona un contenedor server side</h2>
+            <p>Montas un endpoint en un subdominio propio, por ejemplo datos.tudominio.com, corriendo sobre Cloud Run u otra infraestructura. El navegador deja de hablar con una docena de dominios de terceros y envía todo a ese subdominio. Allí, un contenedor de GTM recibe cada hit, lo valida, lo enriquece o lo recorta, y lo reenvía a las plataformas que decidas. Tú eliges qué dato sale, hacia dónde y en qué forma.</p>
+
+            <h2>Lo que arregla</h2>
+            <ul>
+                <li><strong>La vida de las cookies en Safari.</strong> ITP recorta las cookies creadas por JavaScript a 7 días; las que crea tu servidor en primera parte duran lo que configures. Un cliente que vuelve a los 20 días desde Safari pasa de "nuevo usuario" a la verdad: recurrente.</li>
+                <li><strong>Parte del bloqueo.</strong> Los bloqueadores cazan los dominios de Google y Meta. Un hit hacia tu propio subdominio pasa con más frecuencia. Recuperas una parte del tráfico invisible; los bloqueadores de listas agresivas siguen ganando.</li>
+                <li><strong>Control del dato saliente.</strong> El navegador envía a cada plataforma lo que su script quiera coger. El servidor envía lo que tú declares, y eso convierte la frase "solo compartimos lo necesario" de tu política de privacidad en algo verificable.</li>
+                <li><strong>Conversiones avanzadas y CAPI.</strong> Enhanced conversions de Google y la Conversions API de Meta funcionan mejor desde servidor, con el hasheado de datos hecho donde debe.</li>
+                <li><strong>Menos JavaScript en la página.</strong> Cada script de terceros que sacas del navegador son milisegundos de carga que recuperas.</li>
+            </ul>
+
+            <h2>Lo que sigue igual</h2>
+            <ul>
+                <li><strong>El consentimiento.</strong> El RGPD aplica al dato, viaje por donde viaje. El servidor respeta el consent igual que el navegador, y quien te lo presente como vía de escape te está proponiendo mover la infracción de sitio.</li>
+                <li><strong>La calidad del dataLayer.</strong> Un purchase sin transaction_id llega igual de roto al servidor. El server side transporta; el que ordena eres tú.</li>
+                <li><strong>La atribución.</strong> Los modelos de GA4 y Ads son los que son. Cambia la cantidad de señal que les llega, no la lógica del reparto.</li>
+            </ul>
+
+            <h2>Cuánto cuesta de verdad</h2>
+            <table>
+                <tr><th>Concepto</th><th>Rango</th><th>Nota</th></tr>
+                <tr><td>Infraestructura</td><td>De 40 a 150 €/mes</td><td>Cloud Run según tráfico. Menos de eso, con configuración mínima que se queda corta en picos.</td></tr>
+                <tr><td>Implementación</td><td>De 1.000 a 5.000 € una vez</td><td>Depende del ecommerce, las plataformas conectadas y el estado previo de la medición.</td></tr>
+                <tr><td>Mantenimiento</td><td>Horas cada mes</td><td>El coste escondido: las APIs de Meta y Google cambian, los certificados caducan y alguien tiene que mirar los logs.</td></tr>
+            </table>
+            <p>La pregunta incómoda para tu agencia o tu equipo: cuando el contenedor falle un martes a las 9, ¿quién lo mira? Sin respuesta a eso, no montes server side.</p>
+
+            <h2>Mi criterio para decidir</h2>
+            <p>Recomiendo server side cuando se cumplen las tres:</p>
+            <ol>
+                <li>Inviertes más de 2.000 o 3.000 € al mes en Google Ads o Meta. Por debajo, la mejora de señal tarda años en pagar la infraestructura.</li>
+                <li>Vendes online y quieres CAPI o enhanced conversions con datos de cliente bien tratados.</li>
+                <li>Existe un responsable técnico del contenedor, interno o contratado.</li>
+            </ol>
+            <p>Con la medición web coja, el orden correcto es otro: primero el dataLayer, el consent y la deduplicación, que cuestan menos y rinden más. He visto presupuestos de server side aprobados en webs donde el purchase se disparaba dos veces. El duplicado también viaja en primera parte.</p>
+
+            <h2>Migrar sin romper la medición</h2>
+            <ol>
+                <li><strong>Espejo</strong>: montas el contenedor y le mandas copia del tráfico, sin apagar nada. Los datos de producción siguen saliendo del montaje web.</li>
+                <li><strong>Comparación</strong>: dos o tres semanas cruzando ambos caminos. Buscas diferencias por navegador y por tipo de evento, y las explicas una a una.</li>
+                <li><strong>Cambio por plataforma</strong>: migras GA4, después Ads, después Meta. Cada una con su ventana de validación.</li>
+                <li><strong>Apagado</strong>: retiras las etiquetas web que ya no hacen falta. Este paso se olvida y deja duplicados sueltos.</li>
+            </ol>
+
+            <h2>Errores que veo en migraciones reales</h2>
+            <ul>
+                <li><strong>Doble medición eterna.</strong> El paso 4 de la migración se pospone y las etiquetas web conviven meses con las del servidor. Cada compra cuenta dos veces y las campañas optimizan contra humo.</li>
+                <li><strong>El subdominio en otro dominio.</strong> Contenedores montados sobre el dominio del proveedor o sobre un dominio distinto al de la web. Las cookies dejan de ser de primera parte y la ventaja principal se esfuma.</li>
+                <li><strong>Cookies de servidor sin configurar.</strong> El contenedor corre, reenvía hits y nadie activó la escritura de la cookie FPID. Safari sigue recortando a 7 días y el proyecto entero pierde su motivo.</li>
+                <li><strong>Logs sin mirar.</strong> Meta cambia un requisito de la CAPI, los eventos empiezan a rebotar y nadie se entera hasta que el rendimiento de campañas cae semanas después. Una alerta sobre la tasa de error del contenedor cuesta una hora de montar.</li>
+                <li><strong>Presupuesto sin partida de mantenimiento.</strong> El proyecto se vende como obra única. A los seis meses, el contenedor es de nadie.</li>
+            </ul>
+
+            <h2>Preguntas frecuentes</h2>
+            <h3>¿Mejora el SEO?</h3>
+            <p>De rebote y poco: quitar scripts de terceros acelera la página, y la velocidad puntúa. Nadie posiciona por tener server side, y quien lo anuncie como palanca SEO está rellenando la propuesta.</p>
+            <h3>¿Puedo medir sin banner gracias al server side?</h3>
+            <p>No. La obligación de consentimiento depende del dato personal, no del camino que recorra. Existen alternativas cookieless con otra base legal, y de hecho tengo un producto en ese terreno, pero el server side de Google no es eso.</p>
+            <h3>¿Cloud Run o un proveedor gestionado?</h3>
+            <p>Cloud Run cuando tienes quien lo administre; un gestionado (Stape, Addingwell y similares) cuando prefieres pagar por olvidarte de la infraestructura. El contenedor de GTM es idéntico en ambos.</p>
+
+            <div class="post__cta">
+                <p><strong>¿Dudas entre arreglar tu medición web o dar el salto a server side?</strong> Te miro lo que tienes y te doy el orden de prioridades con números, sin compromiso.</p>
+                <a href="../ecommerce-web.html" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de analítica web →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>

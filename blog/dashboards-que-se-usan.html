@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Cómo montar un dashboard que la gente abra cada semana</title>
+    <meta name="description" content="Método para diseñar dashboards que se usan: la decisión antes que el gráfico, tres niveles de lectura, errores típicos y Power BI frente a Looker Studio." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/blog/dashboards-que-se-usan.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/blog/dashboards-que-se-usan.html" />
+    <meta property="og:title" content="Cómo montar un dashboard que la gente abra cada semana" />
+    <meta property="og:description" content="La decisión antes que el gráfico, tres niveles de lectura y los errores que matan un panel." />
+    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content="2026-08-12" />
+    <meta property="article:author" content="Antonio Luis Pérez Carmona" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://antonioluisperez.com/blog/dashboards-que-se-usan.html#article",
+                "mainEntityOfPage": "https://antonioluisperez.com/blog/dashboards-que-se-usan.html",
+                "headline": "Cómo montar un dashboard que la gente abra cada semana",
+                "description": "Método para diseñar dashboards que se usan: la decisión antes que el gráfico, tres niveles de lectura, errores típicos y Power BI frente a Looker Studio.",
+                "inLanguage": "es",
+                "datePublished": "2026-08-12",
+                "dateModified": "2026-08-12",
+                "image": "https://antonioluisperez.com/og-image.png",
+                "author": { "@id": "https://antonioluisperez.com/#person" },
+                "publisher": { "@id": "https://antonioluisperez.com/#person" },
+                "isPartOf": { "@id": "https://antonioluisperez.com/blog/#blog" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://antonioluisperez.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
+                    { "@type": "ListItem", "position": 3, "name": "Dashboards que se usan" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+            <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+            <a href="./" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="blog_post_topbar">CV ↓</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="./" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <article class="post">
+            <p class="post__meta">Blog · Dashboards · 12 ago 2026</p>
+            <h1 class="post__title">Cómo montar un dashboard que la gente abra cada semana</h1>
+            <p class="post__byline">Por <a href="../index.html#about">Antonio Luis Pérez Carmona</a>, analista digital. Mantengo más de 100 dashboards en producción en Power BI y Looker Studio.</p>
+
+            <p><strong>Un dashboard funciona cuando alguien lo abre por voluntad propia y cambia una decisión con lo que ve.</strong> Mantengo más de cien en producción para equipos de Producto, Marketing y Operaciones, y la diferencia entre los que se consultan a diario y los que mueren en un marcador se decide antes de arrastrar el primer gráfico: en la pregunta que responden.</p>
+
+            <p>Este es el método que sigo para diseñarlos, los errores que los matan y las señales para saber si el tuyo vive o finge.</p>
+
+            <h2>Empieza por la decisión</h2>
+            <p>La pregunta que ordena todo el diseño: <strong>¿qué decisión cambia si este número sube o baja?</strong> Un dashboard de conversión por canal existe para mover presupuesto entre canales. Uno de fricción en el embudo existe para decidir qué pantalla se rediseña. Cuando una métrica no conecta con una decisión de alguien concreto, la quito, por bonita que quede.</p>
+            <p>El encargo típico llega al revés: "ponme todo lo de GA4 en un panel". Ese panel se entrega, se enseña en una reunión y muere. A la tercera semana lo abre una persona: quien lo hizo.</p>
+
+            <h2>Tres niveles de lectura</h2>
+            <p>Los que se usan comparten una estructura de arriba abajo:</p>
+            <ol>
+                <li><strong>Estado</strong>: cuatro o cinco números grandes con su comparativa. El usuario responde "¿vamos bien?" en cinco segundos, sin scroll.</li>
+                <li><strong>Diagnóstico</strong>: la evolución y los desgloses que explican el nivel 1. Aquí se responde "¿por qué?".</li>
+                <li><strong>Detalle</strong>: las tablas con filtros para quien baja al barro. La mayoría de usuarios jamás llega aquí, y eso es señal de buen diseño, no de fracaso.</li>
+            </ol>
+            <p>La prueba de los cinco segundos la hago con el usuario delante: abro el panel y cuento. Si a los cinco segundos duda de si el mes va bien o mal, el nivel 1 está mal resuelto.</p>
+
+            <h2>Errores que matan un dashboard</h2>
+            <ul>
+                <li><strong>Cuarenta métricas.</strong> El panel que enseña todo no responde nada. Cada métrica extra diluye a las que importan.</li>
+                <li><strong>Números sin comparativa.</strong> Un 3,2% de conversión, ¿es bueno? Sin el mes anterior o el objetivo al lado, el número decora.</li>
+                <li><strong>Colores decorativos.</strong> El rojo y el verde significan cosas. Un panel donde el rojo es un canal y el verde otro obliga a desaprender el semáforo.</li>
+                <li><strong>Sin fecha de actualización visible.</strong> El usuario que duda de la frescura del dato deja de fiarse del panel entero.</li>
+                <li><strong>Un panel para todos.</strong> Dirección quiere cuatro números; el equipo de campañas quiere el desglose por anuncio. Servir a los dos en la misma página falla con los dos. Mejor dos páginas, cada una con su dueño.</li>
+                <li><strong>Métricas de vanidad.</strong> Las páginas vistas acumuladas desde 2023 suben siempre. Los números que solo pueden subir no deciden nada.</li>
+            </ul>
+
+            <h2>Power BI o Looker Studio</h2>
+            <p>Uso los dos a diario y el criterio de elección cabe en una tabla:</p>
+            <table>
+                <tr><th></th><th>Looker Studio</th><th>Power BI</th></tr>
+                <tr><td>Coste</td><td>Gratis</td><td>Licencia por usuario</td></tr>
+                <tr><td>Conexión con GA4 y Ads</td><td>Nativa, en minutos</td><td>Vía conectores, con más fricción</td></tr>
+                <tr><td>Volumen y modelado</td><td>Se ahoga con tablas grandes; mejor sobre BigQuery</td><td>DAX y modelo de datos serio, aguanta millones de filas</td></tr>
+                <tr><td>Gobernanza</td><td>Compartir tipo Google Drive</td><td>Espacios, roles y permisos de empresa</td></tr>
+                <tr><td>Encaja cuando</td><td>Marketing digital, agencias, reporting ligero</td><td>La organización vive en Microsoft y cruza fuentes pesadas</td></tr>
+            </table>
+
+            <h2>El mantenimiento pesa más que el diseño</h2>
+            <p>Un dashboard es un producto con ciclo de vida, y lo que lo mata con más frecuencia está detrás: el pipeline. La primera mañana que el panel enseña datos de hace nueve días, el usuario lo anota; la segunda, deja de entrar. Recuperar esa confianza cuesta meses.</p>
+            <p>Mi rutina: validación del dato contra la fuente antes de publicar cambios, fecha de última actualización a la vista en el propio panel, y revisión trimestral con el dueño del dashboard para retirar lo que dejó de usarse. Cada gráfico retirado acelera y aclara los que quedan.</p>
+
+            <h2>El proceso con un panel nuevo</h2>
+            <ol>
+                <li><strong>Entrevista con el dueño</strong>: media hora sobre las decisiones que toma cada semana y los números que le piden a él. De ahí salen las métricas, sin abrir todavía ninguna herramienta.</li>
+                <li><strong>Boceto en papel o en una diapositiva</strong>: la estructura de tres niveles con números inventados. Corregir aquí cuesta minutos; corregir en Power BI con el modelo montado cuesta tardes.</li>
+                <li><strong>El dato</strong>: conexión a la fuente, limpieza y validación cruzada contra los informes que el equipo ya usa. El panel nuevo tiene que cuadrar con lo que la gente cree saber, o explicar la diferencia a la primera.</li>
+                <li><strong>Dos semanas de rodaje</strong> con el dueño usándolo en su rutina real. De ahí salen los ajustes que importan: los filtros que faltan y los gráficos que nadie mira.</li>
+                <li><strong>Alta oficial</strong>: acceso al resto del equipo, fecha de actualización visible y un propietario con nombre. Los paneles sin dueño envejecen mal.</li>
+            </ol>
+
+            <h2>Señales de que funciona</h2>
+            <ul>
+                <li>Aparece en reuniones sin que tú lo lleves: alguien comparte pantalla y es tu panel.</li>
+                <li>Las preguntas cambian de nivel: de "¿este dato es fiable?" a "¿por qué bajó el canal orgánico en móvil?".</li>
+                <li>Te piden accesos para gente que no conoces.</li>
+                <li>Alguien protesta el día que falla la actualización. La queja es el mejor KPI de adopción que existe.</li>
+            </ul>
+
+            <h2>Preguntas frecuentes</h2>
+            <h3>¿Cuántas métricas debería tener?</h3>
+            <p>En el nivel de estado, entre cuatro y seis. En total, las que pueda defender el dueño del panel una a una respondiendo qué decisión cambia cada una. En mis paneles más usados, la página principal baja de diez.</p>
+            <h3>¿Tiempo real o actualización diaria?</h3>
+            <p>Diaria para el 95% de los casos. El tiempo real cuesta caro, complica el pipeline y alimenta la tentación de mirar el panel como quien mira la bolsa. Operaciones con turnos o campañas en directo son la excepción con motivo.</p>
+            <h3>¿Quién debería definir el dashboard?</h3>
+            <p>El que toma la decisión, con el analista traduciendo. El panel definido solo por el analista mide lo medible; el definido solo por negocio pide lo imposible. La versión buena sale de esa conversación, y suele ocupar la mitad de lo que ambos imaginaban.</p>
+
+            <div class="post__cta">
+                <p><strong>¿Tu reporting se hace a mano cada lunes?</strong> Monto dashboards en Power BI y Looker Studio que se actualizan solos y se usan de verdad. Cuéntame qué informe te come la semana.</p>
+                <a href="../data-analyst.html" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de análisis de datos →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
