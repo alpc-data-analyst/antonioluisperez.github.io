@@ -301,6 +301,12 @@ body.consent-open {
     color: var(--gray-meta);
 }
 
+/* En movil la marca muestra el rol, no el nombre: el nombre ya ocupa el
+   hero entero dos dedos mas abajo y quedaba repetido. */
+.topbar__brand-role {
+    display: none;
+}
+
 .topbar__nav {
     display: flex;
     gap: 24px;
@@ -856,6 +862,12 @@ body.menu-open {
     padding-top: 6px;
 }
 
+/* La version corta del estado solo existe en movil, donde el rol ya
+   esta en la barra superior y repetirlo aqui sobraba */
+.hero__status--mobile {
+    display: none;
+}
+
 /* Subrayado fluorescente: marca lo que esta vivo ahora mismo */
 .journey__now {
     display: inline-block;
@@ -1328,6 +1340,26 @@ body.menu-open {
 
     .topbar__burger {
         display: flex;
+    }
+
+    .topbar__brand {
+        font-size: 0.7rem;
+    }
+
+    .topbar__brand-name {
+        display: none;
+    }
+
+    .topbar__brand-role {
+        display: inline;
+    }
+
+    .hero__status--desktop {
+        display: none;
+    }
+
+    .hero__status--mobile {
+        display: block;
     }
 
     .numbers {
