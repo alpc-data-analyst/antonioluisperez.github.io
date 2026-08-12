@@ -369,14 +369,12 @@ body.consent-open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* El hero llena exactamente el primer pantallazo: el espacio sobrante se
+       reparte entre todos los bloques con space-between, asi los logos cierran
+       el borde inferior sin que el hueco se acumule en un solo sitio. */
+    justify-content: space-between;
     text-align: center;
-    padding: clamp(24px, 4vh, 56px) var(--pad);
-}
-
-.intro {
-    text-align: center;
-    padding: clamp(64px, 12vh, 130px) var(--pad) 0;
+    padding: clamp(20px, 4vh, 48px) var(--pad) clamp(24px, 4vh, 56px);
 }
 
 .hero__status {
@@ -405,11 +403,11 @@ body.consent-open {
     line-height: 1;
     letter-spacing: 0.01em;
     color: var(--gray-ghost);
-    margin-top: clamp(14px, 3vh, 36px);
+    margin-top: clamp(18px, 3.6vh, 44px);
 }
 
 .hero__owner {
-    margin-top: clamp(20px, 3.5vh, 40px);
+    margin-top: clamp(24px, 4.2vh, 48px);
 }
 
 .hero__owner a {
@@ -448,6 +446,7 @@ body.consent-open {
 }
 
 .hero__path {
+    display: inline-block;
     font-size: clamp(0.82rem, 1.15vw, 1.02rem);
     font-weight: 700;
     text-transform: uppercase;
@@ -463,26 +462,24 @@ body.consent-open {
     border-color: var(--neon);
 }
 
-.hero__intro {
-    max-width: 560px;
-    margin-inline: auto;
-}
-
-.hero__spec {
-    font-size: 0.9rem;
+/* La linea que pesca al otro publico: quien no viene a fichar, viene a
+   contratar servicios. Discreta a proposito, los botones mandan. */
+.hero__paths-client {
+    margin-top: clamp(18px, 3vh, 30px);
+    font-size: 0.88rem;
     color: var(--gray-text);
-    margin-top: 10px;
 }
 
-.hero__dek {
-    font-size: 1.05rem;
-    font-weight: 600;
+.hero__paths-client a {
+    font-weight: 700;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 2px;
+    white-space: nowrap;
 }
 
-.hero__sub {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    margin-top: 14px;
+.hero__paths-client a:hover {
+    background: var(--neon);
+    border-color: var(--neon);
 }
 
 .hero__cta {
@@ -507,13 +504,164 @@ body.consent-open {
     border-color: var(--gray-meta);
 }
 
-.hero__meta {
+/* -------- Clientes ---------------------------------------------- */
+/* Franja de prueba social DENTRO del hero, debajo de los tres caminos:
+   ocupa el hueco sobrante del primer pantallazo en vez de abrir otro.
+   Sin numero de seccion: no es un destino de navegacion. */
+.clients {
+    width: 100%;
+    padding: clamp(28px, 4vh, 48px) 0 0;
+    text-align: center;
+}
+
+.clients__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(28px, 4.5vw, 60px);
+    margin: clamp(30px, 5vh, 48px) auto 0;
+    max-width: 1100px;
+}
+
+/* Cada hueco es una caja identica de tamaño fijo: al rotar el grupo, ni la
+   parrilla ni nada por encima se mueve un pixel. Dentro, cada logo se ajusta
+   solo: a los apaisados los limita el ancho y a los cuadrados la altura, asi
+   los cuadrados (Leticia, Sticker Seeds, Viajar a Mexico) salen mas grandes
+   sin reglas aparte. */
+.clients__item {
+    width: clamp(150px, 19vw, 220px);
+    height: clamp(56px, 7.5vw, 88px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* En gris se integran en el poster, igual que las insignias. El multiply
+   borra los fondos blancos o crema que traen algunos logos de origen. */
+.clients__item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    mix-blend-mode: multiply;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.clients__item:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Sumal y Noce solo existen en version blanca: se invierten a negro.
+   Al pasar por encima no hay color que recuperar, solo suben de opacidad. */
+.clients__item--invert img,
+.clients__item--invert:hover img {
+    filter: invert(1) grayscale(1);
+}
+
+/* Rotacion por grupos: el JS esconde los que no tocan y funde el grupo
+   entero con is-out antes de cambiarlo. El display de .clients__item pisa
+   al atributo hidden del navegador, asi que se refuerza aqui. */
+.clients__item[hidden] {
+    display: none;
+}
+
+.clients__grid.is-out .clients__item img {
+    opacity: 0;
+}
+
+/* -------- Reseñas ------------------------------------------------ */
+/* Una reseña cada vez, en fundido. El escenario tiene altura fija para que
+   el cambio de cita no mueva nada de alrededor. Sin JS se apilan todas. */
+.quotes {
+    padding: clamp(36px, 4.5vw, 64px) var(--pad) 0;
+    max-width: 1280px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* El minimo del stage lo marca la cita mas larga en movil (6 lineas en EN):
+   si se queda corto, la cita absoluta desborda sobre la seccion siguiente. */
+.has-js .quotes__stage {
+    position: relative;
+    min-height: clamp(200px, 26vw, 220px);
+    margin-top: clamp(10px, 1.6vw, 20px);
+}
+
+.quote {
+    margin-top: clamp(20px, 3vw, 36px);
+}
+
+.has-js .quotes__stage .quote {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.has-js .quotes__stage .quote.is-current {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Citas fijas en las landings: dos columnas en escritorio, sin rotacion */
+.lp-quotes {
+    display: grid;
+    gap: clamp(36px, 6vw, 64px);
+    margin-top: clamp(40px, 6vw, 64px);
+    text-align: center;
+}
+
+@media (min-width: 881px) {
+    .lp-quotes {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.lp-quotes .quote {
+    margin: 0;
+}
+
+/* La primera seccion de una landing no necesita el colchon gigante */
+.lp-hero {
+    padding-top: clamp(40px, 7vw, 90px);
+    text-align: center;
+}
+
+.lp-hero .section__title,
+.lp-hero .section__lead {
+    margin-inline: auto;
+}
+
+.quote[hidden] {
+    display: none;
+}
+
+.quote__text {
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+    line-height: 1.55;
+    max-width: var(--measure);
+    margin-inline: auto;
+}
+
+.quote__by {
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--gray-meta);
-    margin-top: 28px;
+    margin-top: 18px;
 }
 
 /* -------- Sections ------------------------------------------------ */
@@ -687,14 +835,6 @@ body.consent-open {
     margin-top: clamp(72px, 10vw, 120px);
 }
 
-.certs__joke {
-    font-size: 0.92rem;
-    font-style: italic;
-    color: var(--gray-text);
-    margin-top: 14px;
-    max-width: var(--measure);
-}
-
 .certs {
     text-align: center;
 }
@@ -747,26 +887,6 @@ body.consent-open {
     opacity: 1;
 }
 
-/* Las que no tienen imagen se dibujan con tipografia, como el resto del sitio */
-.cert__mark {
-    width: clamp(78px, 8.5vw, 104px);
-    height: clamp(78px, 8.5vw, 104px);
-    border-radius: 50%;
-    border: 2px solid var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--display);
-    font-size: clamp(1rem, 1.5vw, 1.35rem);
-    letter-spacing: 0.02em;
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-.cert:hover .cert__mark {
-    background: var(--black);
-    color: var(--bg);
-}
-
 .cert__name {
     font-size: 0.6rem;
     font-weight: 700;
@@ -778,18 +898,6 @@ body.consent-open {
 }
 
 /* La que aun no esta ganada */
-.cert__mark--soon {
-    border-style: dashed;
-    border-color: var(--neon-edge);
-    color: var(--neon-edge);
-}
-
-.cert:hover .cert__mark--soon {
-    background: var(--neon);
-    border-color: var(--neon);
-    color: var(--black);
-}
-
 .cert__name--soon {
     color: var(--neon-edge);
 }
@@ -1059,6 +1167,20 @@ body.consent-open {
         font-size: clamp(0.74rem, 1vw, 0.9rem);
         padding: 11px 16px;
         border-width: 2px;
+    }
+
+    .hero__paths-client {
+        margin-top: clamp(12px, 2vh, 20px);
+        font-size: 0.8rem;
+    }
+
+    .clients {
+        padding-top: clamp(20px, 3.5vh, 36px);
+    }
+
+    .clients__item {
+        width: clamp(130px, 16vw, 180px);
+        height: clamp(44px, 6vh, 64px);
     }
 }
 

@@ -6,28 +6,28 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light" />
 
-    <title>Antonio Luis Pérez · AI & Data Analyst · Málaga</title>
-    <meta name="description" content="Antonio Luis Pérez, analista de datos (AI & Data Analyst) en Málaga. Analítica digital con GA4, GTM y BigQuery, Python, SQL y machine learning. Owner de Roometrics." />
+    <title>Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga</title>
+    <meta name="description" content="Antonio Luis Pérez Carmona, analista de datos en Málaga. Analítica digital con GA4, GTM y BigQuery, SQL, Python y machine learning. Owner de Roometrics." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Antonio Luis Pérez" />
     <meta property="og:url" content="https://antonioluisperez.com/" />
-    <meta property="og:title" content="Antonio Luis Pérez · AI & Data Analyst · Málaga" />
+    <meta property="og:title" content="Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga" />
     <meta property="og:description" content="Analítica digital, Python, SQL y machine learning. Llegué por el marketing y me quedé por los datos." />
     <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Antonio Luis Pérez, AI & Data Analyst en Málaga" />
+    <meta property="og:image:alt" content="Antonio Luis Pérez Carmona, AI & Data Analyst en Málaga" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Antonio Luis Pérez · AI & Data Analyst · Málaga" />
+    <meta name="twitter:title" content="Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga" />
     <meta name="twitter:description" content="Analítica digital, Python, SQL y machine learning. Llegué por el marketing y me quedé por los datos." />
     <meta name="twitter:image" content="https://antonioluisperez.com/og-image.png" />
-    <meta name="twitter:image:alt" content="Antonio Luis Pérez, AI & Data Analyst en Málaga" />
+    <meta name="twitter:image:alt" content="Antonio Luis Pérez Carmona, AI & Data Analyst en Málaga" />
 
     <script type="application/ld+json">
     {
@@ -37,7 +37,7 @@
                 "@type": "Person",
                 "@id": "https://antonioluisperez.com/#person",
                 "name": "Antonio Luis Pérez Carmona",
-                "alternateName": "Antonio Luis Pérez",
+                "alternateName": ["Antonio Luis Pérez", "Antonio L. Pérez"],
                 "jobTitle": "AI & Data Analyst",
                 "url": "https://antonioluisperez.com/",
                 "image": "https://antonioluisperez.com/perfil.jpg",
@@ -76,9 +76,18 @@
                 "@type": "WebSite",
                 "@id": "https://antonioluisperez.com/#website",
                 "url": "https://antonioluisperez.com/",
-                "name": "Antonio Luis Pérez · Portfolio",
+                "name": "Antonio Luis Pérez Carmona · Portfolio",
                 "inLanguage": ["es", "en"],
                 "publisher": { "@id": "https://antonioluisperez.com/#person" }
+            },
+            {
+                "@type": "ProfilePage",
+                "@id": "https://antonioluisperez.com/#profilepage",
+                "url": "https://antonioluisperez.com/",
+                "name": "Antonio Luis Pérez Carmona · AI & Data Analyst",
+                "inLanguage": ["es", "en"],
+                "isPartOf": { "@id": "https://antonioluisperez.com/#website" },
+                "mainEntity": { "@id": "https://antonioluisperez.com/#person" }
             }
         ]
     }
@@ -181,47 +190,83 @@
             </p>
 
             <div class="hero__paths">
-                <p class="hero__paths-label" data-i18n="paths_label">¿Qué te interesa?</p>
+                <p class="hero__paths-label" data-i18n="paths_label">¿Qué estás buscando?</p>
                 <div class="hero__paths-list">
-                    <button type="button" class="hero__path" data-path="ecommerce-web" data-i18n="path_web">Ecommerce / Web Analyst</button>
-                    <button type="button" class="hero__path" data-path="data-science" data-i18n="path_ds">Data Science</button>
-                    <button type="button" class="hero__path" data-path="data-analyst" data-i18n="path_da">Data Analyst</button>
+                    <a class="hero__path" href="ecommerce-web.html" data-path="ecommerce-web" data-i18n="path_web">Ecommerce / Web Analyst</a>
+                    <a class="hero__path" href="data-science.html" data-path="data-science" data-i18n="path_ds">Data Science</a>
+                    <a class="hero__path" href="data-analyst.html" data-path="data-analyst" data-i18n="path_da">Data Analyst</a>
                 </div>
+                <p class="hero__paths-client">
+                    <span data-i18n="paths_client">¿Tienes un negocio? También llevo la analítica de empresas.</span>
+                    <a href="#contact" data-path="business" data-i18n="paths_client_cta">Hablemos →</a>
+                </p>
             </div>
+
+            <section id="clients" class="clients" aria-label="Clientes" data-i18n-attr="aria-label:clients_aria">
+                <p class="reveal section__label" data-i18n="clients_label">Ya han confiado en mí</p>
+                <ul class="reveal clients__grid" id="clients-grid">
+                    <li class="clients__item"><img src="clientes/onlinetaxman.png" alt="Online Tax Man" width="512" height="91" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/emisuite.png" alt="Emisuite" width="526" height="189" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/suntropy.svg" alt="Suntropy" width="131" height="40" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/xperienlove.png" alt="Xperienlove" width="532" height="101" decoding="async" /></li>
+                    <li class="clients__item clients__item--invert"><img src="clientes/sumal.png" alt="Sumal" width="432" height="45" decoding="async" /></li>
+                    <li class="clients__item clients__item--invert"><img src="clientes/noce.png" alt="Noce" width="688" height="336" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/vraia.svg" alt="Vraia" width="903" height="252" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/leticia.webp" alt="Leticia González Psicóloga" width="300" height="300" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/viajaramexico.png" alt="Viajar a México" width="250" height="400" decoding="async" /></li>
+                    <li class="clients__item"><img src="clientes/stickerseeds.png" alt="Sticker Seeds" width="190" height="246" decoding="async" /></li>
+                </ul>
+            </section>
         </section>
 
-        <section class="intro">
-            <div class="reveal hero__intro">
-                <p class="hero__dek" data-i18n="hero_dek">Data Analyst con experiencia en marketing y negocio.</p>
-                <p class="hero__sub" data-i18n="hero_sub">Analista digital en Paraty Tech.</p>
-                <p class="hero__spec" data-i18n="hero_spec">Especialidades: Web Analyst, Ecommerce Analyst y Data Science (modelos de ML e IA)</p>
-                <p class="hero__meta">GA4 · GTM · BigQuery · SQL · Python · Power BI</p>
-
-                <p class="hero__cta">
-                    <a href="thankyou.html" data-i18n="hero_cta_cv" data-track="cv_intent_click" data-track-location="hero">Descargar CV</a>
-                    <a href="#contact" data-i18n="hero_cta_contact" data-track="contact_intent_click" data-track-location="hero">Hablemos</a>
-                </p>
+        <section id="testimonials" class="quotes" aria-label="Reseñas de clientes" data-i18n-attr="aria-label:quotes_aria">
+            <p class="reveal section__label" data-i18n="quotes_label">Opiniones de los clientes</p>
+            <div class="reveal quotes__stage" id="quotes-stage">
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_sumal">«Ha entendido rápidamente lo que necesitábamos y lo ha resuelto con precisión y eficacia. Ha sido puntual, preciso y muy profesional durante todo el proceso. Volveríamos a trabajar con él.»</blockquote>
+                    <figcaption class="quote__by">Sumal</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_vam">«Un trabajo excepcional. Rápida entrega, muy buena comunicación y un informe de lo gestionado que ya les gustaría a muchos profesionales. Sin duda volveré a contar con él.»</blockquote>
+                    <figcaption class="quote__by">Viajar a México</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_emi">«Técnicamente es muy bueno en analítica web y Google Tag Manager: entendió y ejecutó la tarea muy rápido. Además me entregó un informe del trabajo y de las mejoras en la analítica de mi cliente.»</blockquote>
+                    <figcaption class="quote__by">Emisuite</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_otm">«Antonio es increíble, un auténtico experto. Lo recomiendo totalmente.»</blockquote>
+                    <figcaption class="quote__by">Online Tax Man</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_seeds">«Estamos muy contentos con la entrega. Es muy profesional y atento a los detalles, con un gran conocimiento en lo que fue contratado. Además nos presentó una auditoría excelente.»</blockquote>
+                    <figcaption class="quote__by">Sticker Seeds</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_suntropy">«Gran trabajo de analítica web. Servicio muy profesional y entrega rápida.»</blockquote>
+                    <figcaption class="quote__by">Suntropy</figcaption>
+                </figure>
             </div>
         </section>
 
         <section id="about" class="section">
             <p class="reveal section__label" data-i18n="about_tag">01 · Sobre mí</p>
-            <h2 class="reveal section__title"><span class="mark-scroll" data-i18n="about_title">Que decida el dato, no la opinión.</span></h2>
+            <h2 class="reveal section__title"><span class="mark-scroll" data-i18n="about_title">Un perfil, tres frentes.</span></h2>
 
-            <p class="reveal about__lead" data-i18n="about_lead">Mi nombre es Antonio y me paso el día ordenando datos que llegan hechos un desastre. Lo que persigo es que en la empresa se decida a partir de lo que encuentro, y no de lo que a alguien le parece esa mañana.</p>
+            <p class="reveal about__lead" data-i18n="about_lead">Soy Antonio Luis Pérez Carmona, Digital Analyst en Paraty Tech: mido el embudo de reserva de más de 1300 webs de hotel con GA4, GTM y BigQuery, y mantengo más de 100 dashboards que Producto, Marketing y Operaciones usan a diario. Vengo del marketing y me quedé por los datos, y por el camino he acabado cubriendo tres roles que normalmente llevan tres personas.</p>
 
             <div class="threecol">
                 <div class="reveal threecol__col" style="--d:0ms">
-                    <h3 data-i18n="about_h1">Qué hago</h3>
-                    <p data-i18n="about_p1">Me encargo del proceso entero. Saco los datos con SQL, los limpio, pruebo modelos en Python y los dejo funcionando en cloud.</p>
+                    <h3 data-i18n="about_h1">Ecommerce / Web Analyst</h3>
+                    <p data-i18n="about_p1">Medición end-to-end: GA4, GTM en web y server side, DataLayer a medida, Consent Mode, Meta CAPI y CRO. El dato entra limpio y las campañas se miden de verdad.</p>
                 </div>
                 <div class="reveal threecol__col" style="--d:90ms">
-                    <h3 data-i18n="about_h2">Cómo trabajo</h3>
-                    <p data-i18n="about_p2">Empiezo por el modelo más tonto que pueda funcionar. Si ese gana, ya está. Y si un dashboard no cambia lo que alguien va a hacer mañana, sobra.</p>
+                    <h3 data-i18n="about_h2">Data Analyst</h3>
+                    <p data-i18n="about_p2">SQL en BigQuery, Python y dashboards en Power BI y Looker Studio. Del dato crudo al informe que la gente abre cada mañana sin que nadie les obligue.</p>
                 </div>
                 <div class="reveal threecol__col" style="--d:180ms">
-                    <h3 data-i18n="about_h3">Qué me mueve</h3>
-                    <p data-i18n="about_p3">El ML aplicado, el NLP y encontrar ese gráfico que hace callar a toda la sala.</p>
+                    <h3 data-i18n="about_h3">Data Scientist</h3>
+                    <p data-i18n="about_p3">Modelos supervisados, series temporales con RNNs y LSTMs y explicabilidad. Máster en Data Science e IA y un caso real de fraude con ROC-AUC 0.92.</p>
                 </div>
             </div>
 
@@ -348,11 +393,11 @@
                         <span class="cert__name">HubSpot Marketing Hub</span>
                     </li>
                     <li class="reveal cert" title="Microsoft AI-900 Training · Windup Training, 2024">
-                        <span class="cert__mark" aria-hidden="true">AI</span>
+                        <img class="cert__img" src="badges/microsoft-fundamentals.svg" alt="Microsoft AI-900 Training" width="300" height="300" loading="lazy" decoding="async" />
                         <span class="cert__name">Microsoft AI-900</span>
                     </li>
                     <li class="reveal cert" title="GA4 Mastery · Optimize Smart, 2025">
-                        <span class="cert__mark" aria-hidden="true">GA4</span>
+                        <img class="cert__img" src="badges/ga4.svg" alt="GA4 Mastery, Optimize Smart" width="450" height="155" loading="lazy" decoding="async" />
                         <span class="cert__name">GA4 Mastery · Optimize Smart</span>
                     </li>
                     <li class="reveal cert" title="Aptis · British Council">
@@ -360,7 +405,7 @@
                         <span class="cert__name" data-i18n="stack_lang">Inglés · B2 First</span>
                     </li>
                     <li class="reveal cert" title="Microsoft Azure Fundamentals (AZ-900)">
-                        <span class="cert__mark cert__mark--soon" aria-hidden="true">AZ</span>
+                        <img class="cert__img" src="badges/azure.svg" alt="Microsoft Azure Fundamentals AZ-900" width="96" height="96" loading="lazy" decoding="async" />
                         <span class="cert__name cert__name--soon" data-i18n="stack_az">Azure AZ-900 · en curso</span>
                     </li>
                 </ul>
@@ -481,8 +526,6 @@
 
     <footer class="footer">
         <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
-        <p data-i18n="footer_love">Hecho a mano con HTML, CSS y JS planos. Sin plantilla.</p>
-        <p data-i18n="footer_updated">Última actualización: ago 2026</p>
         <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
     </footer>
 
