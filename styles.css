@@ -664,6 +664,12 @@ body.menu-open {
     opacity: 1;
 }
 
+/* Logos con mucho detalle interno (Leticia) piden un empujon extra. El
+   transform no afecta al layout, asi que la caja fija sigue fija. */
+.clients__item--zoom img {
+    transform: scale(1.18);
+}
+
 /* Sumal y Noce solo existen en version blanca: se invierten a negro.
    Al pasar por encima no hay color que recuperar, solo suben de opacidad. */
 .clients__item--invert img,
