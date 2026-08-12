@@ -23,6 +23,8 @@
             page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga',
 
             hero_status: 'Analista de datos en Málaga · Disponible',
+            hero_status_short: 'Disponible',
+            brand_role: 'Analista de datos en Málaga',
             hero_role: 'AI & Data Analyst',
             hero_owner: 'Owner de Roometrics.es',
             hero_cta_cv: 'Descargar CV',
@@ -225,6 +227,8 @@
             page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga, Spain',
 
             hero_status: 'Data analyst in Málaga · Available',
+            hero_status_short: 'Available',
+            brand_role: 'Data analyst in Málaga',
             hero_role: 'AI & Data Analyst',
             hero_owner: 'Owner of Roometrics.es',
             hero_cta_cv: 'Download CV',
