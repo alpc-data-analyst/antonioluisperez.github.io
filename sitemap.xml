@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://antonioluisperez.com/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://antonioluisperez.com/ecommerce-web.html</loc>
+    <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://antonioluisperez.com/data-science.html</loc>
+    <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://antonioluisperez.com/data-analyst.html</loc>
+    <lastmod>2026-08-12</lastmod>
   </url>
 </urlset>

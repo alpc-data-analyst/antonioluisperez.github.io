@@ -19,30 +19,41 @@
             nav_cv_aria: 'Descargar CV',
             nav_main_aria: 'Principal',
             lang_aria: 'Idioma',
-            page_title: 'Antonio Luis Pérez · AI & Data Analyst · Málaga',
+            page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga',
 
             hero_status: 'Analista de datos en Málaga · Disponible',
             hero_role: 'AI & Data Analyst',
             hero_owner: 'Owner de Roometrics.es',
             hero_cta_cv: 'Descargar CV',
             hero_cta_contact: 'Hablemos',
-            hero_dek: 'Data Analyst con experiencia en marketing y negocio.',
-            hero_sub: 'Analista digital en Paraty Tech.',
-            hero_spec: 'Especialidades: Web Analyst, Ecommerce Analyst y Data Science (modelos de ML e IA)',
-            paths_label: '¿Qué te interesa?',
+            paths_label: '¿Qué estás buscando?',
             path_web: 'Ecommerce / Web Analyst',
             path_ds: 'Data Science',
             path_da: 'Data Analyst',
+            paths_client: '¿Tienes un negocio? También llevo la analítica de empresas.',
+            paths_client_cta: 'Hablemos →',
+
+            clients_label: 'Ya han confiado en mí',
+            clients_aria: 'Clientes',
+
+            quotes_label: 'Opiniones de los clientes',
+            quotes_aria: 'Reseñas de clientes',
+            q_sumal: '«Ha entendido rápidamente lo que necesitábamos y lo ha resuelto con precisión y eficacia. Ha sido puntual, preciso y muy profesional durante todo el proceso. Volveríamos a trabajar con él.»',
+            q_vam: '«Un trabajo excepcional. Rápida entrega, muy buena comunicación y un informe de lo gestionado que ya les gustaría a muchos profesionales. Sin duda volveré a contar con él.»',
+            q_emi: '«Técnicamente es muy bueno en analítica web y Google Tag Manager: entendió y ejecutó la tarea muy rápido. Además me entregó un informe del trabajo y de las mejoras en la analítica de mi cliente.»',
+            q_otm: '«Antonio es increíble, un auténtico experto. Lo recomiendo totalmente.»',
+            q_seeds: '«Estamos muy contentos con la entrega. Es muy profesional y atento a los detalles, con un gran conocimiento en lo que fue contratado. Además nos presentó una auditoría excelente.»',
+            q_suntropy: '«Gran trabajo de analítica web. Servicio muy profesional y entrega rápida.»',
 
             about_tag: '01 · Sobre mí',
-            about_title: 'Que decida el dato, no la opinión.',
-            about_lead: 'Mi nombre es Antonio y me paso el día ordenando datos que llegan hechos un desastre. Lo que persigo es que en la empresa se decida a partir de lo que encuentro, y no de lo que a alguien le parece esa mañana.',
-            about_h1: 'Qué hago',
-            about_p1: 'Me encargo del proceso entero. Saco los datos con SQL, los limpio, pruebo modelos en Python y los dejo funcionando en cloud.',
-            about_h2: 'Cómo trabajo',
-            about_p2: 'Empiezo por el modelo más tonto que pueda funcionar. Si ese gana, ya está. Y si un dashboard no cambia lo que alguien va a hacer mañana, sobra.',
-            about_h3: 'Qué me mueve',
-            about_p3: 'El ML aplicado, el NLP y encontrar ese gráfico que hace callar a toda la sala.',
+            about_title: 'Un perfil, tres frentes.',
+            about_lead: 'Soy Antonio Luis Pérez Carmona, Digital Analyst en Paraty Tech: mido el embudo de reserva de más de 1300 webs de hotel con GA4, GTM y BigQuery, y mantengo más de 100 dashboards que Producto, Marketing y Operaciones usan a diario. Vengo del marketing y me quedé por los datos, y por el camino he acabado cubriendo tres roles que normalmente llevan tres personas.',
+            about_h1: 'Ecommerce / Web Analyst',
+            about_p1: 'Medición end-to-end: GA4, GTM en web y server side, DataLayer a medida, Consent Mode, Meta CAPI y CRO. El dato entra limpio y las campañas se miden de verdad.',
+            about_h2: 'Data Analyst',
+            about_p2: 'SQL en BigQuery, Python y dashboards en Power BI y Looker Studio. Del dato crudo al informe que la gente abre cada mañana sin que nadie les obligue.',
+            about_h3: 'Data Scientist',
+            about_p3: 'Modelos supervisados, series temporales con RNNs y LSTMs y explicabilidad. Máster en Data Science e IA y un caso real de fraude con ROC-AUC 0.92.',
             about_cv: 'Descargar CV (PDF)',
             about_linkedin: 'Ver LinkedIn',
 
@@ -117,14 +128,71 @@
             tool_bank_chip_alerts: 'Alertas de riesgo',
             tool_bank_chip_bilingual: 'Bilingüe',
 
+            lp_solve_tag: 'Qué resuelvo',
+            lp_proof_tag: 'La prueba',
+            lp_stack_tag: 'El stack para esto',
+            lp_back: 'Volver al portfolio',
+
+            lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
+            lpw_tag: 'Ecommerce / Web Analyst',
+            lpw_h1: 'Tu web vende. Tus datos deberían contarlo.',
+            lpw_lead: 'Medición end-to-end para ecommerce y webs de reserva: GA4, Google Tag Manager en web y server side, DataLayer a medida y toda la parte de privacidad que nadie quiere tocar. Si el dato entra limpio, todo lo demás cuesta la mitad.',
+            lpw_solve_title: 'Los tres fuegos de siempre.',
+            lpw_s1_h: 'Tracking roto o a medias',
+            lpw_s1_p: 'Auditoría completa de la medición, implementación de GA4 y GTM, DataLayer diseñado para tu negocio y validación en DebugView antes de dar nada por bueno.',
+            lpw_s2_h: 'Privacidad sin sustos',
+            lpw_s2_p: 'Consent Mode v2, RGPD, conversiones mejoradas y Meta CAPI. Cumplir la ley sin quedarte ciego: consentimiento bien montado y datos que siguen sirviendo.',
+            lpw_s3_h: 'Del dato a la decisión',
+            lpw_s3_p: 'Funnels, atribución por canal y dashboards que la gente abre cada mañana. Si un informe no cambia una decisión, sobra.',
+            lpw_proof_title: 'Números que no son de folleto.',
+            lpw_n1: 'webs de hotel medidas',
+            lpw_n2: 'dashboards en producción',
+            lpw_n3: 'ecommerce y B2B auditados',
+            lpw_n4: 'negocios medidos por mi cuenta',
+            lpw_cta_title: '¿Vemos tu medición?',
+            lpw_cta_text: 'Cuéntame qué vendes y qué número no te cuadra. Te digo qué haría, sin compromiso y sin jerga.',
+
+            lpds_title: 'Data Science & Machine Learning · Antonio Luis Pérez',
+            lpds_tag: 'Data Science',
+            lpds_h1: 'Modelos con métricas honestas.',
+            lpds_lead: 'Machine learning aplicado a problemas de negocio: clasificación, forecasting y explicabilidad. Empiezo por el modelo más simple que pueda funcionar y solo complico las cosas cuando los números lo piden.',
+            lpds_solve_title: 'En qué te puedo ayudar.',
+            lpds_s1_h: 'Clasificación y predicción',
+            lpds_s1_p: 'Modelos supervisados end-to-end: EDA, feature engineering, entrenamiento y ajuste del umbral de decisión pensando en el coste real de cada error.',
+            lpds_s2_h: 'Series temporales',
+            lpds_s2_p: 'Forecasting con RNNs y LSTMs en PyTorch para demanda, ingresos o tráfico. Siempre con un baseline simple delante, para saber si la red gana de verdad.',
+            lpds_s3_h: 'Explicabilidad',
+            lpds_s3_p: 'Explainable AI para que el modelo no sea una caja negra: qué variable mueve cada predicción y cómo contárselo a quien toma la decisión.',
+            lpds_proof_title: 'El caso del fraude.',
+            lpds_proof_text: 'Pipeline completo sobre el dataset IEEE-CIS: 590K transacciones reales y 434 variables alimentando un Gradient Boosting de 500 árboles. El hallazgo no fue el modelo, fue el umbral: bajándolo de 0.5 a 0.1 se captura el 60% del fraude molestando solo al 0.46% de usuarios legítimos.',
+            lpds_cta_title: '¿Tienes datos y una pregunta?',
+            lpds_cta_text: 'Tráeme el problema. No hace falta que el dataset venga limpio, de eso me encargo yo.',
+
+            lpda_title: 'Data Analyst · Antonio Luis Pérez',
+            lpda_tag: 'Data Analyst',
+            lpda_h1: 'Del dato crudo a la decisión.',
+            lpda_lead: 'SQL, Python y dashboards que se usan de verdad. Ordeno datos que llegan hechos un desastre y los convierto en informes que la gente abre cada mañana sin que nadie les obligue.',
+            lpda_solve_title: 'Menos Excel a mano, más respuestas.',
+            lpda_s1_h: 'Datos limpios',
+            lpda_s1_p: 'Extracción y limpieza con SQL en BigQuery, validación de calidad y pipelines que no te despiertan a las 3 AM.',
+            lpda_s2_h: 'Dashboards que se usan',
+            lpda_s2_p: 'Power BI y Looker Studio para conversión, ingresos y KPIs de UX. Si un dashboard no cambia lo que alguien hace mañana, sobra.',
+            lpda_s3_h: 'Reporting sin manos',
+            lpda_s3_p: 'Automatización con Python y Excel avanzado: lo que era una mañana entera de copiar y pegar pasa a ser un botón.',
+            lpda_proof_title: 'Esto ya está funcionando.',
+            lpda_n1: 'dashboards en producción',
+            lpda_n2: 'webs alimentando los datos',
+            lpda_n3: 'equipos usándolos a diario',
+            lpda_n4: 'clientes auditados',
+            lpda_cta_title: '¿Enterrado en Excels?',
+            lpda_cta_text: 'Cuéntame qué informe te come la semana y te lo devuelvo automatizado.',
+
             contact_tag: '05 · Contacto',
             contact_title: '¿Hablamos?',
             contact_cv: 'CV en PDF',
             contact_reply: 'Suelo responder en el día.',
             wa_href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.',
 
-            footer_love: 'Hecho a mano con HTML, CSS y JS planos. Sin plantilla.',
-            footer_updated: 'Última actualización: ago 2026',
             footer_cookies: 'Preferencias de cookies',
 
             consent_title: 'Cookies',
@@ -152,30 +220,41 @@
             nav_cv_aria: 'Download CV',
             nav_main_aria: 'Main',
             lang_aria: 'Language',
-            page_title: 'Antonio Luis Pérez · AI & Data Analyst · Málaga, Spain',
+            page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga, Spain',
 
             hero_status: 'Data analyst in Málaga · Available',
             hero_role: 'AI & Data Analyst',
             hero_owner: 'Owner of Roometrics.es',
             hero_cta_cv: 'Download CV',
             hero_cta_contact: "Let's talk",
-            hero_dek: 'Data Analyst with a marketing and business background.',
-            hero_sub: 'Digital analyst at Paraty Tech.',
-            hero_spec: 'Specialties: Web Analyst, Ecommerce Analyst and Data Science (ML & AI models)',
             paths_label: 'What are you looking for?',
             path_web: 'Ecommerce / Web Analyst',
             path_ds: 'Data Science',
             path_da: 'Data Analyst',
+            paths_client: 'Running a business? I also handle analytics for companies.',
+            paths_client_cta: "Let's talk →",
+
+            clients_label: 'They already trust me',
+            clients_aria: 'Clients',
+
+            quotes_label: 'What clients say',
+            quotes_aria: 'Client reviews',
+            q_sumal: '"He quickly understood what we needed and solved it with precision and efficiency. Punctual, accurate and very professional throughout the process. We would work with him again."',
+            q_vam: '"Exceptional work. Fast delivery, great communication and a report on everything done that many professionals would envy. I will definitely count on him again."',
+            q_emi: '"He is technically very skilled in web analytics and Google Tag Manager, and he understood and executed the task very quickly. He also provided me with a report on the work done and the improvements in my client\'s analytics."',
+            q_otm: '"Antonio is amazing, he is truly an expert, and I highly recommend him."',
+            q_seeds: '"We are very happy with the delivery. He is very professional and detail-oriented, with deep knowledge of what he was hired for. He also presented us with an excellent audit."',
+            q_suntropy: '"Great work on web analytics. Very professional service and fast delivery."',
 
             about_tag: '01 · About',
-            about_title: 'Let the data decide, not the opinion.',
-            about_lead: "My name is Antonio and I spend my days sorting out data that arrives in a mess. What I am after is that the company decides based on what I find, and not on whatever somebody reckons that morning.",
-            about_h1: 'What I do',
-            about_p1: 'I handle the whole process. Pull the data with SQL, clean it, try models in Python and leave them running in the cloud.',
-            about_h2: 'How I work',
-            about_p2: 'I start with the dumbest model that could work. If that one wins, done. And if a dashboard does not change what someone does tomorrow, it should not exist.',
-            about_h3: "What I'm into",
-            about_p3: 'Applied ML, NLP, and finding the one chart that makes the room go quiet.',
+            about_title: 'One profile, three fronts.',
+            about_lead: 'I am Antonio Luis Pérez Carmona, Digital Analyst at Paraty Tech: I measure the booking funnel of 1300+ hotel websites with GA4, GTM and BigQuery, and maintain 100+ dashboards that Product, Marketing and Operations use daily. I came from marketing, stayed for the data, and along the way ended up covering three roles that usually take three people.',
+            about_h1: 'Ecommerce / Web Analyst',
+            about_p1: 'End-to-end measurement: GA4, GTM on web and server side, custom DataLayer, Consent Mode, Meta CAPI and CRO. Clean data in, campaigns measured for real.',
+            about_h2: 'Data Analyst',
+            about_p2: 'SQL in BigQuery, Python and dashboards in Power BI and Looker Studio. From raw data to the report people open every morning without being told to.',
+            about_h3: 'Data Scientist',
+            about_p3: 'Supervised models, time series with RNNs and LSTMs, and explainability. A master in Data Science and AI plus a real fraud case with 0.92 ROC-AUC.',
             about_cv: 'Download CV (PDF)',
             about_linkedin: 'View LinkedIn',
 
@@ -250,14 +329,71 @@
             tool_bank_chip_alerts: 'Risk alerts',
             tool_bank_chip_bilingual: 'Bilingual',
 
+            lp_solve_tag: 'What I solve',
+            lp_proof_tag: 'Proof',
+            lp_stack_tag: 'The stack for this',
+            lp_back: 'Back to portfolio',
+
+            lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
+            lpw_tag: 'Ecommerce / Web Analyst',
+            lpw_h1: 'Your site sells. Your data should tell the story.',
+            lpw_lead: 'End-to-end measurement for ecommerce and booking sites: GA4, Google Tag Manager on web and server side, custom DataLayer and all the privacy work nobody wants to touch. When clean data comes in, everything else costs half as much.',
+            lpw_solve_title: 'The usual three fires.',
+            lpw_s1_h: 'Broken or half-done tracking',
+            lpw_s1_p: 'Full measurement audit, GA4 and GTM implementation, a DataLayer designed around your business and DebugView validation before anything is called done.',
+            lpw_s2_h: 'Privacy without surprises',
+            lpw_s2_p: 'Consent Mode v2, GDPR, enhanced conversions and Meta CAPI. Comply with the law without going blind: consent done right and data that keeps working.',
+            lpw_s3_h: 'From data to decisions',
+            lpw_s3_p: 'Funnels, channel attribution and dashboards people actually open every morning. If a report does not change a decision, it should not exist.',
+            lpw_proof_title: 'Numbers that are not brochure material.',
+            lpw_n1: 'hotel websites measured',
+            lpw_n2: 'dashboards in production',
+            lpw_n3: 'ecommerce and B2B audited',
+            lpw_n4: 'businesses measured on my own',
+            lpw_cta_title: 'Shall we look at your tracking?',
+            lpw_cta_text: 'Tell me what you sell and which number does not add up. I will tell you what I would do, no strings and no jargon.',
+
+            lpds_title: 'Data Science & Machine Learning · Antonio Luis Pérez',
+            lpds_tag: 'Data Science',
+            lpds_h1: 'Models with honest metrics.',
+            lpds_lead: 'Machine learning applied to business problems: classification, forecasting and explainability. I start with the simplest model that could work and only add complexity when the numbers ask for it.',
+            lpds_solve_title: 'Where I can help.',
+            lpds_s1_h: 'Classification and prediction',
+            lpds_s1_p: 'End-to-end supervised models: EDA, feature engineering, training and decision-threshold tuning built around the real cost of each error.',
+            lpds_s2_h: 'Time series',
+            lpds_s2_p: 'Forecasting with RNNs and LSTMs in PyTorch for demand, revenue or traffic. Always with a simple baseline next to it, to know if the network truly wins.',
+            lpds_s3_h: 'Explainability',
+            lpds_s3_p: 'Explainable AI so the model is not a black box: which variable drives each prediction and how to explain it to whoever makes the call.',
+            lpds_proof_title: 'The fraud case.',
+            lpds_proof_text: 'Full pipeline on the IEEE-CIS dataset: 590K real transactions and 434 features feeding a 500-tree Gradient Boosting. The finding was not the model, it was the threshold: dropping it from 0.5 to 0.1 captures 60% of all fraud while bothering only 0.46% of legitimate users.',
+            lpds_cta_title: 'Got data and a question?',
+            lpds_cta_text: 'Bring me the problem. The dataset does not need to arrive clean, that part is on me.',
+
+            lpda_title: 'Data Analyst · Antonio Luis Pérez',
+            lpda_tag: 'Data Analyst',
+            lpda_h1: 'From raw data to decisions.',
+            lpda_lead: 'SQL, Python and dashboards that actually get used. I sort out data that arrives in a mess and turn it into reports people open every morning without being told to.',
+            lpda_solve_title: 'Less manual Excel, more answers.',
+            lpda_s1_h: 'Clean data',
+            lpda_s1_p: 'Extraction and cleaning with SQL in BigQuery, quality validation and pipelines that do not wake you up at 3 AM.',
+            lpda_s2_h: 'Dashboards that get used',
+            lpda_s2_p: 'Power BI and Looker Studio for conversion, revenue and UX KPIs. If a dashboard does not change what someone does tomorrow, it should not exist.',
+            lpda_s3_h: 'Hands-free reporting',
+            lpda_s3_p: 'Automation with Python and advanced Excel: what used to be a whole morning of copy-paste becomes a button.',
+            lpda_proof_title: 'Already up and running.',
+            lpda_n1: 'dashboards in production',
+            lpda_n2: 'websites feeding the data',
+            lpda_n3: 'teams using them daily',
+            lpda_n4: 'clients audited',
+            lpda_cta_title: 'Buried in spreadsheets?',
+            lpda_cta_text: 'Tell me which report eats your week and I will hand it back automated.',
+
             contact_tag: '05 · Contact',
             contact_title: "Let's talk.",
             contact_cv: 'CV as PDF',
             contact_reply: 'I usually reply within the day.',
             wa_href: 'https://wa.me/34601427159?text=Hi%20Antonio%20Luis%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20know%20more.',
 
-            footer_love: 'Hand-built with plain HTML, CSS and JS. No template.',
-            footer_updated: 'Last updated: Aug 2026',
             footer_cookies: 'Cookie preferences',
 
             consent_title: 'Cookies',
@@ -598,6 +734,87 @@
         pintar();
     };
 
+    /* ---------- Rotacion de logos de clientes ---------- */
+    // Se ven 4 logos; cada pocos segundos los 4 se funden a la vez y entran
+    // los 4 siguientes, en ventana circular sobre la lista completa. Sin JS
+    // o con movimiento reducido se muestra la parrilla entera, quieta.
+    const initClients = () => {
+        const grid = document.getElementById('clients-grid');
+        if (!grid) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const items = Array.prototype.slice.call(grid.children);
+        const GROUP = 4;
+        if (items.length <= GROUP) return;
+
+        let start = 0;
+        const show = () => {
+            items.forEach((li, i) => {
+                const offset = (i - start + items.length) % items.length;
+                li.hidden = offset >= GROUP;
+            });
+        };
+        show();
+
+        // Solo rota cuando la franja esta en pantalla y la pestaña activa
+        let onScreen = true;
+        if ('IntersectionObserver' in window) {
+            onScreen = false;
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e) => { onScreen = e.isIntersecting; });
+            }, { threshold: 0.2 });
+            io.observe(grid);
+        }
+
+        const FADE_MS = 340;
+        window.setInterval(() => {
+            if (!onScreen || document.hidden) return;
+            grid.classList.add('is-out');
+            window.setTimeout(() => {
+                start = (start + GROUP) % items.length;
+                show();
+                grid.classList.remove('is-out');
+            }, FADE_MS);
+        }, 4500);
+    };
+
+    /* ---------- Rotacion de reseñas ---------- */
+    // Una cita visible cada vez; el resto espera su turno y entran en fundido
+    // sobre un escenario de altura fija. Con movimiento reducido se queda la
+    // primera; sin JS el CSS las apila todas y no se pierde ninguna.
+    const initQuotes = () => {
+        const stage = document.getElementById('quotes-stage');
+        if (!stage) return;
+
+        const quotes = Array.prototype.slice.call(stage.children);
+        if (quotes.length < 2) return;
+
+        quotes[0].classList.add('is-current');
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            quotes.slice(1).forEach((q) => { q.hidden = true; });
+            return;
+        }
+
+        let onScreen = true;
+        if ('IntersectionObserver' in window) {
+            onScreen = false;
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e) => { onScreen = e.isIntersecting; });
+            }, { threshold: 0.3 });
+            io.observe(stage);
+        }
+
+        let i = 0;
+        window.setInterval(() => {
+            if (!onScreen || document.hidden) return;
+            quotes[i].classList.remove('is-current');
+            i = (i + 1) % quotes.length;
+            quotes[i].classList.add('is-current');
+        }, 6500);
+    };
+
     /* ---------- Boot ---------- */
     const boot = () => {
         applyTranslations(detectLang());
@@ -618,6 +835,8 @@
         initConsent();
         initReveal();
         initScrollUnderline();
+        initClients();
+        initQuotes();
 
         // Los tres caminos todavía no llevan a ninguna página, pero sí miden.
         // Saber cuál pulsan los recruiters decide cuál merece construirse antes.
