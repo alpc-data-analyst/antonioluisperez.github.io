@@ -862,12 +862,6 @@ body.menu-open {
     padding-top: 6px;
 }
 
-/* La version corta del estado solo existe en movil, donde el rol ya
-   esta en la barra superior y repetirlo aqui sobraba */
-.hero__status--mobile {
-    display: none;
-}
-
 /* Subrayado fluorescente: marca lo que esta vivo ahora mismo */
 .journey__now {
     display: inline-block;
@@ -1354,12 +1348,9 @@ body.menu-open {
         display: inline;
     }
 
+    /* El rol ya esta en la barra superior: en movil el estado sobra */
     .hero__status--desktop {
         display: none;
-    }
-
-    .hero__status--mobile {
-        display: block;
     }
 
     .numbers {
