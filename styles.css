@@ -1134,6 +1134,142 @@ body.menu-open {
     margin-top: 18px;
 }
 
+/* -------- Blog ---------------------------------------------------------- */
+/* El listado reutiliza las tarjetas .work del one-page. Esto es solo el
+   cuerpo de los articulos: medida de lectura y tipografia editorial. */
+.post {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding: clamp(40px, 7vw, 80px) var(--pad) 0;
+}
+
+.post__meta {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--gray-meta);
+}
+
+.post__title {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 5.4vw, 3.6rem);
+    line-height: 1.04;
+    letter-spacing: 0.01em;
+    margin-top: 16px;
+}
+
+.post__byline {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin-top: 18px;
+}
+
+.post__byline a {
+    font-weight: 700;
+    border-bottom: 2px solid var(--neon);
+}
+
+.post h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    margin-top: clamp(44px, 7vw, 64px);
+}
+
+.post h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-top: 28px;
+}
+
+.post p,
+.post li {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--gray-text);
+    margin-top: 14px;
+}
+
+.post strong {
+    color: var(--black);
+}
+
+.post ul {
+    list-style: disc;
+    padding-left: 1.2em;
+}
+
+.post ol {
+    list-style: decimal;
+    padding-left: 1.4em;
+}
+
+.post a {
+    font-weight: 600;
+    border-bottom: 2px solid var(--neon);
+}
+
+.post a:hover {
+    background: var(--neon);
+}
+
+.post table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.88rem;
+}
+
+.post th,
+.post td {
+    border: 1px solid var(--gray-ghost);
+    padding: 10px 12px;
+    text-align: left;
+    color: var(--gray-text);
+    vertical-align: top;
+}
+
+.post th {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--black);
+}
+
+/* Cierre de articulo: el empujon al servicio, estilo poster */
+.post__cta {
+    border: 3px solid var(--black);
+    padding: clamp(20px, 3.5vw, 32px);
+    margin-top: clamp(44px, 7vw, 64px);
+}
+
+.post__cta p {
+    margin-top: 0;
+}
+
+.post__cta a {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 3px;
+}
+
+.post__cta a:hover {
+    background: var(--neon);
+    border-color: var(--neon);
+}
+
 /* -------- Contact ------------------------------------------------------------ */
 .section--contact {
     max-width: none;
