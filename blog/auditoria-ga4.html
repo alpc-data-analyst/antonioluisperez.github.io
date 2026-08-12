@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Auditoría GA4: cómo saber si puedes fiarte de tus datos</title>
+    <meta name="description" content="Checklist de auditoría GA4 de un analista que mide webs reales a diario: los 7 fallos más comunes, el paso a paso con DebugView y qué herramientas usar." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/blog/auditoria-ga4.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/blog/auditoria-ga4.html" />
+    <meta property="og:title" content="Auditoría GA4: cómo saber si puedes fiarte de tus datos" />
+    <meta property="og:description" content="Los 7 fallos que encuentro en casi todas las cuentas de GA4 y el checklist paso a paso para destaparlos." />
+    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content="2026-08-12" />
+    <meta property="article:author" content="Antonio Luis Pérez Carmona" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://antonioluisperez.com/blog/auditoria-ga4.html#article",
+                "mainEntityOfPage": "https://antonioluisperez.com/blog/auditoria-ga4.html",
+                "headline": "Auditoría GA4: cómo saber si puedes fiarte de tus datos",
+                "description": "Checklist de auditoría GA4: los 7 fallos más comunes, el paso a paso con DebugView y las herramientas para comprobarlo.",
+                "inLanguage": "es",
+                "datePublished": "2026-08-12",
+                "dateModified": "2026-08-12",
+                "image": "https://antonioluisperez.com/og-image.png",
+                "author": { "@id": "https://antonioluisperez.com/#person" },
+                "publisher": { "@id": "https://antonioluisperez.com/#person" },
+                "isPartOf": { "@id": "https://antonioluisperez.com/blog/#blog" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://antonioluisperez.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
+                    { "@type": "ListItem", "position": 3, "name": "Auditoría GA4" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+            <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+            <a href="./" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="blog_post_topbar">CV ↓</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="./" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <article class="post">
+            <p class="post__meta">Blog · GA4 · 12 ago 2026</p>
+            <h1 class="post__title">Auditoría GA4: cómo saber si puedes fiarte de tus datos</h1>
+            <p class="post__byline">Por <a href="../index.html#about">Antonio Luis Pérez Carmona</a>, analista digital. Mido el embudo de reserva de más de 1300 webs de hotel y he auditado el tracking de más de 20 ecommerce y B2B.</p>
+
+            <p><strong>Una auditoría de GA4 es una revisión sistemática de tu medición para responder una sola pregunta: ¿los números que ves son verdad?</strong> Se comprueba qué eventos se disparan, cuándo, con qué parámetros y bajo qué consentimiento, y se comparan contra la realidad del negocio. En mi experiencia, más de la mitad de las cuentas que reviso tienen al menos un fallo que invalida decisiones que ya se han tomado.</p>
+
+            <p>Este es el proceso que sigo con clientes reales. No hace falta ser analista para pasar el checklist básico; sí para arreglar lo que salga.</p>
+
+            <h2>¿Cuándo necesitas una auditoría de GA4?</h2>
+            <ul>
+                <li>Las ventas de GA4 no cuadran con las del backend ni de lejos (una desviación del 5 al 15% es normal; un 40% no).</li>
+                <li>Migraste de Universal Analytics con prisas y nadie revisó qué quedó montado.</li>
+                <li>Vas a empezar a invertir en Google Ads o Meta y las campañas van a optimizar contra tus conversiones.</li>
+                <li>Pusiste un banner de consentimiento y el tráfico "cayó" de un día para otro.</li>
+                <li>Cada herramienta te da un número distinto y ya no sabes a cuál creer.</li>
+            </ul>
+
+            <h2>Los 7 fallos que encuentro en casi todas las cuentas</h2>
+
+            <h3>1. Eventos duplicados</h3>
+            <p>El clásico: GTM dispara el evento y el código de la web también, o hay dos etiquetas de configuración conviviendo. Resultado: conversiones dobles y un CPA que parece mejor de lo que es. Se detecta en DebugView en dos minutos viendo si un mismo clic genera dos eventos idénticos.</p>
+
+            <h3>2. El purchase se dispara al recargar la página de gracias</h3>
+            <p>Si el evento de compra vive en la página de confirmación sin protección, cada F5 del cliente es una venta nueva para GA4. La solución pasa por un transaction_id bien enviado y deduplicación. Compara transacciones únicas contra pedidos del backend: si hay más transacciones que pedidos, ya sabes por qué.</p>
+
+            <h3>3. Consent Mode mal configurado</h3>
+            <p>Con la versión 2 hay cuatro estados que gestionar y un orden que respetar: el consentimiento por defecto tiene que establecerse <strong>antes</strong> de que cargue ninguna etiqueta. Lo veo constantemente al revés: GTM carga, dispara, y el banner llega tarde. Eso son datos recogidos sin base legal y, cuando se corrige, la sensación de "hemos perdido tráfico" que en realidad es que antes medías lo que no debías.</p>
+
+            <h3>4. El dataLayer dice una cosa y las etiquetas leen otra</h3>
+            <p>Variables que cambian de nombre entre plantillas, valores que llegan como texto cuando la etiqueta espera número, y ecommerce items a medio rellenar. El síntoma típico: ingresos que aparecen a cero o productos "(not set)" en los informes.</p>
+
+            <h3>5. Tráfico interno y de bots sin filtrar</h3>
+            <p>La oficina entera, la agencia y el propio equipo de desarrollo contando como visitas. En webs con poco tráfico esto distorsiona todo: la duración media, la conversión y hasta las páginas más vistas. GA4 permite definir tráfico interno por IP y hay que activarlo, no solo definirlo.</p>
+
+            <h3>6. Atribución por defecto sin cuestionar</h3>
+            <p>GA4 usa atribución basada en datos por defecto y ventanas de conversión que quizá no encajan con tu ciclo de compra. No es un fallo en sí, pero decidir presupuesto sin saber qué modelo está repartiendo el mérito sí lo es. Al menos, hay que saber qué se está usando y por qué.</p>
+
+            <h3>7. PII colándose en las URLs</h3>
+            <p>Emails y teléfonos en parámetros de URL que acaban en los informes. Además de ser un problema de privacidad serio, es motivo de cierre de propiedad si Google lo detecta. Se busca en el informe de páginas filtrando por "@" y sorprende las veces que aparece algo.</p>
+
+            <h2>El checklist paso a paso</h2>
+            <ol>
+                <li><strong>Inventario</strong>: qué etiquetas viven en GTM, cuáles en código, y quién tiene acceso a qué. Sin mapa no hay auditoría.</li>
+                <li><strong>DebugView + Preview Mode</strong>: recorre el flujo completo (home, listado, ficha, carrito, compra o lead) y verifica cada evento con sus parámetros, una vez y solo una.</li>
+                <li><strong>Consentimiento</strong>: comprueba los estados por defecto, qué pasa al aceptar, al rechazar y al no decidir. Las etiquetas tienen que responder a los cuatro escenarios.</li>
+                <li><strong>Conversiones contra backend</strong>: exporta transacciones de GA4 y compáralas con los pedidos reales del mismo periodo. Documenta la desviación y su causa.</li>
+                <li><strong>Configuración de la propiedad</strong>: zona horaria, moneda, retención de datos (por defecto son solo 2 meses), tráfico interno, dominios de referencia excluidos y enlace con Ads y Search Console.</li>
+                <li><strong>Informe con prioridades</strong>: cada hallazgo con su gravedad, su impacto en negocio y su arreglo concreto. Un fallo sin plan de corrección es una queja, no una auditoría.</li>
+            </ol>
+
+            <h2>¿Qué herramientas hacen falta?</h2>
+            <table>
+                <tr><th>Herramienta</th><th>Para qué</th><th>Coste</th></tr>
+                <tr><td>DebugView (GA4)</td><td>Ver los eventos llegar en tiempo real con sus parámetros</td><td>Gratis</td></tr>
+                <tr><td>Preview Mode (GTM)</td><td>Ver qué etiqueta dispara, con qué variables y en qué orden</td><td>Gratis</td></tr>
+                <tr><td>Tag Assistant</td><td>Validar la implementación en cualquier página pública</td><td>Gratis</td></tr>
+                <tr><td>Consola del navegador</td><td>Inspeccionar el dataLayer tal cual lo ve GTM</td><td>Gratis</td></tr>
+                <tr><td>Export a BigQuery</td><td>Contrastar datos crudos cuando los informes no bastan</td><td>Gratis hasta límites generosos</td></tr>
+            </table>
+            <p>Fíjate en el patrón: todo es gratis. Una auditoría de GA4 no requiere comprar software, requiere saber dónde mirar y tener el criterio para interpretar lo que aparece.</p>
+
+            <h2>¿Por qué GA4 y tu backend nunca van a cuadrar al 100%?</h2>
+            <p>Esta es la pregunta que me hacen en todas las auditorías, así que respuesta directa: <strong>una desviación del 5 al 15% entre GA4 y tu backend es normal y esperable</strong>. No es un fallo tuyo ni de la herramienta. Las causas legítimas:</p>
+            <ul>
+                <li><strong>Consentimiento</strong>: quien rechaza cookies no genera hit medible. Con Consent Mode, Google modela parte de ese hueco, pero modelar no es contar.</li>
+                <li><strong>Adblockers y navegadores restrictivos</strong>: entre un 10 y un 30% del tráfico bloquea la medición según el sector y el perfil de usuario. Público técnico, más bloqueo.</li>
+                <li><strong>Momento del evento</strong>: el backend registra el pedido en el servidor; GA4 lo registra si la página de gracias llegó a cargar y a disparar. Un cierre de pestaña a destiempo y esa venta existe para uno y no para el otro.</li>
+                <li><strong>Zonas horarias y fecha de atribución</strong>: una compra a las 23:58 puede caer en días distintos según quién la cuente.</li>
+            </ul>
+            <p>Lo que sí es señal de problema: desviaciones por encima del 25 o 30%, desviaciones que cambian bruscamente de un mes a otro sin cambio de banner ni de web, o el caso contrario, que GA4 cuente <strong>más</strong> ventas que el backend, que casi siempre delata duplicados. El objetivo de la auditoría no es que los números cuadren al céntimo, es saber explicar cada punto de diferencia.</p>
+
+            <h2>Preguntas frecuentes</h2>
+            <h3>¿Cuánto se tarda en auditar una cuenta de GA4?</h3>
+            <p>Para una web de tamaño normal, entre 4 y 8 horas de trabajo real: menos si la medición es sencilla, más si hay ecommerce con server side y varias plataformas de ads enganchadas. Desconfía de las auditorías de 30 minutos: eso es un pantallazo con logo.</p>
+            <h3>¿Cada cuánto conviene repetirla?</h3>
+            <p>Tras cada cambio grande de la web (rediseño, migración, banner de cookies nuevo) y como mínimo una vez al año. La medición se degrada sola: cada plugin nuevo, cada plantilla que se toca, es una oportunidad de romper algo en silencio.</p>
+            <h3>¿Puedo hacerla yo mismo?</h3>
+            <p>El checklist básico sí, y deberías: detectar que algo está mal no requiere experiencia, solo método. Arreglar un dataLayer, montar la deduplicación o configurar Consent Mode bien ya es otra conversación.</p>
+
+            <div class="post__cta">
+                <p><strong>¿Quieres que le eche un ojo a tu medición?</strong> Audito e implemento GA4 y GTM para ecommerce y webs de servicios. Me cuentas qué número no te cuadra y te digo qué haría, sin compromiso.</p>
+                <a href="../ecommerce-web.html" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de analítica web →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
