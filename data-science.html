@@ -95,6 +95,9 @@
     </div>
 
     <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
         <a href="index.html" class="topbar__brand">Antonio Luis Pérez</a>
 
         <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
@@ -114,6 +117,23 @@
             <a href="thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="lp_ds_topbar">CV ↓</a>
         </div>
     </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="index.html#stack" data-i18n="nav_stack">Stack</a>
+                <a href="index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
 
     <main id="home">
         <section class="section lp-hero">

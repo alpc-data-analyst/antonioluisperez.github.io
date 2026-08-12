@@ -19,6 +19,7 @@
             nav_cv_aria: 'Descargar CV',
             nav_main_aria: 'Principal',
             lang_aria: 'Idioma',
+            menu_aria: 'Menú',
             page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga',
 
             hero_status: 'Analista de datos en Málaga · Disponible',
@@ -220,6 +221,7 @@
             nav_cv_aria: 'Download CV',
             nav_main_aria: 'Main',
             lang_aria: 'Language',
+            menu_aria: 'Menu',
             page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga, Spain',
 
             hero_status: 'Data analyst in Málaga · Available',
@@ -815,6 +817,50 @@
         }, 6500);
     };
 
+    /* ---------- Menu movil ---------- */
+    // Sandwich + panel lateral. Solo opera en movil: en escritorio el burger
+    // esta oculto por CSS y no hay forma de abrirlo.
+    const initMenu = () => {
+        const burger = document.querySelector('.topbar__burger');
+        const drawer = document.getElementById('mobile-menu');
+        if (!burger || !drawer) return;
+
+        let abierto = false;
+
+        const abrir = () => {
+            abierto = true;
+            drawer.hidden = false;
+            // El estado inicial (panel fuera) tiene que pintarse antes de
+            // añadir is-open, o la transicion de entrada no se ve.
+            window.requestAnimationFrame(() => drawer.classList.add('is-open'));
+            burger.classList.add('is-open');
+            burger.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('menu-open');
+        };
+
+        const cerrar = () => {
+            abierto = false;
+            drawer.classList.remove('is-open');
+            burger.classList.remove('is-open');
+            burger.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+            // Se esconde cuando acaba la transicion de salida
+            window.setTimeout(() => { if (!abierto) drawer.hidden = true; }, 300);
+        };
+
+        burger.addEventListener('click', () => (abierto ? cerrar() : abrir()));
+
+        // Tocar el fondo oscuro (fuera del panel) cierra
+        drawer.addEventListener('click', (e) => { if (e.target === drawer) cerrar(); });
+
+        // Navegar a una seccion tambien cierra
+        drawer.querySelectorAll('a').forEach((a) => a.addEventListener('click', cerrar));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && abierto) cerrar();
+        });
+    };
+
     /* ---------- Boot ---------- */
     const boot = () => {
         applyTranslations(detectLang());
@@ -831,6 +877,7 @@
         if (year) year.textContent = new Date().getFullYear();
 
         initTopbarHeight();
+        initMenu();
         initTracking();
         initConsent();
         initReveal();

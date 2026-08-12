@@ -335,6 +335,108 @@ body.consent-open {
     gap: 22px;
 }
 
+/* -------- Menu movil (sandwich + panel lateral) ------------------ */
+/* Solo existe en movil: en escritorio el burger se oculta y el panel
+   no puede abrirse. Z-index por debajo del consentimiento (1000). */
+.topbar__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 26px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.topbar__burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--black);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.topbar__burger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.topbar__burger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.topbar__burger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: rgba(10, 10, 10, 0);
+    transition: background 0.25s ease;
+}
+
+.drawer[hidden] {
+    display: none;
+}
+
+.drawer.is-open {
+    background: rgba(10, 10, 10, 0.45);
+}
+
+.drawer__panel {
+    width: min(78vw, 320px);
+    height: 100%;
+    background: var(--bg);
+    border-right: 3px solid var(--black);
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateX(-102%);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.drawer.is-open .drawer__panel {
+    transform: none;
+}
+
+.drawer__lang {
+    margin-bottom: 26px;
+}
+
+.drawer__nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer__nav a {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.035em;
+    padding: 10px 0;
+}
+
+.drawer__nav a:active,
+.drawer__nav a:hover {
+    color: var(--neon-edge);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .drawer,
+    .drawer__panel,
+    .topbar__burger span {
+        transition: none;
+    }
+}
+
 .lang-switch {
     display: flex;
     gap: 6px;
@@ -1208,10 +1310,24 @@ body.consent-open {
         line-height: 1.04;
     }
 
+    /* Cabecera de una sola linea: la navegacion vive en el panel lateral
+       y el selector de idioma tambien. Solo quedan burger, nombre y CV. */
+    .topbar {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 14px;
+    }
+
     .topbar__nav {
-        order: 3;
-        width: 100%;
-        gap: 18px;
+        display: none;
+    }
+
+    .topbar__aside .lang-switch {
+        display: none;
+    }
+
+    .topbar__burger {
+        display: flex;
     }
 
     .numbers {
