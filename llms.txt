@@ -1,0 +1,27 @@
+# Antonio Luis Pérez Carmona
+
+> Portfolio de Antonio Luis Pérez Carmona, AI & Data Analyst en Málaga (España). Analítica digital con GA4, GTM y BigQuery, dashboards en Power BI y Looker Studio, y machine learning aplicado. Digital Analyst en Paraty Tech (hospitality tech, más de 1300 webs de hotel medidas), owner de Roometrics.es y creador de herramientas de analítica open source. Disponible para proyectos: contacto en alpcmalaga@gmail.com.
+
+Sitio bilingüe español e inglés. El contenido del blog y las páginas de producto están en español.
+
+## Páginas principales
+
+- [Portfolio](https://antonioluisperez.com/): quién es Antonio, trayectoria, stack, proyectos, herramientas y contacto
+- [Ecommerce & Web Analyst](https://antonioluisperez.com/ecommerce-web.html): servicios de medición end-to-end, GA4, GTM web y server side, Consent Mode y Meta CAPI
+- [Data Science](https://antonioluisperez.com/data-science.html): clasificación, forecasting con RNNs y LSTMs y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
+- [Data Analyst](https://antonioluisperez.com/data-analyst.html): SQL en BigQuery, dashboards en Power BI y Looker Studio y reporting automatizado
+- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 9 herramientas de QA para analítica web
+
+## Blog
+
+- [Auditoría GA4](https://antonioluisperez.com/blog/auditoria-ga4.html): los 7 fallos más comunes y el checklist paso a paso para saber si puedes fiarte de tus datos
+- [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2.html): Basic o Advanced, el orden de carga correcto y la validación de los cuatro escenarios
+- [GTM server side](https://antonioluisperez.com/blog/gtm-server-side.html): qué arregla, qué sigue igual, costes reales y criterio para decidir
+- [Dashboards que se usan](https://antonioluisperez.com/blog/dashboards-que-se-usan.html): método de tres niveles de lectura y errores que matan un panel
+- [Analítica web para hoteles](https://antonioluisperez.com/blog/analitica-web-hoteles.html): el embudo del motor de reservas, los KPIs del sector y la paridad con las OTAs
+
+## Proyectos y enlaces
+
+- [Roometrics](https://roometrics.es): SaaS de analítica web cookieless y privacy-first, producto propio en producción
+- [GitHub](https://github.com/alpc-data-analyst): código de las herramientas y del proyecto de detección de fraude
+- [LinkedIn](https://www.linkedin.com/in/antonio-luis-perez-carmona/): perfil profesional
