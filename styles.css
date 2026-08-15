@@ -96,27 +96,6 @@ button {
     outline-color: var(--neon-edge);
 }
 
-/* -------- Halo verde tras los titulares ------------------------- */
-/* Mancha radial muy suave detras del titular completo: distingue los
-   titulos del texto sin competir con la tipografia y funciona igual en
-   una linea que en tres. Gradiente puro, sin blur: cero coste en movil. */
-.mark-scroll {
-    position: relative;
-    display: inline-block;
-}
-
-.mark-scroll::before {
-    content: "";
-    position: absolute;
-    inset: -16% -5%;
-    z-index: -1;
-    background: radial-gradient(
-        58% 68% at 32% 55%,
-        rgba(44, 255, 5, 0.22),
-        rgba(44, 255, 5, 0) 74%
-    );
-    pointer-events: none;
-}
 
 /* -------- Aparicion al hacer scroll ---------------------------- */
 /* Solo se ocultan si hay JS. Sin JS, .has-js nunca se añade y el contenido
@@ -1835,6 +1814,51 @@ body.menu-open {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* -------- Secciones en negativo --------------------------------- */
+/* Bandas negras a sangre completa: el fondo se pinta con box-shadow
+   gigante recortado con clip-path, asi la caja centrada de la seccion
+   no cambia y no hace falta tocar el HTML. Dentro, los tokens se
+   invierten y todos los componentes (bordes, enlaces, titulares) se
+   adaptan solos. */
+.section--dark {
+    --black: #f5f5f5;
+    --gray-text: #b9b9b9;
+    --gray-meta: #8f8f8f;
+    --gray-ghost: #4a4a4a;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    box-shadow: 0 0 0 100vmax #0a0a0a;
+    clip-path: inset(0 -100vmax);
+    padding-bottom: clamp(90px, 12vw, 170px);
+}
+
+/* Sobre negro, el neon puro brilla; la version oscurecida para AA
+   sobre blanco aqui se queda corta de contraste */
+.section--dark a:hover,
+.section--dark .work__links a:hover,
+.section--dark .contact__channels a:hover {
+    color: var(--neon);
+    border-color: var(--neon);
+}
+
+/* La banda de reseñas va pegada al hero blanco: respiracion simetrica */
+.quotes.section--dark {
+    padding-top: clamp(60px, 8vw, 100px);
+}
+
+.footer--dark {
+    background: #0a0a0a;
+    color: #8f8f8f;
+}
+
+.footer--dark .footer__cookies {
+    color: #8f8f8f;
+}
+
+.footer--dark .footer__cookies:hover {
+    color: var(--neon);
 }
 
 /* -------- Print ---------------------------------------------------------------------- */
