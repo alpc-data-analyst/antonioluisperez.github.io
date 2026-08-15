@@ -1,7 +1,6 @@
-# Claude Code local context & settings (don't publish)
-CLAUDE.md
-CLAUDE.local.md
-.claude/
+# Notas locales, fuera del repositorio publico
+*.local.md
+.notas/
 
 # OS junk
 .DS_Store
