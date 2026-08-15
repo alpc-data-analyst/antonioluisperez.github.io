@@ -1452,6 +1452,136 @@ body.menu-open {
     border-color: var(--neon);
 }
 
+/* -------- Pagina de Analytics Copilot ----------------------------------- */
+.ext-logo {
+    display: block;
+    width: clamp(64px, 8vw, 88px);
+    height: auto;
+    margin: 0 auto 18px;
+}
+
+/* Placeholder del boton de la Chrome Web Store hasta que aprueben la ficha */
+.ext-soon {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-meta);
+    border-bottom: 2px dashed var(--gray-ghost);
+    padding-bottom: 4px;
+    cursor: default;
+}
+
+/* Las capturas vienen sobre fondo slate oscuro: enmarcadas en el borde
+   grueso del poster funcionan como tarjetas sobre blanco. */
+.ext-shot {
+    border: 3px solid var(--black);
+    margin: 0;
+}
+
+.ext-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.ext-shot figcaption {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-meta);
+    text-align: left;
+    padding: 10px 14px;
+    border-top: 3px solid var(--black);
+}
+
+.ext-shot--hero {
+    max-width: 880px;
+    margin: clamp(36px, 6vw, 56px) auto 0;
+}
+
+.ext-shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(18px, 3vw, 32px);
+    margin-top: clamp(36px, 6vw, 56px);
+}
+
+.ext-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 56px);
+    margin-top: clamp(40px, 6vw, 64px);
+    max-width: 1080px;
+}
+
+.ext-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.ext-item p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--gray-text);
+    margin-top: 10px;
+}
+
+.ext-flow {
+    border: 3px solid var(--black);
+    padding: clamp(20px, 3.5vw, 32px);
+    margin-top: clamp(28px, 4vw, 44px);
+    max-width: var(--measure);
+}
+
+.ext-flow ol {
+    list-style: decimal;
+    padding-left: 1.4em;
+}
+
+.ext-flow li {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--gray-text);
+    margin-top: 10px;
+}
+
+.ext-flow li strong {
+    color: var(--black);
+}
+
+.ext-flow > p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-top: 18px;
+}
+
+.ext-flow a,
+#privacy a {
+    font-weight: 600;
+    border-bottom: 2px solid var(--neon);
+}
+
+.ext-flow a:hover,
+#privacy a:hover {
+    background: var(--neon);
+}
+
+@media (max-width: 880px) {
+    .ext-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .ext-grid,
+    .ext-shots {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* -------- Contact ------------------------------------------------------------ */
 .section--contact {
     max-width: none;
