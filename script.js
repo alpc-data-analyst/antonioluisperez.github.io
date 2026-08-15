@@ -694,60 +694,6 @@
         window.setTimeout(mostrarTodo, 3000);
     };
 
-    /* ---------- Subrayado que se dibuja con el scroll ---------- */
-    // El trazo verde crece de izquierda a derecha según el titular sube por la
-    // pantalla, en vez de aparecer de golpe. Se calcula sobre el centro del
-    // elemento: 0 cuando entra por abajo, 1 cuando llega a media pantalla.
-    const initScrollUnderline = () => {
-        const marks = document.querySelectorAll('.mark-scroll');
-        if (!marks.length) return;
-
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (reduce.matches) {
-            marks.forEach((el) => el.style.setProperty('--u', '1'));
-            return;
-        }
-
-        // Solo se recalculan los titulares que están en pantalla
-        const visibles = new Set();
-        if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) visibles.add(e.target);
-                    else visibles.delete(e.target);
-                });
-                pintar();
-            }, { rootMargin: '10% 0px 10% 0px' });
-            marks.forEach((el) => io.observe(el));
-        } else {
-            marks.forEach((el) => visibles.add(el));
-        }
-
-        let pendiente = false;
-        const pintar = () => {
-            const vh = window.innerHeight || 1;
-            const inicio = vh * 0.92;   // empieza a dibujarse casi al asomar
-            const fin = vh * 0.48;      // acaba al llegar a media pantalla
-            visibles.forEach((el) => {
-                const r = el.getBoundingClientRect();
-                const centro = r.top + r.height / 2;
-                let p = (inicio - centro) / (inicio - fin);
-                p = p < 0 ? 0 : (p > 1 ? 1 : p);
-                el.style.setProperty('--u', p.toFixed(3));
-            });
-        };
-
-        const alScroll = () => {
-            if (pendiente) return;
-            pendiente = true;
-            requestAnimationFrame(() => { pintar(); pendiente = false; });
-        };
-
-        window.addEventListener('scroll', alScroll, { passive: true });
-        window.addEventListener('resize', alScroll, { passive: true });
-        pintar();
-    };
-
     /* ---------- Rotacion de logos de clientes ---------- */
     // Se ven 4 logos; cada pocos segundos los 4 se funden a la vez y entran
     // los 4 siguientes, en ventana circular sobre la lista completa. Sin JS
@@ -893,7 +839,6 @@
         initTracking();
         initConsent();
         initReveal();
-        initScrollUnderline();
         initClients();
         initQuotes();
 
