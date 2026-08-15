@@ -1847,6 +1847,12 @@ body.menu-open {
     border-color: var(--neon);
 }
 
+/* La seccion blanca que viene despues de una banda negra no necesita el
+   colchon gigante de seccion: el corte de color ya separa de sobra */
+.section--dark + .section {
+    padding-top: clamp(56px, 7vw, 96px);
+}
+
 /* La banda de reseñas es la mas fina: una cita no necesita un oceano
    de negro alrededor */
 .quotes.section--dark {
