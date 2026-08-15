@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Analítica web para hoteles: KPIs, embudo y trampas del sector</title>
+    <meta name="description" content="Guía de analítica web hotelera: el embudo del motor de reservas, los KPIs que un ecommerce no conoce, la paridad con las OTAs y por qué GA4 nunca ve todas las reservas." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/blog/analitica-web-hoteles.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/blog/analitica-web-hoteles.html" />
+    <meta property="og:title" content="Analítica web para hoteles: KPIs, embudo y trampas del sector" />
+    <meta property="og:description" content="El embudo del motor de reservas, la paridad con las OTAs y por qué GA4 nunca ve todas las reservas." />
+    <meta property="og:image" content="https://antonioluisperez.com/blog/img/og-analitica-web-hoteles.jpg" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:published_time" content="2026-08-15" />
+    <meta property="article:author" content="Antonio Luis Pérez Carmona" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "@id": "https://antonioluisperez.com/blog/analitica-web-hoteles.html#article",
+                "mainEntityOfPage": "https://antonioluisperez.com/blog/analitica-web-hoteles.html",
+                "headline": "Analítica web para hoteles: KPIs, embudo y trampas del sector",
+                "description": "Guía de analítica web hotelera: el embudo del motor de reservas, los KPIs que un ecommerce no conoce, la paridad con las OTAs y por qué GA4 nunca ve todas las reservas.",
+                "inLanguage": "es",
+                "datePublished": "2026-08-15",
+                "dateModified": "2026-08-15",
+                "image": "https://antonioluisperez.com/blog/img/og-analitica-web-hoteles.jpg",
+                "author": { "@id": "https://antonioluisperez.com/#person" },
+                "publisher": { "@id": "https://antonioluisperez.com/#person" },
+                "isPartOf": { "@id": "https://antonioluisperez.com/blog/#blog" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": "https://antonioluisperez.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
+                    { "@type": "ListItem", "position": 3, "name": "Analítica web para hoteles" }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+            <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+            <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+            <a href="./" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../thankyou.html" class="topbar__cv" data-i18n="nav_cv" data-i18n-attr="aria-label:nav_cv_aria" aria-label="Descargar CV" data-track="cv_intent_click" data-track-location="blog_post_topbar">CV ↓</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="../index.html#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="../index.html#tools" data-i18n="nav_tools">Herramientas</a>
+                <a href="./" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <article class="post">
+            <p class="post__meta">Blog · Hoteles · 15 ago 2026</p>
+            <h1 class="post__title">Analítica web para hoteles: KPIs, embudo y trampas del sector</h1>
+            <p class="post__byline">Por <a href="../index.html#about">Antonio Luis Pérez Carmona</a>, analista digital en hospitality tech. Mido el embudo de reserva de más de 1300 webs de hotel.</p>
+
+            <figure class="post__hero"><img src="img/analitica-web-hoteles.webp" alt="Ilustración de un hotel con líneas de datos saliendo de sus ventanas hacia un embudo, una en verde" width="1400" height="788" decoding="async" /></figure>
+
+            <p><strong>La analítica web de un hotel mide un negocio con reglas propias: la conversión vive en el motor de reservas, la venta puede cancelarse semanas después de celebrarse y el precio compite en tiempo real contra las OTAs.</strong> Llevo la medición del embudo de reserva de más de 1300 webs de hotel, y las diferencias con un ecommerce clásico cambian la forma de leer cada informe. Estas son las que más cuestan de aprender desde fuera del sector.</p>
+
+            <h2>El embudo tiene cuatro pasos y no es lineal</h2>
+            <p>En un motor de reservas típico, el camino a la compra se mide en cuatro pantallas: selección de habitación y tarifa, extras, datos del huésped y confirmación. En mis informes viven como booking1 a booking4, y cada transición cuenta una historia distinta: la primera habla de precio y disponibilidad, la última de fricción en el pago.</p>
+            <p>Dos rarezas que descolocan al que viene del ecommerce:</p>
+            <ul>
+                <li><strong>Hay pasos que superan el 100% de avance.</strong> El paso de datos recibe entradas que se saltan los anteriores: enlaces directos de campañas de email, flujos de hotel más vuelo, presupuestos guardados. Un embudo hotelero se parece más a una rotonda que a un tobogán, y quien lo lee como línea recta saca conclusiones equivocadas.</li>
+                <li><strong>El mismo motor rinde distinto en cada hotel.</strong> He visto portfolios donde, con el mismo software y las mismas pantallas, una propiedad avanza al segundo paso el 70% de las sesiones y otra el 25%. La diferencia de 40 puntos con el mismo motor descarta al software como sospechoso: ahí se mira tarifa, fotos, disponibilidad del calendario y qué promesa trajo a ese tráfico hasta la puerta.</li>
+            </ul>
+
+            <h2>Los KPIs que un ecommerce ni conoce</h2>
+            <table>
+                <tr><th>KPI</th><th>Qué mide</th><th>Qué decisión alimenta</th></tr>
+                <tr><td>Precio medio por noche</td><td>Tarifa media vendida (el ADR del revenue manager)</td><td>Si la caída de ingresos viene de vender menos o de vender más barato</td></tr>
+                <tr><td>Room nights</td><td>Noches vendidas, el volumen real</td><td>Ocupación con la que planifica operaciones</td></tr>
+                <tr><td>Anticipación</td><td>Días entre reserva y llegada</td><td>Cuándo lanzar campañas y ofertas por mercado</td></tr>
+                <tr><td>Estancia media</td><td>Noches por reserva</td><td>Valor del huésped y mínimos de estancia</td></tr>
+                <tr><td>Ratio de cancelación</td><td>Reservas anuladas sobre el total</td><td>Política de tarifas flexibles frente a no reembolsables</td></tr>
+                <tr><td>Índice de paridad</td><td>Veces que el precio directo gana a las OTAs</td><td>Si tiene sentido invertir en captación esta semana</td></tr>
+            </table>
+            <p>Un descenso de ingresos se diagnostica cruzando los tres primeros: menos noches con la misma tarifa es un problema de demanda; las mismas noches con tarifa inferior es una decisión de revenue; ambos a la vez, un trimestre para enmarcar en la pared del sufrimiento.</p>
+
+            <h2>GA4 nunca ve todas las reservas</h2>
+            <p>El motor tiene un backend que registra el 100% de las operaciones. GA4 registra las que el navegador le deja ver: en los portfolios que mido, entre el 70 y el 85% de las reservas, y la cifra baja cada trimestre por las restricciones de Safari, los bloqueadores y el consentimiento. Mi rutina en cada informe es publicar la cobertura: qué porcentaje del backend llegó a GA4 ese trimestre.</p>
+            <p>El truco para diagnosticar en dos minutos: compara el ticket medio de ambas fuentes. Si GA4 valora cada reserva casi igual que el backend pero le faltan operaciones, tu problema es cobertura, y las tendencias relativas entre canales siguen valiendo. Si el ticket medio también baila, tienes un problema de implementación en el purchase, y entonces no te fíes ni de las tendencias.</p>
+            <p>La regla práctica: el backend responde cuánto se vendió; GA4 responde por dónde llegó y dónde se atascó. Sumar reservas de GA4 para contárselas a dirección acaba en una reunión incómoda.</p>
+
+            <h2>La cancelación convierte la venta en una hipótesis</h2>
+            <p>En hotelería la conversión no cierra el ciclo: una reserva con tarifa flexible es una intención con derecho a arrepentirse. El patrón crece cada año: el huésped reserva con más anticipación, bloquea precio con tarifa cancelable y decide de verdad más cerca de la fecha. Más anticipación con más cancelación no es contradicción, es el mismo comportamiento visto por sus dos caras.</p>
+            <p>Consecuencia para la medición: los informes van por duplicado. Por fecha de reserva para evaluar campañas y captación, y por fecha de estancia para hablar con revenue y operaciones. El revenue cancelado merece su propia serie: un trimestre puede celebrar récord de ventas brutas y esconder que una de cada diez se esfumó.</p>
+
+            <h2>La paridad manda sobre el CRO</h2>
+            <p>El dato más incómodo que le he puesto delante a un hotel: el porcentaje de comprobaciones en las que su web vendía la misma habitación al mejor precio disponible. Cuando ese índice queda por debajo del 50%, la mitad de tu tráfico compara y encuentra la habitación más barata en una OTA con la que además llevas años peleándote.</p>
+            <p>Con paridad rota, la conversión del motor deja de ser un indicador de UX: puede estar impecable el diseño, el copy y la velocidad, que el visitante hace su papel, mira, compara y reserva en otra parte. Por eso la paridad se revisa antes de tocar la web. Optimizar botones con el precio perdido es ordenar la cubierta del Titanic.</p>
+
+            <h2>La estacionalidad rompe las comparativas trimestrales</h2>
+            <p>Comparar un trimestre con el anterior funciona en un SaaS y engaña en un resort: temporada alta contra temporada media produce caídas del 30% que asustan en la portada del informe y desaparecen al comparar con el mismo trimestre del año anterior. La interanual es la comparación que dice la verdad sobre el estado del negocio; la trimestral solo sirve para vigilar la ejecución.</p>
+            <p>El mismo cuidado aplica por mercados: cada país emisor tiene su calendario de vacaciones, y un desplome del mercado argentino o canadiense puede ser divisa y estacionalidad antes que un problema de tu web.</p>
+
+            <h2>Móvil: tres de cada cuatro visitas, una fracción del ingreso</h2>
+            <p>En los portfolios que mido, el móvil aporta en torno al 75% de los usuarios y bastante menos de la mitad del ingreso registrado. Antes de rediseñar nada, dos matices: el viaje se investiga en el móvil durante semanas y se paga en el escritorio en una tarde, así que parte del ingreso de escritorio lo sembró el móvil sin llevarse la atribución. Y la pérdida de medición castiga más al móvil, donde las restricciones de cookies son más agresivas, así que su ingreso real es mayor que el que muestra GA4.</p>
+            <p>El móvil casi siempre tiene margen de mejora en el motor, y aún así conviene medirlo con estas dos correcciones en mente antes de declarar la emergencia.</p>
+
+            <h2>Preguntas frecuentes</h2>
+            <h3>¿Sirve GA4 tal cual para un hotel?</h3>
+            <p>Sirve como fuente de adquisición y comportamiento si el motor empuja un dataLayer de ecommerce completo en los cuatro pasos. Como fuente de ingresos totales, no: esa verdad vive en el backend del motor, y el informe honesto usa las dos fuentes y declara cuál responde cada pregunta.</p>
+            <h3>¿Qué conversión es normal en un motor de reservas?</h3>
+            <p>Entre el 1 y el 2,5% de las sesiones que entran al motor terminan en reserva en la mayoría de los casos que veo, con la paridad y el mercado moviendo ese rango. La comparación útil rara vez es contra el sector: es contra tu propio hotel el año pasado y contra las propiedades hermanas del mismo motor.</p>
+            <h3>¿Por fecha de reserva o por fecha de estancia?</h3>
+            <p>Las dos, para preguntas distintas. Fecha de reserva para campañas y marketing; fecha de estancia para revenue, ocupación y operaciones. Los problemas llegan cuando una reunión mezcla las dos sin avisar.</p>
+
+            <div class="post__cta">
+                <p><strong>¿Llevas un hotel y tus informes no distinguen el motor del resto de la web?</strong> Monto la medición completa del embudo de reserva y te la dejo contando la verdad. Escríbeme y lo vemos con tus datos.</p>
+                <a href="../ecommerce-web.html" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de analítica web →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
