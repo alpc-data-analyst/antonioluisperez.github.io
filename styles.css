@@ -1831,7 +1831,11 @@ body.menu-open {
     color: #f5f5f5;
     box-shadow: 0 0 0 100vmax #0a0a0a;
     clip-path: inset(0 -100vmax);
-    padding-bottom: clamp(90px, 12vw, 170px);
+    /* El margen deja aire BLANCO antes de que empiece la banda: la
+       seccion anterior nunca muere pegada al borde negro */
+    margin-top: clamp(70px, 10vw, 140px);
+    padding-top: clamp(70px, 9vw, 130px);
+    padding-bottom: clamp(80px, 10vw, 150px);
 }
 
 /* Sobre negro, el neon puro brilla; la version oscurecida para AA
@@ -1843,9 +1847,16 @@ body.menu-open {
     border-color: var(--neon);
 }
 
-/* La banda de reseñas va pegada al hero blanco: respiracion simetrica */
+/* La banda de reseñas es la mas fina: una cita no necesita un oceano
+   de negro alrededor */
 .quotes.section--dark {
-    padding-top: clamp(60px, 8vw, 100px);
+    margin-top: clamp(56px, 8vw, 100px);
+    padding-top: clamp(44px, 5.5vw, 68px);
+    padding-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+.quotes.section--dark .quotes__stage {
+    margin-top: clamp(8px, 1.2vw, 14px);
 }
 
 .footer--dark {
