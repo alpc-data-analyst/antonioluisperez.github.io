@@ -202,6 +202,9 @@
 
             footer_cookies: 'Preferencias de cookies',
 
+            fab_aria: 'Abrir contacto',
+            blog_back: 'Volver al blog',
+
             consent_title: 'Cookies',
             consent_text: 'Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.',
             consent_accept: 'Aceptar',
@@ -409,6 +412,9 @@
             wa_href: 'https://wa.me/34601427159?text=Hi%20Antonio%20Luis%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20know%20more.',
 
             footer_cookies: 'Cookie preferences',
+
+            fab_aria: 'Open contact',
+            blog_back: 'Back to the blog',
 
             consent_title: 'Cookies',
             consent_text: 'Alright, the same old song: cookies and consent. Sorry, I am a data analyst, a good one, and I need everything measured and under control.',
@@ -667,6 +673,80 @@
         else window.addEventListener('resize', medir, { passive: true });
     };
 
+    /* ---------- Burbuja de contacto ---------- */
+    // Se inyecta desde aqui y no en cada HTML porque son trece paginas y el
+    // mismo bloque repetido trece veces se desincroniza a la primera.
+    // Ofrece los tres canales en vez de elegir uno: cada uno mide por separado,
+    // asi dentro de unas semanas los datos diran cual sobra.
+    const initFab = () => {
+        if (document.getElementById('fab')) return;
+
+        const canales = [
+            { id: 'whatsapp', txt: 'WhatsApp', href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.', i18n: 'wa_href', fuera: true },
+            { id: 'linkedin', txt: 'LinkedIn', href: 'https://www.linkedin.com/in/antonio-luis-perez-carmona/', fuera: true },
+            { id: 'email', txt: 'Email', href: 'mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio' }
+        ];
+
+        const fab = document.createElement('div');
+        fab.className = 'fab';
+        fab.id = 'fab';
+
+        const menu = document.createElement('div');
+        menu.className = 'fab__menu';
+        menu.id = 'fab-menu';
+        menu.hidden = true;
+
+        canales.forEach((c) => {
+            const a = document.createElement('a');
+            a.className = 'fab__item';
+            a.href = c.href;
+            a.textContent = c.txt;
+            if (c.fuera) { a.target = '_blank'; a.rel = 'noopener'; }
+            if (c.i18n) a.setAttribute('data-i18n-attr', 'href:' + c.i18n);
+            a.setAttribute('data-track', 'contact_intent_click');
+            a.setAttribute('data-track-location', 'fab_' + c.id);
+            menu.appendChild(a);
+        });
+
+        const btn = document.createElement('button');
+        btn.className = 'fab__btn';
+        btn.id = 'fab-btn';
+        btn.type = 'button';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', 'fab-menu');
+        btn.setAttribute('aria-label', 'Contacto');
+        btn.setAttribute('data-i18n-attr', 'aria-label:fab_aria');
+        btn.innerHTML =
+            '<svg class="fab__ico fab__ico--open" viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.8-.4L3 21l1.6-4.7A8.2 8.2 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
+            '<svg class="fab__ico fab__ico--close" viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+        fab.appendChild(menu);
+        fab.appendChild(btn);
+        document.body.appendChild(fab);
+
+        const abrir = (si) => {
+            menu.hidden = !si;
+            fab.classList.toggle('is-open', si);
+            btn.setAttribute('aria-expanded', String(si));
+        };
+
+        btn.addEventListener('click', () => {
+            const abriendo = menu.hidden;
+            abrir(abriendo);
+            if (abriendo) track('contact_fab_opened');
+        });
+
+        // Se cierra al pulsar fuera o con Escape, como cualquier menu
+        document.addEventListener('click', (e) => {
+            if (!fab.contains(e.target)) abrir(false);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.hidden) { abrir(false); btn.focus(); }
+        });
+    };
+
     /* ---------- Aparicion al entrar en pantalla ---------- */
     const initReveal = () => {
         const els = document.querySelectorAll('.reveal');
@@ -821,6 +901,9 @@
 
     /* ---------- Boot ---------- */
     const boot = () => {
+        // La burbuja se construye antes de traducir para que entre en el barrido
+        initFab();
+
         applyTranslations(detectLang());
 
         document.querySelectorAll('[data-lang]').forEach((btn) => {

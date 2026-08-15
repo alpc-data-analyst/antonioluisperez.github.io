@@ -241,6 +241,100 @@ body.consent-open {
     color: var(--neon-edge);
 }
 
+/* -------- Burbuja de contacto ---------------------------------- */
+/* Queda por debajo del consentimiento (z-index 1000) a proposito: mientras no
+   haya decision, el overlay opaco la tapa y no se puede pulsar. */
+.fab {
+    position: fixed;
+    right: clamp(16px, 3vw, 32px);
+    bottom: clamp(16px, 3vw, 32px);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.fab__btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(10, 10, 10, 0.28);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.fab__btn:hover {
+    background: var(--neon);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+.fab__ico {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.fab__ico--close,
+.fab.is-open .fab__ico--open {
+    display: none;
+}
+
+.fab.is-open .fab__ico--close {
+    display: block;
+}
+
+.fab__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.fab__menu[hidden] {
+    display: none;
+}
+
+.fab__item {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 10px 16px;
+    background: var(--black);
+    color: var(--bg);
+    box-shadow: 0 4px 14px rgba(10, 10, 10, 0.22);
+    animation: fab-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fab__item:nth-child(2) { animation-delay: 0.04s; }
+.fab__item:nth-child(3) { animation-delay: 0.08s; }
+
+.fab__item:hover {
+    background: var(--neon);
+    color: var(--black);
+}
+
+@keyframes fab-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fab__item {
+        animation: none;
+    }
+}
+
 /* -------- Top bar ---------------------------------------------- */
 .topbar {
     display: flex;
@@ -1222,6 +1316,33 @@ body.menu-open {
     padding: clamp(40px, 7vw, 80px) var(--pad) 0;
 }
 
+/* Vuelta al listado. La flecha va en ::before para que no la lea el lector
+   de pantalla dos veces ni se quede suelta si el texto cambia de idioma. */
+.post__back {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray-meta);
+    margin-bottom: 22px;
+}
+
+.post__back::before {
+    content: "\2190";
+    margin-right: 8px;
+    display: inline-block;
+    transition: transform 0.18s ease;
+}
+
+.post__back:hover {
+    color: var(--neon-edge);
+}
+
+.post__back:hover::before {
+    transform: translateX(-4px);
+}
+
 .post__meta {
     font-size: 0.7rem;
     font-weight: 600;
@@ -1405,6 +1526,17 @@ body.menu-open {
 
 .post a:hover {
     background: var(--neon);
+}
+
+/* La vuelta al listado es navegacion, no una referencia dentro del texto, asi
+   que se le quita el trazo verde que llevan los enlaces del articulo. Hace
+   falta subir la especificidad porque .post a pesa mas que .post__back. */
+.post a.post__back {
+    border-bottom: 0;
+}
+
+.post a.post__back:hover {
+    background: none;
 }
 
 .post table {
