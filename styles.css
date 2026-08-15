@@ -1164,6 +1164,87 @@ body.menu-open {
     border-bottom: 2px solid var(--neon);
 }
 
+/* Parrilla de cards del listado del blog: la ilustracion arriba, borde
+   grueso del estilo poster y la tarjeta entera clicable. */
+.postcards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: clamp(20px, 3vw, 36px);
+    margin-top: clamp(36px, 6vw, 56px);
+}
+
+.postcard {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--black);
+    transition: transform 0.2s ease;
+}
+
+.postcard:hover {
+    transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .postcard,
+    .postcard:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+.postcard__img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 3px solid var(--black);
+}
+
+.postcard__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 16px 18px 20px;
+}
+
+.postcard__meta {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gray-meta);
+}
+
+.postcard__title {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1.12;
+    letter-spacing: 0.02em;
+    margin-top: 10px;
+}
+
+.postcard__text {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--gray-text);
+    margin-top: 10px;
+}
+
+.postcard__go {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.postcard:hover .postcard__go {
+    color: var(--neon-edge);
+}
+
 .post__hero {
     margin-top: clamp(28px, 4vw, 40px);
 }
