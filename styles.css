@@ -485,14 +485,6 @@ body.menu-open {
     padding: clamp(20px, 4vh, 48px) var(--pad) clamp(24px, 4vh, 56px);
 }
 
-.hero__status {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    color: var(--gray-meta);
-}
-
 .hero__name {
     font-family: var(--display);
     font-weight: 400;
@@ -1488,11 +1480,6 @@ body.menu-open {
 
     .topbar__brand-role {
         display: inline;
-    }
-
-    /* El rol ya esta en la barra superior: en movil el estado sobra */
-    .hero__status--desktop {
-        display: none;
     }
 
     .numbers {
