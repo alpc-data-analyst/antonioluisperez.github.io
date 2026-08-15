@@ -1166,11 +1166,15 @@ body.menu-open {
 
 /* Parrilla de cards del listado del blog: la ilustracion arriba, borde
    grueso del estilo poster y la tarjeta entera clicable. */
+.blog-list {
+    padding-top: clamp(28px, 4vw, 48px);
+}
+
 .postcards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: clamp(20px, 3vw, 36px);
-    margin-top: clamp(36px, 6vw, 56px);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: clamp(14px, 2vw, 24px);
+    margin-top: clamp(20px, 3vw, 32px);
 }
 
 .postcard {
@@ -1204,14 +1208,14 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 16px 18px 20px;
+    padding: 12px 14px 14px;
 }
 
 .postcard__meta {
-    font-size: 0.62rem;
+    font-size: 0.56rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     color: var(--gray-meta);
 }
 
@@ -1219,26 +1223,26 @@ body.menu-open {
     font-family: var(--display);
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 1.25rem;
-    line-height: 1.12;
+    font-size: 1rem;
+    line-height: 1.14;
     letter-spacing: 0.02em;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .postcard__text {
-    font-size: 0.85rem;
-    line-height: 1.55;
+    font-size: 0.76rem;
+    line-height: 1.5;
     color: var(--gray-text);
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .postcard__go {
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     margin-top: auto;
-    padding-top: 16px;
+    padding-top: 12px;
 }
 
 .postcard:hover .postcard__go {
