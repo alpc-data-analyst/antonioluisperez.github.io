@@ -879,11 +879,6 @@ body.menu-open {
     transition: filter 0.5s ease 0.2s, opacity 0.5s ease 0.2s;
 }
 
-/* Los logos que solo existen en blanco van sobre chip negro */
-.journey__media--dark {
-    background: var(--black);
-}
-
 .has-js .reveal.journey__media {
     opacity: 0;
     transform: translateX(26px);
@@ -914,9 +909,26 @@ body.menu-open {
     }
 }
 
+/* En movil el logo se queda, compacto y alineado con el texto, debajo
+   de cada etapa. La sombra neon baja de tamaño en proporcion. */
 @media (max-width: 880px) {
     .journey__media {
-        display: none;
+        max-width: 210px;
+        min-height: 80px;
+        padding: 14px 18px;
+        justify-self: start;
+        margin-top: 4px;
+    }
+
+    .journey__media img {
+        max-height: 44px;
+        max-width: 160px;
+    }
+
+    .has-js .reveal.journey__media.is-visible {
+        box-shadow:
+            5px 5px 0 var(--neon),
+            0 0 24px rgba(44, 255, 5, 0.35);
     }
 }
 
