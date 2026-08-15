@@ -369,32 +369,81 @@
             <p class="reveal section__label" data-i18n="stack_tag">02 · Stack</p>
             <h2 class="reveal section__title"><span class="mark-scroll" data-i18n="stack_title">Las herramientas con las que me muevo cada día.</span></h2>
 
-            <ul class="stack">
-                <li class="reveal stack__row" style="--d:0ms">
+            <div class="stackgrid">
+                <div class="reveal stackcard" style="--d:0ms">
                     <h3 data-i18n="stack_core_title">Python y SQL</h3>
-                    <p class="stack__tools">Pandas · NumPy · Scikit-learn · PyTorch · PostgreSQL · MySQL · BigQuery</p>
-                </li>
-                <li class="reveal stack__row" style="--d:55ms">
+                    <ul class="chips">
+                        <li><img src="stack/pandas.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Pandas</li>
+                        <li><img src="stack/numpy.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />NumPy</li>
+                        <li><img src="stack/scikitlearn.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Scikit-learn</li>
+                        <li><img src="stack/pytorch.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />PyTorch</li>
+                        <li><img src="stack/postgresql.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />PostgreSQL</li>
+                        <li><img src="stack/mysql.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />MySQL</li>
+                        <li><img src="stack/googlebigquery.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />BigQuery</li>
+                    </ul>
+                </div>
+
+                <div class="reveal stackcard" style="--d:70ms">
                     <h3 data-i18n="stack_viz_title">Analítica y Viz</h3>
-                    <p class="stack__tools">GA4 · GTM Web + Server Side · Looker Studio · Power BI · Tableau · Adobe Analytics · Matomo · Microsoft Clarity</p>
-                </li>
-                <li class="reveal stack__row" style="--d:110ms">
+                    <ul class="chips">
+                        <li><img src="stack/googleanalytics.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />GA4</li>
+                        <li><img src="stack/googletagmanager.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />GTM Web + Server Side</li>
+                        <li><img src="stack/looker.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Looker Studio</li>
+                        <li>Power BI</li>
+                        <li><img src="stack/tableau.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Tableau</li>
+                        <li><img src="stack/adobe.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Adobe Analytics</li>
+                        <li><img src="stack/matomo.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Matomo</li>
+                        <li>Microsoft Clarity</li>
+                    </ul>
+                </div>
+
+                <div class="reveal stackcard" style="--d:140ms">
                     <h3 data-i18n="stack_meas_title">Medición y privacidad</h3>
-                    <p class="stack__tools" data-i18n="stack_meas_tools">DataLayer · Consent Mode · GDPR · Meta CAPI · Conversiones mejoradas · Tests A/B · CRO</p>
-                </li>
-                <li class="reveal stack__row" style="--d:165ms">
+                    <ul class="chips">
+                        <li>DataLayer</li>
+                        <li>Consent Mode</li>
+                        <li>GDPR</li>
+                        <li><img src="stack/meta.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Meta CAPI</li>
+                        <li><span data-i18n="chip_ec">Conversiones mejoradas</span></li>
+                        <li><span data-i18n="chip_ab">Tests A/B</span></li>
+                        <li>CRO</li>
+                    </ul>
+                </div>
+
+                <div class="reveal stackcard" style="--d:0ms">
                     <h3 data-i18n="stack_ml_title">Machine Learning</h3>
-                    <p class="stack__tools">RNN · LSTM · NLP · Scikit-learn · Azure ML</p>
-                </li>
-                <li class="reveal stack__row" style="--d:220ms">
+                    <ul class="chips">
+                        <li>RNN</li>
+                        <li>LSTM</li>
+                        <li>NLP</li>
+                        <li><img src="stack/scikitlearn.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Scikit-learn</li>
+                        <li>Azure ML</li>
+                    </ul>
+                </div>
+
+                <div class="reveal stackcard" style="--d:70ms">
                     <h3 data-i18n="stack_cloud_title">Cloud y DevOps</h3>
-                    <p class="stack__tools">AWS · GCP · Bash · Git</p>
-                </li>
-                <li class="reveal stack__row" style="--d:275ms">
+                    <ul class="chips">
+                        <li><img src="stack/amazonwebservices.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />AWS</li>
+                        <li><img src="stack/googlecloud.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />GCP</li>
+                        <li><img src="stack/gnubash.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Bash</li>
+                        <li><img src="stack/git.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Git</li>
+                    </ul>
+                </div>
+
+                <div class="reveal stackcard" style="--d:140ms">
                     <h3 data-i18n="stack_data_title">Ingeniería de datos</h3>
-                    <p class="stack__tools">ETL · APIs · Airflow · HIVE · Hadoop · NoSQL · Pipelines</p>
-                </li>
-            </ul>
+                    <ul class="chips">
+                        <li>ETL</li>
+                        <li>APIs</li>
+                        <li><img src="stack/apacheairflow.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Airflow</li>
+                        <li><img src="stack/apachehive.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />HIVE</li>
+                        <li><img src="stack/apachehadoop.svg" alt="" width="14" height="14" loading="lazy" decoding="async" aria-hidden="true" />Hadoop</li>
+                        <li>NoSQL</li>
+                        <li>Pipelines</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="certs">
                 <p class="reveal section__label" data-i18n="stack_certs">Certificaciones</p>

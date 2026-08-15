@@ -993,19 +993,63 @@ body.menu-open {
 }
 
 /* -------- Stack -------------------------------------------------------- */
-.stack {
-    margin-top: clamp(48px, 7vw, 80px);
+/* Parrilla compacta de categorias con chips: cada herramienta con su
+   icono oficial en tinta negra donde existe, texto plano donde no. */
+.stackgrid {
     display: grid;
-    gap: clamp(36px, 6vw, 64px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(32px, 4.5vw, 56px) clamp(28px, 4vw, 56px);
+    margin-top: clamp(40px, 6vw, 64px);
 }
 
-.stack__row h3 {
-    font-family: var(--display);
-    font-weight: 400;
+.stackcard h3 {
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: clamp(1.6rem, 3.6vw, 2.8rem);
-    letter-spacing: 0.01em;
-    line-height: 1.05;
+    letter-spacing: 0.18em;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.chips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 2px solid var(--gray-ghost);
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-text);
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.chips li:hover {
+    border-color: var(--neon);
+    color: var(--black);
+}
+
+.chips img {
+    display: block;
+    width: 14px;
+    height: 14px;
+    opacity: 0.8;
+}
+
+@media (max-width: 880px) {
+    .stackgrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .stackgrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .stack__tools {
@@ -1657,8 +1701,7 @@ body.menu-open {
 /* -------- Alternancia izq/dcha (solo escritorio) ----------------------------------- */
 @media (min-width: 881px) {
     .work:nth-of-type(even),
-    .tool:nth-of-type(even),
-    .stack__row:nth-of-type(even) {
+    .tool:nth-of-type(even) {
         text-align: right;
     }
 
