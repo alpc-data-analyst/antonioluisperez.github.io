@@ -511,6 +511,7 @@ body.menu-open {
 .hero__owner a:hover {
     background: var(--black);
     border-color: var(--black);
+    color: var(--bg);
 }
 
 /* -------- Mapa de pings del hero ---------------------------------- */
@@ -705,6 +706,7 @@ body.menu-open {
 .hero__path:hover {
     background: var(--black);
     border-color: var(--black);
+    color: var(--bg);
 }
 
 /* La linea que pesca al otro publico: quien no viene a fichar, viene a
@@ -725,6 +727,7 @@ body.menu-open {
 .hero__paths-client a:hover {
     background: var(--black);
     border-color: var(--black);
+    color: var(--bg);
 }
 
 .hero__cta {
@@ -1656,6 +1659,7 @@ body.menu-open {
 .post__cta a:hover {
     background: var(--black);
     border-color: var(--black);
+    color: var(--bg);
 }
 
 /* -------- Pagina de Analytics Copilot ----------------------------------- */
