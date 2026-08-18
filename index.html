@@ -398,17 +398,80 @@
 
         <section id="contact" class="section section--contact section--dark">
             <p class="reveal section__label" data-i18n="sv_c_tag">04 · Contacto</p>
-            <h2 class="reveal contact__title" data-i18n="contact_title">¿Hablamos?</h2>
+            <h2 class="reveal contact__title" data-i18n="contact_title">Cuéntame qué necesitas</h2>
 
-            <a class="reveal contact__email" href="mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20la%20web" data-track="contact_intent_click" data-track-location="contact_email">alpcmalaga@gmail.com</a>
+            <div class="contact-grid">
+                <div class="reveal contact-aside">
+                    <p class="contact-aside__lead" data-i18n="contact_lead">Escríbeme y te digo por dónde empezar. Sin compromiso y sin discurso de ventas: si tu caso no es para mí, te lo digo.</p>
 
-            <p class="reveal contact__channels">
-                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
-                <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener">GitHub ↗</a>
-                <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="contact_whatsapp">WhatsApp ↗</a>
-            </p>
+                    <ul class="contact-aside__list">
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="1"/><path d="M2.6 6.4L12 13.2l9.4-6.8"/></svg>
+                            <a href="mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20la%20web" data-track="contact_intent_click" data-track-location="contact_email">alpcmalaga@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3.6h4l1.8 4.4-2.3 1.6a12 12 0 0 0 6.9 6.9l1.6-2.3 4.4 1.8v4a1.4 1.4 0 0 1-1.5 1.4C10.3 20.6 3.4 13.7 2.6 5.1A1.4 1.4 0 0 1 4 3.6z"/></svg>
+                            <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="contact_whatsapp">WhatsApp</a>
+                        </li>
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.4s7.4-6.1 7.4-11.1a7.4 7.4 0 1 0-14.8 0c0 5 7.4 11.1 7.4 11.1z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                            <span data-i18n="contact_place">Málaga, España · trabajo en remoto</span>
+                        </li>
+                    </ul>
 
-            <p class="reveal contact__note" data-i18n="contact_reply">Suelo responder en el día.</p>
+                    <p class="contact-aside__social">
+                        <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener">GitHub ↗</a>
+                    </p>
+
+                    <p class="contact-aside__note" data-i18n="contact_reply">Suelo responder en el día.</p>
+                </div>
+
+                <form class="reveal form" id="contact-form" novalidate>
+                    <div class="form__row">
+                        <div class="form__field">
+                            <label for="f-nombre" data-i18n="form_name">Nombre</label>
+                            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+                        </div>
+                        <div class="form__field">
+                            <label for="f-empresa"><span data-i18n="form_company">Empresa</span> <span class="form__opt" data-i18n="form_optional">(opcional)</span></label>
+                            <input type="text" id="f-empresa" name="empresa" autocomplete="organization">
+                        </div>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-email" data-i18n="form_email">Email</label>
+                        <input type="email" id="f-email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-asunto" data-i18n="form_need">¿Qué necesitas?</label>
+                        <select id="f-asunto" name="asunto">
+                            <option value="auditoria" data-i18n="form_need_1">Auditoría de medición</option>
+                            <option value="implementacion" data-i18n="form_need_2">Implementación y tracking</option>
+                            <option value="dashboards" data-i18n="form_need_3">Dashboards y reporting</option>
+                            <option value="formacion" data-i18n="form_need_4">Formación para mi equipo</option>
+                            <option value="otro" data-i18n="form_need_5">Otra cosa</option>
+                        </select>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-mensaje" data-i18n="form_msg">Cuéntame tu caso</label>
+                        <textarea id="f-mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Trampa para bots: invisible para personas, irresistible para scripts -->
+                    <div class="form__trap" aria-hidden="true">
+                        <label for="f-web">No rellenar</label>
+                        <input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="form__send" data-i18n="form_send">Enviar mensaje</button>
+
+                    <p class="form__status" role="status" aria-live="polite"></p>
+                    <p class="form__legal" data-i18n="form_legal">Tus datos se usan solo para responderte. Nada de listas ni de terceros.</p>
+                </form>
+            </div>
         </section>
     </main>
 

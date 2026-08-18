@@ -254,7 +254,27 @@
             lpda_cta_text: 'Cuéntame qué informe te come la semana y te lo devuelvo automatizado.',
 
             contact_tag: '05 · Contacto',
-            contact_title: '¿Hablamos?',
+            contact_title: 'Cuéntame qué necesitas',
+            contact_lead: 'Escríbeme y te digo por dónde empezar. Sin compromiso y sin discurso de ventas: si tu caso no es para mí, te lo digo.',
+            contact_place: 'Málaga, España · trabajo en remoto',
+            form_name: 'Nombre',
+            form_company: 'Empresa',
+            form_optional: '(opcional)',
+            form_email: 'Email',
+            form_need: '¿Qué necesitas?',
+            form_need_1: 'Auditoría de medición',
+            form_need_2: 'Implementación y tracking',
+            form_need_3: 'Dashboards y reporting',
+            form_need_4: 'Formación para mi equipo',
+            form_need_5: 'Otra cosa',
+            form_msg: 'Cuéntame tu caso',
+            form_send: 'Enviar mensaje',
+            form_legal: 'Tus datos se usan solo para responderte. Nada de listas ni de terceros.',
+            form_sending: 'Enviando...',
+            form_ok: 'Mensaje enviado. Te respondo en cuanto lo lea.',
+            form_err: 'No se ha podido enviar. Escríbeme a alpcmalaga@gmail.com y lo vemos.',
+            form_err_campos: 'Revisa los campos marcados antes de enviar.',
+            form_mailto: 'Se abre tu correo con el mensaje listo. Dale a enviar y me llega.',
             contact_cv: 'CV en PDF',
             contact_reply: 'Suelo responder en el día.',
             wa_href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.',
@@ -521,7 +541,27 @@
             lpda_cta_text: 'Tell me which report eats your week and I will hand it back automated.',
 
             contact_tag: '05 · Contact',
-            contact_title: "Let's talk.",
+            contact_title: 'Tell me what you need',
+            contact_lead: "Drop me a line and I'll tell you where to start. No commitment and no sales pitch: if your case is not for me, I'll say so.",
+            contact_place: 'Málaga, Spain · working remotely',
+            form_name: 'Name',
+            form_company: 'Company',
+            form_optional: '(optional)',
+            form_email: 'Email',
+            form_need: 'What do you need?',
+            form_need_1: 'Measurement audit',
+            form_need_2: 'Implementation and tracking',
+            form_need_3: 'Dashboards and reporting',
+            form_need_4: 'Training for my team',
+            form_need_5: 'Something else',
+            form_msg: 'Tell me about your case',
+            form_send: 'Send message',
+            form_legal: 'Your details are used only to reply to you. No lists, no third parties.',
+            form_sending: 'Sending...',
+            form_ok: 'Message sent. I will reply as soon as I read it.',
+            form_err: 'It could not be sent. Write to alpcmalaga@gmail.com and we will sort it out.',
+            form_err_campos: 'Check the highlighted fields before sending.',
+            form_mailto: 'Your email app opens with the message ready. Hit send and it reaches me.',
             contact_cv: 'CV as PDF',
             contact_reply: 'I usually reply within the day.',
             wa_href: 'https://wa.me/34601427159?text=Hi%20Antonio%20Luis%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20know%20more.',
@@ -1062,6 +1102,24 @@
         });
     };
 
+    /* ---------- Cabecera pegada ---------- */
+    // Marca la barra en cuanto la pagina se despega del principio. Un
+    // centinela invisible en lo alto evita escuchar el scroll en cada
+    // fotograma, que es lo que suele volver pesada esta pieza.
+    const initStickyBar = () => {
+        const bar = document.querySelector('.topbar');
+        if (!bar || !('IntersectionObserver' in window)) return;
+
+        const centinela = document.createElement('div');
+        centinela.setAttribute('aria-hidden', 'true');
+        centinela.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:1px';
+        document.body.insertBefore(centinela, document.body.firstChild);
+
+        new IntersectionObserver(([e]) => {
+            bar.classList.toggle('is-stuck', !e.isIntersecting);
+        }, { threshold: 0 }).observe(centinela);
+    };
+
     /* ---------- Menu movil ---------- */
     // Sandwich + panel lateral. Solo opera en movil: en escritorio el burger
     // esta oculto por CSS y no hay forma de abrirlo.
@@ -1106,6 +1164,100 @@
         });
     };
 
+    /* ---------- Formulario de contacto ---------- */
+    // El envío lo atiende una Pages Function de Cloudflare, el fichero
+    // functions/api/contacto.js de este mismo repositorio. La clave del
+    // servicio de correo vive como secreto en Cloudflare y nunca baja al
+    // navegador.
+    //
+    // Si la ruta no responde, y eso pasa en cualquier alojamiento que no
+    // ejecute funciones, el formulario no se queda muerto: compone el correo
+    // y abre el cliente de email del visitante.
+    const FORM_ENDPOINT = '/api/contacto';
+    const FORM_EMAIL = 'alpcmalaga@gmail.com';
+
+    const initContactForm = () => {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+
+        const boton = form.querySelector('.form__send');
+        const aviso = form.querySelector('.form__status');
+        let empezado = false;
+
+        const decir = (clave, estado) => {
+            const dict = I18N[document.documentElement.lang] || I18N.es;
+            aviso.textContent = dict[clave] || '';
+            aviso.className = 'form__status' + (estado ? ' ' + estado : '');
+        };
+
+        // Cuanta gente empieza a escribir y no llega a enviar
+        form.addEventListener('input', () => {
+            if (empezado) return;
+            empezado = true;
+            track('form_start', { form_id: 'contacto' });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.classList.add('is-checked');
+
+            // Campo trampa relleno: es un bot, se descarta en silencio
+            const trampa = form.querySelector('[name="website"]');
+            if (trampa && trampa.value) return;
+
+            if (!form.checkValidity()) {
+                decir('form_err_campos', 'is-err');
+                const fallo = form.querySelector('input:invalid, textarea:invalid');
+                if (fallo) fallo.focus();
+                return;
+            }
+
+            const datos = new FormData(form);
+            datos.delete('website');
+            datos.append('idioma', document.documentElement.lang || 'es');
+
+            track('form_submitted', { form_id: 'contacto', form_subject: datos.get('asunto') });
+
+            const abrirCorreo = () => {
+                const cuerpo = [];
+                datos.forEach((v, k) => cuerpo.push(k + ': ' + v));
+                window.location.href = 'mailto:' + FORM_EMAIL
+                    + '?subject=' + encodeURIComponent('Contacto web: ' + datos.get('nombre'))
+                    + '&body=' + encodeURIComponent(cuerpo.join('\n'));
+                decir('form_mailto', 'is-ok');
+            };
+
+            if (!FORM_ENDPOINT) {
+                abrirCorreo();
+                return;
+            }
+
+            boton.disabled = true;
+            decir('form_sending');
+
+            fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                body: datos,
+                headers: { Accept: 'application/json' }
+            }).then((r) => {
+                // 404 o 405 significan que la función no está desplegada,
+                // no que el envío haya fallado. Ahí sí compensa el plan B.
+                if (r.status === 404 || r.status === 405) {
+                    abrirCorreo();
+                    return;
+                }
+                if (!r.ok) throw new Error(r.status);
+                form.reset();
+                form.classList.remove('is-checked');
+                decir('form_ok', 'is-ok');
+            }).catch(() => {
+                decir('form_err', 'is-err');
+            }).then(() => {
+                boton.disabled = false;
+            });
+        });
+    };
+
     /* ---------- Boot ---------- */
     const boot = () => {
         // La burbuja se construye antes de traducir para que entre en el barrido
@@ -1125,6 +1277,7 @@
         if (year) year.textContent = new Date().getFullYear();
 
         initTopbarHeight();
+        initStickyBar();
         initMenu();
         initTracking();
         initConsent();
@@ -1132,6 +1285,7 @@
         initCounters();
         initClients();
         initQuotes();
+        initContactForm();
 
         // Los tres caminos todavía no llevan a ninguna página, pero sí miden.
         // Saber cuál pulsan los recruiters decide cuál merece construirse antes.

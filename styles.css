@@ -45,7 +45,12 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* clip y no hidden: hidden crearia un contenedor de scroll y la cabecera
+       pegajosa dejaria de pegarse */
     overflow-x: clip;
+    /* Hueco para que la cabecera fija no tape el titulo de la seccion a la
+       que se salta desde el menu */
+    scroll-padding-top: clamp(62px, 7vw, 86px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -166,7 +171,9 @@ button {
     position: absolute;
     top: -48px;
     left: 16px;
-    z-index: 100;
+    /* Por encima de la cabecera pegajosa (800): al enfocarlo aparece justo
+       donde ella esta y si no, quedaria tapado */
+    z-index: 850;
     padding: 10px 16px;
     background: var(--black);
     color: var(--bg);
@@ -273,13 +280,35 @@ body.consent-open {
 }
 
 /* -------- Top bar ---------------------------------------------- */
+/* Se queda pegada arriba al hacer scroll. Fondo solido y no
+   backdrop-filter: en elementos que acompañan al scroll ese filtro cuesta
+   fotogramas en movil. */
 .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 800;
+    background: var(--bg);
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 16px 28px;
     flex-wrap: wrap;
     padding: 26px var(--pad);
+    transition: padding 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* En cuanto se despega del principio, se aprieta y se separa del contenido
+   con una linea, para que no flote sin apoyo sobre el texto */
+.topbar.is-stuck {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    box-shadow: 0 1px 0 var(--gray-ghost);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .topbar {
+        transition: none;
+    }
 }
 
 .topbar__brand {
@@ -1846,9 +1875,7 @@ body.menu-open {
 
 /* -------- Contact ------------------------------------------------------------ */
 .section--contact {
-    max-width: none;
-    text-align: center;
-    padding-bottom: clamp(40px, 8vw, 80px);
+    padding-bottom: clamp(50px, 8vw, 90px);
 }
 
 .contact__title {
@@ -1860,45 +1887,236 @@ body.menu-open {
     margin-top: 24px;
 }
 
-.contact__email {
-    display: inline-block;
-    font-size: clamp(1.2rem, 3.4vw, 2.4rem);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-top: clamp(28px, 5vw, 48px);
-    border-bottom: 3px solid var(--black);
-    padding-bottom: 6px;
+/* El formulario manda, por eso se lleva la columna ancha */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: clamp(36px, 5vw, 76px);
+    margin-top: clamp(38px, 5vw, 60px);
+    align-items: start;
+}
+
+.contact-aside__lead {
+    font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+    line-height: 1.55;
+    color: var(--gray-text);
+}
+
+.contact-aside__list {
+    list-style: none;
+    margin-top: 30px;
+    display: grid;
+    gap: 16px;
+}
+
+.contact-aside__list li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 0.95rem;
     overflow-wrap: anywhere;
 }
 
-.contact__email:hover {
-    color: var(--gray-meta);
-    border-color: var(--gray-meta);
+.contact-aside__ico {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: var(--neon);
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-.contact__channels {
+.contact-aside__list a {
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.contact-aside__list a:hover {
+    border-color: currentColor;
+}
+
+.contact-aside__social {
     display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: clamp(36px, 6vw, 56px);
+    gap: 24px;
+    margin-top: 30px;
 }
 
-.contact__channels a {
+.contact-aside__social a {
     font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.005em;
     color: var(--gray-meta);
 }
 
-.contact__channels a:hover {
-    color: var(--neon-edge);
-}
-
-.contact__note {
+.contact-aside__note {
     font-size: 0.85rem;
     color: var(--gray-meta);
-    margin-top: 26px;
+    margin-top: 22px;
+}
+
+/* -------- Formulario de contacto -------------------------------------------- */
+.form {
+    display: grid;
+    gap: 18px;
+}
+
+.form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form__field {
+    display: grid;
+    gap: 7px;
+}
+
+.form__field label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-meta);
+}
+
+.form__opt {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.96rem;
+    color: var(--black);
+    background: transparent;
+    border: 2px solid var(--gray-ghost);
+    border-radius: 0;
+    padding: 13px 14px;
+    transition: border-color 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* La flecha del desplegable, dibujada a mano porque al quitar la apariencia
+   nativa el select se queda sin ninguna pista de que se abre */
+.form select {
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+                      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 40px;
+}
+
+.form select option {
+    color: #0a0a0a;
+    background: #ffffff;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 118px;
+    line-height: 1.5;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: var(--neon);
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: var(--gray-meta);
+}
+
+/* Solo se marca en rojo despues de intentar enviar, nunca mientras se escribe */
+.form.is-checked input:invalid,
+.form.is-checked textarea:invalid {
+    border-color: #ff5a4d;
+}
+
+.form__trap {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form__send {
+    justify-self: start;
+    font: inherit;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    background: var(--neon);
+    border: 2px solid var(--neon);
+    border-radius: 0;
+    padding: 15px 30px;
+    margin-top: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.form__send:hover {
+    background: transparent;
+    color: var(--neon);
+}
+
+.form__send[disabled] {
+    opacity: 0.55;
+    cursor: default;
+}
+
+.form__status {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form__status:empty {
+    display: none;
+}
+
+.form__status.is-ok {
+    color: var(--neon);
+}
+
+.form__status.is-err {
+    color: #ff8a80;
+}
+
+.form__legal {
+    font-size: 0.76rem;
+    color: var(--gray-meta);
+    line-height: 1.5;
+}
+
+@media (max-width: 880px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 560px) {
+    .form__row {
+        grid-template-columns: 1fr;
+    }
+
+    .form__send {
+        justify-self: stretch;
+        text-align: center;
+    }
 }
 
 /* -------- Footer ---------------------------------------------------------------- */
@@ -2113,7 +2331,7 @@ body.menu-open {
    sobre blanco aqui se queda corta de contraste */
 .section--dark a:hover,
 .section--dark .work__links a:hover,
-.section--dark .contact__channels a:hover {
+.section--dark .contact-aside__social a:hover {
     color: var(--neon);
     border-color: var(--neon);
 }
