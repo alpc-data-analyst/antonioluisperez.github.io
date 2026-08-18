@@ -19,8 +19,11 @@
     --neon: #2cff05;
     --neon-edge: #1f8c05;
 
-    --display: 'Anton', 'Arial Narrow', sans-serif;
-    --sans: 'Archivo', Helvetica, Arial, sans-serif;
+    /* Una sola familia, dos papeles: los titulares en el peso mas gordo
+       y el texto en regular. Montserrat variable da los dos sin cargar
+       dos ficheros. */
+    --display: 'Montserrat', Helvetica, Arial, sans-serif;
+    --sans: 'Montserrat', Helvetica, Arial, sans-serif;
 
     --pad: clamp(20px, 4vw, 56px);
     --measure: 640px;
@@ -150,7 +153,7 @@ button {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
@@ -202,10 +205,10 @@ button {
 
 .consent__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.6rem, 11vw, 5.5rem);
-    line-height: 1;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.9rem, 6.5vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .consent__lang {
@@ -401,10 +404,10 @@ body.consent-open {
 
 .drawer__nav a {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 1.15;
-    letter-spacing: 0.035em;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     padding: 10px 0;
 }
 
@@ -469,19 +472,19 @@ body.menu-open {
 
 .hero__name {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(3.4rem, 11.5vw, 11rem);
-    line-height: 0.98;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(2.1rem, 6.2vw, 5.2rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
     margin-top: clamp(28px, 6vh, 72px);
 }
 
 .hero__role {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(1.9rem, 6.4vw, 6rem);
-    line-height: 1;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.3rem, 3.6vw, 2.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     color: var(--neon-edge);
     margin-top: clamp(18px, 3.6vh, 44px);
 }
@@ -574,8 +577,8 @@ body.menu-open {
 
 .counter__num {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
     line-height: 1.05;
     letter-spacing: 0.01em;
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
@@ -608,10 +611,10 @@ body.menu-open {
    cuerpo porque lleva mas caracteres que un nombre propio. */
 .hero__claim {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.3rem, 5.4vw, 4.8rem);
-    line-height: 1.06;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.9rem, 4.1vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
     margin-top: clamp(16px, 3vh, 32px);
     max-width: 19ch;
     margin-inline: auto;
@@ -627,9 +630,9 @@ body.menu-open {
 
 .steps__num {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
-    line-height: 1;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+    line-height: 1.05;
     color: var(--neon);
 }
 
@@ -911,10 +914,10 @@ body.menu-open {
 
 .section__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2rem, 5.2vw, 4.2rem);
-    line-height: 1.02;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.55rem, 3.4vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
     margin-top: 22px;
     max-width: 20ch;
 }
@@ -962,9 +965,9 @@ body.menu-open {
 
 .journey__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(1.7rem, 4vw, 3rem);
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+    letter-spacing: -0.02em;
     margin-top: 20px;
 }
 
@@ -1270,16 +1273,16 @@ body.menu-open {
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
 .work__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.2rem, 6.6vw, 5.6rem);
-    line-height: 1;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.8vw, 2.9rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     margin-top: 16px;
     max-width: 18ch;
 }
@@ -1300,9 +1303,10 @@ body.menu-open {
 
 .numbers__item dd {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.2rem, 4.6vw, 4rem);
-    line-height: 1;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
 }
 
 .numbers__item dt {
@@ -1339,10 +1343,10 @@ body.menu-open {
 
 .tool__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2rem, 5.2vw, 4.2rem);
-    line-height: 1;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.55rem, 3.4vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .tool__title a:hover {
@@ -1383,16 +1387,16 @@ body.menu-open {
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
 .post__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2rem, 5.4vw, 3.6rem);
-    line-height: 1.04;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.02em;
     margin-top: 16px;
 }
 
@@ -1478,7 +1482,7 @@ body.menu-open {
 
 .postcard__title {
     font-family: var(--display);
-    font-weight: 400;
+    font-weight: 800;
     font-size: 1rem;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -1516,10 +1520,10 @@ body.menu-open {
 
 .post h2 {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    line-height: 1.1;
-    letter-spacing: 0.01em;
+    font-weight: 800;
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
     margin-top: clamp(44px, 7vw, 64px);
 }
 
@@ -1746,9 +1750,10 @@ body.menu-open {
 
 .contact__title {
     font-family: var(--display);
-    font-weight: 400;
-    font-size: clamp(2.6rem, 8vw, 7rem);
-    line-height: 1;
+    font-weight: 800;
+    font-size: clamp(1.9rem, 4.6vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
     margin-top: 24px;
 }
 
