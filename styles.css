@@ -14,10 +14,10 @@
     --gray-ghost: #d9d9d9;
 
     /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
-       Sobre blanco el #2cff05 puro no llega a contraste AA, asi que el texto
-       usa la version oscurecida y el puro queda para fondos y trazos. */
+       Sobre blanco el #2cff05 no llega a contraste como texto suelto, asi que
+       cuando toca texto va con sombra dura negra detras (efecto de mala
+       registracion de imprenta) o directamente como fondo con texto negro. */
     --neon: #2cff05;
-    --neon-edge: #1f8c05;
 
     /* Una sola familia, dos papeles: los titulares en el peso mas gordo
        y el texto en regular. Montserrat variable da los dos sin cargar
@@ -121,7 +121,7 @@ button {
 }
 
 :focus-visible {
-    outline-color: var(--neon-edge);
+    outline-color: var(--neon);
 }
 
 
@@ -265,7 +265,8 @@ body.consent-open {
 }
 
 .footer__cookies:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 /* -------- Top bar ---------------------------------------------- */
@@ -311,7 +312,8 @@ body.consent-open {
 
 .topbar__nav a:hover,
 .topbar__cv:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .topbar__cv {
@@ -319,7 +321,8 @@ body.consent-open {
 }
 
 .topbar__cv:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .topbar__aside {
@@ -414,7 +417,8 @@ body.consent-open {
 
 .drawer__nav a:active,
 .drawer__nav a:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 body.menu-open {
@@ -446,7 +450,8 @@ body.menu-open {
 }
 
 .lang-switch__btn:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .lang-switch__btn.is-active {
@@ -488,7 +493,8 @@ body.menu-open {
     font-size: clamp(1.3rem, 3.6vw, 2.9rem);
     line-height: 1.1;
     letter-spacing: 0.005em;
-    color: var(--neon-edge);
+    color: var(--neon);
+    text-shadow: 2px 2px 0 var(--black);
     margin-top: clamp(18px, 3.6vh, 44px);
 }
 
@@ -586,7 +592,10 @@ body.menu-open {
     letter-spacing: 0.01em;
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
     font-variant-numeric: tabular-nums;
-    color: var(--neon-edge);
+    color: var(--neon);
+    /* Sombra dura negra: el fosforito solo no se lee sobre blanco, y de paso
+       queda el desajuste de tinta de un cartel serigrafiado. */
+    text-shadow: 2px 2px 0 var(--black);
 }
 
 .counter__lbl {
@@ -1261,9 +1270,12 @@ body.menu-open {
     color: var(--gray-text);
 }
 
-/* La que aun no esta ganada */
+/* La que aun no esta ganada: chip de neon, que a 0.6rem el verde como
+   color de texto no hay quien lo lea */
 .cert__name--soon {
-    color: var(--neon-edge);
+    background: var(--neon);
+    color: var(--black);
+    padding: 2px 6px;
 }
 
 /* -------- Projects ------------------------------------------------------- */
@@ -1338,7 +1350,8 @@ body.menu-open {
 }
 
 .work__links a:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 /* -------- Tools ------------------------------------------------------------ */
@@ -1358,7 +1371,38 @@ body.menu-open {
 }
 
 .tool__title a:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
+}
+
+/* Cada servicio abre con una barra de neon: el verde entra como elemento
+   grafico, donde no compromete la lectura, y ordena los cuatro bloques. */
+.tool__title::before {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 8px;
+    background: var(--neon);
+    margin-bottom: 18px;
+}
+
+@media (min-width: 881px) {
+    .tool:nth-of-type(even) .tool__title::before {
+        margin-left: auto;
+    }
+}
+
+/* La flecha se pinta desde CSS y no en el texto: asi va en neon, no la
+   lee dos veces el lector de pantalla y no depende del idioma. */
+.tool__title a::after {
+    content: " \2192";
+    color: var(--neon);
+    text-shadow: 1.5px 1.5px 0 var(--black);
+}
+
+.tool__title a:hover::after {
+    transform: translateX(4px);
+    display: inline-block;
 }
 
 .tool__tagline {
@@ -1514,7 +1558,8 @@ body.menu-open {
 }
 
 .postcard:hover .postcard__go {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .post__hero {
@@ -1798,7 +1843,8 @@ body.menu-open {
 }
 
 .contact__channels a:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .contact__note {
@@ -2206,7 +2252,8 @@ body.menu-open {
 }
 
 .post__back:hover {
-    color: var(--neon-edge);
+    color: var(--black);
+    background: var(--neon);
 }
 
 .post__back:hover::before {
