@@ -1422,8 +1422,9 @@ body.menu-open {
    lee dos veces el lector de pantalla y no depende del idioma. */
 .tool__title a::after {
     content: " \2192";
-    color: var(--neon);
-    text-shadow: 1.5px 1.5px 0 var(--black);
+    /* La flecha va en negro sobre blanco: en neon a este tamaño se pierde,
+       y el verde ya lo pone la barra de encima del titulo. */
+    color: var(--black);
 }
 
 .tool__title a:hover::after {
