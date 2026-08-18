@@ -2164,8 +2164,8 @@ body.menu-open {
 }
 
 .fab__btn:hover {
-    background: var(--black);
-    color: var(--bg);
+    background: var(--neon);
+    color: var(--black);
     transform: translateY(-2px);
 }
 
@@ -2215,8 +2215,64 @@ body.menu-open {
 .fab__item:nth-child(3) { animation-delay: 0.08s; }
 
 .fab__item:hover {
-    background: var(--black);
-    color: var(--bg);
+    background: var(--neon);
+    color: var(--black);
+}
+
+/* Globo que invita a pulsar. Aparece solo, a los pocos segundos, y se va
+   para siempre en cuanto el visitante abre la burbuja o lo cierra: si
+   insistiera en cada pagina seria publicidad, no una ayuda. */
+.fab__hint {
+    position: absolute;
+    right: 68px;
+    bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    background: var(--neon);
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 10px 14px;
+    box-shadow: 0 4px 14px rgba(10, 10, 10, 0.22);
+    animation: fab-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    cursor: pointer;
+}
+
+.fab__hint[hidden] {
+    display: none;
+}
+
+/* Pico del globo, apuntando al boton */
+.fab__hint::after {
+    content: "";
+    position: absolute;
+    right: -7px;
+    bottom: 16px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid var(--neon);
+}
+
+.fab__hint-x {
+    font-size: 1rem;
+    line-height: 1;
+    opacity: 0.55;
+    padding: 0 2px;
+}
+
+.fab__hint-x:hover {
+    opacity: 1;
+}
+
+@media (max-width: 560px) {
+    .fab__hint {
+        font-size: 0.74rem;
+        padding: 8px 12px;
+    }
 }
 
 @keyframes fab-in {

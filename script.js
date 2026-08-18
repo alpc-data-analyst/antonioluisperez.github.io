@@ -25,6 +25,8 @@
             lang_aria: 'Idioma',
             menu_aria: 'Menú',
             fab_aria: 'Abrir contacto',
+            fab_hint: '¿Necesitas ayuda?',
+            fab_hint_close: 'Cerrar aviso',
             blog_back: 'Volver al blog',
             post_more: 'Seguir leyendo',
             blog_h1: 'Blog de analítica web y datos',
@@ -290,6 +292,8 @@
             lang_aria: 'Language',
             menu_aria: 'Menu',
             fab_aria: 'Open contact',
+            fab_hint: 'Need a hand?',
+            fab_hint_close: 'Dismiss',
             blog_back: 'Back to the blog',
             post_more: 'Keep reading',
             blog_h1: 'Web analytics and data blog',
@@ -980,15 +984,68 @@
             '<svg class="fab__ico fab__ico--close" viewBox="0 0 24 24" aria-hidden="true">' +
             '<path d="M6 6l12 12M18 6L6 18"/></svg>';
 
+        // Globo de aviso: aparece solo a los pocos segundos para que la
+        // burbuja no pase desapercibida. Con una X para cerrarlo, porque
+        // un aviso que no se puede callar molesta mas de lo que capta.
+        const globo = document.createElement('div');
+        globo.className = 'fab__hint';
+        globo.id = 'fab-hint';
+        globo.hidden = true;
+
+        const texto = document.createElement('span');
+        texto.setAttribute('data-i18n', 'fab_hint');
+        texto.textContent = '¿Necesitas ayuda?';
+
+        const cerrar = document.createElement('button');
+        cerrar.className = 'fab__hint-x';
+        cerrar.type = 'button';
+        cerrar.textContent = '\u00d7';
+        cerrar.setAttribute('aria-label', 'Cerrar aviso');
+        cerrar.setAttribute('data-i18n-attr', 'aria-label:fab_hint_close');
+
+        globo.appendChild(texto);
+        globo.appendChild(cerrar);
+
+        fab.appendChild(globo);
         fab.appendChild(menu);
         fab.appendChild(btn);
         document.body.appendChild(fab);
+
+        const VISTO = 'alpc_fab_hint';
+        const ocultarGlobo = (recordar) => {
+            globo.hidden = true;
+            if (!recordar) return;
+            try { sessionStorage.setItem(VISTO, '1'); } catch (e) { /* modo privado */ }
+        };
 
         const abrir = (si) => {
             menu.hidden = !si;
             fab.classList.toggle('is-open', si);
             btn.setAttribute('aria-expanded', String(si));
+            if (si) ocultarGlobo(true);
         };
+
+        // El globo solo asoma una vez por sesion y a los cuatro segundos:
+        // el tiempo justo para que el visitante haya leido el titular.
+        let yaVisto = false;
+        try { yaVisto = sessionStorage.getItem(VISTO) === '1'; } catch (e) { /* modo privado */ }
+        if (!yaVisto && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            window.setTimeout(() => {
+                if (menu.hidden) globo.hidden = false;
+            }, 4000);
+        }
+
+        // Pulsar el globo abre la burbuja, que es lo que se le pide al visitante
+        texto.addEventListener('click', () => {
+            ocultarGlobo(true);
+            abrir(true);
+            track('contact_fab_opened', { origen: 'hint' });
+        });
+
+        cerrar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            ocultarGlobo(true);
+        });
 
         btn.addEventListener('click', () => {
             const abriendo = menu.hidden;
