@@ -15,11 +15,11 @@ Sitio bilingüe español e inglés. El contenido del blog y las páginas de prod
 
 ## Blog
 
-- [Auditoría GA4](https://antonioluisperez.com/blog/auditoria-ga4.html): los 7 fallos más comunes y el checklist paso a paso para saber si puedes fiarte de tus datos
-- [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2.html): Basic o Advanced, el orden de carga correcto y la validación de los cuatro escenarios
-- [GTM server side](https://antonioluisperez.com/blog/gtm-server-side.html): qué arregla, qué sigue igual, costes reales y criterio para decidir
-- [Dashboards que se usan](https://antonioluisperez.com/blog/dashboards-que-se-usan.html): método de tres niveles de lectura y errores que matan un panel
-- [Analítica web para hoteles](https://antonioluisperez.com/blog/analitica-web-hoteles.html): el embudo del motor de reservas, los KPIs del sector y la paridad con las OTAs
+- [Auditoría GA4](https://antonioluisperez.com/blog/auditoria-ga4): los 7 fallos más comunes y el checklist paso a paso para saber si puedes fiarte de tus datos
+- [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2): Basic o Advanced, el orden de carga correcto y la validación de los cuatro escenarios
+- [GTM server side](https://antonioluisperez.com/blog/gtm-server-side): qué arregla, qué sigue igual, costes reales y criterio para decidir
+- [Dashboards que se usan](https://antonioluisperez.com/blog/dashboards-que-se-usan): método de tres niveles de lectura y errores que matan un panel
+- [Analítica web para hoteles](https://antonioluisperez.com/blog/analitica-web-hoteles): el embudo del motor de reservas, los KPIs del sector y la paridad con las OTAs
 
 ## Proyectos y enlaces
 

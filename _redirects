@@ -14,3 +14,12 @@
 # Rutas viejas que aun circulan por LinkedIn
 /recruiters           /recruiters/              301
 /blog                 /blog/                    301
+
+# Los articulos del blog se publicaron con .html y Cloudflare sirve la version
+# sin extension. Sin estas reglas la redireccion seria un 307 temporal, que no
+# traspasa autoridad y deja a Google con las dos URLs en el indice.
+/blog/auditoria-ga4.html           /blog/auditoria-ga4           301
+/blog/consent-mode-v2.html         /blog/consent-mode-v2         301
+/blog/gtm-server-side.html         /blog/gtm-server-side         301
+/blog/dashboards-que-se-usan.html  /blog/dashboards-que-se-usan  301
+/blog/analitica-web-hoteles.html   /blog/analitica-web-hoteles   301
