@@ -58,6 +58,31 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+/* Sin el retardo de 300 ms del doble toque, y sin el flash azul de
+   Android al pulsar: el hover y el focus ya dan la respuesta. */
+a,
+button,
+[role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Los titulares reparten sus lineas en vez de dejar una palabra huerfana */
+h1, h2, h3,
+.hero__claim,
+.section__title,
+.work__title,
+.tool__title,
+.post__title,
+.contact__title {
+    text-wrap: balance;
+}
+
+/* Los parrafos evitan la viuda de la ultima linea */
+p {
+    text-wrap: pretty;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -178,7 +203,6 @@ button {
 .consent__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2.6rem, 11vw, 5.5rem);
     line-height: 1;
     letter-spacing: 0.01em;
@@ -214,8 +238,7 @@ button {
 .consent__btn {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     color: var(--black);
     border-bottom: 2px solid var(--black);
     padding-bottom: 4px;
@@ -254,8 +277,7 @@ body.consent-open {
 .topbar__brand {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     white-space: nowrap;
 }
 
@@ -277,11 +299,10 @@ body.consent-open {
 
 .topbar__nav a,
 .topbar__cv {
-    font-size: 0.7rem;
+    font-size: 0.86rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--gray-meta);
+    letter-spacing: 0.005em;
+    color: var(--gray-text);
 }
 
 .topbar__nav a:hover,
@@ -381,7 +402,6 @@ body.consent-open {
 .drawer__nav a {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: 1.8rem;
     line-height: 1.15;
     letter-spacing: 0.035em;
@@ -450,7 +470,6 @@ body.menu-open {
 .hero__name {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(3.4rem, 11.5vw, 11rem);
     line-height: 0.98;
     letter-spacing: 0.01em;
@@ -460,7 +479,6 @@ body.menu-open {
 .hero__role {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(1.9rem, 6.4vw, 6rem);
     line-height: 1;
     letter-spacing: 0.01em;
@@ -475,8 +493,7 @@ body.menu-open {
 .hero__owner a {
     font-size: 0.8rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.005em;
     border-bottom: 3px solid var(--neon);
     padding-bottom: 4px;
 }
@@ -592,12 +609,11 @@ body.menu-open {
 .hero__claim {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
-    font-size: clamp(2.6rem, 7.2vw, 6.6rem);
-    line-height: 1.04;
+    font-size: clamp(2.3rem, 5.4vw, 4.8rem);
+    line-height: 1.06;
     letter-spacing: 0.01em;
-    margin-top: clamp(20px, 4vh, 44px);
-    max-width: 14ch;
+    margin-top: clamp(16px, 3vh, 32px);
+    max-width: 19ch;
     margin-inline: auto;
 }
 
@@ -620,8 +636,7 @@ body.menu-open {
 .steps h3 {
     font-size: 0.92rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.005em;
     margin-top: 12px;
 }
 
@@ -652,8 +667,7 @@ body.menu-open {
 .hero__paths-label {
     font-size: clamp(0.8rem, 1.4vw, 1rem);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
 }
 
@@ -667,10 +681,10 @@ body.menu-open {
 
 .hero__path {
     display: inline-block;
+    background: var(--bg);
     font-size: clamp(0.82rem, 1.15vw, 1.02rem);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.005em;
     color: var(--black);
     border: 3px solid var(--black);
     padding: clamp(14px, 1.6vw, 20px) clamp(20px, 2.4vw, 34px);
@@ -713,8 +727,7 @@ body.menu-open {
 .hero__cta a {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     border-bottom: 2px solid var(--black);
     padding-bottom: 4px;
 }
@@ -884,8 +897,7 @@ body.menu-open {
 .quote__by {
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     margin-top: 18px;
 }
@@ -900,7 +912,6 @@ body.menu-open {
 .section__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2rem, 5.2vw, 4.2rem);
     line-height: 1.02;
     letter-spacing: 0.01em;
@@ -935,8 +946,7 @@ body.menu-open {
 .threecol__col h3 {
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.005em;
 }
 
 .threecol__col p {
@@ -953,7 +963,6 @@ body.menu-open {
 .journey__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(1.7rem, 4vw, 3rem);
     letter-spacing: 0.01em;
     margin-top: 20px;
@@ -1079,8 +1088,7 @@ body.menu-open {
 .journey__role {
     font-size: 0.78rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     margin-top: 6px;
 }
@@ -1101,8 +1109,7 @@ body.menu-open {
 .about__cta a {
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     border-bottom: 2px solid var(--black);
     padding-bottom: 4px;
 }
@@ -1125,8 +1132,7 @@ body.menu-open {
 .stackcard h3 {
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.005em;
 }
 
 .chips {
@@ -1175,8 +1181,7 @@ body.menu-open {
 .stack__tools {
     font-size: 0.72rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     margin-top: 10px;
 }
@@ -1241,8 +1246,7 @@ body.menu-open {
 .cert__name {
     font-size: 0.6rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.005em;
     text-align: center;
     line-height: 1.5;
     color: var(--gray-text);
@@ -1273,7 +1277,6 @@ body.menu-open {
 .work__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2.2rem, 6.6vw, 5.6rem);
     line-height: 1;
     letter-spacing: 0.01em;
@@ -1305,8 +1308,7 @@ body.menu-open {
 .numbers__item dt {
     font-size: 0.68rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     margin-top: 10px;
 }
@@ -1321,8 +1323,7 @@ body.menu-open {
 .work__links a {
     font-size: 0.74rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
 }
 
 .work__links a:hover {
@@ -1339,7 +1340,6 @@ body.menu-open {
 .tool__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2rem, 5.2vw, 4.2rem);
     line-height: 1;
     letter-spacing: 0.01em;
@@ -1365,8 +1365,7 @@ body.menu-open {
 .tool__chips {
     font-size: 0.7rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     margin-top: 18px;
 }
@@ -1391,7 +1390,6 @@ body.menu-open {
 .post__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2rem, 5.4vw, 3.6rem);
     line-height: 1.04;
     letter-spacing: 0.01em;
@@ -1481,7 +1479,6 @@ body.menu-open {
 .postcard__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: 1rem;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -1498,8 +1495,7 @@ body.menu-open {
 .postcard__go {
     font-size: 0.6rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.005em;
     margin-top: auto;
     padding-top: 12px;
 }
@@ -1521,7 +1517,6 @@ body.menu-open {
 .post h2 {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(1.4rem, 3vw, 2rem);
     line-height: 1.1;
     letter-spacing: 0.01em;
@@ -1584,8 +1579,7 @@ body.menu-open {
 .post th {
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.005em;
     color: var(--black);
 }
 
@@ -1605,8 +1599,7 @@ body.menu-open {
     margin-top: 14px;
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     border-bottom: 2px solid var(--black);
     padding-bottom: 3px;
 }
@@ -1629,8 +1622,7 @@ body.menu-open {
     display: inline-block;
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     border-bottom: 2px dashed var(--gray-ghost);
     padding-bottom: 4px;
@@ -1653,8 +1645,7 @@ body.menu-open {
 .ext-shot figcaption {
     font-size: 0.68rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
     text-align: left;
     padding: 10px 14px;
@@ -1756,7 +1747,6 @@ body.menu-open {
 .contact__title {
     font-family: var(--display);
     font-weight: 400;
-    text-transform: uppercase;
     font-size: clamp(2.6rem, 8vw, 7rem);
     line-height: 1;
     margin-top: 24px;
@@ -1789,8 +1779,7 @@ body.menu-open {
 .contact__channels a {
     font-size: 0.72rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.005em;
     color: var(--gray-meta);
 }
 
