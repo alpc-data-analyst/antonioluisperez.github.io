@@ -6,7 +6,8 @@ Sitio bilingüe español e inglés. El contenido del blog y las páginas de prod
 
 ## Páginas principales
 
-- [Portfolio](https://antonioluisperez.com/): quién es Antonio, trayectoria, stack, proyectos, herramientas y contacto
+- [Consultoría de analítica digital](https://antonioluisperez.com/): servicios de medición, dashboards, data science y formación, con clientes y reseñas
+- [CV y trayectoria (recruiters)](https://antonioluisperez.com/recruiters/): quién es Antonio, trayectoria completa, stack, certificaciones y proyectos
 - [Ecommerce & Web Analyst](https://antonioluisperez.com/ecommerce-web.html): servicios de medición end-to-end, GA4, GTM web y server side, Consent Mode y Meta CAPI
 - [Data Science](https://antonioluisperez.com/data-science.html): clasificación, forecasting con RNNs y LSTMs y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
 - [Data Analyst](https://antonioluisperez.com/data-analyst.html): SQL en BigQuery, dashboards en Power BI y Looker Studio y reporting automatizado
