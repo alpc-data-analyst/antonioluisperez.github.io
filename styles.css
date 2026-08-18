@@ -631,21 +631,72 @@ body.menu-open {
 
 /* Los cuatro pasos del proceso, numerados en neon sobre la banda negra */
 .steps {
+    --steps-gap: clamp(28px, 4vw, 52px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: clamp(28px, 4vw, 52px);
+    gap: var(--steps-gap);
     margin-top: clamp(44px, 6vw, 68px);
 }
 
-.steps__num {
+/* Cada paso lleva su icono en una caja con borde, y una linea de puntos
+   los cose para que se lea como un recorrido y no como cuatro bloques
+   sueltos. La caja tapa la linea a su paso, de ahi el fondo solido. */
+.step__mark {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    border: 3px solid var(--neon);
+    /* Literal y no var(--black): dentro de la banda oscura ese token esta
+       invertido a casi blanco. */
+    background: #0a0a0a;
+}
+
+.step__ico {
+    width: 30px;
+    height: 30px;
+    fill: none;
+    stroke: var(--neon);
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.step__num {
+    position: absolute;
+    top: -11px;
+    left: -11px;
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(1.8rem, 3.4vw, 2.7rem);
-    line-height: 1.05;
-    color: var(--neon);
+    font-size: 0.86rem;
+    line-height: 1;
+    color: #0a0a0a;
+    background: var(--neon);
+    padding: 4px 7px;
+}
+
+@media (min-width: 881px) {
+    .steps > * {
+        position: relative;
+    }
+
+    .steps > *:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 33px;
+        left: 78px;
+        /* El negativo saca la linea de su celda y la lleva hasta donde
+           empieza la caja siguiente */
+        right: calc(-1 * var(--steps-gap));
+        height: 3px;
+        background: repeating-linear-gradient(90deg, var(--neon) 0 9px, transparent 9px 20px);
+        opacity: 0.4;
+    }
 }
 
 .steps h3 {
+    margin-top: 20px;
     font-size: 0.92rem;
     font-weight: 700;
     letter-spacing: 0.005em;
