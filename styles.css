@@ -680,7 +680,9 @@ body.menu-open {
     font-size: clamp(0.8rem, 1.4vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.005em;
-    color: var(--gray-meta);
+    /* Es la promesa de la web y cae sobre el mapa: con el gris claro se
+       quedaba en 2,96:1 y no habia quien la leyera. */
+    color: var(--gray-text);
 }
 
 .hero__paths-list {
