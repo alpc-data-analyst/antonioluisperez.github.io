@@ -16,12 +16,69 @@
             nav_tools: 'Herramientas',
             nav_blog: 'Blog',
             nav_contact: 'Contacto',
+            nav_services: 'Servicios',
+            nav_process: 'Proceso',
+            nav_talk: 'Hablemos →',
             nav_cv: 'CV ↓',
             nav_cv_aria: 'Descargar CV',
             nav_main_aria: 'Principal',
             lang_aria: 'Idioma',
             menu_aria: 'Menú',
-            page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga',
+            fab_aria: 'Abrir contacto',
+            blog_back: 'Volver al blog',
+            page_title: 'Consultoría de analítica digital en Málaga · Antonio Luis Pérez',
+            rec_title: 'Antonio Luis Pérez Carmona · CV y trayectoria · Data Analyst',
+
+            sv_kicker: 'Consultoría de analítica digital · Málaga y remoto',
+            counters_aria: 'Cifras',
+            cnt_webs: 'Webs medidas',
+            cnt_dash: 'Dashboards en producción',
+            cnt_audit: 'Auditorías de tracking',
+            sv_h1: 'Convierto tus datos en decisiones de negocio.',
+            sv_lead: 'Mido webs, apps y ecommerce. Convierto el comportamiento de tus usuarios en KPIs que entiende todo el equipo y en decisiones que aguantan una reunión.',
+            sv_cta1: 'Cuéntame tu caso',
+            sv_cta2: 'Ver servicios',
+            sv_rec: '¿Eres recruiter? Mi CV y trayectoria tienen su propia página.',
+            sv_rec_cta: 'Verla →',
+            sv_s_tag: '01 · Servicios',
+            sv_s_title: 'Qué puedo hacer por tus datos.',
+            sv_s1_title: 'Auditoría de medición →',
+            sv_s1_tag: 'Saber si puedes fiarte de tus datos, antes de decidir con ellos.',
+            sv_s1_text: 'Reviso tu GA4 y tu GTM evento a evento: duplicados, compras que se cuentan dos veces, consentimiento mal montado y datos personales donde no deben estar. Sales con un informe priorizado y con la desviación contra tu backend explicada.',
+            sv_s2_title: 'Implementación y tracking →',
+            sv_s2_tag: 'GA4 y GTM contando la verdad desde el primer dato.',
+            sv_s2_text: 'DataLayer a medida, GTM web y server side, Consent Mode v2, Meta CAPI y conversiones mejoradas. Validado en DebugView y documentado para que tu equipo lo mantenga sin depender de mí.',
+            sv_s3_title: 'Dashboards y reporting →',
+            sv_s3_tag: 'Informes que se actualizan solos y se abren cada lunes.',
+            sv_s3_text: 'Power BI y Looker Studio sobre SQL en BigQuery, con actualización automática. El estado en cinco segundos arriba, el detalle abajo.',
+            qe_tag: 'Antes de empezar',
+            qe_title: '¿Qué es la analítica digital?',
+            qe_lead: 'La analítica digital consiste en medir lo que hacen las personas en tu web o en tu app y convertirlo en decisiones: qué canal trae clientes y cuál solo tráfico, en qué paso del proceso de compra se cae la gente, y qué cambio ha subido las ventas y cuál no ha hecho nada.',
+            qe_h1: 'Medir',
+            qe_p1: 'Registrar cada paso importante con nombres estables y respetando el consentimiento. Si el dato entra sucio, lo demás sobra.',
+            qe_h2: 'Entender',
+            qe_p2: 'Cruzar fuentes, separar la señal del ruido y saber qué pregunta responde cada número. Un gráfico no es un hallazgo.',
+            qe_h3: 'Decidir',
+            qe_p3: 'Convertirlo en KPIs que entiende todo el equipo y en acciones concretas. Si no cambia lo que alguien hace mañana, no es analítica, es decoración.',
+            sv_s4_title: 'Formación y mentorías →',
+            sv_s4_tag: 'Tu equipo midiendo solo en unas semanas.',
+            sv_s4_text: 'Workshops de GA4 y GTM para tu equipo y mentoría 1:1 para analistas. Con vuestros datos, no con diapositivas genéricas.',
+            sv_p_tag: '02 · Proceso',
+            sv_p_title: 'Cómo trabajo.',
+            sv_p1_h: 'Diagnóstico',
+            sv_p1_p: 'Media hora de llamada y una revisión de lo que tienes montado. Gratis, y sales con un problema localizado.',
+            sv_p2_h: 'Propuesta',
+            sv_p2_p: 'Alcance, plazos y precio cerrados por escrito. Sin sorpresas ni horas infladas.',
+            sv_p3_h: 'Implementación',
+            sv_p3_p: 'Validación documentada de cada pieza. Ves el avance, no un informe al final.',
+            sv_p4_h: 'Entrega y soporte',
+            sv_p4_p: 'Documentación, vídeo de traspaso y un mes de soporte. Lo entregado queda tuyo y funcionando.',
+            sv_a_tag: '03 · Sobre mí',
+            sv_a_title: 'Quién está detrás.',
+            sv_a_lead: 'Soy Antonio Luis Pérez Carmona, Digital Analyst: mido a diario más de 1300 webs y mantengo más de 100 dashboards en producción. Por mi cuenta he construido Roometrics, analítica web sin cookies, y Analytics Copilot, una extensión de Chrome para QA de medición. Lo que vendo es lo que hago cada día.',
+            sv_a_cv: 'Trayectoria completa y CV →',
+            sv_c_tag: '04 · Contacto',
+            sv_foot_rec: 'Recruiters: CV y trayectoria',
 
             brand_role: 'Analista de datos en Málaga',
             hero_role: 'AI & Data Analyst',
@@ -32,8 +89,6 @@
             path_web: 'Ecommerce / Web Analyst',
             path_ds: 'Data Science',
             path_da: 'Data Analyst',
-            paths_client: '¿Tienes un negocio? También llevo la analítica de empresas.',
-            paths_client_cta: 'Hablemos →',
 
             clients_label: 'Ya han confiado en mí',
             clients_aria: 'Clientes',
@@ -202,9 +257,6 @@
 
             footer_cookies: 'Preferencias de cookies',
 
-            fab_aria: 'Abrir contacto',
-            blog_back: 'Volver al blog',
-
             consent_title: 'Cookies',
             consent_text: 'Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.',
             consent_accept: 'Aceptar',
@@ -227,12 +279,69 @@
             nav_tools: 'Tools',
             nav_blog: 'Blog',
             nav_contact: 'Contact',
+            nav_services: 'Services',
+            nav_process: 'Process',
+            nav_talk: "Let's talk →",
             nav_cv: 'CV ↓',
             nav_cv_aria: 'Download CV',
             nav_main_aria: 'Main',
             lang_aria: 'Language',
             menu_aria: 'Menu',
-            page_title: 'Antonio Luis Pérez Carmona · AI & Data Analyst · Málaga, Spain',
+            fab_aria: 'Open contact',
+            blog_back: 'Back to the blog',
+            page_title: 'Digital analytics consulting in Málaga · Antonio Luis Pérez',
+            rec_title: 'Antonio Luis Pérez Carmona · CV & career · Data Analyst',
+
+            sv_kicker: 'Digital analytics consulting · Málaga & remote',
+            counters_aria: 'Numbers',
+            cnt_webs: 'Websites measured',
+            cnt_dash: 'Dashboards in production',
+            cnt_audit: 'Tracking audits',
+            sv_h1: 'I turn your data into business decisions.',
+            sv_lead: 'I measure websites, apps and ecommerce. I turn how your users behave into KPIs the whole team understands and decisions that hold up in a meeting.',
+            sv_cta1: 'Tell me your case',
+            sv_cta2: 'See services',
+            sv_rec: 'Recruiter? My CV and career have their own page.',
+            sv_rec_cta: 'View it →',
+            sv_s_tag: '01 · Services',
+            sv_s_title: 'What I can do for your data.',
+            sv_s1_title: 'Measurement audit →',
+            sv_s1_tag: 'Know whether you can trust your data before deciding with it.',
+            sv_s1_text: 'I go through your GA4 and GTM event by event: duplicates, purchases counted twice, consent set up backwards and personal data where it should not be. You get a prioritised report and the gap against your backend explained.',
+            sv_s2_title: 'Implementation & tracking →',
+            sv_s2_tag: 'GA4 and GTM telling the truth from the first data point.',
+            sv_s2_text: 'Custom DataLayer, GTM on web and server side, Consent Mode v2, Meta CAPI and enhanced conversions. Validated in DebugView and documented so your team can maintain it without me.',
+            sv_s3_title: 'Dashboards & reporting →',
+            sv_s3_tag: 'Reports that update themselves and get opened every Monday.',
+            sv_s3_text: 'Power BI and Looker Studio over SQL in BigQuery, refreshed automatically. Status in five seconds up top, detail below.',
+            qe_tag: 'First things first',
+            qe_title: 'What is digital analytics?',
+            qe_lead: 'Digital analytics means measuring what people do on your site or app and turning it into decisions: which channel brings customers and which only brings traffic, where in the checkout people drop off, and which change lifted sales and which did nothing.',
+            qe_h1: 'Measure',
+            qe_p1: 'Record every step that matters with stable names and respecting consent. If the data comes in dirty, the rest is pointless.',
+            qe_h2: 'Understand',
+            qe_p2: 'Cross sources, separate signal from noise and know which question each number answers. A chart is not a finding.',
+            qe_h3: 'Decide',
+            qe_p3: 'Turn it into KPIs the whole team understands and into concrete actions. If it does not change what someone does tomorrow, it is decoration, not analytics.',
+            sv_s4_title: 'Training & mentoring →',
+            sv_s4_tag: 'Your team measuring on its own within weeks.',
+            sv_s4_text: 'GA4 and GTM workshops for your team and 1:1 mentoring for analysts. Built on your data, not on generic slides.',
+            sv_p_tag: '02 · Process',
+            sv_p_title: 'How I work.',
+            sv_p1_h: 'Diagnosis',
+            sv_p1_p: 'Half an hour on a call and a review of your setup. Free, and you leave with one problem identified.',
+            sv_p2_h: 'Proposal',
+            sv_p2_p: 'Scope, timeline and a fixed price in writing. No surprises, no padded hours.',
+            sv_p3_h: 'Implementation',
+            sv_p3_p: 'Documented validation of every piece. You see progress, not a report at the end.',
+            sv_p4_h: 'Delivery & support',
+            sv_p4_p: 'Documentation, a handover video and one month of support. What I deliver stays yours and working.',
+            sv_a_tag: '03 · About',
+            sv_a_title: 'Who is behind this.',
+            sv_a_lead: 'I am Antonio Luis Pérez Carmona, Digital Analyst: I measure 1300+ websites daily and maintain 100+ dashboards in production. On my own I built Roometrics, cookieless web analytics, and Analytics Copilot, a Chrome extension for measurement QA. What I sell is what I do every day.',
+            sv_a_cv: 'Full career & CV →',
+            sv_c_tag: '04 · Contact',
+            sv_foot_rec: 'Recruiters: CV & career',
 
             brand_role: 'Data analyst in Málaga',
             hero_role: 'AI & Data Analyst',
@@ -243,8 +352,6 @@
             path_web: 'Ecommerce / Web Analyst',
             path_ds: 'Data Science',
             path_da: 'Data Analyst',
-            paths_client: 'Running a business? I also handle analytics for companies.',
-            paths_client_cta: "Let's talk →",
 
             clients_label: 'They already trust me',
             clients_aria: 'Clients',
@@ -412,9 +519,6 @@
             wa_href: 'https://wa.me/34601427159?text=Hi%20Antonio%20Luis%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20know%20more.',
 
             footer_cookies: 'Cookie preferences',
-
-            fab_aria: 'Open contact',
-            blog_back: 'Back to the blog',
 
             consent_title: 'Cookies',
             consent_text: 'Alright, the same old song: cookies and consent. Sorry, I am a data analyst, a good one, and I need everything measured and under control.',
@@ -673,80 +777,6 @@
         else window.addEventListener('resize', medir, { passive: true });
     };
 
-    /* ---------- Burbuja de contacto ---------- */
-    // Se inyecta desde aqui y no en cada HTML porque son trece paginas y el
-    // mismo bloque repetido trece veces se desincroniza a la primera.
-    // Ofrece los tres canales en vez de elegir uno: cada uno mide por separado,
-    // asi dentro de unas semanas los datos diran cual sobra.
-    const initFab = () => {
-        if (document.getElementById('fab')) return;
-
-        const canales = [
-            { id: 'whatsapp', txt: 'WhatsApp', href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.', i18n: 'wa_href', fuera: true },
-            { id: 'linkedin', txt: 'LinkedIn', href: 'https://www.linkedin.com/in/antonio-luis-perez-carmona/', fuera: true },
-            { id: 'email', txt: 'Email', href: 'mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio' }
-        ];
-
-        const fab = document.createElement('div');
-        fab.className = 'fab';
-        fab.id = 'fab';
-
-        const menu = document.createElement('div');
-        menu.className = 'fab__menu';
-        menu.id = 'fab-menu';
-        menu.hidden = true;
-
-        canales.forEach((c) => {
-            const a = document.createElement('a');
-            a.className = 'fab__item';
-            a.href = c.href;
-            a.textContent = c.txt;
-            if (c.fuera) { a.target = '_blank'; a.rel = 'noopener'; }
-            if (c.i18n) a.setAttribute('data-i18n-attr', 'href:' + c.i18n);
-            a.setAttribute('data-track', 'contact_intent_click');
-            a.setAttribute('data-track-location', 'fab_' + c.id);
-            menu.appendChild(a);
-        });
-
-        const btn = document.createElement('button');
-        btn.className = 'fab__btn';
-        btn.id = 'fab-btn';
-        btn.type = 'button';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-controls', 'fab-menu');
-        btn.setAttribute('aria-label', 'Contacto');
-        btn.setAttribute('data-i18n-attr', 'aria-label:fab_aria');
-        btn.innerHTML =
-            '<svg class="fab__ico fab__ico--open" viewBox="0 0 24 24" aria-hidden="true">' +
-            '<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.8-.4L3 21l1.6-4.7A8.2 8.2 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
-            '<svg class="fab__ico fab__ico--close" viewBox="0 0 24 24" aria-hidden="true">' +
-            '<path d="M6 6l12 12M18 6L6 18"/></svg>';
-
-        fab.appendChild(menu);
-        fab.appendChild(btn);
-        document.body.appendChild(fab);
-
-        const abrir = (si) => {
-            menu.hidden = !si;
-            fab.classList.toggle('is-open', si);
-            btn.setAttribute('aria-expanded', String(si));
-        };
-
-        btn.addEventListener('click', () => {
-            const abriendo = menu.hidden;
-            abrir(abriendo);
-            if (abriendo) track('contact_fab_opened');
-        });
-
-        // Se cierra al pulsar fuera o con Escape, como cualquier menu
-        document.addEventListener('click', (e) => {
-            if (!fab.contains(e.target)) abrir(false);
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !menu.hidden) { abrir(false); btn.focus(); }
-        });
-    };
-
     /* ---------- Aparicion al entrar en pantalla ---------- */
     const initReveal = () => {
         const els = document.querySelectorAll('.reveal');
@@ -855,6 +885,122 @@
         }, 6500);
     };
 
+    /* ---------- Contadores ---------- */
+    // Las cifras suben desde cero al entrar en pantalla, una sola vez.
+    // El separador de miles se pone en el idioma activo, asi que 1300
+    // se lee 1.300 en español y 1,300 en ingles.
+    const initCounters = () => {
+        const nums = document.querySelectorAll('[data-count]');
+        if (!nums.length) return;
+
+        const formatear = (n) => n.toLocaleString(document.documentElement.lang || 'es');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const contar = (el) => {
+            const fin = parseInt(el.getAttribute('data-count'), 10) || 0;
+            if (reduce) { el.textContent = formatear(fin); return; }
+
+            const DUR = 1500;
+            let t0 = null;
+            const paso = (t) => {
+                if (!t0) t0 = t;
+                let p = Math.min(1, (t - t0) / DUR);
+                p = 1 - Math.pow(1 - p, 3);   // frena al final, como un cuentakilometros
+                el.textContent = formatear(Math.round(fin * p));
+                if (p < 1) requestAnimationFrame(paso);
+            };
+            requestAnimationFrame(paso);
+        };
+
+        if (!('IntersectionObserver' in window)) {
+            nums.forEach(contar);
+            return;
+        }
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (!e.isIntersecting) return;
+                contar(e.target);
+                io.unobserve(e.target);
+            });
+        }, { threshold: 0.4 });
+        nums.forEach((el) => io.observe(el));
+    };
+
+    /* ---------- Burbuja de contacto ---------- */
+    // Se inyecta desde aqui y no en cada HTML porque son trece paginas y el
+    // mismo bloque repetido trece veces se desincroniza a la primera.
+    // Ofrece los tres canales en vez de elegir uno: cada uno mide por separado,
+    // asi dentro de unas semanas los datos diran cual sobra.
+    const initFab = () => {
+        if (document.getElementById('fab')) return;
+
+        const canales = [
+            { id: 'whatsapp', txt: 'WhatsApp', href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.', i18n: 'wa_href', fuera: true },
+            { id: 'linkedin', txt: 'LinkedIn', href: 'https://www.linkedin.com/in/antonio-luis-perez-carmona/', fuera: true },
+            { id: 'email', txt: 'Email', href: 'mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio' }
+        ];
+
+        const fab = document.createElement('div');
+        fab.className = 'fab';
+        fab.id = 'fab';
+
+        const menu = document.createElement('div');
+        menu.className = 'fab__menu';
+        menu.id = 'fab-menu';
+        menu.hidden = true;
+
+        canales.forEach((c) => {
+            const a = document.createElement('a');
+            a.className = 'fab__item';
+            a.href = c.href;
+            a.textContent = c.txt;
+            if (c.fuera) { a.target = '_blank'; a.rel = 'noopener'; }
+            if (c.i18n) a.setAttribute('data-i18n-attr', 'href:' + c.i18n);
+            a.setAttribute('data-track', 'contact_intent_click');
+            a.setAttribute('data-track-location', 'fab_' + c.id);
+            menu.appendChild(a);
+        });
+
+        const btn = document.createElement('button');
+        btn.className = 'fab__btn';
+        btn.id = 'fab-btn';
+        btn.type = 'button';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', 'fab-menu');
+        btn.setAttribute('aria-label', 'Contacto');
+        btn.setAttribute('data-i18n-attr', 'aria-label:fab_aria');
+        btn.innerHTML =
+            '<svg class="fab__ico fab__ico--open" viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.8-.4L3 21l1.6-4.7A8.2 8.2 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
+            '<svg class="fab__ico fab__ico--close" viewBox="0 0 24 24" aria-hidden="true">' +
+            '<path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+        fab.appendChild(menu);
+        fab.appendChild(btn);
+        document.body.appendChild(fab);
+
+        const abrir = (si) => {
+            menu.hidden = !si;
+            fab.classList.toggle('is-open', si);
+            btn.setAttribute('aria-expanded', String(si));
+        };
+
+        btn.addEventListener('click', () => {
+            const abriendo = menu.hidden;
+            abrir(abriendo);
+            if (abriendo) track('contact_fab_opened');
+        });
+
+        // Se cierra al pulsar fuera o con Escape, como cualquier menu
+        document.addEventListener('click', (e) => {
+            if (!fab.contains(e.target)) abrir(false);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.hidden) { abrir(false); btn.focus(); }
+        });
+    };
+
     /* ---------- Menu movil ---------- */
     // Sandwich + panel lateral. Solo opera en movil: en escritorio el burger
     // esta oculto por CSS y no hay forma de abrirlo.
@@ -922,6 +1068,7 @@
         initTracking();
         initConsent();
         initReveal();
+        initCounters();
         initClients();
         initQuotes();
 

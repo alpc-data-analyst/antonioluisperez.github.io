@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://antonioluisperez.com/</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://antonioluisperez.com/recruiters/</loc>
+    <lastmod>2026-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://antonioluisperez.com/analitica-web/</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>
-    <loc>https://antonioluisperez.com/ecommerce-web.html</loc>
+    <loc>https://antonioluisperez.com/data-science/</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>
-    <loc>https://antonioluisperez.com/data-science.html</loc>
-    <lastmod>2026-08-12</lastmod>
-  </url>
-  <url>
-    <loc>https://antonioluisperez.com/data-analyst.html</loc>
+    <loc>https://antonioluisperez.com/business-intelligence/</loc>
     <lastmod>2026-08-12</lastmod>
   </url>
   <url>

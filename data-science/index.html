@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es" data-i18n-title="lpds_title">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Data Science & Machine Learning · Antonio Luis Pérez</title>
+    <meta name="description" content="Data scientist en Málaga: clasificación, forecasting con RNNs y LSTMs y explicabilidad. Caso real de fraude sobre 590K transacciones. Antonio Luis Pérez Carmona." />
+    <meta name="author" content="Antonio Luis Pérez Carmona" />
+    <link rel="canonical" href="https://antonioluisperez.com/data-science/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Antonio Luis Pérez" />
+    <meta property="og:url" content="https://antonioluisperez.com/data-science/" />
+    <meta property="og:title" content="Data Science & Machine Learning · Antonio Luis Pérez" />
+    <meta property="og:description" content="Modelos con métricas honestas. Del EDA al umbral de decisión, pensando en el coste real de cada error." />
+    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://antonioluisperez.com/data-science/",
+        "url": "https://antonioluisperez.com/data-science/",
+        "name": "Data Science & Machine Learning · Antonio Luis Pérez Carmona",
+        "inLanguage": ["es", "en"],
+        "isPartOf": { "@id": "https://antonioluisperez.com/#website" },
+        "about": { "@id": "https://antonioluisperez.com/#person" }
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script>
+    // Consent Mode v2. Ver el comentario en index.html.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+    });
+    gtag('set', 'url_passthrough', true);
+    (function () {
+        var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
+        if (m && decodeURIComponent(m[1]) === 'granted') {
+            gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+                analytics_storage: 'granted'
+            });
+        }
+    })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N23PS4MN');</script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>document.documentElement.classList.add('has-js');</script>
+</head>
+
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23PS4MN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <a class="skip-link" href="#home" data-i18n="skip_link">Saltar al contenido</a>
+
+    <div class="consent" id="consent" role="dialog" aria-modal="true" aria-labelledby="consent-title" tabindex="-1" hidden>
+        <div class="consent__box">
+            <div class="lang-switch consent__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <div class="consent__actions">
+                <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
+                <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="topbar">
+        <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../index.html" class="topbar__brand">Antonio Luis Pérez</a>
+
+        <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+            <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
+            <a href="../index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a>
+            <a href="../blog/" data-i18n="nav_blog">Blog</a>
+            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="topbar__aside">
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <a href="../index.html#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="lp_ds_topbar">Hablemos →</a>
+        </div>
+    </header>
+
+    <div class="drawer" id="mobile-menu" hidden>
+        <div class="drawer__panel">
+            <div class="lang-switch drawer__lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang_aria">
+                <button class="lang-switch__btn is-active" type="button" data-lang="es" aria-pressed="true">ES</button>
+                <span aria-hidden="true">/</span>
+                <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
+                <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
+                <a href="../index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a>
+                <a href="../blog/" data-i18n="nav_blog">Blog</a>
+                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            </nav>
+        </div>
+    </div>
+
+    <main id="home">
+        <section class="section lp-hero">
+            <p class="reveal section__label" data-i18n="lpds_tag">Data Science</p>
+            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpds_h1">Modelos con métricas honestas.</span></h1>
+            <p class="reveal section__lead" data-i18n="lpds_lead">Machine learning aplicado a problemas de negocio: clasificación, forecasting y explicabilidad. Empiezo por el modelo más simple que pueda funcionar y solo complico las cosas cuando los números lo piden.</p>
+            <p class="reveal hero__cta">
+                <a href="../index.html#contact" data-i18n="hero_cta_contact" data-track="contact_intent_click" data-track-location="lp_ds_hero">Hablemos</a>
+                <a href="../thankyou.html" data-i18n="hero_cta_cv" data-track="cv_intent_click" data-track-location="lp_ds_hero">Descargar CV</a>
+            </p>
+        </section>
+
+        <section id="solve" class="section">
+            <p class="reveal section__label" data-i18n="lp_solve_tag">Qué resuelvo</p>
+            <h2 class="reveal section__title"><span class="mark-scroll" data-i18n="lpds_solve_title">En qué te puedo ayudar.</span></h2>
+
+            <div class="threecol">
+                <div class="reveal threecol__col" style="--d:0ms">
+                    <h3 data-i18n="lpds_s1_h">Clasificación y predicción</h3>
+                    <p data-i18n="lpds_s1_p">Modelos supervisados end-to-end: EDA, feature engineering, entrenamiento y ajuste del umbral de decisión pensando en el coste real de cada error.</p>
+                </div>
+                <div class="reveal threecol__col" style="--d:90ms">
+                    <h3 data-i18n="lpds_s2_h">Series temporales</h3>
+                    <p data-i18n="lpds_s2_p">Forecasting con RNNs y LSTMs en PyTorch para demanda, ingresos o tráfico. Siempre con un baseline simple delante, para saber si la red gana de verdad.</p>
+                </div>
+                <div class="reveal threecol__col" style="--d:180ms">
+                    <h3 data-i18n="lpds_s3_h">Explicabilidad</h3>
+                    <p data-i18n="lpds_s3_p">Explainable AI para que el modelo no sea una caja negra: qué variable mueve cada predicción y cómo contárselo a quien toma la decisión.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof" class="section">
+            <p class="reveal section__label" data-i18n="lp_proof_tag">La prueba</p>
+            <h2 class="reveal section__title"><span class="mark-scroll" data-i18n="lpds_proof_title">El caso del fraude.</span></h2>
+            <p class="reveal section__lead" data-i18n="lpds_proof_text">Pipeline completo sobre el dataset IEEE-CIS: 590K transacciones reales y 434 variables alimentando un Gradient Boosting de 500 árboles. El hallazgo no fue el modelo, fue el umbral: bajándolo de 0.5 a 0.1 se captura el 60% del fraude molestando solo al 0.46% de usuarios legítimos.</p>
+
+            <dl class="numbers">
+                <div class="numbers__item">
+                    <dd>590K</dd>
+                    <dt data-i18n="proj_fraud_m1">transacciones</dt>
+                </div>
+                <div class="numbers__item">
+                    <dd>434</dd>
+                    <dt data-i18n="proj_fraud_m2">variables</dt>
+                </div>
+                <div class="numbers__item">
+                    <dd>0.92</dd>
+                    <dt>ROC-AUC</dt>
+                </div>
+                <div class="numbers__item">
+                    <dd>60%</dd>
+                    <dt data-i18n="proj_fraud_m4">fraude detectado</dt>
+                </div>
+            </dl>
+
+            <p class="reveal work__links">
+                <a href="https://github.com/alpc-data-analyst/fraud-detection-ieee-cis" target="_blank" rel="noopener"><span data-i18n="proj_fraud_repo">Ver el código en GitHub</span> ↗</a>
+            </p>
+
+            <div class="lp-quotes">
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_emi">«Técnicamente es muy bueno en analítica web y Google Tag Manager: entendió y ejecutó la tarea muy rápido. Además me entregó un informe del trabajo y de las mejoras en la analítica de mi cliente.»</blockquote>
+                    <figcaption class="quote__by">Emisuite</figcaption>
+                </figure>
+                <figure class="quote">
+                    <blockquote class="quote__text" data-i18n="q_otm">«Antonio es increíble, un auténtico experto. Lo recomiendo totalmente.»</blockquote>
+                    <figcaption class="quote__by">Online Tax Man</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="lp-stack" class="section">
+            <p class="reveal section__label" data-i18n="lp_stack_tag">El stack para esto</p>
+            <p class="reveal stack__tools">Python · Pandas · NumPy · Scikit-learn · PyTorch · SQL · BigQuery · Azure ML · Tableau</p>
+        </section>
+
+        <section id="contact" class="section section--contact">
+            <h2 class="reveal contact__title"><span class="mark-scroll" data-i18n="lpds_cta_title">¿Tienes datos y una pregunta?</span></h2>
+            <p class="reveal section__lead" style="margin-inline:auto" data-i18n="lpds_cta_text">Tráeme el problema. No hace falta que el dataset venga limpio, de eso me encargo yo.</p>
+
+            <a class="reveal contact__email" href="mailto:alpcmalaga@gmail.com?subject=Proyecto%20de%20Data%20Science" data-track="contact_intent_click" data-track-location="lp_ds_contact">alpcmalaga@gmail.com</a>
+
+            <p class="reveal contact__channels">
+                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="lp_ds_whatsapp">WhatsApp ↗</a>
+                <a href="../index.html" data-i18n="lp_back">Volver al portfolio</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
