@@ -486,6 +486,106 @@ body.menu-open {
     border-color: var(--neon);
 }
 
+/* -------- Mapa de pings del hero ---------------------------------- */
+/* Mapamundi latiendo detrás del titular. Va DENTRO del hero, en
+   position absolute (nunca fixed: iOS lo suelta un frame en el
+   rubber-band), y el hero aisla su contexto de apilado para que el
+   canvas no se cuele por debajo del fondo del body. */
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-map {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.38;
+}
+
+.hero-map canvas {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max(112%, 1150px);
+    height: auto;
+}
+
+/* Degradados que funden el mapa por los bordes: el texto siempre gana */
+.hero-map::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(58% 46% at 50% 42%, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 72%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 26%, rgba(255, 255, 255, 0) 68%, rgba(255, 255, 255, 0.9));
+}
+
+@media (max-width: 760px) {
+    .hero-map {
+        opacity: 0.3;
+    }
+
+    .hero-map canvas {
+        width: 1000px;
+    }
+}
+
+/* -------- Contadores del hero -------------------------------------- */
+.counters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px clamp(28px, 5vw, 64px);
+    margin-top: clamp(26px, 4vh, 44px);
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.counter__num {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    /* Cifras de ancho fijo: el número no baila mientras cuenta */
+    font-variant-numeric: tabular-nums;
+    color: var(--neon-edge);
+}
+
+.counter__lbl {
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gray-meta);
+    text-align: center;
+}
+
+@media (max-width: 560px) {
+    .counters {
+        gap: 12px 26px;
+    }
+
+    .counter__lbl {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+    }
+}
+
 /* -------- Home de servicios -------------------------------------- */
 /* El claim sustituye al nombre gigante: promesa en Anton, mas corta de
    cuerpo porque lleva mas caracteres que un nombre propio. */
@@ -1801,6 +1901,22 @@ body.menu-open {
     .hero__paths-client {
         margin-top: clamp(12px, 2vh, 20px);
         font-size: 0.8rem;
+    }
+
+    /* Con poca altura los contadores se aprietan para no expulsar a los
+       logos de clientes del primer pantallazo */
+    .counters {
+        margin-top: clamp(14px, 2.2vh, 24px);
+        gap: 8px clamp(22px, 4vw, 44px);
+    }
+
+    .counter__num {
+        font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+    }
+
+    .counter__lbl {
+        font-size: 0.58rem;
+        letter-spacing: 0.12em;
     }
 
     .clients {

@@ -206,6 +206,8 @@
 
     <main id="home">
         <section class="hero">
+            <div class="hero-map" aria-hidden="true"><canvas id="pingmap"></canvas></div>
+
             <p class="section__label" data-i18n="sv_kicker">Consultoría de analítica digital · Málaga y remoto</p>
 
             <h1 class="hero__claim" data-i18n="sv_h1">Convierto tus datos en decisiones.</h1>
@@ -224,6 +226,21 @@
                     <span data-i18n="sv_rec">¿Eres recruiter? Mi CV y trayectoria tienen su propia página.</span>
                     <a href="recruiters/" data-path="recruiters" data-i18n="sv_rec_cta">Verla →</a>
                 </p>
+            </div>
+
+            <div class="counters" aria-label="Cifras" data-i18n-attr="aria-label:counters_aria">
+                <div class="counter">
+                    <span class="counter__num"><span data-count="1300">0</span>+</span>
+                    <span class="counter__lbl" data-i18n="cnt_webs">Webs medidas</span>
+                </div>
+                <div class="counter">
+                    <span class="counter__num"><span data-count="100">0</span>+</span>
+                    <span class="counter__lbl" data-i18n="cnt_dash">Dashboards en producción</span>
+                </div>
+                <div class="counter">
+                    <span class="counter__num"><span data-count="20">0</span>+</span>
+                    <span class="counter__lbl" data-i18n="cnt_audit">Auditorías de tracking</span>
+                </div>
             </div>
 
             <section id="clients" class="clients" aria-label="Clientes" data-i18n-attr="aria-label:clients_aria">
@@ -372,5 +389,7 @@
     </footer>
 
     <script src="script.js" defer></script>
+    <!-- Solo la home: 60 KB de trazados del mapamundi que el resto no necesita -->
+    <script src="worldmap.js" defer></script>
 </body>
 </html>

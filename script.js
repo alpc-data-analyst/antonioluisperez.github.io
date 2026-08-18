@@ -28,6 +28,10 @@
             rec_title: 'Antonio Luis Pérez Carmona · CV y trayectoria · Data Analyst',
 
             sv_kicker: 'Consultoría de analítica digital · Málaga y remoto',
+            counters_aria: 'Cifras',
+            cnt_webs: 'Webs medidas',
+            cnt_dash: 'Dashboards en producción',
+            cnt_audit: 'Auditorías de tracking',
             sv_h1: 'Convierto tus datos en decisiones.',
             sv_lead: 'Medición bien montada, dashboards que se abren solos y modelos cuando hacen falta.',
             sv_cta1: 'Cuéntame tu caso',
@@ -276,6 +280,10 @@
             rec_title: 'Antonio Luis Pérez Carmona · CV & career · Data Analyst',
 
             sv_kicker: 'Digital analytics consulting · Málaga & remote',
+            counters_aria: 'Numbers',
+            cnt_webs: 'Websites measured',
+            cnt_dash: 'Dashboards in production',
+            cnt_audit: 'Tracking audits',
             sv_h1: 'I turn your data into decisions.',
             sv_lead: 'Measurement done right, dashboards that get opened, and models when they earn their place.',
             sv_cta1: 'Tell me your case',
@@ -855,6 +863,48 @@
         }, 6500);
     };
 
+    /* ---------- Contadores ---------- */
+    // Las cifras suben desde cero al entrar en pantalla, una sola vez.
+    // El separador de miles se pone en el idioma activo, asi que 1300
+    // se lee 1.300 en español y 1,300 en ingles.
+    const initCounters = () => {
+        const nums = document.querySelectorAll('[data-count]');
+        if (!nums.length) return;
+
+        const formatear = (n) => n.toLocaleString(document.documentElement.lang || 'es');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const contar = (el) => {
+            const fin = parseInt(el.getAttribute('data-count'), 10) || 0;
+            if (reduce) { el.textContent = formatear(fin); return; }
+
+            const DUR = 1500;
+            let t0 = null;
+            const paso = (t) => {
+                if (!t0) t0 = t;
+                let p = Math.min(1, (t - t0) / DUR);
+                p = 1 - Math.pow(1 - p, 3);   // frena al final, como un cuentakilometros
+                el.textContent = formatear(Math.round(fin * p));
+                if (p < 1) requestAnimationFrame(paso);
+            };
+            requestAnimationFrame(paso);
+        };
+
+        if (!('IntersectionObserver' in window)) {
+            nums.forEach(contar);
+            return;
+        }
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (!e.isIntersecting) return;
+                contar(e.target);
+                io.unobserve(e.target);
+            });
+        }, { threshold: 0.4 });
+        nums.forEach((el) => io.observe(el));
+    };
+
     /* ---------- Menu movil ---------- */
     // Sandwich + panel lateral. Solo opera en movil: en escritorio el burger
     // esta oculto por CSS y no hay forma de abrirlo.
@@ -919,6 +969,7 @@
         initTracking();
         initConsent();
         initReveal();
+        initCounters();
         initClients();
         initQuotes();
 
