@@ -14,10 +14,14 @@
     --gray-ghost: #d9d9d9;
 
     /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
-       Sobre blanco el #2cff05 no llega a contraste como texto suelto, asi que
-       cuando toca texto va con sombra dura negra detras (efecto de mala
-       registracion de imprenta) o directamente como fondo con texto negro. */
+       Tres tonos con un papel cada uno, porque el fosforito puro sobre blanco
+       no se lee como texto (1,36:1):
+         --neon       fondos, barras y todo lo que no haya que leer
+         --neon-mid   texto grande, como los contadores (2,8:1, legible a 38px)
+         --neon-edge  texto pequeño, enlaces y hover (4,36:1) */
     --neon: #2cff05;
+    --neon-mid: #1fb300;
+    --neon-edge: #1f8c05;
 
     /* Una sola familia, dos papeles: los titulares en el peso mas gordo
        y el texto en regular. Montserrat variable da los dos sin cargar
@@ -265,8 +269,7 @@ body.consent-open {
 }
 
 .footer__cookies:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 /* -------- Top bar ---------------------------------------------- */
@@ -312,8 +315,7 @@ body.consent-open {
 
 .topbar__nav a:hover,
 .topbar__cv:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .topbar__cv {
@@ -321,8 +323,7 @@ body.consent-open {
 }
 
 .topbar__cv:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .topbar__aside {
@@ -417,8 +418,7 @@ body.consent-open {
 
 .drawer__nav a:active,
 .drawer__nav a:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 body.menu-open {
@@ -450,8 +450,7 @@ body.menu-open {
 }
 
 .lang-switch__btn:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .lang-switch__btn.is-active {
@@ -493,22 +492,8 @@ body.menu-open {
     font-size: clamp(1.3rem, 3.6vw, 2.9rem);
     line-height: 1.1;
     letter-spacing: 0.005em;
-    color: var(--neon);
-    position: relative;
-    display: inline-block;
-    padding: 0 10px;
+    color: var(--neon-mid);
     margin-top: clamp(18px, 3.6vh, 44px);
-}
-
-.hero__role::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.06em;
-    height: 0.5em;
-    background: var(--black);
-    z-index: -1;
 }
 
 .hero__owner {
@@ -605,23 +590,7 @@ body.menu-open {
     letter-spacing: 0.01em;
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
     font-variant-numeric: tabular-nums;
-    color: var(--neon);
-    position: relative;
-    display: inline-block;
-    padding: 0 8px;
-}
-
-/* Barra negra detras del numero, como un subrayado grueso: el fosforito
-   solo no se lee sobre blanco y aqui se apoya en el negro. */
-.counter__num::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.02em;
-    height: 0.52em;
-    background: var(--black);
-    z-index: -1;
+    color: var(--neon-mid);
 }
 
 .counter__lbl {
@@ -1296,12 +1265,9 @@ body.menu-open {
     color: var(--gray-text);
 }
 
-/* La que aun no esta ganada: chip de neon, que a 0.6rem el verde como
-   color de texto no hay quien lo lea */
+/* La que aun no esta ganada */
 .cert__name--soon {
-    background: var(--neon);
-    color: var(--black);
-    padding: 2px 6px;
+    color: var(--neon-edge);
 }
 
 /* -------- Projects ------------------------------------------------------- */
@@ -1376,8 +1342,7 @@ body.menu-open {
 }
 
 .work__links a:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 /* -------- Tools ------------------------------------------------------------ */
@@ -1397,8 +1362,7 @@ body.menu-open {
 }
 
 .tool__title a:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 /* Cada servicio abre con una barra de neon: el verde entra como elemento
@@ -1585,8 +1549,7 @@ body.menu-open {
 }
 
 .postcard:hover .postcard__go {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .post__hero {
@@ -1870,8 +1833,7 @@ body.menu-open {
 }
 
 .contact__channels a:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .contact__note {
@@ -2279,8 +2241,7 @@ body.menu-open {
 }
 
 .post__back:hover {
-    color: var(--black);
-    background: var(--neon);
+    color: var(--neon-edge);
 }
 
 .post__back:hover::before {
