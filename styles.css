@@ -494,8 +494,21 @@ body.menu-open {
     line-height: 1.1;
     letter-spacing: 0.005em;
     color: var(--neon);
-    text-shadow: 2px 2px 0 var(--black);
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
     margin-top: clamp(18px, 3.6vh, 44px);
+}
+
+.hero__role::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.06em;
+    height: 0.5em;
+    background: var(--black);
+    z-index: -1;
 }
 
 .hero__owner {
@@ -593,9 +606,22 @@ body.menu-open {
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
     font-variant-numeric: tabular-nums;
     color: var(--neon);
-    /* Sombra dura negra: el fosforito solo no se lee sobre blanco, y de paso
-       queda el desajuste de tinta de un cartel serigrafiado. */
-    text-shadow: 2px 2px 0 var(--black);
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+/* Barra negra detras del numero, como un subrayado grueso: el fosforito
+   solo no se lee sobre blanco y aqui se apoya en el negro. */
+.counter__num::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.02em;
+    height: 0.52em;
+    background: var(--black);
+    z-index: -1;
 }
 
 .counter__lbl {
