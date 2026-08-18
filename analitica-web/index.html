@@ -23,13 +23,60 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": "https://antonioluisperez.com/analitica-web/",
-        "url": "https://antonioluisperez.com/analitica-web/",
-        "name": "Ecommerce & Web Analyst · Antonio Luis Pérez Carmona",
-        "inLanguage": ["es", "en"],
-        "isPartOf": { "@id": "https://antonioluisperez.com/#website" },
-        "about": { "@id": "https://antonioluisperez.com/#person" }
+        "@graph": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://antonioluisperez.com/analitica-web/",
+                "url": "https://antonioluisperez.com/analitica-web/",
+                "name": "Ecommerce & Web Analyst · Antonio Luis Pérez Carmona",
+                "inLanguage": [
+                    "es",
+                    "en"
+                ],
+                "isPartOf": {
+                    "@id": "https://antonioluisperez.com/#website"
+                },
+                "about": {
+                    "@id": "https://antonioluisperez.com/#person"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://antonioluisperez.com/analitica-web/#service",
+                "name": "Analítica web y medición",
+                "serviceType": "Analítica web",
+                "description": "Auditoría e implementación de medición con GA4 y Google Tag Manager en web y server side, DataLayer a medida, Consent Mode v2, Meta CAPI y conversiones mejoradas.",
+                "url": "https://antonioluisperez.com/analitica-web/",
+                "provider": {
+                    "@id": "https://antonioluisperez.com/#person"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "España"
+                },
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://antonioluisperez.com/#contact"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "https://antonioluisperez.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Analítica web y medición"
+                    }
+                ]
+            }
+        ]
     }
     </script>
 
@@ -137,9 +184,9 @@
 
     <main id="home">
         <section class="section lp-hero">
-            <p class="reveal section__label" data-i18n="lpw_tag">Ecommerce / Web Analyst</p>
-            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpw_h1">Tu web vende. Tus datos deberían contarlo.</span></h1>
-            <p class="reveal section__lead" data-i18n="lpw_lead">Medición end-to-end para ecommerce y webs de reserva: GA4, Google Tag Manager en web y server side, DataLayer a medida y toda la parte de privacidad que nadie quiere tocar. Si el dato entra limpio, todo lo demás cuesta la mitad.</p>
+            <p class="reveal section__label" data-i18n="lpw_tag">Analítica web y medición</p>
+            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpw_h1">Analítica web que cuenta la verdad.</span></h1>
+            <p class="reveal section__lead" data-i18n="lpw_lead">Tu web vende y tus datos deberían contarlo. Medición end-to-end para ecommerce y webs de servicios: GA4, Google Tag Manager en web y server side, DataLayer a medida y la parte de privacidad que nadie quiere tocar.</p>
             <p class="reveal hero__cta">
                 <a href="../index.html#contact" data-i18n="hero_cta_contact" data-track="contact_intent_click" data-track-location="lp_web_hero">Hablemos</a>
                 <a href="../thankyou.html" data-i18n="hero_cta_cv" data-track="cv_intent_click" data-track-location="lp_web_hero">Descargar CV</a>
@@ -173,7 +220,7 @@
             <dl class="numbers">
                 <div class="numbers__item">
                     <dd>1300+</dd>
-                    <dt data-i18n="lpw_n1">webs de hotel medidas</dt>
+                    <dt data-i18n="lpw_n1">webs medidas</dt>
                 </div>
                 <div class="numbers__item">
                     <dd>100+</dd>

@@ -2055,6 +2055,43 @@ body.menu-open {
     color: var(--neon);
 }
 
+/* -------- Seguir leyendo ---------------------------------------- */
+/* Enlaza cada articulo con los dos mas cercanos: reparte autoridad entre
+   ellos y le da al lector el siguiente paso sin volver al listado. */
+.post__more {
+    border-top: 3px solid var(--black);
+    margin-top: clamp(44px, 7vw, 64px);
+    padding-top: 22px;
+}
+
+.post__more-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gray-meta);
+}
+
+.post__more ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.post__more li {
+    margin-top: 10px;
+}
+
+.post__more a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--neon);
+}
+
+.post__more a:hover {
+    background: var(--neon);
+}
+
 /* -------- Burbuja de contacto ---------------------------------- */
 /* Queda por debajo del consentimiento (z-index 1000) a proposito: mientras no
    haya decision, el overlay opaco la tapa y no se puede pulsar. */

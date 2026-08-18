@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light" />
 
     <title>Data Science & Machine Learning · Antonio Luis Pérez</title>
-    <meta name="description" content="Data scientist en Málaga: clasificación, forecasting con RNNs y LSTMs y explicabilidad. Caso real de fraude sobre 590K transacciones. Antonio Luis Pérez Carmona." />
+    <meta name="description" content="Data science aplicado: clasificación, forecasting con RNNs y LSTMs y explicabilidad. Caso real de fraude sobre 590K transacciones reales." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/data-science/" />
 
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Antonio Luis Pérez" />
     <meta property="og:url" content="https://antonioluisperez.com/data-science/" />
     <meta property="og:title" content="Data Science & Machine Learning · Antonio Luis Pérez" />
-    <meta property="og:description" content="Modelos con métricas honestas. Del EDA al umbral de decisión, pensando en el coste real de cada error." />
+    <meta property="og:description" content="Data science aplicado con métricas honestas. Del EDA al umbral de decisión, pensando en el coste real de cada error." />
     <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -23,13 +23,60 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": "https://antonioluisperez.com/data-science/",
-        "url": "https://antonioluisperez.com/data-science/",
-        "name": "Data Science & Machine Learning · Antonio Luis Pérez Carmona",
-        "inLanguage": ["es", "en"],
-        "isPartOf": { "@id": "https://antonioluisperez.com/#website" },
-        "about": { "@id": "https://antonioluisperez.com/#person" }
+        "@graph": [
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://antonioluisperez.com/data-science/",
+                "url": "https://antonioluisperez.com/data-science/",
+                "name": "Data Science & Machine Learning · Antonio Luis Pérez Carmona",
+                "inLanguage": [
+                    "es",
+                    "en"
+                ],
+                "isPartOf": {
+                    "@id": "https://antonioluisperez.com/#website"
+                },
+                "about": {
+                    "@id": "https://antonioluisperez.com/#person"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://antonioluisperez.com/data-science/#service",
+                "name": "Data science aplicado",
+                "serviceType": "Data science",
+                "description": "Modelos supervisados, forecasting con RNNs y LSTMs y explicabilidad sobre datos de negocio reales.",
+                "url": "https://antonioluisperez.com/data-science/",
+                "provider": {
+                    "@id": "https://antonioluisperez.com/#person"
+                },
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "España"
+                },
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://antonioluisperez.com/#contact"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Inicio",
+                        "item": "https://antonioluisperez.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Data science aplicado"
+                    }
+                ]
+            }
+        ]
     }
     </script>
 
@@ -138,7 +185,7 @@
     <main id="home">
         <section class="section lp-hero">
             <p class="reveal section__label" data-i18n="lpds_tag">Data Science</p>
-            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpds_h1">Modelos con métricas honestas.</span></h1>
+            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpds_h1">Data science aplicado con métricas honestas.</span></h1>
             <p class="reveal section__lead" data-i18n="lpds_lead">Machine learning aplicado a problemas de negocio: clasificación, forecasting y explicabilidad. Empiezo por el modelo más simple que pueda funcionar y solo complico las cosas cuando los números lo piden.</p>
             <p class="reveal hero__cta">
                 <a href="../index.html#contact" data-i18n="hero_cta_contact" data-track="contact_intent_click" data-track-location="lp_ds_hero">Hablemos</a>
