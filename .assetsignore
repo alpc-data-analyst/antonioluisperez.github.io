@@ -1,0 +1,9 @@
+# Ficheros del repositorio que NO deben publicarse como parte de la web.
+# Sin esto, el codigo del Worker quedaria descargable en /src/contacto.js.
+src/
+.wrangler/
+node_modules/
+wrangler.jsonc
+.assetsignore
+.github/
+.gitignore

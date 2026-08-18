@@ -1,9 +1,10 @@
 /**
  * Endpoint del formulario de contacto.
  *
- * Es una Pages Function de Cloudflare: el fichero vive en functions/api/ y
- * Cloudflare lo publica solo en la ruta /api/contacto. No hay servidor que
- * mantener ni puerto que vigilar.
+ * Lo invoca src/index.js cuando entra un POST a /api/contacto. El sitio se
+ * despliega como Worker con activos estaticos, no como proyecto de Pages,
+ * asi que aqui no vale la convencion de carpeta functions/: el enrutado es
+ * explicito en el punto de entrada.
  *
  * Por qué hace falta un servicio de correo por detrás: un Worker no puede
  * hablar SMTP, así que el envío pasa por la API de Resend. La ventaja frente
@@ -51,7 +52,7 @@ async function pasaTurnstile(token, secreto, ip) {
     return datos.success === true;
 }
 
-export async function onRequestPost({ request, env }) {
+export async function manejaContacto(request, env) {
     // Solo se aceptan envíos desde la propia web. No es una barrera seria
     // contra alguien decidido, pero descarta el ruido automatizado.
     const origen = request.headers.get('Origin') || '';
@@ -141,8 +142,4 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: true }, 200);
 }
 
-// Sin catch-all onRequest: exportarlo junto a onRequestPost deja en el aire
-// cuál de los dos atiende el POST. Explícito y aburrido es mejor.
-export const onRequestGet = () => json({ ok: false, error: 'metodo' }, 405);
-export const onRequestPut = () => json({ ok: false, error: 'metodo' }, 405);
-export const onRequestDelete = () => json({ ok: false, error: 'metodo' }, 405);
+export { json };

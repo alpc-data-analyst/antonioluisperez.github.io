@@ -1,0 +1,29 @@
+{
+    // Configuracion del Worker que sirve antonioluisperez.com.
+    //
+    // El sitio no tiene build: son HTML, CSS y JS planos servidos desde la
+    // raiz del repositorio. El Worker solo entra en juego para /api/contacto.
+    "name": "antonioluisperez-portfolio",
+    "main": "src/index.js",
+    "compatibility_date": "2026-08-18",
+
+    "assets": {
+        "directory": "./",
+        "binding": "ASSETS",
+
+        // Sirve 404.html con codigo 404 de verdad, no un 200 disfrazado
+        "not_found_handling": "404-page",
+
+        // /thankyou.html redirige a /thankyou, y /carpeta sirve su index.html
+        "html_handling": "auto-trailing-slash",
+
+        // El Worker atiende /api/ antes de mirar si hay un fichero con ese
+        // nombre. Sin esto el enrutado dependeria de que no exista, que es
+        // una garantia demasiado fragil
+        "run_worker_first": ["/api/*"]
+    },
+
+    "observability": {
+        "enabled": true
+    }
+}
