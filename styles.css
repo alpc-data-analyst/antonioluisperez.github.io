@@ -16,7 +16,7 @@
     /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
        Tres tonos con un papel cada uno, porque el fosforito puro sobre blanco
        no se lee como texto (1,36:1):
-         --neon       fondos, barras y todo lo que no haya que leer
+         --neon       barras, badges y seleccion, nunca un bloque grande
          --neon-mid   texto grande, como los contadores (2,8:1, legible a 38px)
          --neon-edge  texto pequeño, enlaces y hover (4,36:1) */
     --neon: #2cff05;
@@ -509,8 +509,8 @@ body.menu-open {
 }
 
 .hero__owner a:hover {
-    background: var(--neon);
-    border-color: var(--neon);
+    background: var(--black);
+    border-color: var(--black);
 }
 
 /* -------- Mapa de pings del hero ---------------------------------- */
@@ -703,8 +703,8 @@ body.menu-open {
 }
 
 .hero__path:hover {
-    background: var(--neon);
-    border-color: var(--neon);
+    background: var(--black);
+    border-color: var(--black);
 }
 
 /* La linea que pesca al otro publico: quien no viene a fichar, viene a
@@ -723,8 +723,8 @@ body.menu-open {
 }
 
 .hero__paths-client a:hover {
-    background: var(--neon);
-    border-color: var(--neon);
+    background: var(--black);
+    border-color: var(--black);
 }
 
 .hero__cta {
@@ -1605,7 +1605,8 @@ body.menu-open {
 }
 
 .post a:hover {
-    background: var(--neon);
+    background: var(--black);
+    color: var(--bg);
 }
 
 .post table {
@@ -1653,8 +1654,8 @@ body.menu-open {
 }
 
 .post__cta a:hover {
-    background: var(--neon);
-    border-color: var(--neon);
+    background: var(--black);
+    border-color: var(--black);
 }
 
 /* -------- Pagina de Analytics Copilot ----------------------------------- */
@@ -1769,7 +1770,8 @@ body.menu-open {
 
 .ext-flow a:hover,
 #privacy a:hover {
-    background: var(--neon);
+    background: var(--black);
+    color: var(--bg);
 }
 
 @media (max-width: 880px) {
@@ -2124,7 +2126,8 @@ body.menu-open {
 }
 
 .post__more a:hover {
-    background: var(--neon);
+    background: var(--black);
+    color: var(--bg);
 }
 
 /* -------- Burbuja de contacto ---------------------------------- */
@@ -2155,8 +2158,8 @@ body.menu-open {
 }
 
 .fab__btn:hover {
-    background: var(--neon);
-    color: var(--black);
+    background: var(--black);
+    color: var(--bg);
     transform: translateY(-2px);
 }
 
@@ -2206,8 +2209,8 @@ body.menu-open {
 .fab__item:nth-child(3) { animation-delay: 0.08s; }
 
 .fab__item:hover {
-    background: var(--neon);
-    color: var(--black);
+    background: var(--black);
+    color: var(--bg);
 }
 
 @keyframes fab-in {
