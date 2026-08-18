@@ -1,0 +1,48 @@
+# Cabeceras de seguridad de Cloudflare Pages.
+#
+# GitHub Pages no permitia ponerlas: no hay forma de tocar la respuesta HTTP.
+# Es una de las cosas que se gana con la mudanza.
+
+/*
+  # El navegador respeta el Content-Type declarado y no adivina. Corta los
+  # ataques que cuelan un script disfrazado de imagen.
+  X-Content-Type-Options: nosniff
+
+  # Nadie mete la web en un iframe ajeno para superponerle botones falsos.
+  X-Frame-Options: SAMEORIGIN
+
+  # Al salir hacia otro dominio solo viaja el origen, nunca la ruta completa.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # La web no necesita camara, microfono ni ubicacion. Si algun script
+  # inyectado los pide, el navegador se lo niega.
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+
+  # Un año de HTTPS obligatorio. Ojo: una vez servida, el navegador la
+  # recuerda aunque se retire la cabecera.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  X-DNS-Prefetch-Control: off
+
+# Las fuentes y los iconos no cambian nunca sin cambiar de nombre
+/badges/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/stack/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/clientes/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/trayectoria/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# PENDIENTE: Content-Security-Policy.
+#
+# No se activa a ciegas a proposito. Antonio añade etiquetas nuevas en GTM
+# cada poco y una CSP mal calibrada las bloquea EN SILENCIO: la etiqueta
+# deja de dispararse y en GTM todo parece correcto. Hay que probarla antes
+# en la URL de vista previa .pages.dev con la consola abierta, y repasarla
+# cada vez que entre un pixel nuevo. Punto de partida:
+#
+# Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com; base-uri 'self'; form-action 'self'; object-src 'none'

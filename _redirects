@@ -1,0 +1,16 @@
+# Redirecciones de Cloudflare Pages.
+#
+# Las tres primeras sustituyen a los ficheros stub con meta refresh, que
+# devuelven 200 y hacen que Google tarde en consolidar la URL nueva. Un 301
+# de verdad traspasa la autoridad y se resuelve antes de descargar nada.
+#
+# Los stub se quedan en el repo hasta comprobar con curl que Cloudflare da
+# prioridad a esta regla sobre el fichero estatico del mismo nombre.
+
+/ecommerce-web.html   /analitica-web/           301
+/data-analyst.html    /business-intelligence/   301
+/data-science.html    /data-science/            301
+
+# Rutas viejas que aun circulan por LinkedIn
+/recruiters           /recruiters/              301
+/blog                 /blog/                    301

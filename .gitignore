@@ -2,6 +2,10 @@
 *.local.md
 .notas/
 
+# Cache local de wrangler (pruebas de las Pages Functions)
+.wrangler/
+node_modules/
+
 # OS junk
 .DS_Store
 Thumbs.db
