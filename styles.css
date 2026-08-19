@@ -14,14 +14,20 @@
     --gray-ghost: #d9d9d9;
 
     /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
-       Tres tonos con un papel cada uno, porque el fosforito puro sobre blanco
-       no se lee como texto (1,36:1):
-         --neon       barras, badges y seleccion, nunca un bloque grande
-         --neon-mid   texto grande, como los contadores (2,8:1, legible a 38px)
-         --neon-edge  texto pequeño, enlaces y hover (4,36:1) */
+       UN SOLO VERDE DE MARCA, el fosforito, con una regla que lo gobierna:
+       siempre apoyado en negro. Sobre blanco tiene 1,36:1 y como texto no se
+       lee; sobre #0a0a0a tiene 13,7:1 y se lee de lejos. De ahi que los
+       numeros del hero y el rol vayan dentro de un rectangulo negro en vez
+       de en un verde mas oscuro, que desentonaba con el fosforito.
+         --neon       el acento: texto sobre negro, rellenos, barras, bordes
+         --neon-edge  la excepcion: texto pequeño y enlaces sobre blanco,
+                      unico tono que llega a AA (4,36:1) */
     --neon: #2cff05;
-    --neon-mid: #1fb300;
     --neon-edge: #1f8c05;
+    /* Negro que NO se invierte dentro de .section--dark. Los rectangulos
+       que llevan verde encima tienen que seguir siendo negros aunque la
+       seccion invierta sus tokens, o el verde se queda sin base. */
+    --ink: #0a0a0a;
 
     /* Una sola familia, dos papeles: los titulares en el peso mas gordo
        y el texto en regular. Montserrat variable da los dos sin cargar
@@ -521,7 +527,15 @@ body.menu-open {
     font-size: clamp(1.3rem, 3.6vw, 2.9rem);
     line-height: 1.1;
     letter-spacing: 0.005em;
-    color: var(--neon-mid);
+    color: var(--neon);
+    background: var(--ink);
+    /* display inline para que el rectangulo abrace el texto y no la linea
+       entera, y box-decoration-clone para que al partir en dos lineas las
+       dos mitades lleven su propio relleno */
+    display: inline-block;
+    padding: 0.06em 0.26em 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
     margin-top: clamp(18px, 3.6vh, 44px);
 }
 
@@ -609,7 +623,7 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 7px;
 }
 
 .counter__num {
@@ -620,7 +634,11 @@ body.menu-open {
     letter-spacing: 0.01em;
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
     font-variant-numeric: tabular-nums;
-    color: var(--neon-mid);
+    color: var(--neon);
+    background: var(--ink);
+    padding: 0.1em 0.3em 0.16em;
+    /* El ancho final se reserva desde JS antes de empezar a contar, si no
+       el rectangulo crece de 0 a 1.202 y empuja a los contadores vecinos */
 }
 
 .counter__lbl {
