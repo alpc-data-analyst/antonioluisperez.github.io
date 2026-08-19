@@ -20,3 +20,4 @@ wrangler.jsonc
 # Solo lo necesita GitHub Pages, que sigue de paracaidas. En Cloudflare no
 # pinta nada y no hay motivo para servirlo.
 CNAME
+.dev.vars

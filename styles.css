@@ -2172,6 +2172,16 @@ body.menu-open {
     border-color: #ff5a4d;
 }
 
+/* Sin altura propia: cuando Turnstile no necesita nada, no ocupa nada. Si
+   pinta el reto, el iframe trae su tamaño y el hueco crece solo. */
+.form__turnstile:empty {
+    display: none;
+}
+
+.form__turnstile iframe {
+    max-width: 100%;
+}
+
 .form__trap {
     position: absolute;
     left: -9999px;

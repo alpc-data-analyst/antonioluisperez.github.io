@@ -558,6 +558,10 @@
                         <input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off">
                     </div>
 
+                    <!-- Hueco del captcha de Cloudflare. Vacio e invisible salvo que
+                         Turnstile decida pedir un clic; entonces el widget aparece aqui -->
+                    <div class="form__turnstile"></div>
+
                     <button type="submit" class="form__send" data-i18n="form_send">Enviar mensaje</button>
 
                     <p class="form__status" role="status" aria-live="polite"></p>

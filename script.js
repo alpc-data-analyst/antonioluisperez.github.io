@@ -288,6 +288,8 @@
             form_ok: 'Mensaje enviado. Te respondo en cuanto lo lea.',
             form_err: 'No se ha podido enviar. Escríbeme a alpcmalaga@gmail.com y lo vemos.',
             form_err_campos: 'Revisa los campos marcados antes de enviar.',
+            form_err_captcha: 'No he podido comprobar que no eres un robot. Vuelve a intentarlo, y si sigue fallando escríbeme a alpcmalaga@gmail.com.',
+            form_err_frecuencia: 'Demasiados envíos seguidos. Espera un minuto y vuelve a intentarlo.',
             form_mailto: 'Se abre tu correo con el mensaje listo. Dale a enviar y me llega.',
             contact_cv: 'CV en PDF',
             contact_reply: 'Suelo responder en el día.',
@@ -589,6 +591,8 @@
             form_ok: 'Message sent. I will reply as soon as I read it.',
             form_err: 'It could not be sent. Write to alpcmalaga@gmail.com and we will sort it out.',
             form_err_campos: 'Check the highlighted fields before sending.',
+            form_err_captcha: 'I could not verify you are not a robot. Try again, and if it keeps failing write to alpcmalaga@gmail.com.',
+            form_err_frecuencia: 'Too many submissions in a row. Wait a minute and try again.',
             form_mailto: 'Your email app opens with the message ready. Hit send and it reaches me.',
             contact_cv: 'CV as PDF',
             contact_reply: 'I usually reply within the day.',
@@ -1215,6 +1219,18 @@
     const FORM_ENDPOINT = '/api/contacto';
     const FORM_EMAIL = 'alpcmalaga@gmail.com';
 
+    // Turnstile, el captcha de Cloudflare. Esta es la clave PUBLICA (site
+    // key); la secreta vive en el Worker como TURNSTILE_SECRET. Vacia = no se
+    // carga nada y el servidor no exige token. Las dos claves van juntas: con
+    // el secreto puesto y esta vacia, ningun envio real pasaria.
+    //
+    // Se carga solo cuando el visitante empieza a tocar el formulario, no al
+    // abrir la pagina: asi el 99% de las visitas no descarga un script de
+    // terceros que no necesita. Modo "interaction-only": invisible salvo que
+    // Cloudflare dude, y entonces pide un clic, nunca semaforos ni bicicletas.
+    const TURNSTILE_SITEKEY = '0x4AAAAAAEVpcfMMt9LZepKI';
+    const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+
     const initContactForm = () => {
         const form = document.getElementById('contact-form');
         if (!form) return;
@@ -1236,6 +1252,52 @@
             track('form_start', { form_id: 'contacto' });
         });
 
+        /* ---- Turnstile ---- */
+        const hueco = form.querySelector('.form__turnstile');
+        let widget = null;          // id que devuelve turnstile.render
+        let cargando = false;
+
+        const pintarTurnstile = () => {
+            if (widget !== null || !window.turnstile || !hueco) return;
+            widget = window.turnstile.render(hueco, {
+                sitekey: TURNSTILE_SITEKEY,
+                theme: 'dark',
+                language: document.documentElement.lang || 'es',
+                appearance: 'interaction-only',
+                'response-field-name': 'cf-turnstile-response'
+            });
+        };
+
+        const cargarTurnstile = () => {
+            if (!TURNSTILE_SITEKEY || cargando) return;
+            cargando = true;
+            if (window.turnstile) { pintarTurnstile(); return; }
+            const s = document.createElement('script');
+            s.src = TURNSTILE_SRC;
+            s.async = true;
+            s.onload = pintarTurnstile;
+            document.head.appendChild(s);
+        };
+
+        // Al primer contacto con el formulario: foco en un campo o un dedo
+        // sobre el, lo que llegue antes
+        form.addEventListener('focusin', cargarTurnstile, { once: true });
+        form.addEventListener('pointerdown', cargarTurnstile, { once: true });
+
+        // El token tarda un momento en llegar tras pintar el widget. Si
+        // alguien rellena y envia mas rapido que eso, se espera un poco en
+        // vez de mandar un envio sin token que el servidor va a rechazar.
+        const esperarToken = () => new Promise((resolver) => {
+            if (!TURNSTILE_SITEKEY || !window.turnstile || widget === null) { resolver(); return; }
+            const t0 = Date.now();
+            const mirar = () => {
+                const tok = window.turnstile.getResponse(widget);
+                if (tok || Date.now() - t0 > 6000) { resolver(); return; }
+                setTimeout(mirar, 150);
+            };
+            mirar();
+        });
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             form.classList.add('is-checked');
@@ -1251,6 +1313,13 @@
                 return;
             }
 
+            boton.disabled = true;
+            decir('form_sending');
+
+            esperarToken().then(() => enviar());
+        });
+
+        const enviar = () => {
             const datos = new FormData(form);
             datos.delete('website');
             datos.append('idioma', document.documentElement.lang || 'es');
@@ -1268,11 +1337,9 @@
 
             if (!FORM_ENDPOINT) {
                 abrirCorreo();
+                boton.disabled = false;
                 return;
             }
-
-            boton.disabled = true;
-            decir('form_sending');
 
             fetch(FORM_ENDPOINT, {
                 method: 'POST',
@@ -1285,16 +1352,28 @@
                     abrirCorreo();
                     return;
                 }
+                // Errores con mensaje propio: el captcha no ha pasado y el
+                // freno por frecuencia. Lo demas cae en el generico.
+                if (r.status === 400 || r.status === 429) {
+                    return r.json().catch(() => ({})).then((d) => {
+                        if (d.error === 'captcha') decir('form_err_captcha', 'is-err');
+                        else if (d.error === 'frecuencia') decir('form_err_frecuencia', 'is-err');
+                        else decir('form_err', 'is-err');
+                        if (window.turnstile && widget !== null) window.turnstile.reset(widget);
+                    });
+                }
                 if (!r.ok) throw new Error(r.status);
                 form.reset();
                 form.classList.remove('is-checked');
                 decir('form_ok', 'is-ok');
+                // Un segundo envio necesita un token nuevo
+                if (window.turnstile && widget !== null) window.turnstile.reset(widget);
             }).catch(() => {
                 decir('form_err', 'is-err');
             }).then(() => {
                 boton.disabled = false;
             });
-        });
+        };
     };
 
     /* ---------- Boot ---------- */

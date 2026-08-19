@@ -17,7 +17,10 @@
  *   RESEND_API_KEY    secreto, obligatoria
  *   CONTACT_TO        destino, por defecto alpcmalaga@gmail.com
  *   CONTACT_FROM      remitente verificado en Resend
- *   TURNSTILE_SECRET  opcional; si existe, se exige captcha invisible
+ *   TURNSTILE_SECRET  si existe, se exige el token de Turnstile. La clave
+ *                     publica (site key) va en script.js, TURNSTILE_SITEKEY.
+ *                     Las dos tienen que estar, o ninguna: con el secreto
+ *                     puesto y sin site key, todos los envios reales fallan.
  */
 
 const LIMITES = { nombre: 120, empresa: 160, email: 190, asunto: 40, mensaje: 5000 };
@@ -52,13 +55,51 @@ async function pasaTurnstile(token, secreto, ip) {
     return datos.success === true;
 }
 
+// Freno por IP dentro del propio Worker. Vive en memoria del aislado, asi
+// que no es una garantia global (cada aislado lleva su cuenta y se vacia al
+// reciclarse), pero corta en seco el bucle tonto de un script desde una
+// sola IP sin gastar nada. La barrera de verdad es la regla de limite de
+// velocidad de Cloudflare, que se configura en el panel.
+const VENTANA_MS = 60 * 1000;
+const MAX_POR_VENTANA = 3;
+const TOPE_CUERPO = 32 * 1024;
+const ultimos = new Map();
+
+function pasaFreno(ip) {
+    const ahora = Date.now();
+    const lista = (ultimos.get(ip) || []).filter((t) => ahora - t < VENTANA_MS);
+    if (lista.length >= MAX_POR_VENTANA) return false;
+    lista.push(ahora);
+    ultimos.set(ip, lista);
+    // Que el mapa no crezca sin fin si alguien rota de IP
+    if (ultimos.size > 2000) {
+        for (const [k, v] of ultimos) {
+            if (!v.some((t) => ahora - t < VENTANA_MS)) ultimos.delete(k);
+        }
+    }
+    return true;
+}
+
 export async function manejaContacto(request, env) {
-    // Solo se aceptan envíos desde la propia web. No es una barrera seria
-    // contra alguien decidido, pero descarta el ruido automatizado.
+    // Solo se aceptan envíos desde la propia web. La cabecera Origin es
+    // OBLIGATORIA: todos los navegadores la mandan en un POST por fetch,
+    // asi que su ausencia delata a un script. Antes se toleraba que faltase
+    // y cualquier curl pelado pasaba el filtro.
     const origen = request.headers.get('Origin') || '';
     const anfitrion = new URL(request.url).origin;
-    if (origen && origen !== anfitrion) {
+    if (origen !== anfitrion) {
         return json({ ok: false, error: 'origen' }, 403);
+    }
+
+    // Un formulario de contacto no pesa 32 KB ni con el mensaje mas largo
+    const tamano = parseInt(request.headers.get('Content-Length') || '0', 10);
+    if (tamano > TOPE_CUERPO) {
+        return json({ ok: false, error: 'tamano' }, 413);
+    }
+
+    const ip = request.headers.get('CF-Connecting-IP') || 'desconocida';
+    if (!pasaFreno(ip)) {
+        return json({ ok: false, error: 'frecuencia' }, 429);
     }
 
     let campos;
@@ -75,8 +116,10 @@ export async function manejaContacto(request, env) {
         return json({ ok: true }, 200);
     }
 
+    // Turnstile: si hay secreto configurado, el token es obligatorio. Es lo
+    // que para a los bots que rellenan formularios de verdad, los que saltan
+    // la trampa porque han leido el codigo (el repositorio es publico).
     if (env.TURNSTILE_SECRET) {
-        const ip = request.headers.get('CF-Connecting-IP');
         const valido = await pasaTurnstile(campos.get('cf-turnstile-response'), env.TURNSTILE_SECRET, ip);
         if (!valido) return json({ ok: false, error: 'captcha' }, 400);
     }
