@@ -1060,14 +1060,20 @@ body.menu-open {
 /* El patron del medico: a la izquierda los sintomas del cliente, para que
    sepa que sabemos lo que le pasa; a la derecha el plan con su llamada.
    Todo cabe en el primer pantallazo, sin scroll. */
-.lp-hero {
+/* .section.lp-hero y no .lp-hero a secas: .section va despues en el fichero
+   con la misma especificidad y su padding de 110px pisaba a este */
+.section.lp-hero {
     min-height: calc(100svh - var(--topbar-h, 90px));
     display: grid;
     grid-template-columns: 1.08fr 0.92fr;
     gap: clamp(36px, 5vw, 80px);
-    align-items: center;
-    align-content: center;
-    padding-top: clamp(20px, 3.5vh, 48px);
+    /* Arranca pegado a la cabecera, no centrado: centrado en vertical, las
+       pantallas bajas empujaban la mitad del contenido bajo el pliegue. El
+       padding-top pisa el colchon generico de .section (110px o mas), que
+       esta pensado para separar secciones, no para el primer pantallazo. */
+    align-items: start;
+    align-content: start;
+    padding-top: clamp(18px, 3.5vh, 44px);
     padding-bottom: clamp(24px, 4.5vh, 60px);
 }
 
@@ -1202,10 +1208,42 @@ body.menu-open {
 }
 
 @media (max-width: 880px) {
-    .lp-hero {
+    .section.lp-hero {
         grid-template-columns: 1fr;
         min-height: 0;
         gap: 30px;
+    }
+}
+
+@media (max-height: 800px) and (min-width: 881px) {
+    .lp-hero .section__title {
+        font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+        margin-top: 12px;
+    }
+
+    .lp-pains__tag {
+        margin-top: 18px;
+    }
+
+    .lp-pains {
+        gap: 9px;
+    }
+
+    .lp-plan {
+        padding: clamp(18px, 2.2vw, 26px) clamp(20px, 2.4vw, 30px);
+    }
+
+    .lp-plan__steps {
+        gap: 12px;
+        margin-top: 14px;
+    }
+
+    .lp-plan__cta {
+        margin-top: 18px;
+    }
+
+    .lp-plan__trust {
+        margin-top: 12px;
     }
 }
 
