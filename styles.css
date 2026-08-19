@@ -1067,14 +1067,14 @@ body.menu-open {
     display: grid;
     grid-template-columns: 1.08fr 0.92fr;
     gap: clamp(36px, 5vw, 80px);
-    /* Arranca pegado a la cabecera, no centrado: centrado en vertical, las
-       pantallas bajas empujaban la mitad del contenido bajo el pliegue. El
-       padding-top pisa el colchon generico de .section (110px o mas), que
-       esta pensado para separar secciones, no para el primer pantallazo. */
-    align-items: start;
-    align-content: start;
-    padding-top: clamp(18px, 3.5vh, 44px);
-    padding-bottom: clamp(24px, 4.5vh, 60px);
+    /* Centrado en el primer pantallazo. El truco esta en el padding: pisa el
+       colchon de 110px de .section, que es para separar secciones, no para
+       el hero. Con el colchon fuera, el centrado cabe tambien en pantallas
+       bajas; sin esta regla, era el colchon el que empujaba todo al pliegue. */
+    align-items: center;
+    align-content: center;
+    padding-top: clamp(16px, 2.5vh, 36px);
+    padding-bottom: clamp(20px, 3.5vh, 48px);
 }
 
 .lp-hero .section__title {
