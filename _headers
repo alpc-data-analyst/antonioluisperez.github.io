@@ -31,6 +31,9 @@
   X-Robots-Tag: noindex
 
 # Las fuentes y los iconos no cambian nunca sin cambiar de nombre
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /badges/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -52,4 +55,4 @@
 # cada vez que entre un pixel nuevo. Turnstile necesita challenges.cloudflare.com
 # en script-src y en frame-src. Punto de partida:
 #
-# Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com https://challenges.cloudflare.com; base-uri 'self'; form-action 'self'; object-src 'none'
+# Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com https://challenges.cloudflare.com; base-uri 'self'; form-action 'self'; object-src 'none'
