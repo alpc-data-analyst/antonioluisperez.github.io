@@ -647,6 +647,38 @@ body.menu-open {
     }
 }
 
+/* Malla de datos del hero de /recruiters/ (datamesh.js). Mismo tratamiento
+   que el mapa: opacidad baja y fundido por los bordes, el nombre siempre
+   gana. El lienzo se estira al hero entero, no tiene proporcion propia. */
+.hero-mesh {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.42;
+}
+
+.hero-mesh canvas {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-mesh::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(55% 48% at 50% 40%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 74%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.92));
+}
+
+@media (max-width: 760px) {
+    .hero-mesh {
+        opacity: 0.32;
+    }
+}
+
 /* -------- Contadores del hero -------------------------------------- */
 .counters {
     display: flex;
