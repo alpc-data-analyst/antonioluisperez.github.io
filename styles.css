@@ -900,6 +900,9 @@ body.menu-open {
 .hero__cta {
     display: flex;
     justify-content: center;
+    /* Centrados en vertical: en la pagina de la extension conviven un
+       boton relleno y un enlace de texto, y si no, bailan */
+    align-items: center;
     gap: 28px;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -1838,15 +1841,20 @@ body.menu-open {
 }
 
 /* Placeholder del boton de la Chrome Web Store hasta que aprueben la ficha */
-.ext-soon {
+/* El boton de instalar, ahora que la extension esta en la Store: relleno
+   en el color de marca, que es la unica accion que importa en esta pagina */
+.hero__cta a.ext-install {
     display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.005em;
-    color: var(--gray-meta);
-    border-bottom: 2px dashed var(--gray-ghost);
-    padding-bottom: 4px;
-    cursor: default;
+    background: var(--marca);
+    color: #ffffff;
+    border: 2px solid var(--marca);
+    padding: 11px 20px;
+}
+
+.hero__cta a.ext-install:hover {
+    background: transparent;
+    color: var(--marca);
+    border-color: var(--marca);
 }
 
 /* Las capturas vienen sobre fondo slate oscuro: enmarcadas en el borde

@@ -11,7 +11,7 @@ Sitio bilingüe español e inglés. El contenido del blog y las páginas de prod
 - [Analítica web](https://antonioluisperez.com/analitica-web/): auditoría e implementación de medición, GA4, GTM web y server side, Consent Mode y Meta CAPI
 - [Business intelligence](https://antonioluisperez.com/business-intelligence/): dashboards en Power BI y Looker Studio, SQL en BigQuery y reporting automatizado
 - [Data science](https://antonioluisperez.com/data-science/): clasificación, forecasting y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
-- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 9 herramientas de QA para analítica web
+- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 9 herramientas de QA para analítica web. Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
 
 ## Blog
 
