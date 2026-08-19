@@ -46,6 +46,36 @@
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
                     { "@type": "ListItem", "position": 3, "name": "Analítica web para hoteles" }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://antonioluisperez.com/blog/analitica-web-hoteles#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Sirve GA4 tal cual para un hotel?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sirve como fuente de adquisición y comportamiento si el motor empuja un dataLayer de ecommerce completo en los cuatro pasos. Como fuente de ingresos totales, no: esa verdad vive en el backend del motor, y el informe honesto usa las dos fuentes y declara cuál responde cada pregunta."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué conversión es normal en un motor de reservas?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Entre el 1 y el 2,5% de las sesiones que entran al motor terminan en reserva en la mayoría de los casos que veo, con la paridad y el mercado moviendo ese rango. La comparación útil rara vez es contra el sector: es contra tu propio hotel el año pasado y contra las propiedades hermanas del mismo motor."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Por fecha de reserva o por fecha de estancia?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Las dos, para preguntas distintas. Fecha de reserva para campañas y marketing; fecha de estancia para revenue, ocupación y operaciones. Los problemas llegan cuando una reunión mezcla las dos sin avisar."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -163,6 +193,16 @@
             <figure class="post__hero"><img src="img/analitica-web-hoteles.webp" alt="Ilustración de un hotel con líneas de datos saliendo de sus ventanas hacia un embudo, una en verde" width="1400" height="788" decoding="async" /></figure>
 
             <p><strong>La analítica web de un hotel mide un negocio con reglas propias: la conversión vive en el motor de reservas, la venta puede cancelarse semanas después de celebrarse y el precio compite en tiempo real contra las OTAs.</strong> Llevo la medición del embudo de reserva de más de 1300 webs de hotel, y las diferencias con un ecommerce clásico cambian la forma de leer cada informe. Estas son las que más cuestan de aprender desde fuera del sector.</p>
+
+            <aside class="post__key">
+                <p class="post__key-tag">Lo que vas a sacar de aquí</p>
+                <ul>
+                    <li>El embudo tiene cuatro pasos y no es lineal</li>
+                    <li>Los KPIs propios del sector que un ecommerce ni conoce</li>
+                    <li>Por qué GA4 nunca va a ver todas las reservas</li>
+                    <li>Cómo la cancelación y la estacionalidad rompen las comparativas</li>
+                </ul>
+            </aside>
 
             <h2>El embudo tiene cuatro pasos y no es lineal</h2>
             <p>En un motor de reservas típico, el camino a la compra se mide en cuatro pantallas: selección de habitación y tarifa, extras, datos del huésped y confirmación. En mis informes viven como booking1 a booking4, y cada transición cuenta una historia distinta: la primera habla de precio y disponibilidad, la última de fricción en el pago.</p>

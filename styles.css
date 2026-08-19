@@ -1891,6 +1891,118 @@ body.menu-open {
     }
 }
 
+/* -------- Puntos clave del articulo ------------------------------------ */
+/* Va antes del primer H2 y resume el articulo en cuatro lineas. Sirve al
+   lector que decide si sigue, y a los motores de respuesta, que levantan
+   justo este tipo de bloque cuando resumen una pagina. */
+.post__key {
+    margin: clamp(28px, 4vw, 40px) 0;
+    padding: clamp(20px, 2.6vw, 26px) clamp(20px, 2.8vw, 30px);
+    background: var(--ink);
+    color: #f5f5f5;
+}
+
+.post .post__key-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--neon);
+    margin-bottom: 14px;
+}
+
+.post .post__key ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.post .post__key li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #d8d8d8;
+}
+
+/* La marca de lista, dibujada a mano para que sea del verde de marca */
+.post .post__key li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 9px;
+    height: 3px;
+    background: var(--neon);
+}
+
+/* -------- Preguntas frecuentes ---------------------------------------- */
+/* Con <details> nativo: se abre sin una linea de JavaScript, funciona con
+   teclado y el buscador lee el contenido aunque este plegado. */
+.faq {
+    margin-top: clamp(34px, 5vw, 52px);
+    border-top: 2px solid var(--black);
+}
+
+.faq__item {
+    border-bottom: 2px solid var(--gray-ghost);
+}
+
+.faq__item summary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clamp(16px, 3vw, 36px);
+    padding: clamp(17px, 2.2vw, 23px) 0;
+    cursor: pointer;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(0.98rem, 1.8vw, 1.2rem);
+    line-height: 1.32;
+    letter-spacing: -0.01em;
+    /* Fuera la flecha del navegador, que cambia de forma en cada uno */
+    list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq__item summary:hover {
+    color: var(--neon-edge);
+}
+
+/* El mismo signo hace de abrir y de cerrar: girado 45 grados, el mas se
+   convierte en una equis */
+.faq__item summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-size: 1.45em;
+    line-height: 0.82;
+    color: var(--neon-edge);
+    transition: transform 0.2s ease;
+}
+
+.faq__item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq__a {
+    padding-bottom: clamp(19px, 2.5vw, 27px);
+    max-width: var(--measure);
+}
+
+.faq__a p {
+    color: var(--gray-text);
+    line-height: 1.62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq__item summary::after {
+        transition: none;
+    }
+}
+
 /* -------- Contact ------------------------------------------------------------ */
 .section--contact {
     padding-bottom: clamp(50px, 8vw, 90px);

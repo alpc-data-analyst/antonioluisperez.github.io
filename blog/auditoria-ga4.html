@@ -46,6 +46,36 @@
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
                     { "@type": "ListItem", "position": 3, "name": "Auditoría GA4" }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://antonioluisperez.com/blog/auditoria-ga4#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Cuánto se tarda en auditar una cuenta de GA4?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Para una web de tamaño normal, entre 4 y 8 horas de trabajo real: menos si la medición es sencilla, más si hay ecommerce con server side y varias plataformas de ads enganchadas. Desconfía de las auditorías de 30 minutos: eso es un pantallazo con logo."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Cada cuánto conviene repetirla?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Tras cada cambio grande de la web (rediseño, migración, banner de cookies nuevo) y como mínimo una vez al año. La medición se degrada sola: cada plugin nuevo, cada plantilla que se toca, es una oportunidad de romper algo en silencio."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puedo hacerla yo mismo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "El checklist básico sí, y deberías: detectar que algo está mal no requiere experiencia, solo método. Arreglar un dataLayer, montar la deduplicación o configurar Consent Mode bien ya es otra conversación."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -165,6 +195,16 @@
             <p><strong>Una auditoría de GA4 es una revisión sistemática de tu medición para responder una sola pregunta: ¿los números que ves son verdad?</strong> Se comprueba qué eventos se disparan, cuándo, con qué parámetros y bajo qué consentimiento, y se comparan contra la realidad del negocio. En mi experiencia, más de la mitad de las cuentas que reviso tienen al menos un fallo que invalida decisiones que ya se han tomado.</p>
 
             <p>Este es el proceso que sigo con clientes reales. No hace falta ser analista para pasar el checklist básico; sí para arreglar lo que salga.</p>
+
+            <aside class="post__key">
+                <p class="post__key-tag">Lo que vas a sacar de aquí</p>
+                <ul>
+                    <li>Los 7 fallos que aparecen en casi todas las cuentas, con el síntoma por el que los reconoces</li>
+                    <li>Un checklist que puedes pasar tú mismo esta tarde, sin ser analista</li>
+                    <li>Por qué GA4 y tu backend nunca cuadran al 100% y qué desviación es normal</li>
+                    <li>Dónde acaba lo que puedes arreglar solo y dónde empieza el dataLayer</li>
+                </ul>
+            </aside>
 
             <h2>¿Cuándo necesitas una auditoría de GA4?</h2>
             <ul>

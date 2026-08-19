@@ -46,6 +46,36 @@
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
                     { "@type": "ListItem", "position": 3, "name": "GTM server side" }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://antonioluisperez.com/blog/gtm-server-side#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Mejora el SEO?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "De rebote y poco: quitar scripts de terceros acelera la página, y la velocidad puntúa. Nadie posiciona por tener server side, y quien lo anuncie como palanca SEO está rellenando la propuesta."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puedo medir sin banner gracias al server side?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. La obligación de consentimiento depende del dato personal, no del camino que recorra. Existen alternativas cookieless con otra base legal, y de hecho tengo un producto en ese terreno, pero el server side de Google no es eso."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Cloud Run o un proveedor gestionado?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Cloud Run cuando tienes quien lo administre; un gestionado (Stape, Addingwell y similares) cuando prefieres pagar por olvidarte de la infraestructura. El contenedor de GTM es idéntico en ambos."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -165,6 +195,16 @@
             <p><strong>El server side tagging traslada parte de tu medición del navegador a un servidor bajo tu control.</strong> El navegador envía un único hit a un subdominio tuyo y el contenedor del servidor lo transforma y lo reparte a GA4, Google Ads o Meta. Compensa cuando inviertes en publicidad y pierdes señal por navegadores y bloqueadores. Con la medición web rota, añade una capa de coste encima de un problema sin resolver.</p>
 
             <p>Me toca montarlo, mantenerlo y también desaconsejarlo. Este artículo reúne el criterio que uso para decidir, con los costes reales que casi ningún vendedor menciona.</p>
+
+            <aside class="post__key">
+                <p class="post__key-tag">Lo que vas a sacar de aquí</p>
+                <ul>
+                    <li>Qué arregla de verdad un contenedor server side y qué sigue exactamente igual</li>
+                    <li>El coste real, que no es solo la factura de Cloud</li>
+                    <li>El criterio concreto para decidir si a ti te compensa</li>
+                    <li>Cómo migrar sin quedarte sin datos por el camino</li>
+                </ul>
+            </aside>
 
             <h2>Cómo funciona un contenedor server side</h2>
             <p>Montas un endpoint en un subdominio propio, por ejemplo datos.tudominio.com, corriendo sobre Cloud Run u otra infraestructura. El navegador deja de hablar con una docena de dominios de terceros y envía todo a ese subdominio. Allí, un contenedor de GTM recibe cada hit, lo valida, lo enriquece o lo recorta, y lo reenvía a las plataformas que decidas. Tú eliges qué dato sale, hacia dónde y en qué forma.</p>

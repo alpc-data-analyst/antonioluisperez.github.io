@@ -46,6 +46,36 @@
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
                     { "@type": "ListItem", "position": 3, "name": "Dashboards que se usan" }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://antonioluisperez.com/blog/dashboards-que-se-usan#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Cuántas métricas debería tener?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "En el nivel de estado, entre cuatro y seis. En total, las que pueda defender el dueño del panel una a una respondiendo qué decisión cambia cada una. En mis paneles más usados, la página principal baja de diez."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Tiempo real o actualización diaria?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Diaria para el 95% de los casos. El tiempo real cuesta caro, complica el pipeline y alimenta la tentación de mirar el panel como quien mira la bolsa. Operaciones con turnos o campañas en directo son la excepción con motivo."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Quién debería definir el dashboard?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "El que toma la decisión, con el analista traduciendo. El panel definido solo por el analista mide lo medible; el definido solo por negocio pide lo imposible. La versión buena sale de esa conversación, y suele ocupar la mitad de lo que ambos imaginaban."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -165,6 +195,16 @@
             <p><strong>Un dashboard funciona cuando alguien lo abre por voluntad propia y cambia una decisión con lo que ve.</strong> Mantengo más de cien en producción para equipos de Producto, Marketing y Operaciones, y la diferencia entre los que se consultan a diario y los que mueren en un marcador se decide antes de arrastrar el primer gráfico: en la pregunta que responden.</p>
 
             <p>Este es el método que sigo para diseñarlos, los errores que los matan y las señales para saber si el tuyo vive o finge.</p>
+
+            <aside class="post__key">
+                <p class="post__key-tag">Lo que vas a sacar de aquí</p>
+                <ul>
+                    <li>Empezar por la decisión que hay que tomar, no por el gráfico</li>
+                    <li>Los tres niveles de lectura que hacen que un panel se abra cada semana</li>
+                    <li>Power BI o Looker Studio: cuándo tiene sentido cada uno</li>
+                    <li>Por qué el mantenimiento pesa más que el diseño</li>
+                </ul>
+            </aside>
 
             <h2>Empieza por la decisión</h2>
             <p>La pregunta que ordena todo el diseño: <strong>¿qué decisión cambia si este número sube o baja?</strong> Un dashboard de conversión por canal existe para mover presupuesto entre canales. Uno de fricción en el embudo existe para decidir qué pantalla se rediseña. Cuando una métrica no conecta con una decisión de alguien concreto, la quito, por bonita que quede.</p>

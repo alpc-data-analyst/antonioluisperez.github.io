@@ -46,6 +46,36 @@
                     { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://antonioluisperez.com/blog/" },
                     { "@type": "ListItem", "position": 3, "name": "Consent Mode v2" }
                 ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://antonioluisperez.com/blog/consent-mode-v2#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Consent Mode v2 es obligatorio?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Para usar audiencias, remarketing y conversiones avanzadas de Google en el Espacio Económico Europeo, sí, desde marzo de 2024. Para medir con GA4 sin funciones publicitarias, la obligación real es el RGPD de siempre: consentimiento previo para cookies no esenciales."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Necesito una CMP certificada por Google?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Para servir anuncios personalizados en el EEE, Google exige un CMP certificado integrado con el TCF. Para una web sin publicidad programática, un banner propio bien montado cumple, y de hecho el de mi portfolio está hecho a mano."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Advanced me permite medir a quien rechaza?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Mide pings anónimos y modela conversiones a partir de ellos. Datos individuales de quien rechazó, no: quien te venda eso te está vendiendo una sanción con plazo de entrega."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -165,6 +195,16 @@
             <p><strong>Consent Mode v2 es el mecanismo con el que tus etiquetas de Google respetan la decisión de cookies de cada visitante.</strong> Añade dos señales sobre la versión anterior, ad_user_data y ad_personalization, obligatorias desde marzo de 2024 para usar audiencias y remarketing de Google en Europa. La implementación se decide en un detalle que casi todo el mundo hace mal: el orden de carga.</p>
 
             <p>Esta guía cubre el montaje correcto, la elección entre Basic y Advanced y la validación de los cuatro escenarios de consentimiento. Todo sale de cuentas reales que audito, con sus fallos incluidos.</p>
+
+            <aside class="post__key">
+                <p class="post__key-tag">Lo que vas a sacar de aquí</p>
+                <ul>
+                    <li>Qué cambia de verdad con la versión 2, más allá de los dos parámetros nuevos</li>
+                    <li>Basic o Advanced: qué recuperas y qué firmas con cada uno</li>
+                    <li>El orden de carga es lo que decide si cumples, no el banner que pongas</li>
+                    <li>Cómo validar los cuatro escenarios de consentimiento en cinco minutos</li>
+                </ul>
+            </aside>
 
             <h2>Qué cambia con la versión 2</h2>
             <p>La versión 1 gestionaba dos estados: analytics_storage para medición y ad_storage para publicidad. La v2 suma dos señales que viajan con cada hit:</p>
