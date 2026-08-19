@@ -1,9 +1,22 @@
 # Ficheros del repositorio que NO deben publicarse como parte de la web.
 # Sin esto, el codigo del Worker quedaria descargable en /src/contacto.js.
+
+# El entorno de build de Cloudflare clona el repo con su .git dentro y lo
+# subia entero: /.git/HEAD y /.git/config eran publicos. No llevan secretos
+# (la URL del remoto es https sin token), pero es la clasica exposicion
+# que marcan los escaneres y permite reconstruir el arbol sin pasar por
+# GitHub. Va el primero para que nadie lo quite por error.
+.git/
+.gitignore
+.gitattributes
+
 src/
 .wrangler/
 node_modules/
 wrangler.jsonc
 .assetsignore
 .github/
-.gitignore
+
+# Solo lo necesita GitHub Pages, que sigue de paracaidas. En Cloudflare no
+# pinta nada y no hay motivo para servirlo.
+CNAME
