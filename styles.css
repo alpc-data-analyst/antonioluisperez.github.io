@@ -67,6 +67,9 @@
        Sobre el teal oscuro el texto va en BLANCO, nunca en negro. */
     --marca: #0f5f6b;
     --marca-claro: #4ec5cf;
+    /* El mismo color en canales sueltos, para las sombras y halos que
+       necesitan transparencia: rgba(var(--marca-rgb), 0.4) */
+    --marca-rgb: 15, 95, 107;
     /* Negro que NO se invierte dentro de .section--dark. Lo usa el bloque de
        puntos clave de los articulos, que es una caja negra fuera de banda. */
     --ink: #0a0a0a;
@@ -1170,7 +1173,7 @@ body.menu-open {
     transform: none;
     box-shadow:
         7px 7px 0 var(--marca),
-        0 0 36px rgba(44, 255, 5, 0.4);
+        0 0 36px rgba(var(--marca-rgb), 0.4);
 }
 
 .journey__media.is-visible img {
@@ -1205,7 +1208,7 @@ body.menu-open {
     .has-js .reveal.journey__media.is-visible {
         box-shadow:
             5px 5px 0 var(--marca),
-            0 0 24px rgba(44, 255, 5, 0.35);
+            0 0 24px rgba(var(--marca-rgb), 0.35);
     }
 }
 
