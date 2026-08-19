@@ -1056,14 +1056,157 @@ body.menu-open {
 }
 
 /* La primera seccion de una landing no necesita el colchon gigante */
+/* -------- Landing de servicio: hero a dos columnas -------------------- */
+/* El patron del medico: a la izquierda los sintomas del cliente, para que
+   sepa que sabemos lo que le pasa; a la derecha el plan con su llamada.
+   Todo cabe en el primer pantallazo, sin scroll. */
 .lp-hero {
-    padding-top: clamp(40px, 7vw, 90px);
-    text-align: center;
+    min-height: calc(100svh - var(--topbar-h, 90px));
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: clamp(36px, 5vw, 80px);
+    align-items: center;
+    align-content: center;
+    padding-top: clamp(20px, 3.5vh, 48px);
+    padding-bottom: clamp(24px, 4.5vh, 60px);
 }
 
-.lp-hero .section__title,
-.lp-hero .section__lead {
-    margin-inline: auto;
+.lp-hero .section__title {
+    font-size: clamp(1.8rem, 3.9vw, 3.2rem);
+    margin-top: 16px;
+}
+
+.lp-pains__tag {
+    margin-top: clamp(20px, 3vh, 36px);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--marca);
+}
+
+.lp-pains {
+    list-style: none;
+    margin-top: 14px;
+    display: grid;
+    gap: 12px;
+    max-width: 560px;
+}
+
+.lp-pains li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+
+.lp-pains li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 10px;
+    height: 3px;
+    background: var(--marca);
+}
+
+/* La caja del plan es negra fuera de banda: los tokens no se invierten
+   solos, asi que el color de marca sube de tono a mano, como en .post__key */
+.lp-plan {
+    --marca: var(--marca-claro);
+    background: var(--ink);
+    color: #f5f5f5;
+    padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 38px);
+}
+
+.lp-plan__tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--marca);
+}
+
+.lp-plan__steps {
+    list-style: none;
+    counter-reset: paso;
+    margin-top: 18px;
+    display: grid;
+    gap: 16px;
+}
+
+.lp-plan__steps li {
+    counter-increment: paso;
+    position: relative;
+    padding-left: 40px;
+    color: #d8d8d8;
+    line-height: 1.5;
+}
+
+.lp-plan__steps li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 0.05em;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: #0a0a0a;
+    background: var(--marca);
+}
+
+.lp-plan__cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: clamp(22px, 3vh, 30px);
+}
+
+.lp-plan__btn {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    background: var(--marca);
+    border: 2px solid var(--marca);
+    padding: 13px 24px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lp-plan__btn:hover {
+    background: transparent;
+    color: var(--marca);
+}
+
+.lp-plan__wa {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #d8d8d8;
+}
+
+.lp-plan__wa:hover {
+    color: var(--marca);
+}
+
+.lp-plan__trust {
+    margin-top: 18px;
+    font-size: 0.74rem;
+    color: #8f8f8f;
+}
+
+@media (max-width: 880px) {
+    .lp-hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 30px;
+    }
 }
 
 .quote[hidden] {

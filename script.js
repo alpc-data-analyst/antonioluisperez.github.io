@@ -201,8 +201,25 @@
 
             lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
             lpw_tag: 'Analítica web y medición',
-            lpw_h1: 'Analítica web que cuenta la verdad.',
+            lpw_h1: 'Tu analítica web dice una cosa. Tu negocio, otra.',
             lpw_lead: 'Tu web vende y tus datos deberían contarlo. Medición end-to-end para ecommerce y webs de servicios: GA4, Google Tag Manager en web y server side, DataLayer a medida y la parte de privacidad que nadie quiere tocar.',
+            lp_pains_tag: '¿Te suena?',
+            lp_plan_tag: 'El plan',
+            lp_trust: 'Reseñas de 5,0 · Respuesta en el día · Diagnóstico gratis',
+            lpw_pain1: 'GA4 dice 80 ventas y tu backend 110, y nadie sabe cuál creerse.',
+            lpw_pain2: 'Cada herramienta da un número distinto para lo mismo.',
+            lpw_pain3: 'Pusiste el banner de cookies y las conversiones se hundieron.',
+            lpw_pain4: 'Inviertes en campañas sin saber qué canal trae clientes de verdad.',
+            lpw_plan1: 'Audito tu medición y te digo dónde miente y por qué.',
+            lpw_plan2: 'Reconstruyo GA4, Tag Manager y el DataLayer, con el consentimiento bien montado.',
+            lpw_plan3: 'Valido contra tu backend y te lo entrego documentado y funcionando.',
+            lpda_pain1: 'El informe mensual tarda tres días en salir y nace viejo.',
+            lpda_pain2: 'Cada departamento llega a la reunión con su propio número.',
+            lpda_pain3: 'Datos por todas partes y respuestas en ninguna.',
+            lpda_pain4: 'El dashboard que encargaste no lo abre nadie desde marzo.',
+            lpda_plan1: 'Empiezo por la decisión que tienes que tomar, no por el gráfico.',
+            lpda_plan2: 'Monto el panel en Power BI o Looker Studio, conectado y actualizándose solo.',
+            lpda_plan3: 'Formo a tu equipo para que lo mantenga sin depender de nadie.',
             lpw_solve_title: 'Los tres fuegos de siempre.',
             lpw_s1_h: 'Tracking roto o a medias',
             lpw_s1_p: 'Auditoría completa de la medición, implementación de GA4 y GTM, DataLayer diseñado para tu negocio y validación en DebugView antes de dar nada por bueno.',
@@ -235,8 +252,8 @@
             lpds_cta_text: 'Tráeme el problema. No hace falta que el dataset venga limpio, de eso me encargo yo.',
 
             lpda_title: 'Data Analyst · Antonio Luis Pérez',
-            lpda_tag: 'Data Analyst',
-            lpda_h1: 'Business intelligence y dashboards que se usan.',
+            lpda_tag: 'Business intelligence y reporting',
+            lpda_h1: 'Business intelligence que la gente abre cada mañana.',
             lpda_lead: 'SQL, Python y dashboards que se usan de verdad. Ordeno datos que llegan hechos un desastre y los convierto en informes que la gente abre cada mañana sin que nadie les obligue.',
             lpda_solve_title: 'Menos Excel a mano, más respuestas.',
             lpda_s1_h: 'Datos limpios',
@@ -504,8 +521,25 @@
 
             lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
             lpw_tag: 'Web analytics & measurement',
-            lpw_h1: 'Web analytics that tells the truth.',
+            lpw_h1: 'Your web analytics says one thing. Your business, another.',
             lpw_lead: 'Your site sells and your data should tell the story. End-to-end measurement for ecommerce and service sites: GA4, Google Tag Manager on web and server side, custom DataLayer and the privacy work nobody wants to touch.',
+            lp_pains_tag: 'Sound familiar?',
+            lp_plan_tag: 'The plan',
+            lp_trust: '5.0 reviews · Same-day reply · Free diagnosis',
+            lpw_pain1: 'GA4 says 80 sales, your backend says 110, and nobody knows which to trust.',
+            lpw_pain2: 'Every tool gives a different number for the same thing.',
+            lpw_pain3: 'You added the cookie banner and conversions sank.',
+            lpw_pain4: 'You spend on campaigns without knowing which channel really brings customers.',
+            lpw_plan1: 'I audit your measurement and tell you where it lies and why.',
+            lpw_plan2: 'I rebuild GA4, Tag Manager and the DataLayer, with consent done right.',
+            lpw_plan3: 'I validate against your backend and hand it over documented and working.',
+            lpda_pain1: 'The monthly report takes three days to build and is born stale.',
+            lpda_pain2: 'Every department walks into the meeting with its own number.',
+            lpda_pain3: 'Data everywhere and answers nowhere.',
+            lpda_pain4: 'Nobody has opened the dashboard you commissioned since March.',
+            lpda_plan1: 'I start from the decision you need to make, not from the chart.',
+            lpda_plan2: 'I build the panel in Power BI or Looker Studio, connected and refreshing itself.',
+            lpda_plan3: 'I train your team so it runs without depending on anyone.',
             lpw_solve_title: 'The usual three fires.',
             lpw_s1_h: 'Broken or half-done tracking',
             lpw_s1_p: 'Full measurement audit, GA4 and GTM implementation, a DataLayer designed around your business and DebugView validation before anything is called done.',
@@ -538,8 +572,8 @@
             lpds_cta_text: 'Bring me the problem. The dataset does not need to arrive clean, that part is on me.',
 
             lpda_title: 'Data Analyst · Antonio Luis Pérez',
-            lpda_tag: 'Data Analyst',
-            lpda_h1: 'Business intelligence and dashboards that get used.',
+            lpda_tag: 'Business intelligence and reporting',
+            lpda_h1: 'Business intelligence people actually open every morning.',
             lpda_lead: 'SQL, Python and dashboards that actually get used. I sort out data that arrives in a mess and turn it into reports people open every morning without being told to.',
             lpda_solve_title: 'Less manual Excel, more answers.',
             lpda_s1_h: 'Clean data',
@@ -1250,6 +1284,15 @@
             if (empezado) return;
             empezado = true;
             track('form_start', { form_id: 'contacto' });
+        });
+
+        // Quien pulsa "Formación" o el plan de una landing no deberia tener
+        // que volver a decir que necesita: el enlace deja puesto el desplegable
+        document.querySelectorAll('[data-need]').forEach((el) => {
+            el.addEventListener('click', () => {
+                const sel = document.getElementById('f-asunto');
+                if (sel) sel.value = el.getAttribute('data-need');
+            });
         });
 
         /* ---- Turnstile ---- */

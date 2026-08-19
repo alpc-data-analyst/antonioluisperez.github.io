@@ -150,7 +150,7 @@
             <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
             <a href="../index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a>
             <a href="../blog/" data-i18n="nav_blog">Blog</a>
-            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            <a href="#contact" data-i18n="nav_contact">Contacto</a>
         </nav>
 
         <div class="topbar__aside">
@@ -159,7 +159,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <a href="../index.html#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="lp_web_topbar">Hablemos →</a>
+            <a href="#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="lp_web_topbar">Hablemos →</a>
         </div>
     </header>
 
@@ -174,20 +174,39 @@
                 <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
                 <a href="../index.html#sobre-mi" data-i18n="nav_about">Sobre mí</a>
                 <a href="../blog/" data-i18n="nav_blog">Blog</a>
-                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+                <a href="#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
         </div>
     </div>
 
     <main id="home">
         <section class="section lp-hero">
-            <p class="reveal section__label" data-i18n="lpw_tag">Analítica web y medición</p>
-            <h1 class="reveal section__title"><span class="mark-scroll" data-i18n="lpw_h1">Analítica web que cuenta la verdad.</span></h1>
-            <p class="reveal section__lead" data-i18n="lpw_lead">Tu web vende y tus datos deberían contarlo. Medición end-to-end para ecommerce y webs de servicios: GA4, Google Tag Manager en web y server side, DataLayer a medida y la parte de privacidad que nadie quiere tocar.</p>
-            <p class="reveal hero__cta">
-                <a href="../index.html#contact" data-i18n="hero_cta_contact" data-track="contact_intent_click" data-track-location="lp_web_hero">Hablemos</a>
-                <a href="/thankyou" data-i18n="hero_cta_cv" data-track="cv_intent_click" data-track-location="lp_web_hero">Descargar CV</a>
-            </p>
+            <div class="lp-hero__main">
+                <p class="reveal section__label" data-i18n="lpw_tag">Analítica web y medición</p>
+                <h1 class="reveal section__title" data-i18n="lpw_h1">Tu analítica web dice una cosa. Tu negocio, otra.</h1>
+
+                <p class="reveal lp-pains__tag" data-i18n="lp_pains_tag">¿Te suena?</p>
+                <ul class="reveal lp-pains">
+                    <li data-i18n="lpw_pain1">GA4 dice 80 ventas y tu backend 110, y nadie sabe cuál creerse.</li>
+                    <li data-i18n="lpw_pain2">Cada herramienta da un número distinto para lo mismo.</li>
+                    <li data-i18n="lpw_pain3">Pusiste el banner de cookies y las conversiones se hundieron.</li>
+                    <li data-i18n="lpw_pain4">Inviertes en campañas sin saber qué canal trae clientes de verdad.</li>
+                </ul>
+            </div>
+
+            <aside class="reveal lp-plan">
+                <p class="lp-plan__tag" data-i18n="lp_plan_tag">El plan</p>
+                <ol class="lp-plan__steps">
+                    <li data-i18n="lpw_plan1">Audito tu medición y te digo dónde miente y por qué.</li>
+                    <li data-i18n="lpw_plan2">Reconstruyo GA4, Tag Manager y el DataLayer, con el consentimiento bien montado.</li>
+                    <li data-i18n="lpw_plan3">Valido contra tu backend y te lo entrego documentado y funcionando.</li>
+                </ol>
+                <p class="lp-plan__cta">
+                    <a class="lp-plan__btn" href="#contact" data-need="auditoria" data-track="contact_intent_click" data-track-location="lp_web_hero" data-i18n="sv_cta1">Cuéntame tu caso</a>
+                    <a class="lp-plan__wa" href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="lp_web_hero_wa">WhatsApp ↗</a>
+                </p>
+                <p class="lp-plan__trust" data-i18n="lp_trust">Reseñas de 5,0 · Respuesta en el día · Diagnóstico gratis</p>
+            </aside>
         </section>
 
         <section id="solve" class="section">
@@ -250,17 +269,85 @@
             <p class="reveal stack__tools">GA4 · GTM Web + Server Side · DataLayer · Consent Mode · Meta CAPI · BigQuery · Looker Studio · Power BI · Hotjar · Clarity</p>
         </section>
 
-        <section id="contact" class="section section--contact">
-            <h2 class="reveal contact__title"><span class="mark-scroll" data-i18n="lpw_cta_title">¿Vemos tu medición?</span></h2>
-            <p class="reveal section__lead" style="margin-inline:auto" data-i18n="lpw_cta_text">Cuéntame qué vendes y qué número no te cuadra. Te digo qué haría, sin compromiso y sin jerga.</p>
+        <section id="contact" class="section section--contact section--dark">
+            <h2 class="reveal contact__title" data-i18n="lpw_cta_title">¿Vemos tu medición?</h2>
 
-            <a class="reveal contact__email" href="mailto:alpcmalaga@gmail.com?subject=Anal%C3%ADtica%20para%20mi%20negocio" data-track="contact_intent_click" data-track-location="lp_web_contact">alpcmalaga@gmail.com</a>
+            <div class="contact-grid">
+                <div class="reveal contact-aside">
+                    <p class="contact-aside__lead" data-i18n="lpw_cta_text">Cuéntame qué vendes y qué número no te cuadra. Te digo qué haría, sin compromiso y sin jerga.</p>
 
-            <p class="reveal contact__channels">
-                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
-                <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="lp_web_whatsapp">WhatsApp ↗</a>
-                <a href="/" data-i18n="lp_back">Volver al portfolio</a>
-            </p>
+                    <ul class="contact-aside__list">
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.6" y="5" width="18.8" height="14" rx="1"/><path d="M2.6 6.4L12 13.2l9.4-6.8"/></svg>
+                            <a href="mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20la%20web" data-track="contact_intent_click" data-track-location="contact_email">alpcmalaga@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3.6h4l1.8 4.4-2.3 1.6a12 12 0 0 0 6.9 6.9l1.6-2.3 4.4 1.8v4a1.4 1.4 0 0 1-1.5 1.4C10.3 20.6 3.4 13.7 2.6 5.1A1.4 1.4 0 0 1 4 3.6z"/></svg>
+                            <a href="https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s." target="_blank" rel="noopener" data-i18n-attr="href:wa_href" data-track="contact_intent_click" data-track-location="contact_whatsapp">WhatsApp</a>
+                        </li>
+                        <li>
+                            <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.4s7.4-6.1 7.4-11.1a7.4 7.4 0 1 0-14.8 0c0 5 7.4 11.1 7.4 11.1z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                            <span data-i18n="contact_place">Málaga, España · trabajo en remoto</span>
+                        </li>
+                    </ul>
+
+                    <p class="contact-aside__social">
+                        <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener">GitHub ↗</a>
+                    </p>
+
+                    <p class="contact-aside__note" data-i18n="contact_reply">Suelo responder en el día.</p>
+                </div>
+
+                <form class="reveal form" id="contact-form" novalidate>
+                    <div class="form__row">
+                        <div class="form__field">
+                            <label for="f-nombre" data-i18n="form_name">Nombre</label>
+                            <input type="text" id="f-nombre" name="nombre" autocomplete="name" required>
+                        </div>
+                        <div class="form__field">
+                            <label for="f-empresa"><span data-i18n="form_company">Empresa</span> <span class="form__opt" data-i18n="form_optional">(opcional)</span></label>
+                            <input type="text" id="f-empresa" name="empresa" autocomplete="organization">
+                        </div>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-email" data-i18n="form_email">Email</label>
+                        <input type="email" id="f-email" name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-asunto" data-i18n="form_need">¿Qué necesitas?</label>
+                        <select id="f-asunto" name="asunto">
+                            <option value="auditoria" data-i18n="form_need_1">Auditoría de medición</option>
+                            <option value="implementacion" data-i18n="form_need_2">Implementación y tracking</option>
+                            <option value="dashboards" data-i18n="form_need_3">Dashboards y reporting</option>
+                            <option value="formacion" data-i18n="form_need_4">Formación para mi equipo</option>
+                            <option value="otro" data-i18n="form_need_5">Otra cosa</option>
+                        </select>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="f-mensaje" data-i18n="form_msg">Cuéntame tu caso</label>
+                        <textarea id="f-mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Trampa para bots: invisible para personas, irresistible para scripts -->
+                    <div class="form__trap" aria-hidden="true">
+                        <label for="f-web">No rellenar</label>
+                        <input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <!-- Hueco del captcha de Cloudflare. Vacio e invisible salvo que
+                         Turnstile decida pedir un clic; entonces el widget aparece aqui -->
+                    <div class="form__turnstile"></div>
+
+                    <button type="submit" class="form__send" data-i18n="form_send">Enviar mensaje</button>
+
+                    <p class="form__status" role="status" aria-live="polite"></p>
+                    <p class="form__legal" data-i18n="form_legal">Tus datos se usan solo para responderte. Nada de listas ni de terceros.</p>
+                </form>
+            </div>
         </section>
     </main>
 
