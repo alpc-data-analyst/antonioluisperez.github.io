@@ -29,7 +29,7 @@
     ];
 
     const LAND = '#9a9a9a';        // continentes en gris: el color lo pone el ping
-    const PING = '31, 140, 5';     // --neon-edge, el verde que sí contrasta sobre blanco
+    const PING = '15, 95, 107';    // --marca, el teal que contrasta sobre el mapa gris
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let pings = [];

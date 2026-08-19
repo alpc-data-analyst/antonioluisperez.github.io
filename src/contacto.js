@@ -108,7 +108,7 @@ export async function manejaContacto(request, env) {
 
     const html = `<div style="font-family:system-ui,sans-serif;font-size:15px;line-height:1.55">
 <table style="border-collapse:collapse;margin-bottom:18px">${filas}</table>
-<div style="border-left:3px solid #2cff05;padding-left:14px;white-space:pre-wrap">${escapa(mensaje)}</div>
+<div style="border-left:3px solid #0f5f6b;padding-left:14px;white-space:pre-wrap">${escapa(mensaje)}</div>
 </div>`;
 
     try {

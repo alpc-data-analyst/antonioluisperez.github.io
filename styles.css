@@ -13,20 +13,27 @@
     --gray-meta: #969696;
     --gray-ghost: #d9d9d9;
 
-    /* Neon noir: el verde solo aparece donde algo esta vivo o se puede tocar.
-       UN SOLO VERDE DE MARCA, el fosforito, con una regla que lo gobierna:
-       siempre apoyado en negro. Sobre blanco tiene 1,36:1 y como texto no se
-       lee; sobre #0a0a0a tiene 13,7:1 y se lee de lejos. De ahi que los
-       numeros del hero y el rol vayan dentro de un rectangulo negro en vez
-       de en un verde mas oscuro, que desentonaba con el fosforito.
-         --neon       el acento: texto sobre negro, rellenos, barras, bordes
-         --neon-edge  la excepcion: texto pequeño y enlaces sobre blanco,
-                      unico tono que llega a AA (4,36:1) */
-    --neon: #2cff05;
-    --neon-edge: #1f8c05;
-    /* Negro que NO se invierte dentro de .section--dark. Los rectangulos
-       que llevan verde encima tienen que seguir siendo negros aunque la
-       seccion invierta sus tokens, o el verde se queda sin base. */
+    /* Blanco, negro y UN color de marca: teal profundo. El color aparece
+       donde algo esta vivo o se puede tocar.
+
+       Ningun color se lee bien sobre blanco Y sobre negro a la vez: el techo
+       matematico son 4,35:1 en cada uno, por debajo de AA. Por eso el mismo
+       color tiene dos tonos, y el claro se activa SOLO dentro de
+       .section--dark, sin que haya que tocar ningun componente:
+         --marca        #0F5F6B, sobre blanco 7,32:1
+         --marca-claro  #4EC5CF, sobre negro  9,63:1
+
+       Se eligio teal y no azul, verde ni rojo por el oficio: en un cuadro de
+       mando el rojo significa metrica mala y el verde metrica buena, asi que
+       una marca de analitica en esos tonos pelea contra la semantica de su
+       propio sector. El teal no colisiona con nada y no es el azul
+       corporativo que usan todas las consultoras.
+
+       Sobre el teal oscuro el texto va en BLANCO, nunca en negro. */
+    --marca: #0f5f6b;
+    --marca-claro: #4ec5cf;
+    /* Negro que NO se invierte dentro de .section--dark. Lo usa el bloque de
+       puntos clave de los articulos, que es una caja negra fuera de banda. */
     --ink: #0a0a0a;
 
     /* Una sola familia, dos papeles: los titulares en el peso mas gordo
@@ -131,12 +138,12 @@ button {
 }
 
 ::selection {
-    background: var(--neon);
-    color: var(--black);
+    background: var(--marca);
+    color: #ffffff;
 }
 
 :focus-visible {
-    outline-color: var(--neon);
+    outline-color: var(--marca);
 }
 
 
@@ -282,7 +289,7 @@ body.consent-open {
 }
 
 .footer__cookies:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 /* -------- Top bar ---------------------------------------------- */
@@ -350,7 +357,7 @@ body.consent-open {
 
 .topbar__nav a:hover,
 .topbar__cv:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 .topbar__cv {
@@ -358,7 +365,7 @@ body.consent-open {
 }
 
 .topbar__cv:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 .topbar__aside {
@@ -453,7 +460,7 @@ body.consent-open {
 
 .drawer__nav a:active,
 .drawer__nav a:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 body.menu-open {
@@ -485,7 +492,7 @@ body.menu-open {
 }
 
 .lang-switch__btn:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 .lang-switch__btn.is-active {
@@ -527,15 +534,7 @@ body.menu-open {
     font-size: clamp(1.3rem, 3.6vw, 2.9rem);
     line-height: 1.1;
     letter-spacing: 0.005em;
-    color: var(--neon);
-    background: var(--ink);
-    /* display inline para que el rectangulo abrace el texto y no la linea
-       entera, y box-decoration-clone para que al partir en dos lineas las
-       dos mitades lleven su propio relleno */
-    display: inline-block;
-    padding: 0.06em 0.26em 0.12em;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    color: var(--marca);
     margin-top: clamp(18px, 3.6vh, 44px);
 }
 
@@ -547,7 +546,7 @@ body.menu-open {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.005em;
-    border-bottom: 3px solid var(--neon);
+    border-bottom: 3px solid var(--marca);
     padding-bottom: 4px;
 }
 
@@ -634,11 +633,9 @@ body.menu-open {
     letter-spacing: 0.01em;
     /* Cifras de ancho fijo: el número no baila mientras cuenta */
     font-variant-numeric: tabular-nums;
-    color: var(--neon);
-    background: var(--ink);
-    padding: 0.1em 0.3em 0.16em;
-    /* El ancho final se reserva desde JS antes de empezar a contar, si no
-       el rectangulo crece de 0 a 1.202 y empuja a los contadores vecinos */
+    /* Sin rectangulo negro detras: esa caja existia solo porque el verde
+       fosforito no se leia sobre blanco. El teal si. */
+    color: var(--marca);
 }
 
 .counter__lbl {
@@ -676,7 +673,7 @@ body.menu-open {
     margin-inline: auto;
 }
 
-/* Los cuatro pasos del proceso, numerados en neon sobre la banda negra */
+/* Los cuatro pasos del proceso, numerados en el color de marca sobre la banda negra */
 .steps {
     --steps-gap: clamp(28px, 4vw, 52px);
     display: grid;
@@ -694,7 +691,7 @@ body.menu-open {
     place-items: center;
     width: 66px;
     height: 66px;
-    border: 3px solid var(--neon);
+    border: 3px solid var(--marca);
     /* Literal y no var(--black): dentro de la banda oscura ese token esta
        invertido a casi blanco. */
     background: #0a0a0a;
@@ -704,7 +701,7 @@ body.menu-open {
     width: 30px;
     height: 30px;
     fill: none;
-    stroke: var(--neon);
+    stroke: var(--marca);
     stroke-width: 1.9;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -719,7 +716,7 @@ body.menu-open {
     font-size: 0.86rem;
     line-height: 1;
     color: #0a0a0a;
-    background: var(--neon);
+    background: var(--marca);
     padding: 4px 7px;
 }
 
@@ -737,7 +734,7 @@ body.menu-open {
            empieza la caja siguiente */
         right: calc(-1 * var(--steps-gap));
         height: 3px;
-        background: repeating-linear-gradient(90deg, var(--neon) 0 9px, transparent 9px 20px);
+        background: repeating-linear-gradient(90deg, var(--marca) 0 9px, transparent 9px 20px);
         opacity: 0.4;
     }
 }
@@ -1099,7 +1096,7 @@ body.menu-open {
 
 /* Logo de cada etapa: caja del estilo poster que se "enciende" al entrar
    en pantalla: aparece deslizando, pasa de gris a color y le crece la
-   sombra neon con un halo verde. */
+   sombra con un halo del color de marca. */
 .journey__media {
     display: flex;
     align-items: center;
@@ -1137,7 +1134,7 @@ body.menu-open {
     opacity: 1;
     transform: none;
     box-shadow:
-        7px 7px 0 var(--neon),
+        7px 7px 0 var(--marca),
         0 0 36px rgba(44, 255, 5, 0.4);
 }
 
@@ -1155,7 +1152,7 @@ body.menu-open {
 }
 
 /* En movil el logo se queda, compacto y alineado con el texto, debajo
-   de cada etapa. La sombra neon baja de tamaño en proporcion. */
+   de cada etapa. La sombra baja de tamaño en proporcion. */
 @media (max-width: 880px) {
     .journey__media {
         max-width: 210px;
@@ -1172,7 +1169,7 @@ body.menu-open {
 
     .has-js .reveal.journey__media.is-visible {
         box-shadow:
-            5px 5px 0 var(--neon),
+            5px 5px 0 var(--marca),
             0 0 24px rgba(44, 255, 5, 0.35);
     }
 }
@@ -1189,8 +1186,8 @@ body.menu-open {
 /* Subrayado fluorescente: marca lo que esta vivo ahora mismo */
 .journey__now {
     display: inline-block;
-    background: var(--neon);
-    color: var(--black);
+    background: var(--marca);
+    color: #ffffff;
     padding: 1px 7px;
     font-weight: 700;
 }
@@ -1271,7 +1268,7 @@ body.menu-open {
 }
 
 .chips li:hover {
-    border-color: var(--neon);
+    border-color: var(--marca);
     color: var(--black);
 }
 
@@ -1370,7 +1367,7 @@ body.menu-open {
 
 /* La que aun no esta ganada */
 .cert__name--soon {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 /* -------- Projects ------------------------------------------------------- */
@@ -1445,7 +1442,7 @@ body.menu-open {
 }
 
 .work__links a:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 /* -------- Tools ------------------------------------------------------------ */
@@ -1465,17 +1462,17 @@ body.menu-open {
 }
 
 .tool__title a:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
-/* Cada servicio abre con una barra de neon: el verde entra como elemento
+/* Cada servicio abre con una barra de color: la marca entra como elemento
    grafico, donde no compromete la lectura, y ordena los cuatro bloques. */
 .tool__title::before {
     content: "";
     display: block;
     width: 64px;
     height: 8px;
-    background: var(--neon);
+    background: var(--marca);
     margin-bottom: 18px;
 }
 
@@ -1485,12 +1482,12 @@ body.menu-open {
     }
 }
 
-/* La flecha se pinta desde CSS y no en el texto: asi va en neon, no la
+/* La flecha se pinta desde CSS y no en el texto: asi va en el color de marca, no la
    lee dos veces el lector de pantalla y no depende del idioma. */
 .tool__title a::after {
     content: " \2192";
-    /* La flecha va en negro sobre blanco: en neon a este tamaño se pierde,
-       y el verde ya lo pone la barra de encima del titulo. */
+    /* La flecha va en negro sobre blanco: en el color de marca a este tamaño se pierde,
+       y el color ya lo pone la barra de encima del titulo. */
     color: var(--black);
 }
 
@@ -1555,7 +1552,7 @@ body.menu-open {
 
 .post__byline a {
     font-weight: 700;
-    border-bottom: 2px solid var(--neon);
+    border-bottom: 2px solid var(--marca);
 }
 
 /* Parrilla de cards del listado del blog: la ilustracion arriba, borde
@@ -1652,7 +1649,7 @@ body.menu-open {
 }
 
 .postcard:hover .postcard__go {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 .post__hero {
@@ -1704,7 +1701,7 @@ body.menu-open {
 
 .post a {
     font-weight: 600;
-    border-bottom: 2px solid var(--neon);
+    border-bottom: 2px solid var(--marca);
 }
 
 .post a:hover {
@@ -1869,7 +1866,7 @@ body.menu-open {
 .ext-flow a,
 #privacy a {
     font-weight: 600;
-    border-bottom: 2px solid var(--neon);
+    border-bottom: 2px solid var(--marca);
 }
 
 .ext-flow a:hover,
@@ -1896,6 +1893,9 @@ body.menu-open {
    lector que decide si sigue, y a los motores de respuesta, que levantan
    justo este tipo de bloque cuando resumen una pagina. */
 .post__key {
+    /* Caja negra fuera de .section--dark, asi que el token no se invierte
+       solo y hay que subir el tono aqui */
+    --marca: var(--marca-claro);
     margin: clamp(28px, 4vw, 40px) 0;
     padding: clamp(20px, 2.6vw, 26px) clamp(20px, 2.8vw, 30px);
     background: var(--ink);
@@ -1907,7 +1907,7 @@ body.menu-open {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: var(--neon);
+    color: var(--marca);
     margin-bottom: 14px;
 }
 
@@ -1925,7 +1925,7 @@ body.menu-open {
     color: #d8d8d8;
 }
 
-/* La marca de lista, dibujada a mano para que sea del verde de marca */
+/* La marca de lista, dibujada a mano para que lleve el color de marca */
 .post .post__key li::before {
     content: "";
     position: absolute;
@@ -1933,7 +1933,7 @@ body.menu-open {
     top: 0.55em;
     width: 9px;
     height: 3px;
-    background: var(--neon);
+    background: var(--marca);
 }
 
 /* -------- Preguntas frecuentes ---------------------------------------- */
@@ -1969,7 +1969,7 @@ body.menu-open {
 }
 
 .faq__item summary:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 /* El mismo signo hace de abrir y de cerrar: girado 45 grados, el mas se
@@ -1979,7 +1979,7 @@ body.menu-open {
     flex-shrink: 0;
     font-size: 1.45em;
     line-height: 0.82;
-    color: var(--neon-edge);
+    color: var(--marca);
     transition: transform 0.2s ease;
 }
 
@@ -2052,7 +2052,7 @@ body.menu-open {
     height: 21px;
     flex-shrink: 0;
     fill: none;
-    stroke: var(--neon);
+    stroke: var(--marca);
     stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -2158,7 +2158,7 @@ body.menu-open {
 .form select:focus,
 .form textarea:focus {
     outline: none;
-    border-color: var(--neon);
+    border-color: var(--marca);
 }
 
 .form input::placeholder,
@@ -2188,8 +2188,8 @@ body.menu-open {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #0a0a0a;
-    background: var(--neon);
-    border: 2px solid var(--neon);
+    background: var(--marca);
+    border: 2px solid var(--marca);
     border-radius: 0;
     padding: 15px 30px;
     margin-top: 4px;
@@ -2199,7 +2199,7 @@ body.menu-open {
 
 .form__send:hover {
     background: transparent;
-    color: var(--neon);
+    color: var(--marca);
 }
 
 .form__send[disabled] {
@@ -2218,7 +2218,7 @@ body.menu-open {
 }
 
 .form__status.is-ok {
-    color: var(--neon);
+    color: var(--marca);
 }
 
 .form__status.is-err {
@@ -2442,6 +2442,8 @@ body.menu-open {
    invierten y todos los componentes (bordes, enlaces, titulares) se
    adaptan solos. */
 .section--dark {
+    /* El color de marca sube de tono: el mismo, legible sobre negro */
+    --marca: var(--marca-claro);
     --black: #f5f5f5;
     --gray-text: #b9b9b9;
     --gray-meta: #8f8f8f;
@@ -2457,13 +2459,12 @@ body.menu-open {
     padding-bottom: clamp(80px, 10vw, 150px);
 }
 
-/* Sobre negro, el neon puro brilla; la version oscurecida para AA
-   sobre blanco aqui se queda corta de contraste */
+/* El tono claro del color de marca, que sobre negro da 9,63:1 */
 .section--dark a:hover,
 .section--dark .work__links a:hover,
 .section--dark .contact-aside__social a:hover {
-    color: var(--neon);
-    border-color: var(--neon);
+    color: var(--marca);
+    border-color: var(--marca);
 }
 
 /* La seccion blanca que viene despues de una banda negra no necesita el
@@ -2494,7 +2495,7 @@ body.menu-open {
 }
 
 .footer--dark .footer__cookies:hover {
-    color: var(--neon);
+    color: var(--marca);
 }
 
 /* -------- Seguir leyendo ---------------------------------------- */
@@ -2527,7 +2528,7 @@ body.menu-open {
 .post__more a {
     font-size: 0.95rem;
     font-weight: 600;
-    border-bottom: 2px solid var(--neon);
+    border-bottom: 2px solid var(--marca);
 }
 
 .post__more a:hover {
@@ -2563,8 +2564,8 @@ body.menu-open {
 }
 
 .fab__btn:hover {
-    background: var(--neon);
-    color: var(--black);
+    background: var(--marca);
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -2614,8 +2615,8 @@ body.menu-open {
 .fab__item:nth-child(3) { animation-delay: 0.08s; }
 
 .fab__item:hover {
-    background: var(--neon);
-    color: var(--black);
+    background: var(--marca);
+    color: #ffffff;
 }
 
 /* Globo que invita a pulsar. Aparece solo, a los pocos segundos, y se va
@@ -2629,8 +2630,8 @@ body.menu-open {
     align-items: center;
     gap: 10px;
     white-space: nowrap;
-    background: var(--neon);
-    color: var(--black);
+    background: var(--marca);
+    color: #ffffff;
     font-size: 0.8rem;
     font-weight: 700;
     padding: 10px 14px;
@@ -2653,7 +2654,7 @@ body.menu-open {
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 7px solid var(--neon);
+    border-left: 7px solid var(--marca);
 }
 
 .fab__hint-x {
@@ -2705,7 +2706,7 @@ body.menu-open {
 }
 
 .post__back:hover {
-    color: var(--neon-edge);
+    color: var(--marca);
 }
 
 .post__back:hover::before {
@@ -2713,7 +2714,7 @@ body.menu-open {
 }
 
 /* La vuelta al listado es navegacion, no una referencia dentro del texto, asi
-   que se le quita el trazo verde que llevan los enlaces del articulo. Hace
+   que se le quita el trazo de color que llevan los enlaces del articulo. Hace
    falta subir la especificidad porque .post a pesa mas que .post__back. */
 .post a.post__back {
     border-bottom: 0;

@@ -972,9 +972,8 @@
         const formatear = (n) => n.toLocaleString(document.documentElement.lang || 'es');
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        // El numero vive dentro de un rectangulo negro, asi que si empieza en
-        // 0 y termina en 1.202 la caja crece y empuja a los contadores
-        // vecinos. Se mide el ancho del valor final y se reserva antes.
+        // Se mide el ancho del valor final y se reserva antes de contar: si no,
+        // pasar de 0 a 1.202 ensancha el contador y empuja a sus vecinos.
         const reservarAncho = (el, fin) => {
             const previo = el.textContent;
             el.textContent = formatear(fin);
