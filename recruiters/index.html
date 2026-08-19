@@ -109,7 +109,6 @@
         ad_personalization: 'denied',
         analytics_storage: 'denied'
     });
-    gtag('set', 'url_passthrough', true);
     (function () {
         var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
         if (m && decodeURIComponent(m[1]) === 'granted') {
@@ -146,7 +145,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
             <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">

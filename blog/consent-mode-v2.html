@@ -95,7 +95,6 @@
         ad_personalization: 'denied',
         analytics_storage: 'denied'
     });
-    gtag('set', 'url_passthrough', true);
     (function () {
         var m = document.cookie.match(/(?:^|;\s*)alpc_consent=([^;]*)/);
         if (m && decodeURIComponent(m[1]) === 'granted') {
@@ -132,7 +131,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <h2 class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</h2>
+            <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
             <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">
@@ -237,7 +236,7 @@
                 <li><strong>El default llega después de GTM.</strong> El clásico. Revisa el orden de los scripts en el head, no en la documentación del CMP.</li>
                 <li><strong>El banner solo actualiza analytics_storage y ad_storage.</strong> Configuración heredada de la v1. Las señales nuevas se quedan en denied para siempre y Google Ads trabaja a ciegas.</li>
                 <li><strong>El CMP y GTM no se hablan.</strong> El banner guarda la decisión en su propia cookie y nadie la traduce a consent update. El usuario acepta; las etiquetas ni se enteran.</li>
-                <li><strong>url_passthrough sin activar.</strong> Sin cookies, los parámetros de clic (gclid) se pierden entre páginas. Esta opción los pasa por URL y salva la atribución de quien rechaza.</li>
+                <li><strong>url_passthrough activado sin pensarlo, o al revés.</strong> Si compras tráfico, actívalo: sin cookies el gclid se pierde entre páginas y esta opción lo pasa por URL, salvando la atribución de quien rechaza. Si no inviertes en ads, déjalo apagado: ensucia todas las URLs de la navegación de quien rechaza, la gente las copia y las comparte así, y no ganas nada a cambio.</li>
                 <li><strong>Solo se prueba el camino feliz.</strong> Todo el mundo prueba aceptar. Rechazar, la decisión granular y no decidir quedan sin probar, y ahí viven los fallos.</li>
             </ul>
 
