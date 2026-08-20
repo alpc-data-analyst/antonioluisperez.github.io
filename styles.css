@@ -828,11 +828,41 @@ body.menu-open {
     .steps {
         grid-template-columns: 1fr 1fr;
     }
+
+    /* Sin la linea que los cose, el icono solo en su esquina dejaba toda la
+       fila vacia a su derecha y parecia descolocado. En movil el icono y el
+       titulo van juntos en la misma fila y el texto debajo, a lo ancho. */
+    .steps > * {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 16px;
+        align-items: center;
+    }
+
+    .step__mark {
+        width: 56px;
+        height: 56px;
+    }
+
+    .step__ico {
+        width: 26px;
+        height: 26px;
+    }
+
+    .steps h3 {
+        margin-top: 0;
+    }
+
+    .steps p {
+        grid-column: 1 / -1;
+        margin-top: 8px;
+    }
 }
 
 @media (max-width: 560px) {
     .steps {
         grid-template-columns: 1fr;
+        gap: 26px;
     }
 }
 
@@ -1409,11 +1439,13 @@ body.menu-open {
    de cada etapa. La sombra baja de tamaño en proporcion. */
 @media (max-width: 880px) {
     .journey__media {
-        max-width: 210px;
+        max-width: 240px;
         min-height: 80px;
         padding: 14px 18px;
-        justify-self: start;
-        margin-top: 4px;
+        /* Centrado: clavado a la izquierda bajo el texto dejaba media
+           pantalla vacia a su derecha y parecia un error */
+        justify-self: center;
+        margin-top: 10px;
     }
 
     .journey__media img {
