@@ -1782,6 +1782,12 @@ body.menu-open {
     display: inline-block;
 }
 
+/* Los enlaces que salen del sitio llevan la flecha diagonal, que es la
+   convencion de "se abre fuera", en vez de la horizontal */
+.tool__title a[target="_blank"]::after {
+    content: " \2197";
+}
+
 .tool__tagline {
     font-size: 1.02rem;
     font-weight: 600;
