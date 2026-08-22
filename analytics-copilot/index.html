@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light" />
 
     <title>Analytics Copilot · Extensión de Chrome para QA de analítica</title>
-    <meta name="description" content="9 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome: sesión, atribución y consentimiento en tiempo real. Gratis y open source." />
+    <meta name="description" content="10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome: sesión, atribución, conversiones y capturas anotadas. Gratis y open source." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/analytics-copilot/" />
 
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Antonio Luis Pérez" />
     <meta property="og:url" content="https://antonioluisperez.com/analytics-copilot/" />
     <meta property="og:title" content="Analytics Copilot · Extensión de Chrome para QA de analítica web" />
-    <meta property="og:description" content="9 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome. Gratis y open source." />
+    <meta property="og:description" content="10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome, con captura de página completa anotada. Gratis y open source." />
     <meta property="og:image" content="https://antonioluisperez.com/analytics-copilot/img/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,7 +31,9 @@
                 "name": "Analytics Copilot",
                 "applicationCategory": "BrowserApplication",
                 "operatingSystem": "Chrome",
-                "description": "Extensión de Chrome con 9 herramientas de QA para analítica web: Consent Mode v2, sesión GA4 en tiempo real, atribución de Google Ads y generador de eventos de dataLayer. 100% local.",
+                "description": "Extensión de Chrome con 10 herramientas de QA para analítica web: Consent Mode v2, sesión GA4 en tiempo real, atribución de Google Ads, generador de eventos de dataLayer y captura de página completa con editor de anotaciones. 100% local.",
+                "softwareVersion": "1.4.0",
+                "releaseNotes": "https://github.com/alpc-data-analyst/analytics-copilot/releases",
                 "url": "https://antonioluisperez.com/analytics-copilot/",
                 "image": "https://antonioluisperez.com/analytics-copilot/img/og.jpg",
                 "installUrl": "https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe",
@@ -163,7 +165,7 @@
             <img class="reveal ext-logo" src="img/logo.svg" alt="Logo de Analytics Copilot" width="88" height="88" decoding="async" />
             <p class="reveal section__label">Herramienta · Extensión de Chrome</p>
             <h1 class="reveal section__title">Analytics Copilot</h1>
-            <p class="reveal section__lead">QA de analítica web en un clic: GA4, GTM, Google Ads y Consent Mode. 9 herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network. 100% local: no envía ningún dato a ningún servidor.</p>
+            <p class="reveal section__lead">QA de analítica web en un clic: GA4, GTM, Google Ads y Consent Mode. 10 herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network. 100% local: no envía ningún dato a ningún servidor.</p>
 
             <p class="reveal hero__cta">
                 <a class="ext-install" href="https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe" target="_blank" rel="noopener" data-track="extension_install_click" data-track-location="hero">Añadir a Chrome ↗</a>
@@ -171,13 +173,13 @@
             </p>
 
             <figure class="reveal ext-shot ext-shot--hero">
-                <img src="img/menu.webp" alt="Parrilla de las 9 herramientas de Analytics Copilot en el popup de Chrome" width="1280" height="800" decoding="async" />
+                <img src="img/menu.webp" alt="Parrilla de herramientas de Analytics Copilot en el popup de Chrome" width="1280" height="800" decoding="async" />
             </figure>
         </section>
 
         <section id="tools-ext" class="section">
             <p class="reveal section__label">Qué lleva dentro</p>
-            <h2 class="reveal section__title">Las 9 herramientas.</h2>
+            <h2 class="reveal section__title">Las 10 herramientas.</h2>
 
             <div class="ext-grid">
                 <div class="reveal ext-item" style="--d:0ms">
@@ -216,6 +218,10 @@
                     <h3>📟 Consola</h3>
                     <p>Captura console.* y errores JS, y sobrevive a las recargas.</p>
                 </div>
+                <div class="reveal ext-item ext-item--new" style="--d:0ms">
+                    <h3>📸 Captura <span class="ext-new">Nuevo en 1.4</span></h3>
+                    <p>Pantallazo de la página completa: hace scroll y cose la web entera en una sola imagen, ocultando cabeceras fijas para que no se repitan. Se abre en un editor donde señalar con flechas, cajas y texto, y difuminar datos sensibles (client_id, emails, transaction_id) antes de mandársela a un cliente.</p>
+                </div>
             </div>
         </section>
 
@@ -230,9 +236,29 @@
                     <li><strong>Verifica el gclid</strong>: comprueba que se guarda en la cookie _gcl_aw.</li>
                     <li><strong>Completa la compra</strong> como lo haría un cliente.</li>
                     <li><strong>Mira la conversión</strong>: value, currency y si el gclid viajó con ella.</li>
+                    <li><strong>Llévate la captura anotada</strong>: página completa, flechas sobre lo que falla y los datos del cliente difuminados, lista para el informe.</li>
                 </ol>
-                <p>Atribución de punta a punta verificada sin abrir el Network.</p>
+                <p>Detectar el problema, documentarlo y tapar los datos sensibles, todo dentro de la misma herramienta y sin que nada salga del navegador.</p>
             </div>
+        </section>
+
+        <section id="novedades" class="section">
+            <p class="reveal section__label">Novedades</p>
+            <h2 class="reveal section__title">Notas de versión.</h2>
+
+            <article class="reveal release">
+                <p class="release__meta"><span class="release__tag">v1.4.0</span> <span class="release__date">Agosto de 2026</span></p>
+                <h3 class="release__title">Captura de página completa con editor de anotaciones</h3>
+                <p class="release__text"><code>chrome.tabs.captureVisibleTab</code> solo fotografía lo que se ve, así que la extensión recorre la página por tramos, los captura y los cose en un canvas. Funciona incluso cuando quien hace scroll no es el documento sino un contenedor interno, como pasa en los informes de GA4, y oculta las cabeceras fijas para que no salgan repetidas en cada tramo.</p>
+                <p class="release__text">La última captura queda guardada y se abre en un editor de anotaciones: flechas, cajas y texto que se pueden mover y reeditar después de crearlos, y una herramienta de difuminado que pixela muestreando la imagen original. El dato queda irrecuperable en el PNG; no es un efecto visual que alguien pueda deshacer.</p>
+                <p class="release__text">Todo ocurre en el navegador: la imagen se compone en un canvas local y se guarda en el IndexedDB del propio Chrome. Sin subidas, sin servidor, sin telemetría.</p>
+                <aside class="release__note">
+                    <p><strong>Por qué importa.</strong> Google retiró GoFullPage de la Chrome Web Store por incumplir su política de privacidad, y mucha gente de analítica la usaba a diario para documentar hallazgos. Analytics Copilot cubre ese hueco sin añadir un solo permiso nuevo: usa <code>activeTab</code>, que ya estaba concedido bajo gesto del usuario, y la imagen nunca sale de tu máquina.</p>
+                </aside>
+                <p class="release__links">
+                    <a href="https://github.com/alpc-data-analyst/analytics-copilot/releases" target="_blank" rel="noopener">Historial completo de versiones ↗</a>
+                </p>
+            </article>
         </section>
 
         <section id="shots" class="section">

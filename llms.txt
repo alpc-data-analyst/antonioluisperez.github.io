@@ -12,7 +12,7 @@ Sitio bilingüe español e inglés. El contenido del blog y las páginas de prod
 - [Business intelligence](https://antonioluisperez.com/business-intelligence/): dashboards en Power BI y Looker Studio, SQL en BigQuery y reporting automatizado
 - [Data science](https://antonioluisperez.com/data-science/): clasificación, forecasting y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
 - [Curso de GA4](https://antonioluisperez.com/curso-ga4/): curso online de Google Analytics 4 en español, en vídeo y a tu ritmo, 200 euros
-- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 9 herramientas de QA para analítica web. Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
+- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 10 herramientas de QA para analítica web, incluida captura de página completa con editor de anotaciones (v1.4.0). Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
 
 ## Blog
 

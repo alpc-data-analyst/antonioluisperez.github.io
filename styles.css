@@ -2149,6 +2149,92 @@ body.menu-open {
     margin-top: 10px;
 }
 
+/* Notas de version de la extension */
+.release {
+    margin-top: clamp(30px, 4vw, 46px);
+    max-width: 760px;
+}
+
+.release__meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.release__tag {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: var(--marca);
+    padding: 5px 10px;
+}
+
+.release__date {
+    font-size: 0.76rem;
+    color: var(--gray-meta);
+}
+
+.release__title {
+    margin-top: 16px;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.release__text {
+    margin-top: 14px;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--gray-text);
+}
+
+.release__text code,
+.release__note code {
+    font-size: 0.88em;
+    padding: 1px 5px;
+    background: #f0f0f0;
+}
+
+.release__note {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-left: 4px solid var(--marca);
+    background: #f7f7f7;
+}
+
+.release__note p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--gray-text);
+}
+
+.release__links {
+    margin-top: 20px;
+}
+
+.release__links a {
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 3px;
+}
+
+/* La tarjeta nueva de la parrilla se señala con una etiqueta */
+.ext-new {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: var(--marca);
+    padding: 3px 7px;
+}
+
 .ext-flow {
     border: 3px solid var(--black);
     padding: clamp(20px, 3.5vw, 32px);
