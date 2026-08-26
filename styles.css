@@ -2221,6 +2221,33 @@ body.menu-open {
     padding-bottom: 3px;
 }
 
+/* Cada version es un articulo; las menores van mas juntas y sin captura */
+.release + .release {
+    margin-top: clamp(34px, 5vw, 56px);
+    padding-top: clamp(28px, 4vw, 44px);
+    border-top: 2px solid var(--gray-ghost);
+}
+
+.release__shot {
+    margin-top: 20px;
+    border: 3px solid var(--black);
+    background: #1f2937;
+}
+
+.release__shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 800;
+}
+
+.release__shot figcaption {
+    padding: 10px 14px;
+    font-size: 0.76rem;
+    color: var(--gray-meta);
+    background: var(--bg);
+}
+
 /* La tarjeta nueva de la parrilla se señala con una etiqueta */
 .ext-new {
     display: inline-block;

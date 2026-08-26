@@ -32,7 +32,7 @@
                 "applicationCategory": "BrowserApplication",
                 "operatingSystem": "Chrome",
                 "description": "Extensión de Chrome con 10 herramientas de QA para analítica web: Consent Mode v2, sesión GA4 en tiempo real, atribución de Google Ads, generador de eventos de dataLayer y captura de página completa con editor de anotaciones. 100% local.",
-                "softwareVersion": "1.4.0",
+                "softwareVersion": "1.4.1",
                 "releaseNotes": "https://github.com/alpc-data-analyst/analytics-copilot/releases",
                 "url": "https://antonioluisperez.com/analytics-copilot/",
                 "image": "https://antonioluisperez.com/analytics-copilot/img/og.jpg",
@@ -173,7 +173,7 @@
             </p>
 
             <figure class="reveal ext-shot ext-shot--hero">
-                <img src="img/menu.webp" alt="Parrilla de herramientas de Analytics Copilot en el popup de Chrome" width="1280" height="800" decoding="async" />
+                <img src="img/menu.webp" alt="Parrilla de las 10 herramientas de Analytics Copilot en el popup de Chrome, con los accesos a la captura en la cabecera" width="1280" height="800" decoding="async" />
             </figure>
         </section>
 
@@ -220,7 +220,7 @@
                 </div>
                 <div class="reveal ext-item ext-item--new" style="--d:0ms">
                     <h3>📸 Captura <span class="ext-new">Nuevo en 1.4</span></h3>
-                    <p>Pantallazo de la página completa: hace scroll y cose la web entera en una sola imagen, ocultando cabeceras fijas para que no se repitan. Se abre en un editor donde señalar con flechas, cajas y texto, y difuminar datos sensibles (client_id, emails, transaction_id) antes de mandársela a un cliente.</p>
+                    <p>Pantallazo de la página completa: hace scroll y cose la web entera en una sola imagen, ocultando cabeceras fijas para que no se repitan. Se abre en un editor donde señalar con flechas, cajas y texto, y difuminar datos sensibles (client_id, emails, transaction_id) antes de mandársela a un cliente. Copia la imagen anotada al portapapeles o descárgala como PNG.</p>
                 </div>
             </div>
         </section>
@@ -246,9 +246,19 @@
             <p class="reveal section__label">Novedades</p>
             <h2 class="reveal section__title">Notas de versión.</h2>
 
+            <article class="reveal release release--minor">
+                <p class="release__meta"><span class="release__tag">v1.4.1</span> <span class="release__date">Agosto de 2026</span></p>
+                <h3 class="release__title">Copiar la captura anotada al portapapeles</h3>
+                <p class="release__text">En la 1.4.0 el clic derecho sobre la captura mostraba "Copiar imagen" en gris, sin funcionar: el clic caía sobre la capa de anotación y no sobre la imagen, y aunque hubiera caído bien, el copiado nativo del navegador se habría llevado el fondo sin las anotaciones, que es justo lo que no sirve. Ahora el clic derecho abre un menú propio con "Copiar imagen con anotaciones" y "Descargar PNG", hay un botón Copiar en la barra y funciona con Ctrl o Cmd + C. Todo se compone en el navegador; sigue sin subirse nada y sin permisos nuevos.</p>
+            </article>
+
             <article class="reveal release">
-                <p class="release__meta"><span class="release__tag">v1.4.0</span> <span class="release__date">Agosto de 2026</span></p>
+                <p class="release__meta"><span class="release__tag">v1.4.0</span> <span class="release__date">22 de agosto de 2026</span></p>
                 <h3 class="release__title">Captura de página completa con editor de anotaciones</h3>
+                <figure class="release__shot">
+                    <img src="img/editor.webp" alt="Editor de anotaciones de Analytics Copilot sobre una captura de página completa, con la barra de flechas, cajas, texto y difuminado" width="1280" height="800" loading="lazy" decoding="async" />
+                    <figcaption>El editor: flechas, cajas, texto y difuminado sobre la página entera</figcaption>
+                </figure>
                 <p class="release__text"><code>chrome.tabs.captureVisibleTab</code> solo fotografía lo que se ve, así que la extensión recorre la página por tramos, los captura y los cose en un canvas. Funciona incluso cuando quien hace scroll no es el documento sino un contenedor interno, como pasa en los informes de GA4, y oculta las cabeceras fijas para que no salgan repetidas en cada tramo.</p>
                 <p class="release__text">La última captura queda guardada y se abre en un editor de anotaciones: flechas, cajas y texto que se pueden mover y reeditar después de crearlos, y una herramienta de difuminado que pixela muestreando la imagen original. El dato queda irrecuperable en el PNG; no es un efecto visual que alguien pueda deshacer.</p>
                 <p class="release__text">Todo ocurre en el navegador: la imagen se compone en un canvas local y se guarda en el IndexedDB del propio Chrome. Sin subidas, sin servidor, sin telemetría.</p>
