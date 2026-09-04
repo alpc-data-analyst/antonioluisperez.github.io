@@ -22,4 +22,6 @@
 /blog/consent-mode-v2.html         /blog/consent-mode-v2         301
 /blog/gtm-server-side.html         /blog/gtm-server-side         301
 /blog/dashboards-que-se-usan.html  /blog/dashboards-que-se-usan  301
-/blog/analitica-web-hoteles.html   /blog/analitica-web-hoteles   301
+# Articulo retirado: las dos formas de la URL van al indice del blog.
+/blog/analitica-web-hoteles.html   /blog/   301
+/blog/analitica-web-hoteles        /blog/   301

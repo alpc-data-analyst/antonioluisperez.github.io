@@ -20,7 +20,6 @@ Sitio bilingüe español e inglés. El contenido del blog y las páginas de prod
 - [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2): Basic o Advanced, el orden de carga correcto y la validación de los cuatro escenarios
 - [GTM server side](https://antonioluisperez.com/blog/gtm-server-side): qué arregla, qué sigue igual, costes reales y criterio para decidir
 - [Dashboards que se usan](https://antonioluisperez.com/blog/dashboards-que-se-usan): método de tres niveles de lectura y errores que matan un panel
-- [Analítica web para hoteles](https://antonioluisperez.com/blog/analitica-web-hoteles): el embudo del motor de reservas, los KPIs del sector y la paridad con las OTAs
 
 ## Proyectos y enlaces
 
