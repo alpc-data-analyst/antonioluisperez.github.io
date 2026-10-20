@@ -1,0 +1,685 @@
+/* =============================================================
+   Home · hero oscuro, fichas de herramientas y agentes de IA
+   Solo la carga index.html, detras de styles.css: reutiliza sus
+   tokens (--pad, --marca, --display...) y no toca al resto de
+   paginas. Lo que no esta aqui sale de styles.css tal cual.
+   ============================================================= */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* -------- Barra superior en negro -------------------------------- */
+/* La barra continua el hero: negra, con el nombre y el rol apilados. */
+.home .topbar {
+    background: #0a0a0a;
+    color: #f5f5f5;
+}
+
+.home .topbar.is-stuck {
+    box-shadow: 0 1px 0 #262626;
+}
+
+.home .topbar__brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    color: #f5f5f5;
+}
+
+.home .topbar__brand:hover {
+    color: var(--marca-claro);
+}
+
+.home .topbar__brand-role {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #b9b9b9;
+}
+
+.home .topbar__nav a {
+    color: #b9b9b9;
+}
+
+.home .topbar__cv {
+    color: #f5f5f5;
+}
+
+.home .topbar__nav a:hover,
+.home .topbar__cv:hover {
+    color: var(--marca-claro);
+}
+
+.home .topbar .lang-switch {
+    color: #4a4a4a;
+}
+
+.home .topbar .lang-switch__btn {
+    color: #8f8f8f;
+}
+
+.home .topbar .lang-switch__btn.is-active {
+    color: #f5f5f5;
+}
+
+.home .topbar__burger span {
+    background: #f5f5f5;
+}
+
+/* -------- Hero oscuro ------------------------------------------- */
+/* Sin la altura de pantalla completa del hero de styles.css: aqui el
+   contenido va seguido y el borde inferior lo pisan las fichas */
+.hero--dark {
+    min-height: 0;
+    justify-content: flex-start;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    text-align: center;
+    padding: clamp(40px, 7vh, 72px) var(--pad) clamp(190px, 22vh, 230px);
+}
+
+/* El mapa de pings, el mismo de siempre: los continentes grises leen bien
+   sobre negro; solo cambia el fundido de los bordes, ahora a negro */
+.hero--dark .hero-map {
+    opacity: 0.26;
+}
+
+.hero--dark .hero-map::after {
+    background:
+        radial-gradient(58% 46% at 50% 42%, rgba(10, 10, 10, 0.78), rgba(10, 10, 10, 0) 72%),
+        linear-gradient(180deg, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0) 26%, rgba(10, 10, 10, 0) 68%, rgba(10, 10, 10, 0.95));
+}
+
+.hero--dark .section__label {
+    color: #8f8f8f;
+}
+
+.hero-dark__title {
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: 0.005em;
+    max-width: 16ch;
+    margin: 26px auto 0;
+}
+
+.hero-dark__lead {
+    max-width: 46ch;
+    margin: 30px auto 0;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.55;
+    color: #b9b9b9;
+}
+
+.hero-dark__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+/* -------- Botones ------------------------------------------------ */
+/* Mismo bloque de borde grueso que el resto de la web; el relleno teal
+   marca la accion principal */
+.btn-solid,
+.btn-line {
+    display: inline-block;
+    font-size: clamp(0.88rem, 1.15vw, 1rem);
+    font-weight: 800;
+    letter-spacing: 0.005em;
+    padding: clamp(14px, 1.6vw, 18px) clamp(22px, 2.4vw, 32px);
+    border: 3px solid;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-solid {
+    background: var(--marca-claro);
+    border-color: var(--marca-claro);
+    color: #0a0a0a;
+}
+
+.btn-solid:hover {
+    background: #7fd8df;
+    border-color: #7fd8df;
+    color: #0a0a0a;
+}
+
+.btn-line {
+    background: var(--bg);
+    border-color: var(--black);
+    color: var(--black);
+    font-weight: 700;
+}
+
+.btn-line:hover {
+    border-color: var(--marca);
+    color: var(--marca);
+}
+
+.btn-line--light {
+    background: transparent;
+    border-color: #f5f5f5;
+    color: #f5f5f5;
+}
+
+.btn-line--light:hover {
+    border-color: var(--marca-claro);
+    color: var(--marca-claro);
+}
+
+/* -------- Fichas de herramientas --------------------------------- */
+/* Suben sobre el borde inferior del hero negro */
+.tools-cards {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: clamp(-170px, -18vh, -140px) auto 0;
+    padding: 0 var(--pad);
+}
+
+.tools-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 48px 24px;
+}
+
+.tcard {
+    min-width: 0;
+}
+
+.tcard__shot {
+    display: block;
+    height: 240px;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.tcard__shot--panel {
+    padding: 24px 0 0 24px;
+}
+
+.tcard__shot--panel img {
+    width: 150%;
+    max-width: none;
+    height: auto;
+}
+
+.tcard__shot--popup {
+    display: flex;
+    justify-content: center;
+    padding: 24px 20px 0;
+}
+
+.tcard__shot--popup img {
+    width: 72%;
+    max-width: 220px;
+    height: auto;
+    align-self: flex-start;
+}
+
+/* Lo que hacen los agentes, en negro: tres tareas con su marca teal */
+.tcard__shot--agents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 32px;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid #262626;
+}
+
+.tcard__shot--agents span {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.tcard__shot--agents span::before {
+    content: "";
+    flex: none;
+    width: 14px;
+    height: 14px;
+    background: var(--marca-claro);
+}
+
+.tcard__title {
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.15;
+    margin-top: 24px;
+}
+
+.tcard__title::before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 6px;
+    background: var(--marca);
+    margin-bottom: 16px;
+}
+
+.tcard__title a:hover {
+    color: var(--marca);
+}
+
+.tcard__tag {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3d3d3d;
+}
+
+.tcard__meta {
+    margin-top: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #767676;
+}
+
+/* -------- Como trabajo: los pasos de los agentes ------------------ */
+.agent-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: clamp(32px, 4vw, 48px);
+    margin-top: clamp(44px, 6vw, 64px);
+}
+
+.agent-steps__mark {
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    border: 3px solid var(--marca);
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--marca);
+}
+
+/* El ultimo paso es el humano: relleno, para que se lea distinto */
+.agent-steps__mark--me {
+    background: var(--marca);
+    color: #ffffff;
+}
+
+.agent-steps h3 {
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1.15;
+    margin-top: 22px;
+}
+
+.agent-steps p {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--gray-text);
+}
+
+.agent-steps__note {
+    margin-top: clamp(40px, 5vw, 64px);
+    max-width: 760px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3d3d3d;
+}
+
+/* -------- Servicios ---------------------------------------------- */
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: clamp(32px, 4vw, 48px);
+    margin-top: clamp(44px, 6vw, 64px);
+}
+
+.svc__title {
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.35rem;
+    line-height: 1.15;
+}
+
+.svc__title::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 6px;
+    background: var(--marca);
+    margin-bottom: 16px;
+}
+
+.svc__title a:hover {
+    color: var(--marca);
+}
+
+.svc p {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--gray-text);
+}
+
+.svc-cta {
+    margin-top: clamp(40px, 5vw, 56px);
+}
+
+/* -------- Clientes ----------------------------------------------- */
+/* La parrilla rota por grupos (script.js); aqui va alineada a la
+   izquierda con el titulo de la seccion */
+#clientes .clients__grid {
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: clamp(36px, 5vw, 56px);
+}
+
+#clientes .counters {
+    justify-content: flex-start;
+    margin-top: clamp(48px, 6vw, 80px);
+}
+
+/* -------- Contacto con reseñas ------------------------------------ */
+#contact .quotes__stage {
+    max-width: 680px;
+    margin: 0 auto clamp(70px, 9vw, 120px);
+    text-align: center;
+}
+
+.contact__label {
+    margin-top: 0;
+}
+
+/* -------- Pagina de herramientas (/herramientas/) ----------------- */
+.tools-hero {
+    background: #0a0a0a;
+    color: #f5f5f5;
+    text-align: center;
+    padding: clamp(56px, 9vh, 96px) var(--pad) clamp(64px, 10vh, 110px);
+}
+
+.tools-hero .section__label {
+    color: #8f8f8f;
+}
+
+.tools-hero__title {
+    max-width: 18ch;
+}
+
+.tool-rows {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(56px, 8vw, 96px);
+    margin-top: clamp(44px, 6vw, 64px);
+}
+
+.tool-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+}
+
+/* Alterna captura a izquierda y derecha, como la lista de la web antigua */
+.tool-row:nth-child(even) .tool-row__shot {
+    order: 2;
+}
+
+.tool-row__shot {
+    display: block;
+    height: clamp(240px, 28vw, 360px);
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.tool-row__title {
+    font-family: var(--display);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.tool-row__title a:hover {
+    color: var(--marca);
+}
+
+.tool-row__tag {
+    margin-top: 14px;
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+
+.tool-row__text {
+    margin-top: 10px;
+    max-width: 56ch;
+    font-size: 0.95rem;
+    color: var(--gray-text);
+}
+
+.tool-row__cta {
+    margin-top: 24px;
+}
+
+.tools-free {
+    margin-top: clamp(44px, 6vw, 64px);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.tcard__shot--utm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.55;
+    color: #3d3d3d;
+    overflow-wrap: anywhere;
+}
+
+.tcard__shot--utm b {
+    color: var(--marca);
+}
+
+.tcard__shot--blurr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #3d3d3d;
+}
+
+.tcard__shot--blurr span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tcard__shot--blurr i {
+    flex: 1;
+    height: 18px;
+    background: #0a0a0a;
+}
+
+.tcard__shot--blurr i.corto {
+    flex: 0.7;
+}
+
+.tcard__shot--blurr i.medio {
+    flex: 0.85;
+}
+
+.tools-agents__cta {
+    margin-top: 36px;
+}
+
+@media (max-width: 880px) {
+    .tool-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-row:nth-child(even) .tool-row__shot {
+        order: 0;
+    }
+}
+
+/* -------- El agente (agent.js) ----------------------------------- */
+/* Vive en el documento, no en la pantalla: se desplaza con la pagina.
+   Por debajo de la barra superior (800) y sin recibir el puntero. */
+.agent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 700;
+    width: 48px;
+    height: 56px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    will-change: transform;
+}
+
+.agent.is-on {
+    opacity: 1;
+}
+
+/* Esperando al ratón: recibe el puntero y se balancea para llamar la atención */
+.agent.is-waiting {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Respira sin despegar los pies del suelo: se aplasta un poco desde abajo */
+.agent.is-waiting .agent__body svg {
+    transform-origin: 50% 100%;
+    animation: agente-espera 1.4s ease-in-out infinite;
+}
+
+@keyframes agente-espera {
+    0%, 100% { scale: 1 1; }
+    50% { scale: 1.04 0.95; }
+}
+
+/* Poses: de frente en reposo; ojos felices y brazo arriba al saltar y hablar */
+.agent__cara--juego,
+.agent__brazo--arriba {
+    display: none;
+}
+
+.agent.is-air .agent__cara--frente,
+.agent.is-talking .agent__cara--frente,
+.agent.is-air .agent__brazo--abajo,
+.agent.is-talking .agent__brazo--abajo {
+    display: none;
+}
+
+.agent.is-air .agent__cara--juego,
+.agent.is-talking .agent__cara--juego,
+.agent.is-air .agent__brazo--arriba,
+.agent.is-talking .agent__brazo--arriba {
+    display: inline;
+}
+
+.agent__body {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 100%;
+    transition: transform 0.15s ease;
+}
+
+.agent__body svg {
+    display: block;
+    overflow: visible;
+    transition: transform 0.15s ease;
+}
+
+.agent__body.is-left svg {
+    transform: scaleX(-1);
+}
+
+/* Se estira en el aire y se aplasta al caer */
+.agent.is-air .agent__body {
+    transform: scale(0.92, 1.08);
+}
+
+.agent__body.is-land {
+    transform: scale(1.18, 0.82);
+}
+
+.agent__ojo {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: agente-parpadeo 3.4s infinite;
+}
+
+@keyframes agente-parpadeo {
+    0%, 92%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.12); }
+}
+
+/* El bocadillo: blanco con borde negro, como los botones de la web */
+.agent__say {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    padding: 8px 12px;
+    background: #ffffff;
+    color: #0a0a0a;
+    border: 2px solid #0a0a0a;
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px) scale(0.92);
+    transform-origin: 50% 100%;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.agent__say::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -6px;
+    border: 6px solid transparent;
+    border-top-color: #0a0a0a;
+}
+
+.agent.is-talking .agent__say {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+@media (max-width: 880px) {
+    .home .topbar__brand-name {
+        display: block;
+    }
+
+    .tools-cards {
+        margin-top: -150px;
+    }
+}

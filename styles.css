@@ -2957,12 +2957,16 @@ body.menu-open {
     color: #8f8f8f;
 }
 
+/* Todos los enlaces del pie, no solo el de cookies: sin esto heredaban el
+   negro del texto y desaparecian sobre el fondo negro */
+.footer--dark a,
 .footer--dark .footer__cookies {
     color: #8f8f8f;
 }
 
+.footer--dark a:hover,
 .footer--dark .footer__cookies:hover {
-    color: var(--marca);
+    color: var(--marca-claro);
 }
 
 /* -------- Seguir leyendo ---------------------------------------- */

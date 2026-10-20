@@ -1,17 +1,17 @@
 # Antonio Luis Pérez Carmona
 
-> Portfolio de Antonio Luis Pérez Carmona, AI & Data Analyst en Málaga (España). Analítica digital con GA4, GTM y BigQuery, dashboards en Power BI y Looker Studio, y machine learning aplicado. Digital Analyst en Paraty Tech (hospitality tech, más de 1300 webs de hotel medidas), owner de Roometrics.es y creador de herramientas de analítica open source. Disponible para proyectos: contacto en alpcmalaga@gmail.com.
+> Antonio Luis Pérez Carmona es Analytics Engineer en Málaga (España). Hace analítica web con agentes de IA: audita, implementa y analiza GA4, Google Tag Manager y BigQuery, con agentes que revisan contenedores, prueban el tracking y preparan informes, y con él decidiendo y firmando cada entrega. Ha medido más de 1300 webs. Creador de Roometrics (analítica web cookieless) y de Analytics Copilot (extensión de Chrome para QA de analítica). Disponible para proyectos: contacto en alpcmalaga@gmail.com.
 
 Sitio bilingüe español e inglés. El contenido del blog y las páginas de producto están en español.
 
 ## Páginas principales
 
-- [Consultoría de analítica digital](https://antonioluisperez.com/): servicios de medición, dashboards, data science y formación, con clientes y reseñas
+- [Analítica web con agentes de IA](https://antonioluisperez.com/): herramientas, cómo trabaja con agentes, servicios (auditoría GA4 y GTM, implementación, análisis e informes, BI), clientes y contacto
+- [Herramientas](https://antonioluisperez.com/herramientas/): Roometrics, Analytics Copilot, UTM Builder y Blurr, y los agentes de IA que está construyendo
 - [CV y trayectoria (recruiters)](https://antonioluisperez.com/recruiters/): quién es Antonio, trayectoria completa, stack, certificaciones y proyectos
 - [Analítica web](https://antonioluisperez.com/analitica-web/): auditoría e implementación de medición, GA4, GTM web y server side, Consent Mode y Meta CAPI
 - [Business intelligence](https://antonioluisperez.com/business-intelligence/): dashboards en Power BI y Looker Studio, SQL en BigQuery y reporting automatizado
 - [Data science](https://antonioluisperez.com/data-science/): clasificación, forecasting y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
-- [Curso de GA4](https://antonioluisperez.com/curso-ga4/): curso online de Google Analytics 4 en español, en vídeo y a tu ritmo, 200 euros
 - [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 10 herramientas de QA para analítica web, incluida captura de página completa con editor de anotaciones (v1.4.1). Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
 
 ## Blog
