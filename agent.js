@@ -125,6 +125,7 @@
     };
 
     const tween = (ms, fn) => new Promise((done) => {
+        ancla = null; // en el aire no va pegado a nada
         const t0 = performance.now();
         const step = (t) => {
             const k = Math.min(1, (t - t0) / ms);
@@ -178,14 +179,41 @@
         return tween(Math.max(380, Math.abs(y - y0) * 1.1), (k) => place(x0, y0 + (y - y0) * k * k));
     };
 
-    const talk = (texto, ms) => {
+    // Pone el texto y desplaza el bocadillo si se saldría de la pantalla
+    const decir = (texto) => {
         say.textContent = texto;
+        const w = say.offsetWidth;
+        const cx = pos.x - window.scrollX;
+        const margen = 12;
+        let dx = 0;
+        if (cx - w / 2 < margen) dx = margen - (cx - w / 2);
+        else if (cx + w / 2 > document.documentElement.clientWidth - margen) dx = document.documentElement.clientWidth - margen - (cx + w / 2);
+        // la cola no puede salirse del bocadillo
+        dx = Math.max(-(w / 2 - 14), Math.min(w / 2 - 14, dx));
+        say.style.setProperty('--say-dx', Math.round(dx) + 'px');
+    };
+
+    const talk = (texto, ms) => {
+        decir(texto);
         el.classList.add('is-talking');
         return wait(ms).then(() => el.classList.remove('is-talking'));
     };
 
-    const show = () => el.classList.add('is-on');
+    // Parpadea cada 3,4 s solo mientras se ve: fuera de eso no cuesta nada
+    let parpadeo = 0;
+    const show = () => {
+        el.classList.add('is-on');
+        if (!parpadeo) {
+            parpadeo = setInterval(() => {
+                el.classList.add('is-blink');
+                setTimeout(() => el.classList.remove('is-blink'), 110);
+            }, 3400);
+        }
+    };
     const hide = () => {
+        clearInterval(parpadeo);
+        parpadeo = 0;
+        ancla = null;
         el.classList.remove('is-on', 'is-air', 'is-talking', 'is-waiting');
         body.classList.remove('is-land');
     };
@@ -201,7 +229,7 @@
         el.classList.add('is-waiting');
         if (!pistaDada) {
             pistaDada = true;
-            say.textContent = TXT[lang()].pista;
+            decir(TXT[lang()].pista);
             el.classList.add('is-talking');
         }
     });
@@ -228,6 +256,40 @@
         const top = r.top + window.scrollY;
         return { left: left, top: top, right: left + r.width, bottom: top + r.height, cx: left + r.width / 2 };
     };
+    /* ---------- Pegado a lo que pisa ---------- */
+    // Quieto, el robot sigue al elemento sobre el que está: si la página se
+    // mueve por debajo (la barra superior encoge al hacer scroll, zoom,
+    // cambio de ventana...) se recoloca en vez de quedarse flotando.
+    // dx: distancia desde el borde izquierdo; sin dx, centrado.
+    let ancla = null;
+    const sobre = (node, dx) => {
+        const b = box(node);
+        return { x: b.left + (dx == null ? (b.right - b.left) / 2 : dx), y: b.top };
+    };
+    const posa = (node, dx) => {
+        ancla = { node: node, dx: dx };
+        const p = sobre(node, dx);
+        place(p.x, p.y);
+    };
+    let pendiente = false;
+    const recolocar = () => {
+        if (!ancla || pendiente) return;
+        pendiente = true;
+        requestAnimationFrame(() => {
+            pendiente = false;
+            if (ancla) posa(ancla.node, ancla.dx);
+        });
+    };
+    window.addEventListener('scroll', recolocar, { passive: true });
+    window.addEventListener('resize', recolocar);
+    if ('ResizeObserver' in window) new ResizeObserver(recolocar).observe(document.body);
+
+    // Salta hasta un elemento midiéndolo justo antes y se queda pegado a él
+    const hopA = (node, dx, h) => {
+        const p = sobre(node, dx);
+        return hop(p.x, p.y, h).then(() => posa(node, dx));
+    };
+
     const one = (sel) => document.querySelector(sel);
     const all = (sel) => Array.prototype.slice.call(document.querySelectorAll(sel));
 
@@ -248,23 +310,21 @@
             const grid = one('.tools-cards__grid');
             const shots = all('.tcard__shot');
             if (!b1n || !b2n || !grid || !shots.length) return;
-            const b1 = box(b1n);
-            const b2 = box(b2n);
-            const g = box(grid);
-            const last = box(shots[shots.length - 1]);
-            if (!enFila([b1, b2])) return;
+            const lastN = shots[shots.length - 1];
+            if (!enFila([box(b1n), box(b2n)])) return;
 
             // Siempre apoyado en algo: empieza sobre la ficha de Roometrics,
             // sube a los dos botones y baja a la ficha de los agentes
-            const primera = box(shots[0]);
-            place(primera.left + 64, primera.top);
+            posa(shots[0], 64);
             show();
             await hover();
-            await hop(b1.cx, b1.top, 50);
+            await hopA(b1n, null, 50);
             await hover();
-            await hop(b2.cx, b2.top, 60);
+            await hopA(b2n, null, 60);
             await talk(TXT[lang()].inicio, ULTIMA);
-            await hop(last.left + 64, last.top, 40);
+            await hopA(lastN, 64, 40);
+            const last = box(lastN);
+            const g = box(grid);
             await walk(last.right - 24);
             await hop(Math.max(last.right, g.right) + 30, last.top - 6, 24, false);
             await fall(last.bottom + 60);
@@ -280,13 +340,15 @@
             const note = one('.agent-steps__note');
             if (total < 4 || !note || !enFila([0, 1, 2, 3].map(mark))) return;
 
+            const marks = all('.agent-steps__mark');
             place(mark(0).cx, mark(0).top - 110);
             show();
             await fall(mark(0).top);
             await land();
+            posa(marks[0]);
             for (let i = 1; i < total; i++) {
                 await hover();
-                await hop(mark(i).cx, mark(i).top, 64);
+                await hopA(marks[i], null, 64);
             }
             await talk(TXT[lang()].agentes, ULTIMA);
             await hop(mark(3).cx + 240, mark(3).top - 10, 56, false);
@@ -301,13 +363,15 @@
             if (total < 4 || !enFila([0, 1, 2, 3].map(title))) return;
             const barra = (t) => t.left + 20; // las barras miden 40px
 
+            const titles = all('.svc__title');
             place(barra(title(0)), title(0).top - 110);
             show();
             await fall(title(0).top);
             await land();
+            posa(titles[0], 20);
             for (let i = 1; i < total; i++) {
                 await hover();
-                await hop(barra(title(i)), title(i).top, 60);
+                await hopA(titles[i], 20, 60);
             }
             await talk(TXT[lang()].servicios, ULTIMA);
             await hop(barra(title(3)) + 220, title(3).top - 10, 50, false);

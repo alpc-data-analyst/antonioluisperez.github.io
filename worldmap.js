@@ -35,23 +35,38 @@
     let pings = [];
     let last = 0;
 
+    // El mapa y los hubs no cambian: se pintan una vez en un lienzo aparte
+    // y cada fotograma solo lo copia (rellenar todos los trazados 60 veces
+    // por segundo era lo que hacía ir la home a tirones)
+    let base = null;
     const drawMap = () => {
-        ctx.save();
-        ctx.scale(sx, sy);
-        ctx.translate(-VB[0], -VB[1]);
-        ctx.fillStyle = LAND;
-        P2D.forEach((p) => ctx.fill(p));
-        ctx.restore();
-        // Los hubs siempre visibles, tenues: el mapa nunca queda muerto
-        HUBS.forEach((h) => {
-            ctx.beginPath();
-            ctx.arc(h[0] / 100 * W, h[1] / 100 * H, 3, 0, 6.283);
-            ctx.fillStyle = 'rgba(' + PING + ', .55)';
-            ctx.fill();
-        });
+        if (!base) {
+            base = document.createElement('canvas');
+            base.width = W;
+            base.height = H;
+            const b = base.getContext('2d');
+            b.save();
+            b.scale(sx, sy);
+            b.translate(-VB[0], -VB[1]);
+            b.fillStyle = LAND;
+            P2D.forEach((p) => b.fill(p));
+            b.restore();
+            // Los hubs siempre visibles, tenues: el mapa nunca queda muerto
+            b.fillStyle = 'rgba(' + PING + ', .55)';
+            HUBS.forEach((h) => {
+                b.beginPath();
+                b.arc(h[0] / 100 * W, h[1] / 100 * H, 3, 0, 6.283);
+                b.fill();
+            });
+        }
+        ctx.drawImage(base, 0, 0);
     };
 
+    let prev = 0;
     const frame = (t) => {
+        // Crecimiento por tiempo, no por fotograma
+        const k = prev ? Math.min(3, (t - prev) / 16.7) : 1;
+        prev = t;
         ctx.clearRect(0, 0, W, H);
         drawMap();
 
@@ -75,7 +90,7 @@
         }
 
         pings.forEach((p) => {
-            p.r += 1.4;
+            p.r += 1.4 * k;
             const a = Math.max(0, 1 - p.r / 70);
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, 6.283);
@@ -101,18 +116,25 @@
             ctx.stroke();
         }
 
-        if (corriendo) requestAnimationFrame(frame);
+        // Los pings laten despacio: con 30 fotogramas por segundo basta,
+        // aunque la pantalla vaya a 60 o 144 Hz
+        if (corriendo) espera = setTimeout(() => requestAnimationFrame(frame), 33);
     };
 
     // Solo late mientras el hero está en pantalla y la pestaña activa:
     // un canvas animado fuera de vista es batería tirada.
     let corriendo = false;
+    let espera = 0;
     const arrancar = () => {
         if (corriendo || document.hidden) return;
         corriendo = true;
+        prev = 0;
         requestAnimationFrame(frame);
     };
-    const parar = () => { corriendo = false; };
+    const parar = () => {
+        corriendo = false;
+        clearTimeout(espera);
+    };
 
     if ('IntersectionObserver' in window) {
         new IntersectionObserver((e) => {

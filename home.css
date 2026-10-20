@@ -557,12 +557,15 @@
     height: 56px;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.25s ease;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
     will-change: transform;
 }
 
 .agent.is-on {
     opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease;
 }
 
 /* Esperando al ratón: recibe el puntero y se balancea para llamar la atención */
@@ -571,9 +574,10 @@
     cursor: pointer;
 }
 
-/* Respira sin despegar los pies del suelo: se aplasta un poco desde abajo */
-.agent.is-waiting .agent__body svg {
-    transform-origin: 50% 100%;
+/* Respira sin despegar los pies del suelo: se aplasta un poco desde abajo.
+   Va en el contenedor (no dentro del SVG) para que la anime la tarjeta
+   gráfica sin repintar la página en cada fotograma */
+.agent.is-waiting .agent__body {
     animation: agente-espera 1.4s ease-in-out infinite;
 }
 
@@ -628,15 +632,15 @@
     transform: scale(1.18, 0.82);
 }
 
+/* Parpadeo: agent.js pone .is-blink un instante cada 3,4 s mientras se ve
+   (una animación CSS infinita aquí repintaba la página en cada fotograma) */
 .agent__ojo {
     transform-box: fill-box;
     transform-origin: center;
-    animation: agente-parpadeo 3.4s infinite;
 }
 
-@keyframes agente-parpadeo {
-    0%, 92%, 100% { transform: scaleY(1); }
-    95% { transform: scaleY(0.12); }
+.agent.is-blink .agent__ojo {
+    transform: scaleY(0.12);
 }
 
 /* El bocadillo: blanco con borde negro, como los botones de la web */
@@ -654,7 +658,8 @@
     line-height: 1.2;
     white-space: nowrap;
     opacity: 0;
-    transform: translateX(-50%) translateY(4px) scale(0.92);
+    /* --say-dx lo pone agent.js para que no se salga por los lados */
+    transform: translateX(calc(-50% + var(--say-dx, 0px))) translateY(4px) scale(0.92);
     transform-origin: 50% 100%;
     transition: opacity 0.18s ease, transform 0.18s ease;
 }
@@ -662,7 +667,7 @@
 .agent__say::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: calc(50% - var(--say-dx, 0px));
     top: 100%;
     margin-left: -6px;
     border: 6px solid transparent;
@@ -671,7 +676,7 @@
 
 .agent.is-talking .agent__say {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateX(calc(-50% + var(--say-dx, 0px))) translateY(0) scale(1);
 }
 
 @media (max-width: 880px) {
