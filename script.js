@@ -16,85 +16,26 @@
             nav_tools: 'Herramientas',
             nav_blog: 'Blog',
             nav_contact: 'Contacto',
+            nav_home: 'Inicio',
             nav_services: 'Servicios',
-            nav_process: 'Proceso',
             nav_talk: 'Hablemos →',
             nav_cv: 'CV ↓',
             nav_cv_aria: 'Descargar CV',
             nav_main_aria: 'Principal',
             lang_aria: 'Idioma',
             menu_aria: 'Menú',
-            fab_aria: 'Abrir contacto',
-            fab_hint: '¿Necesitas ayuda?',
-            fab_hint_close: 'Cerrar aviso',
             blog_back: 'Volver al blog',
             post_more: 'Seguir leyendo',
-            blog_h1: 'Blog de analítica web y datos',
-            page_title: 'Consultoría de analítica digital en Málaga · Antonio Luis Pérez',
-            rec_title: 'Antonio Luis Pérez Carmona · CV y trayectoria · Data Analyst',
+            blog_h1: 'Guías de medición web',
+            rec_title: 'Antonio Luis Pérez Carmona | CV y trayectoria | Analytics Engineer',
 
-            sv_kicker: 'Consultoría de analítica digital · Málaga y remoto',
-            counters_aria: 'Cifras',
-            cnt_webs: 'Webs medidas',
-            cnt_dash: 'Dashboards en producción',
-            cnt_audit: 'Auditorías de tracking',
-            sv_h1: 'Convierto tus datos en decisiones de negocio.',
-            sv_lead: 'Mido webs, apps y ecommerce. Convierto el comportamiento de tus usuarios en KPIs que entiende todo el equipo y en decisiones que aguantan una reunión.',
             sv_cta1: 'Cuéntame tu caso',
-            sv_cta2: 'Ver servicios',
-            sv_rec: '¿Eres recruiter? Mi CV y trayectoria tienen su propia página.',
-            sv_rec_cta: 'Verla →',
-            sv_s_tag: '01 · Servicios',
-            sv_s_title: 'Qué puedo hacer por tus datos.',
-            sv_s1_title: 'Auditoría de medición',
-            sv_s1_tag: 'Saber si puedes fiarte de tus datos, antes de decidir con ellos.',
-            sv_s1_text: 'Reviso tu GA4 y tu GTM evento a evento: duplicados, compras que se cuentan dos veces, consentimiento mal montado y datos personales donde no deben estar. Sales con un informe priorizado y con la desviación contra tu backend explicada.',
-            sv_s2_title: 'Implementación y tracking',
-            sv_s2_tag: 'GA4 y GTM contando la verdad desde el primer dato.',
-            sv_s2_text: 'DataLayer a medida, GTM web y server side, Consent Mode v2, Meta CAPI y conversiones mejoradas. Validado en DebugView y documentado para que tu equipo lo mantenga sin depender de mí.',
-            sv_s3_title: 'Dashboards y reporting',
-            sv_s3_tag: 'Informes que se actualizan solos y se abren cada lunes.',
-            sv_s3_text: 'Power BI y Looker Studio sobre SQL en BigQuery, con actualización automática. El estado en cinco segundos arriba, el detalle abajo.',
-            qe_tag: 'Antes de empezar',
-            qe_title: '¿Qué es la analítica digital?',
-            qe_lead: 'La analítica digital consiste en medir lo que hacen las personas en tu web o en tu app y convertirlo en decisiones: qué canal trae clientes y cuál solo tráfico, en qué paso del proceso de compra se cae la gente, y qué cambio ha subido las ventas y cuál no ha hecho nada.',
-            qe_h1: 'Medir',
-            qe_p1: 'Registrar cada paso importante con nombres estables y respetando el consentimiento. Si el dato entra sucio, lo demás sobra.',
-            qe_h2: 'Entender',
-            qe_p2: 'Cruzar fuentes, separar la señal del ruido y saber qué pregunta responde cada número. Un gráfico no es un hallazgo.',
-            qe_h3: 'Decidir',
-            qe_p3: 'Convertirlo en KPIs que entiende todo el equipo y en acciones concretas. Si no cambia lo que alguien hace mañana, no es analítica, es decoración.',
-            sv_s4_title: 'Formación y mentorías',
-            sv_s4_tag: 'Tu equipo midiendo solo en unas semanas.',
-            sv_s4_text: 'Workshops de GA4 y GTM para tu equipo y mentoría 1:1 para analistas. Con vuestros datos, no con diapositivas genéricas.',
-            sv_p_tag: '02 · Proceso',
-            sv_p_title: 'Cómo trabajo.',
-            sv_p1_h: 'Diagnóstico',
-            sv_p1_p: 'Media hora de llamada y una revisión de lo que tienes montado. Gratis, y sales con un problema localizado.',
-            sv_p2_h: 'Propuesta',
-            sv_p2_p: 'Alcance, plazos y precio cerrados por escrito. Sin sorpresas ni horas infladas.',
-            sv_p3_h: 'Implementación',
-            sv_p3_p: 'Validación documentada de cada pieza. Ves el avance, no un informe al final.',
-            sv_p4_h: 'Entrega y soporte',
-            sv_p4_p: 'Documentación, vídeo de traspaso y un mes de soporte. Lo entregado queda tuyo y funcionando.',
-            sv_a_tag: '03 · Sobre mí',
-            sv_a_title: 'Quién está detrás.',
-            sv_a_lead: 'Soy Antonio Luis Pérez Carmona, Digital Analyst: mido a diario más de 1300 webs y mantengo más de 100 dashboards en producción. Por mi cuenta he construido Roometrics, analítica web sin cookies, y Analytics Copilot, una extensión de Chrome para QA de medición. Lo que vendo es lo que hago cada día.',
-            sv_a_cv: 'Trayectoria completa y CV →',
-            sv_c_tag: '05 · Contacto',
-            sv_foot_rec: 'Recruiters: CV y trayectoria',
+            sv_foot_rec: 'CV y trayectoria',
 
-            brand_role: 'Analista de datos en Málaga',
-            hero_role: 'AI & Data Analyst',
-            hero_owner: 'Owner de Roometrics.es',
             hero_cta_cv: 'Descargar CV',
             hero_cta_contact: 'Hablemos',
-            paths_label: '¿Qué estás buscando?',
-            path_web: 'Ecommerce / Web Analyst',
-            path_ds: 'Data Science',
-            path_da: 'Data Analyst',
 
-            clients_label: 'Ya han confiado en mí',
+            clients_label: 'Han confiado en mí',
             clients_aria: 'Clientes',
 
             quotes_label: 'Opiniones de los clientes',
@@ -106,73 +47,73 @@
             q_seeds: '«Estamos muy contentos con la entrega. Es muy profesional y atento a los detalles, con un gran conocimiento en lo que fue contratado. Además nos presentó una auditoría excelente.»',
             q_suntropy: '«Gran trabajo de analítica web. Servicio muy profesional y entrega rápida.»',
 
-            about_tag: '01 · Sobre mí',
-            about_title: 'Un perfil, tres frentes.',
-            about_lead: 'Soy Antonio Luis Pérez Carmona, Digital Analyst en Paraty Tech: mido el embudo de reserva de más de 1300 webs de hotel con GA4, GTM y BigQuery, y mantengo más de 100 dashboards que Producto, Marketing y Operaciones usan a diario. Vengo del marketing y me quedé por los datos, y por el camino he acabado cubriendo tres roles que normalmente llevan tres personas.',
-            about_h1: 'Ecommerce / Web Analyst',
-            about_p1: 'Medición end-to-end: GA4, GTM en web y server side, DataLayer a medida, Consent Mode, Meta CAPI y CRO. El dato entra limpio y las campañas se miden de verdad.',
-            about_h2: 'Data Analyst',
-            about_p2: 'SQL en BigQuery, Python y dashboards en Power BI y Looker Studio. Del dato crudo al informe que la gente abre cada mañana sin que nadie les obligue.',
-            about_h3: 'Data Scientist',
-            about_p3: 'Modelos supervisados, series temporales con RNNs y LSTMs y explicabilidad. Máster en Data Science e IA y un caso real de fraude con ROC-AUC 0.92.',
+            about_tag: 'Sobre mí',
+            about_title: 'De junior a liderar la medición de más de 1.000 webs',
+            about_lead: 'Soy Antonio Luis Pérez Carmona, Analytics Engineer en Product Hackers desde noviembre de 2026. Vengo del marketing y me quedé por los datos. En menos de 2 años pasé de analista junior, en agosto de 2024, a liderar el equipo de medición de Paraty Tech.',
+            about_h1: 'Medición web',
+            about_p1: 'GA4 y GTM de principio a fin, en web y server-side. DataLayer a medida, Consent Mode v2, conversiones mejoradas de Google Ads y Meta CAPI.',
+            about_h2: 'Datos y dashboards',
+            about_p2: 'SQL en BigQuery y dashboards en Looker Studio y Power BI. En Paraty Tech montábamos dashboards automatizados que replicábamos a más de 100 clientes.',
+            about_h3: 'Herramientas propias',
+            about_p3: 'Analytics Copilot, una extensión gratuita para auditar la medición. También Roometrics, mi laboratorio de analítica sin cookies, y agentes de IA que revisan GTM y GA4.',
             about_cv: 'Descargar CV (PDF)',
             about_linkedin: 'Ver LinkedIn',
+            rec_line: 'Más de 1.000 webs trackeadas a lo largo de mi trayectoria. Creador de Analytics Copilot.',
 
             timeline_tag: 'Trayectoria',
-            timeline_title: 'Cómo llegué aquí.',
+            timeline_title: 'Cómo llegué aquí',
             tl_uma_role: 'Grado en Marketing e Investigación de Mercados',
             tl_uma_text: 'Cuatro años de grado intentando ser un crack del marketing, para acabar descubriendo que lo que me enganchaba de verdad no eran las campañas bonitas sino los datos que venían detrás. Plot twist aceptado.',
             tl_taco_date: 'Sep 2022 → Abr 2025',
             tl_taco_role: 'De cocinero de línea a Shift Leader',
-            tl_taco_text: 'Empecé friendo tacos y acabé llevando turnos enteros como shift leader. Suena a anécdota de CV, pero ahí aprendí a gestionar equipos, controlar inventario y decidir bajo presión real. El MBA de la freidora, y no lo cambio.',
+            tl_taco_text: 'Dirigía los turnos y el equipo del restaurante, y formaba a la gente nueva.',
             tl_windup_date: 'Sep 2024 → Abr 2025',
-            tl_windup_role: 'Máster en Marketing Digital + Digital Analytics Junior',
-            tl_windup_text: 'Máster de 532h en marketing digital mientras trabajaba como Digital Analytics Junior. Mi primer asalto a la analítica real, con GA4, GTM, DataLayer, dashboards y auditorías de tracking junto a equipos de Paid, SEO y CRO. El momento «ah, esto es lo que quiero hacer».',
-            tl_talent_role: 'Finalista · FYCMA y Diario SUR',
+            tl_windup_role: 'Máster en Marketing Digital + Junior Digital Analyst',
+            tl_windup_text: 'Máster de 532h en marketing digital mientras trabajaba como Junior Digital Analyst. Mi primer asalto a la analítica real, con GA4, GTM, DataLayer, dashboards y auditorías de tracking junto a equipos de Paid, SEO y CRO. El momento «ah, esto es lo que quiero hacer».',
+            tl_talent_role: 'Finalista de FYCMA y Diario SUR',
             tl_talent_text: 'Elegido entre los 25 finalistas de un programa de tres días de FYCMA y Diario SUR. Tres días conociendo empresas de Málaga y a gente de mi edad haciendo cosas bastante más raras que las mías.',
-            tl_paraty_date: 'Mar 2025 → Actualmente',
-            tl_paraty_text: 'Analítica digital en hospitality tech. Medición con GA4 y GTM, en web y en server side, más el diseño de los DataLayers y las auditorías para que el dato llegue limpio. Luego SQL en BigQuery, dashboards en Looker Studio y Power BI, funnels y atribución. Y la parte que nadie quiere tocar: Consent Mode, GDPR y conversiones mejoradas con Google Ads y Meta CAPI.',
-            tl_bigschool_role: 'Máster en Data Science e IA · 400h',
-            tl_bigschool_text: '400h para formalizar el salto a Data Science. Machine Learning, Explainable AI, Python, SQL, Tableau y analítica en cloud sobre proyectos reales. El puente del analyst al scientist, y esta vez con un papel que lo demuestre.',
+            tl_paraty_date: 'Abr 2025 → Oct 2026',
+            tl_paraty_text: 'Empecé como Web & Data Analyst y en mayo de 2026 pasé a liderar un equipo de 3 personas que medía más de 1.000 webs de hoteles y sus motores de reserva. Definí el estándar de medición del equipo, decidía qué se medía en cliente y qué en server-side, y formé al equipo en GA4, GTM server-side y Consent Mode v2.',
+            tl_paraty_role: 'Web & Data Analyst y Web Analytics Team Lead',
+            tl_ph_date: 'Desde nov 2026',
+            tl_bigschool_role: 'Máster en Data Science e IA, 400 h',
+            tl_bigschool_text: '400 horas de Python, SQL, machine learning, IA explicable y analítica en cloud, con proyectos reales.',
             tl_current: 'Actual',
             tl_done: 'Completado',
 
-            stack_tag: '02 · Stack',
-            stack_title: 'Las herramientas con las que me muevo cada día.',
+            stack_tag: 'Stack',
+            stack_title: 'Las herramientas con las que me muevo cada día',
             stack_core_title: 'Python y SQL',
             stack_viz_title: 'Analítica y Viz',
             stack_meas_title: 'Medición y privacidad',
             chip_ec: 'Conversiones mejoradas',
             chip_ab: 'Tests A/B',
-            stack_ml_title: 'Machine Learning',
             stack_cloud_title: 'Cloud y DevOps',
             stack_data_title: 'Ingeniería de datos',
             stack_certs: 'Certificaciones',
             certs_aria: 'Insignias de certificación',
-            stack_lang: 'Inglés · B2 First',
-            stack_az: 'Azure AZ-900 · en curso',
+            stack_lang: 'Inglés, B2 First',
+            stack_az: 'Azure AZ-900, en curso',
 
-            proj_tag: '03 · Proyectos',
-            proj_title: 'En lo que estoy trabajando personalmente.',
-            proj_fraud_title: 'Detección de fraude bancario con ML',
-            proj_fraud_text: 'Modelo end-to-end sobre 590K transacciones reales del dataset IEEE-CIS, con 434 variables entre datos de transacción y señales de identidad como el dispositivo, el dominio de correo o la geolocalización. Un Gradient Boosting de 500 árboles hace el trabajo. El hallazgo está en el umbral. Con el 0.5 por defecto se escapaba más fraude del que se cazaba, y al bajarlo a 0.1 el modelo pasa a capturar el 60% de todo el fraude molestando solo al 0.46% de usuarios legítimos.',
+            proj_tag: 'Proyectos',
+            proj_title: 'Proyectos personales',
             proj_fraud_m1: 'transacciones',
             proj_fraud_m2: 'variables',
             proj_fraud_m4: 'fraude detectado',
             proj_fraud_repo: 'Ver el código en GitHub',
-            proj_fraud_cta: 'Leer en LinkedIn',
             proj_rm_title: 'Roometrics, analítica web sin cookies',
-            proj_rm_text: 'Mi producto, y está en producción. Analítica web que no pone cookies ni guarda IPs, así que tampoco necesita banner. Cada visita se convierte en un código anónimo con claves que rotan cada día: no queda nada que consentir. Se instala en dos líneas o desde GTM, y los datos no salen de Europa. Salió de una frase que me da rabia precisamente porque es verdad: cuando algo es gratis, el producto eres tú.',
+            proj_rm_text: 'Mi proyecto personal y mi laboratorio. Analítica web que no pone cookies ni guarda IPs, así que tampoco necesita banner. Cada visita se convierte en un código anónimo con claves que rotan cada día, y no queda nada que consentir. Se instala en dos líneas o desde GTM, y los datos no salen de Europa. Salió de una frase que me da rabia precisamente porque es verdad. Cuando algo es gratis, el producto eres tú.',
             proj_rm_m2: 'líneas para instalarlo',
             proj_rm_m3: 'rotación de claves',
             proj_rm_m4_val: 'UE',
             proj_rm_m4: 'servidores',
-            proj_rm_cta: 'Ver Roometrics en vivo',
-            tools_tag: '04 · Herramientas',
-            tools_title: 'Herramientas que monto cuando lo de fuera no encaja.',
+            proj_rm_cta: 'Ver Roometrics',
+            proj_rm_meta: 'Proyecto personal, 2026',
+            tools_tag: 'Herramientas',
+            tools_title: 'Herramientas que monto cuando lo de fuera no encaja',
             tools_lead: 'Cosas que me hacían falta y no existían, o existían mal. Las uso yo y las dejo publicadas. Sin cuentas y sin que tus datos salgan de tu navegador.',
             tool_ac_tagline: 'QA de analítica web en un clic, dentro de Chrome.',
-            tool_ac_text: 'Extensión de Chrome con 10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode: sesión en vivo, atribución de punta a punta, generador de eventos y captura de página completa anotada. Todo desde el popup, sin abrir el Network y sin enviar un solo dato fuera de tu navegador.',
+            tool_ac_text: 'Extensión de Chrome con 10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode. Sesión en vivo, atribución de punta a punta, generador de eventos y captura de página completa anotada. Todo desde el popup, sin abrir el Network y sin enviar un solo dato fuera de tu navegador.',
             tool_ac_chip_9: '10 herramientas',
             tool_ac_chip_stack: 'GA4 + Ads + Consent',
             tool_blurr_tagline: 'Tacha datos sensibles sin que salgan de tu equipo.',
@@ -187,22 +128,15 @@
             tool_utm_chip_combo: 'Builder + Validador',
             tool_utm_chip_templates: 'Plantillas por canal',
             tool_utm_chip_bulk: 'Modo bulk',
-            tool_bank_tagline: 'Pon números fríos donde antes había corazonadas.',
-            tool_bank_text: 'Log de apuestas, EV por operación, Kelly fraccionado y curva de equity con drawdown. Avisa cuando un stake supera el 5% de la banca o una apuesta tiene valor esperado negativo. Herramienta de disciplina, no de tipster.',
-            tool_bank_chip_ev: 'EV + Kelly',
-            tool_bank_chip_equity: 'Curva de equity',
-            tool_bank_chip_alerts: 'Alertas de riesgo',
-            tool_bank_chip_bilingual: 'Bilingüe',
 
             lp_solve_tag: 'Qué resuelvo',
             lp_proof_tag: 'La prueba',
             lp_stack_tag: 'El stack para esto',
-            lp_back: 'Volver al portfolio',
+            lp_back: 'Volver al inicio',
 
             lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
             lpw_tag: 'Analítica web y medición',
             lpw_h1: 'Tu analítica web dice una cosa. Tu negocio, otra.',
-            lpw_lead: 'Tu web vende y tus datos deberían contarlo. Medición end-to-end para ecommerce y webs de servicios: GA4, Google Tag Manager en web y server side, DataLayer a medida y la parte de privacidad que nadie quiere tocar.',
             lp_pains_tag: '¿Te suena?',
             lp_plan_tag: 'El plan',
             lp_trust: 'Reseñas de 5,0 · Respuesta en el día · Diagnóstico gratis',
@@ -256,7 +190,6 @@
             lpda_title: 'Data Analyst · Antonio Luis Pérez',
             lpda_tag: 'Business intelligence y reporting',
             lpda_h1: 'Business intelligence que la gente abre cada mañana.',
-            lpda_lead: 'SQL, Python y dashboards que se usan de verdad. Ordeno datos que llegan hechos un desastre y los convierto en informes que la gente abre cada mañana sin que nadie les obligue.',
             lpda_solve_title: 'Menos Excel a mano, más respuestas.',
             lpda_s1_h: 'Datos limpios',
             lpda_s1_p: 'Extracción y limpieza con SQL en BigQuery, validación de calidad y pipelines que no te despiertan a las 3 AM.',
@@ -272,21 +205,7 @@
             lpda_cta_title: '¿Enterrado en Excels?',
             lpda_cta_text: 'Cuéntame qué informe te come la semana y te lo devuelvo automatizado.',
 
-            contact_tag: '05 · Contacto',
-            faq_tag: '04 · Preguntas frecuentes',
-            faq_title: 'Lo que me suelen preguntar',
-            faq_q1: '¿Cuánto cuesta?',
-            faq_a1: 'Depende del tamaño de la web y de lo que haya montado ya. Después de la llamada de diagnóstico, que es gratis, te paso un precio cerrado por el proyecto entero. No cobro por horas: sabes lo que vas a pagar antes de empezar.',
-            faq_q2: '¿Cuánto se tarda?',
-            faq_a2: 'Una auditoría de medición, entre una y dos semanas. Una implementación completa de GA4 y Tag Manager, de dos a cuatro, según cuántos eventos y sistemas haya que conectar. La fecha te la doy antes de empezar, no sobre la marcha.',
-            faq_q3: 'Ya tengo GA4 instalado, ¿me sirve de algo?',
-            faq_a3: 'Casi todos los proyectos que hago son exactamente eso: arreglar lo que ya existe. Tener GA4 puesto y tener GA4 midiendo bien son dos cosas distintas, y la diferencia se nota el día que alguien pregunta de dónde salen las ventas.',
-            faq_q4: '¿Trabajas solo en Málaga?',
-            faq_a4: 'Estoy en Málaga y trabajo con clientes de toda España en remoto. Esto se hace con accesos y videollamadas: no hace falta que estemos en la misma ciudad para que los datos entren bien.',
-            faq_q5: '¿Qué necesitas de mí para empezar?',
-            faq_a5: 'Acceso de lectura a lo que tengas: GA4, Tag Manager, la plataforma del ecommerce si la hay. Y alguien que pueda tocar la web o meter un script cuando toque. Con eso me apaño.',
-            faq_q6: 'Cuando terminemos, ¿me quedo solo con esto?',
-            faq_a6: 'No. Todo lo que monto va documentado para que tu equipo lo mantenga sin depender de mí, que es como debe ser. Si prefieres que siga yo pendiente, hay soporte mensual.',
+            contact_tag: 'Contacto',
             cur_title: 'Curso de Google Analytics 4 online · Antonio Luis Pérez',
             cur_tag: 'Formación · Curso online',
             cur_h1: 'Curso de Google Analytics 4, sin humo y en español.',
@@ -327,9 +246,8 @@
             cur_c_title: '¿Entras?',
             cur_c_text: 'Dime que quieres el curso y te escribo con el acceso en cuanto abra, al precio de lanzamiento. Y si es formación para tu equipo, cuéntamelo aquí también.',
             form_need_6: 'El curso de GA4',
-            contact_title: 'Cuéntame qué necesitas',
-            contact_lead: 'Escríbeme y te digo por dónde empezar. Sin compromiso y sin discurso de ventas: si tu caso no es para mí, te lo digo.',
-            contact_place: 'Málaga, España · trabajo en remoto',
+            contact_title: 'Escríbeme',
+            contact_place: 'Málaga, España',
             form_name: 'Nombre',
             form_company: 'Empresa',
             form_optional: '(opcional)',
@@ -357,81 +275,102 @@
             footer_cookies: 'Preferencias de cookies',
 
             consent_title: 'Cookies',
-            consent_text: 'Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.',
+            consent_text: 'Venga va, el mismo rollo de siempre con las cookies y el consentimiento. Lo siento, soy Analytics Engineer y necesito tenerlo todo medido y bajo control.',
             consent_accept: 'Aceptar',
             consent_reject: 'Rechazar',
 
-            nf_title: 'Aquí no hay datos.',
+            nf_title: 'Aquí no hay datos',
             nf_text: 'Esta página no existe. O existió y ya no, que viene a ser lo mismo para ti. Vuelve al principio, que ahí sí hay cosas.',
-            nf_back: 'Volver al portfolio',
+            nf_back: 'Volver al inicio',
 
-            // Home (oct 2026): analítica web con agentes de IA
-            h_title: 'Analítica web con agentes de IA · Antonio Luis Pérez',
-            h_role: 'Analytics Engineer',
-            h_nav_tools: 'Herramientas',
-            h_nav_how: 'Cómo trabajo',
-            h_nav_clients: 'Clientes',
-            h_kicker: 'GA4 · Tag Manager · BigQuery · Agentes de IA',
-            h_h1: 'Analítica web con agentes de IA.',
-            h_lead: 'Tu GA4 y tu GTM revisados a fondo, con la rapidez de la IA y el criterio de un analista.',
-            h_cta1: 'Pedir diagnóstico gratis',
-            h_cta2: 'Ver mis herramientas',
-            h_rm_tag: 'Analítica web sin cookies ni banner de consentimiento.',
-            h_rm_meta: 'SaaS · En producción',
-            h_ac_tag: 'QA de GA4, GTM, Google Ads y Consent Mode desde Chrome.',
-            h_ac_meta: 'Extensión · Gratis · Open source',
-            h_ag_l1: 'Auditar GTM y GA4',
-            h_ag_l2: 'Probar el tracking en el navegador',
-            h_ag_l3: 'Analizar GA4 y BigQuery',
-            h_ag_title: 'Agentes de IA →',
-            h_ag_tag: 'Agentes propios que auditan, prueban y analizan la medición de una web.',
-            h_ag_meta: 'Hechos por mí · GTM, GA4 y BigQuery',
-            h_how_tag: '01 · Cómo trabajo',
-            h_how_title: 'Los agentes revisan. Yo decido.',
-            h_how_lead: 'Uso agentes de IA conectados a tus herramientas para la parte repetitiva del trabajo: revisar, probar y consultar. El criterio y la decisión final siguen siendo míos.',
-            h_st1_t: 'Auditan',
-            h_st1_p: 'Conectados a tu GTM y tu GA4, revisan etiquetas, activadores, eventos y configuración, y listan cada fallo con dónde está.',
-            h_st2_t: 'Prueban',
-            h_st2_p: 'Navegan tu web como un cliente: añaden al carrito, compran y rellenan formularios. Comprueban que cada evento llega con sus parámetros.',
-            h_st3_t: 'Analizan',
-            h_st3_p: 'Consultan GA4 y BigQuery, escriben el SQL y preparan el borrador del informe con lo que encuentran.',
-            h_st4_t: 'Yo reviso y decido',
-            h_st4_p: 'Leo lo que encuentran, descarto el ruido y te entrego un informe priorizado. Ningún cambio se publica sin que yo lo valide.',
-            h_mcp: 'Mis agentes se conectan a GTM, GA4, BigQuery y al navegador mediante MCP, el estándar abierto con el que hoy los agentes de IA trabajan sobre herramientas reales.',
-            h_sv_tag: '02 · Servicios',
-            h_sv_lead: 'Auditoría, implementación, dashboards y formación sobre tu propia web. Después de una llamada de diagnóstico gratis te paso un precio cerrado por el proyecto entero.',
-            h_sv1_p: 'Mis agentes revisan GA4 y GTM evento a evento y yo te entrego el informe priorizado. De una a dos semanas.',
-            h_sv2_p: 'DataLayer a medida, GTM web y server side, Consent Mode v2 y Meta CAPI. Los agentes prueban cada evento en el navegador antes de entregarlo.',
-            h_sv3_p: 'Power BI y Looker Studio sobre BigQuery, con actualización automática. Los agentes preparan el análisis y yo lo reviso antes de que llegue a tu equipo.',
-            h_cl_tag: '03 · Clientes',
-            h_cl_title: 'Han confiado en mí.',
-            h_ct_tag: '04 · Contacto',
-            h_form_tools: 'Roometrics o Analytics Copilot',
+            // Home en modo marca (23-10-2026)
+            m_title: 'Antonio Luis Pérez | Analytics Engineer',
+            m_sub: 'Creador de Analytics Copilot, una extensión gratuita para auditar GA4, GTM y Consent Mode.',
+            m_tags_aria: 'Lo que mido',
+            m_follow: 'Sígueme en LinkedIn ↗',
+            m_try_copilot: 'Prueba Analytics Copilot →',
+            m_posts_tag: 'En LinkedIn',
+            m_posts_title: 'Lo que publico',
+            m_posts_1a: 'Diagnósticos reales',
+            m_posts_1b: ' de medición, paso a paso.',
+            m_posts_2: 'Las herramientas que construyo.',
+            m_posts_3: 'Novedades de medición web en cuanto salen.',
+            m_posts_4: 'Cómo aprender medición rápido si estás empezando.',
+            m_tools_title: 'Lo que he construido',
+            m_ac_meta: 'Extensión de Chrome gratuita y de código abierto',
+            m_ac_text: 'Audita GA4, GTM, Google Ads y Consent Mode desde el navegador, sin abrir la pestaña Network. Funciona en local y no envía ningún dato fuera.',
+            m_note: 'sustituye a todas mis extensiones',
+            m_ac_install: 'Añadir a Chrome ↗',
+            m_ac_more: 'Ver la extensión →',
+            m_rm_meta: 'Proyecto personal',
+            m_rm_text: 'Mi laboratorio de analítica web sin cookies ni banner de consentimiento. Mide esta misma web.',
+            m_tools_all: 'Todas las herramientas →',
+            m_blog_title: 'Guías de medición',
+            m_blog_lead: 'En español, de momento.',
+            m_blog_all: 'Todo el blog →',
+            m_about_cv: 'CV y trayectoria completa →',
+            m_ct_title: 'Escríbeme',
+            m_ct_lead: 'Para charlas, podcasts o colaboraciones.',
+            m_ct_place: 'Málaga, España',
+            m_form_topic: '¿De qué se trata?',
+            m_form_talk: 'Una charla o un podcast',
+            m_form_collab: 'Una colaboración',
+            m_form_copilot: 'Analytics Copilot',
+            m_form_msg: 'Cuéntame',
+            m_lead_a: 'En Product Hackers. ',
+            m_lead_b1: 'Más de ',
+            m_lead_b2: ' webs trackeadas',
+            m_cinta: 'Herramientas con las que trabajo',
+            m_lead_c: ' a lo largo de mi trayectoria.',
+            m_posts_note: 'con capturas y sin datos de clientes',
+            m_game_tag: 'Diagnóstico de ejemplo',
+            m_game_title: '¿Eres capaz de encontrar el fallo viendo un gráfico?',
+            m_game_lead: 'Sesiones diarias en GA4 de una tienda online inventada. Algo se rompió y no ha vuelto. Haz clic en el día en que empezó.',
+            m_game_note: 'haz clic donde se rompió',
+            m_game_reveal: 'Ver la solución',
+            m_game_aria: 'Gráfica de sesiones diarias. Muévete por los días con las flechas y elige uno con Enter.',
+            m_game_nojs: 'La gráfica necesita JavaScript.',
+            m_ac_meta_a: 'Extensión de Chrome ',
+            m_ac_meta_b: 'gratuita y de código abierto',
+            m_blog_note: 'empieza por la de GA4',
+            m_about_title_a: 'De junior a liderar un equipo de medición en ',
+            m_about_title_b: 'menos de dos años',
+            m_about_lead: 'Vengo del marketing y me quedé por los datos.',
+            m_tl1_date: 'Ago 2024',
+            m_tl1_role: 'Junior Digital Analyst',
+            m_tl2_date: 'Abr 2025',
+            m_tl2_role: 'Web & Data Analyst en Paraty Tech',
+            m_tl2_sub: 'Dashboards automatizados replicados a más de 100 clientes',
+            m_tl3_date: 'May 2026',
+            m_tl3_role: 'Web Analytics Team Lead',
+            m_tl3_sub: 'Un equipo de 3 y más de 1.000 webs de hoteles',
+            m_tl4_date: 'Nov 2026',
+            m_tl4_role: 'Analytics Engineer en Product Hackers',
+            m_tl_note: 'y esto acaba de empezar',
 
             // Página de herramientas (/herramientas/)
-            t_title: 'Herramientas de analítica web con IA · Antonio Luis Pérez',
-            t_kicker: 'Herramientas · Analítica web y agentes de IA',
-            t_h1: 'Herramientas de analítica web que he construido.',
-            t_lead: 'Las uso cada día midiendo webs de clientes. Unas son productos en marcha y otras, utilidades gratuitas que puedes usar ahora mismo.',
-            t_prod_tag: '01 · En producción',
-            t_prod_title: 'Productos en marcha.',
+            t_title: 'Herramientas de analítica web | Antonio Luis Pérez',
+            t_h1: 'Herramientas de analítica web que he construido',
+            t_lead: 'Las construí porque me hacían falta para auditar y medir webs. Casi todas son gratuitas y funcionan en local.',
+            t_prod_tag: 'Las que más uso',
+            t_prod_title: 'Una extensión y un laboratorio',
             t_rm_text: 'Mide visitas, fuentes, campañas y ventas sin identificar a nadie, así que la web que lo usa no necesita banner de cookies. Corre sobre Cloudflare y mide esta misma página.',
             t_rm_cta: 'Ver Roometrics ↗',
-            t_ac_text: 'Diez herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network: señales de Consent Mode, sesión de GA4 en vivo, atribución de Google Ads y capturas de página completa con anotaciones. Todo en local.',
-            t_ac_cta: 'Ver Analytics Copilot →',
-            t_free_tag: '02 · Utilidades gratuitas',
-            t_free_title: 'Para usar ahora mismo.',
+            t_rm_tag: 'Mi laboratorio de analítica web sin cookies ni banner de consentimiento.',
+            t_ac_tag: 'QA de GA4, GTM, Google Ads y Consent Mode desde Chrome.',
+            t_ac_text: 'Diez herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network. Señales de Consent Mode, sesión de GA4 en vivo, atribución de Google Ads y capturas de página completa con anotaciones. Todo en local.',
+            t_free_tag: 'Utilidades gratuitas',
+            t_free_title: 'Para usar ahora mismo',
             t_utm_tag: 'Construye y valida URLs con UTM, también por lotes desde un CSV.',
             t_blurr_tag: 'Tapa datos sensibles en imágenes y PDF sin subir nada.',
-            t_free_meta: 'Web · Gratis · 100 % local',
-            t_ag_tag: '03 · Agentes de IA',
-            t_ag_title: 'En construcción.',
-            t_ag_lead: 'Estoy convirtiendo en herramientas los agentes con los que audito GTM y GA4, pruebo el tracking en el navegador y analizo datos en BigQuery. Si quieres probarlas antes que nadie, escríbeme.',
-            t_ag_cta: 'Quiero probarlas',
+            t_free_meta: 'Web gratuita y 100 % local',
+            t_ag_tag: 'Agentes de IA',
+            t_ag_title: 'En construcción',
+            t_ag_lead: 'Estoy convirtiendo en herramientas los agentes con los que audito GTM y GA4, pruebo el tracking en el navegador y analizo datos en BigQuery. Los iré enseñando en LinkedIn según estén listos.',
 
             thankyou_title: '¡Gracias por descargar mi CV!',
-            thankyou_sub: 'La descarga debería arrancar sola. Mientras, échale un ojo al resto del portfolio.',
-            thankyou_cta: 'Volver al portfolio',
+            thankyou_sub: 'La descarga debería arrancar sola. Mientras, échale un ojo al resto de la web.',
+            thankyou_cta: 'Volver al inicio',
             thankyou_retry: '¿No arrancó? Haz click aquí.'
         },
         en: {
@@ -442,85 +381,26 @@
             nav_tools: 'Tools',
             nav_blog: 'Blog',
             nav_contact: 'Contact',
+            nav_home: 'Home',
             nav_services: 'Services',
-            nav_process: 'Process',
             nav_talk: "Let's talk →",
             nav_cv: 'CV ↓',
             nav_cv_aria: 'Download CV',
             nav_main_aria: 'Main',
             lang_aria: 'Language',
             menu_aria: 'Menu',
-            fab_aria: 'Open contact',
-            fab_hint: 'Need a hand?',
-            fab_hint_close: 'Dismiss',
             blog_back: 'Back to the blog',
             post_more: 'Keep reading',
-            blog_h1: 'Web analytics and data blog',
-            page_title: 'Digital analytics consulting in Málaga · Antonio Luis Pérez',
-            rec_title: 'Antonio Luis Pérez Carmona · CV & career · Data Analyst',
+            blog_h1: 'Web measurement guides',
+            rec_title: 'Antonio Luis Pérez Carmona | CV and career | Analytics Engineer',
 
-            sv_kicker: 'Digital analytics consulting · Málaga & remote',
-            counters_aria: 'Numbers',
-            cnt_webs: 'Websites measured',
-            cnt_dash: 'Dashboards in production',
-            cnt_audit: 'Tracking audits',
-            sv_h1: 'I turn your data into business decisions.',
-            sv_lead: 'I measure websites, apps and ecommerce. I turn how your users behave into KPIs the whole team understands and decisions that hold up in a meeting.',
             sv_cta1: 'Tell me your case',
-            sv_cta2: 'See services',
-            sv_rec: 'Recruiter? My CV and career have their own page.',
-            sv_rec_cta: 'View it →',
-            sv_s_tag: '01 · Services',
-            sv_s_title: 'What I can do for your data.',
-            sv_s1_title: 'Measurement audit',
-            sv_s1_tag: 'Know whether you can trust your data before deciding with it.',
-            sv_s1_text: 'I go through your GA4 and GTM event by event: duplicates, purchases counted twice, consent set up backwards and personal data where it should not be. You get a prioritised report and the gap against your backend explained.',
-            sv_s2_title: 'Implementation & tracking',
-            sv_s2_tag: 'GA4 and GTM telling the truth from the first data point.',
-            sv_s2_text: 'Custom DataLayer, GTM on web and server side, Consent Mode v2, Meta CAPI and enhanced conversions. Validated in DebugView and documented so your team can maintain it without me.',
-            sv_s3_title: 'Dashboards & reporting',
-            sv_s3_tag: 'Reports that update themselves and get opened every Monday.',
-            sv_s3_text: 'Power BI and Looker Studio over SQL in BigQuery, refreshed automatically. Status in five seconds up top, detail below.',
-            qe_tag: 'First things first',
-            qe_title: 'What is digital analytics?',
-            qe_lead: 'Digital analytics means measuring what people do on your site or app and turning it into decisions: which channel brings customers and which only brings traffic, where in the checkout people drop off, and which change lifted sales and which did nothing.',
-            qe_h1: 'Measure',
-            qe_p1: 'Record every step that matters with stable names and respecting consent. If the data comes in dirty, the rest is pointless.',
-            qe_h2: 'Understand',
-            qe_p2: 'Cross sources, separate signal from noise and know which question each number answers. A chart is not a finding.',
-            qe_h3: 'Decide',
-            qe_p3: 'Turn it into KPIs the whole team understands and into concrete actions. If it does not change what someone does tomorrow, it is decoration, not analytics.',
-            sv_s4_title: 'Training & mentoring',
-            sv_s4_tag: 'Your team measuring on its own within weeks.',
-            sv_s4_text: 'GA4 and GTM workshops for your team and 1:1 mentoring for analysts. Built on your data, not on generic slides.',
-            sv_p_tag: '02 · Process',
-            sv_p_title: 'How I work.',
-            sv_p1_h: 'Diagnosis',
-            sv_p1_p: 'Half an hour on a call and a review of your setup. Free, and you leave with one problem identified.',
-            sv_p2_h: 'Proposal',
-            sv_p2_p: 'Scope, timeline and a fixed price in writing. No surprises, no padded hours.',
-            sv_p3_h: 'Implementation',
-            sv_p3_p: 'Documented validation of every piece. You see progress, not a report at the end.',
-            sv_p4_h: 'Delivery & support',
-            sv_p4_p: 'Documentation, a handover video and one month of support. What I deliver stays yours and working.',
-            sv_a_tag: '03 · About',
-            sv_a_title: 'Who is behind this.',
-            sv_a_lead: 'I am Antonio Luis Pérez Carmona, Digital Analyst: I measure 1300+ websites daily and maintain 100+ dashboards in production. On my own I built Roometrics, cookieless web analytics, and Analytics Copilot, a Chrome extension for measurement QA. What I sell is what I do every day.',
-            sv_a_cv: 'Full career & CV →',
-            sv_c_tag: '05 · Contact',
-            sv_foot_rec: 'Recruiters: CV & career',
+            sv_foot_rec: 'CV and career',
 
-            brand_role: 'Data analyst in Málaga',
-            hero_role: 'AI & Data Analyst',
-            hero_owner: 'Owner of Roometrics.es',
             hero_cta_cv: 'Download CV',
             hero_cta_contact: "Let's talk",
-            paths_label: 'What are you looking for?',
-            path_web: 'Ecommerce / Web Analyst',
-            path_ds: 'Data Science',
-            path_da: 'Data Analyst',
 
-            clients_label: 'They already trust me',
+            clients_label: 'They trusted me',
             clients_aria: 'Clients',
 
             quotes_label: 'What clients say',
@@ -532,73 +412,73 @@
             q_seeds: '"We are very happy with the delivery. He is very professional and detail-oriented, with deep knowledge of what he was hired for. He also presented us with an excellent audit."',
             q_suntropy: '"Great work on web analytics. Very professional service and fast delivery."',
 
-            about_tag: '01 · About',
-            about_title: 'One profile, three fronts.',
-            about_lead: 'I am Antonio Luis Pérez Carmona, Digital Analyst at Paraty Tech: I measure the booking funnel of 1300+ hotel websites with GA4, GTM and BigQuery, and maintain 100+ dashboards that Product, Marketing and Operations use daily. I came from marketing, stayed for the data, and along the way ended up covering three roles that usually take three people.',
-            about_h1: 'Ecommerce / Web Analyst',
-            about_p1: 'End-to-end measurement: GA4, GTM on web and server side, custom DataLayer, Consent Mode, Meta CAPI and CRO. Clean data in, campaigns measured for real.',
-            about_h2: 'Data Analyst',
-            about_p2: 'SQL in BigQuery, Python and dashboards in Power BI and Looker Studio. From raw data to the report people open every morning without being told to.',
-            about_h3: 'Data Scientist',
-            about_p3: 'Supervised models, time series with RNNs and LSTMs, and explainability. A master in Data Science and AI plus a real fraud case with 0.92 ROC-AUC.',
+            about_tag: 'About',
+            about_title: 'From junior to leading the measurement of 1,000+ websites',
+            about_lead: 'I am Antonio Luis Pérez Carmona, Analytics Engineer at Product Hackers since November 2026. I came from marketing and stayed for the data. In under 2 years I went from junior analyst, in August 2024, to leading the measurement team at Paraty Tech.',
+            about_h1: 'Web measurement',
+            about_p1: 'GA4 and GTM end to end, on web and server-side. Custom dataLayer, Consent Mode v2, Google Ads enhanced conversions and Meta CAPI.',
+            about_h2: 'Data and dashboards',
+            about_p2: 'SQL in BigQuery and dashboards in Looker Studio and Power BI. At Paraty Tech we built automated dashboards that we rolled out to 100+ clients.',
+            about_h3: 'My own tools',
+            about_p3: 'Analytics Copilot, a free extension to audit measurement. Also Roometrics, my cookieless analytics lab, and AI agents that review GTM and GA4.',
             about_cv: 'Download CV (PDF)',
             about_linkedin: 'View LinkedIn',
+            rec_line: '1,000+ websites tracked throughout my career. Creator of Analytics Copilot.',
 
             timeline_tag: 'Journey',
-            timeline_title: 'How I got here.',
+            timeline_title: 'How I got here',
             tl_uma_role: 'BA in Marketing and Market Research',
             tl_uma_text: "Four years chasing a marketing career, only to find out what really hooked me wasn't the pretty campaigns but the data behind them. Plot twist accepted.",
             tl_taco_date: 'Sep 2022 → Apr 2025',
             tl_taco_role: 'From line cook to Shift Leader',
-            tl_taco_text: "Started frying tacos and ended up running entire shifts as a shift leader. Sounds like a CV anecdote, but that's where I learned to manage teams, keep inventory in check and make calls under real pressure. The fryer-side MBA, and I'd do it again.",
+            tl_taco_text: 'I ran the shifts and the restaurant team, and trained new hires.',
             tl_windup_date: 'Sep 2024 → Apr 2025',
-            tl_windup_role: 'Master in Digital Marketing + Digital Analytics Junior',
-            tl_windup_text: "A 532h digital marketing master while working as a Digital Analytics Junior. My first real dive into analytics, with GA4, GTM, DataLayer, dashboards and tracking audits alongside Paid, SEO and CRO teams. The 'yeah, this is what I want to do' moment.",
-            tl_talent_role: 'Finalist · FYCMA & Diario SUR',
+            tl_windup_role: 'Master in Digital Marketing + Junior Digital Analyst',
+            tl_windup_text: "A 532h digital marketing master while working as a Junior Digital Analyst. My first real dive into analytics, with GA4, GTM, DataLayer, dashboards and tracking audits alongside Paid, SEO and CRO teams. The 'yeah, this is what I want to do' moment.",
+            tl_talent_role: 'Finalist, FYCMA and Diario SUR',
             tl_talent_text: 'Picked as one of 25 finalists in a three day program run by FYCMA and Diario SUR. Three days meeting companies from Málaga and people my age doing far stranger things than I do.',
-            tl_paraty_date: 'Mar 2025 → Present',
-            tl_paraty_text: 'Digital analytics in hospitality tech. Measurement with GA4 and GTM, web and server side, plus DataLayer design and tracking audits so the data arrives clean. Then SQL in BigQuery, dashboards in Looker Studio and Power BI, funnels and attribution. And the part nobody wants to touch: Consent Mode, GDPR and enhanced conversions with Google Ads and Meta CAPI.',
-            tl_bigschool_role: 'Master in Data Science and AI · 400h',
-            tl_bigschool_text: 'A 400h master to formalize the jump into Data Science. Machine Learning, Explainable AI, Python, SQL, Tableau and cloud analytics on real projects. The bridge from analyst to scientist, this time with a piece of paper to prove it.',
+            tl_paraty_date: 'Apr 2025 → Oct 2026',
+            tl_paraty_text: "I started as a Web & Data Analyst and in May 2026 moved on to lead a team of 3 that measured 1,000+ hotel websites and their booking engines. I set the team's measurement standard, decided what was measured client-side and what server-side, and trained the team in GA4, server-side GTM and Consent Mode v2.",
+            tl_paraty_role: 'Web & Data Analyst and Web Analytics Team Lead',
+            tl_ph_date: 'Since Nov 2026',
+            tl_bigschool_role: 'Master in Data Science and AI, 400 h',
+            tl_bigschool_text: '400 hours of Python, SQL, machine learning, explainable AI and cloud analytics, on real projects.',
             tl_current: 'Current',
             tl_done: 'Completed',
 
-            stack_tag: '02 · Stack',
-            stack_title: 'Tools I reach for every day.',
+            stack_tag: 'Stack',
+            stack_title: 'Tools I reach for every day',
             stack_core_title: 'Python & SQL',
             stack_viz_title: 'Analytics & Viz',
             stack_meas_title: 'Measurement & privacy',
             chip_ec: 'Enhanced conversions',
             chip_ab: 'A/B testing',
-            stack_ml_title: 'Machine Learning',
             stack_cloud_title: 'Cloud & DevOps',
             stack_data_title: 'Data engineering',
             stack_certs: 'Certifications',
             certs_aria: 'Certification badges',
-            stack_lang: 'English · B2 First',
-            stack_az: 'Azure AZ-900 · in progress',
+            stack_lang: 'English, B2 First',
+            stack_az: 'Azure AZ-900, in progress',
 
-            proj_tag: '03 · Projects',
-            proj_title: 'What I am building on my own.',
-            proj_fraud_title: 'Bank fraud detection with ML',
-            proj_fraud_text: 'End-to-end model on 590K real transactions from the IEEE-CIS dataset, with 434 features across transaction data and identity signals like device, email domain or geolocation. A 500-tree Gradient Boosting does the work. The real finding was the threshold. At the default 0.5 more fraud slipped through than got caught, and dropping it to 0.1 the model captures 60% of all fraud while bothering only 0.46% of legitimate users.',
+            proj_tag: 'Projects',
+            proj_title: 'Personal projects',
             proj_fraud_m1: 'transactions',
             proj_fraud_m2: 'features',
             proj_fraud_m4: 'fraud caught',
             proj_fraud_repo: 'View the code on GitHub',
-            proj_fraud_cta: 'Read on LinkedIn',
             proj_rm_title: 'Roometrics, cookieless web analytics',
-            proj_rm_text: 'My product, and it is live. Web analytics that sets no cookies and stores no IPs, so it does not need a banner either. Every visit becomes an anonymous code with keys that rotate daily: nothing left to consent to. Two lines to install, or straight from GTM, and the data never leaves Europe. It came out of a line that annoys me precisely because it is true: when something is free, you are the product.',
+            proj_rm_text: 'My personal project and my lab. Web analytics that sets no cookies and stores no IPs, so it does not need a banner either. Every visit becomes an anonymous code with keys that rotate daily, so there is nothing left to consent to. Two lines to install, or straight from GTM, and the data never leaves Europe. It came out of a line that annoys me precisely because it is true. When something is free, you are the product.',
             proj_rm_m2: 'lines to install it',
             proj_rm_m3: 'key rotation',
             proj_rm_m4_val: 'EU',
             proj_rm_m4: 'servers',
-            proj_rm_cta: 'See Roometrics live',
-            tools_tag: '04 · Tools',
-            tools_title: 'Small tools I ship when nothing off-the-shelf fits.',
+            proj_rm_cta: 'See Roometrics',
+            proj_rm_meta: 'Personal project, 2026',
+            tools_tag: 'Tools',
+            tools_title: 'Small tools I ship when nothing off-the-shelf fits',
             tools_lead: 'Things I needed that did not exist, or existed badly. I use them myself and leave them published. No accounts, and your data never leaves your browser.',
             tool_ac_tagline: 'One-click web analytics QA, inside Chrome.',
-            tool_ac_text: 'Chrome extension with 10 tools to audit GA4, GTM, Google Ads and Consent Mode: live session, end-to-end attribution, event generator and annotated full-page capture. All from the popup, without opening the Network tab, and without a single byte leaving your browser.',
+            tool_ac_text: 'Chrome extension with 10 tools to audit GA4, GTM, Google Ads and Consent Mode. Live session, end-to-end attribution, event generator and annotated full-page capture. All from the popup, without opening the Network tab, and without a single byte leaving your browser.',
             tool_ac_chip_9: '10 tools',
             tool_ac_chip_stack: 'GA4 + Ads + Consent',
             tool_blurr_tagline: 'Redact sensitive data without it leaving your machine.',
@@ -613,22 +493,15 @@
             tool_utm_chip_combo: 'Builder + Validator',
             tool_utm_chip_templates: 'Channel templates',
             tool_utm_chip_bulk: 'Bulk mode',
-            tool_bank_tagline: 'Put cold numbers where there used to be gut feeling.',
-            tool_bank_text: 'Bet log, EV per entry, fractional Kelly and an equity curve with drawdown. It flags any stake above 5% of bankroll and any entry with negative expected value. A discipline tool, not a tipster.',
-            tool_bank_chip_ev: 'EV + Kelly',
-            tool_bank_chip_equity: 'Equity curve',
-            tool_bank_chip_alerts: 'Risk alerts',
-            tool_bank_chip_bilingual: 'Bilingual',
 
             lp_solve_tag: 'What I solve',
             lp_proof_tag: 'Proof',
             lp_stack_tag: 'The stack for this',
-            lp_back: 'Back to portfolio',
+            lp_back: 'Back to home',
 
             lpw_title: 'Ecommerce & Web Analyst · Antonio Luis Pérez',
             lpw_tag: 'Web analytics & measurement',
             lpw_h1: 'Your web analytics says one thing. Your business, another.',
-            lpw_lead: 'Your site sells and your data should tell the story. End-to-end measurement for ecommerce and service sites: GA4, Google Tag Manager on web and server side, custom DataLayer and the privacy work nobody wants to touch.',
             lp_pains_tag: 'Sound familiar?',
             lp_plan_tag: 'The plan',
             lp_trust: '5.0 reviews · Same-day reply · Free diagnosis',
@@ -682,7 +555,6 @@
             lpda_title: 'Data Analyst · Antonio Luis Pérez',
             lpda_tag: 'Business intelligence and reporting',
             lpda_h1: 'Business intelligence people actually open every morning.',
-            lpda_lead: 'SQL, Python and dashboards that actually get used. I sort out data that arrives in a mess and turn it into reports people open every morning without being told to.',
             lpda_solve_title: 'Less manual Excel, more answers.',
             lpda_s1_h: 'Clean data',
             lpda_s1_p: 'Extraction and cleaning with SQL in BigQuery, quality validation and pipelines that do not wake you up at 3 AM.',
@@ -698,21 +570,7 @@
             lpda_cta_title: 'Buried in spreadsheets?',
             lpda_cta_text: 'Tell me which report eats your week and I will hand it back automated.',
 
-            contact_tag: '05 · Contact',
-            faq_tag: '04 · Frequently asked',
-            faq_title: 'What people usually ask me',
-            faq_q1: 'How much does it cost?',
-            faq_a1: 'It depends on the size of the site and what is already in place. After the diagnosis call, which is free, I send you a closed price for the whole project. I do not charge by the hour: you know what you are paying before we start.',
-            faq_q2: 'How long does it take?',
-            faq_a2: 'A measurement audit, one to two weeks. A full GA4 and Tag Manager implementation, two to four, depending on how many events and systems need connecting. You get the date before we start, not along the way.',
-            faq_q3: 'I already have GA4 installed, is this any use to me?',
-            faq_a3: 'Almost every project I take on is exactly that: fixing what is already there. Having GA4 installed and having GA4 measuring properly are two different things, and the difference shows the day someone asks where the sales came from.',
-            faq_q4: 'Do you only work in Málaga?',
-            faq_a4: 'I am based in Málaga and work with clients across Spain remotely. This is done with access and video calls: we do not need to be in the same city for the data to come in clean.',
-            faq_q5: 'What do you need from me to start?',
-            faq_a5: 'Read access to whatever you have: GA4, Tag Manager, the ecommerce platform if there is one. And someone who can touch the site or drop in a script when needed. That is enough.',
-            faq_q6: 'When we finish, am I left on my own?',
-            faq_a6: 'No. Everything I build comes documented so your team can maintain it without depending on me, which is how it should be. If you would rather I stay on it, there is monthly support.',
+            contact_tag: 'Contact',
             cur_title: 'Google Analytics 4 online course · Antonio Luis Pérez',
             cur_tag: 'Training · Online course',
             cur_h1: 'A Google Analytics 4 course with no fluff, in plain language.',
@@ -753,9 +611,8 @@
             cur_c_title: 'Are you in?',
             cur_c_text: 'Tell me you want the course and I will write you with access as soon as it opens, at the launch price. And if it is training for your team, tell me here too.',
             form_need_6: 'The GA4 course',
-            contact_title: 'Tell me what you need',
-            contact_lead: "Drop me a line and I'll tell you where to start. No commitment and no sales pitch: if your case is not for me, I'll say so.",
-            contact_place: 'Málaga, Spain · working remotely',
+            contact_title: 'Get in touch',
+            contact_place: 'Málaga, Spain',
             form_name: 'Name',
             form_company: 'Company',
             form_optional: '(optional)',
@@ -783,81 +640,102 @@
             footer_cookies: 'Cookie preferences',
 
             consent_title: 'Cookies',
-            consent_text: 'Alright, the same old song: cookies and consent. Sorry, I am a data analyst, a good one, and I need everything measured and under control.',
+            consent_text: 'Alright, the same old song about cookies and consent. Sorry, I am an Analytics Engineer and I need everything measured and under control.',
             consent_accept: 'Accept',
             consent_reject: 'Reject',
 
-            nf_title: 'No data here.',
+            nf_title: 'No data here',
             nf_text: 'This page does not exist. Or it did and no longer does, which for you amounts to the same thing. Head back to the start, there is actually something there.',
-            nf_back: 'Back to portfolio',
+            nf_back: 'Back to home',
 
-            // Home (Oct 2026): web analytics with AI agents
-            h_title: 'Web analytics with AI agents · Antonio Luis Pérez',
-            h_role: 'Analytics Engineer',
-            h_nav_tools: 'Tools',
-            h_nav_how: 'How I work',
-            h_nav_clients: 'Clients',
-            h_kicker: 'GA4 · Tag Manager · BigQuery · AI agents',
-            h_h1: 'Web analytics with AI agents.',
-            h_lead: 'Your GA4 and GTM reviewed in depth, with the speed of AI and the judgement of an analyst.',
-            h_cta1: 'Get a free diagnosis',
-            h_cta2: 'See my tools',
-            h_rm_tag: 'Web analytics with no cookies and no consent banner.',
-            h_rm_meta: 'SaaS · In production',
-            h_ac_tag: 'QA for GA4, GTM, Google Ads and Consent Mode from Chrome.',
-            h_ac_meta: 'Extension · Free · Open source',
-            h_ag_l1: 'Audit GTM and GA4',
-            h_ag_l2: 'Test tracking in the browser',
-            h_ag_l3: 'Analyse GA4 and BigQuery',
-            h_ag_title: 'AI agents →',
-            h_ag_tag: "My own agents that audit, test and analyse a website's measurement.",
-            h_ag_meta: 'Built by me · GTM, GA4 and BigQuery',
-            h_how_tag: '01 · How I work',
-            h_how_title: 'The agents review. I decide.',
-            h_how_lead: 'I use AI agents connected to your tools for the repetitive part of the job: reviewing, testing and querying. The judgement and the final call are still mine.',
-            h_st1_t: 'They audit',
-            h_st1_p: 'Connected to your GTM and GA4, they review tags, triggers, events and settings, and list every issue with where it is.',
-            h_st2_t: 'They test',
-            h_st2_p: 'They browse your site like a customer: add to cart, buy and fill in forms. They check that every event arrives with its parameters.',
-            h_st3_t: 'They analyse',
-            h_st3_p: 'They query GA4 and BigQuery, write the SQL and draft the report with what they find.',
-            h_st4_t: 'I review and decide',
-            h_st4_p: 'I read what they find, drop the noise and hand you a prioritised report. No change goes live until I have validated it.',
-            h_mcp: 'My agents connect to GTM, GA4, BigQuery and the browser through MCP, the open standard AI agents use today to work on real tools.',
-            h_sv_tag: '02 · Services',
-            h_sv_lead: 'Audits, implementation, dashboards and training on your own site. After a free diagnosis call I send you a fixed price for the whole project.',
-            h_sv1_p: 'My agents review GA4 and GTM event by event and I hand you the prioritised report. One to two weeks.',
-            h_sv2_p: 'Custom dataLayer, web and server-side GTM, Consent Mode v2 and Meta CAPI. The agents test every event in the browser before delivery.',
-            h_sv3_p: 'Power BI and Looker Studio on BigQuery, refreshed automatically. The agents prepare the analysis and I review it before it reaches your team.',
-            h_cl_tag: '03 · Clients',
-            h_cl_title: 'They trusted me.',
-            h_ct_tag: '04 · Contact',
-            h_form_tools: 'Roometrics or Analytics Copilot',
+            // Home, personal brand mode (23 Oct 2026)
+            m_title: 'Antonio Luis Pérez | Analytics Engineer',
+            m_sub: 'Creator of Analytics Copilot, a free extension to audit GA4, GTM and Consent Mode.',
+            m_tags_aria: 'What I measure',
+            m_follow: 'Follow me on LinkedIn ↗',
+            m_try_copilot: 'Try Analytics Copilot →',
+            m_posts_tag: 'On LinkedIn',
+            m_posts_title: 'What I post about',
+            m_posts_1a: 'Real tracking issues',
+            m_posts_1b: ', diagnosed step by step.',
+            m_posts_2: 'The tools I build.',
+            m_posts_3: "Web measurement news as soon as it's out.",
+            m_posts_4: "How to learn measurement fast if you're just getting started.",
+            m_tools_title: "What I've built",
+            m_ac_meta: 'Free, open-source Chrome extension',
+            m_ac_text: 'It audits GA4, GTM, Google Ads and Consent Mode from the browser, without opening the Network tab. It runs locally and sends no data anywhere.',
+            m_note: 'it replaced all my other extensions',
+            m_ac_install: 'Add to Chrome ↗',
+            m_ac_more: 'See the extension →',
+            m_rm_meta: 'Personal project',
+            m_rm_text: 'My lab for web analytics with no cookies and no consent banner. It measures this very site.',
+            m_tools_all: 'All the tools →',
+            m_blog_title: 'Measurement guides',
+            m_blog_lead: 'In Spanish, for now.',
+            m_blog_all: 'The whole blog →',
+            m_about_cv: 'Full CV and career →',
+            m_ct_title: 'Get in touch',
+            m_ct_lead: 'For talks, podcasts or collaborations.',
+            m_ct_place: 'Málaga, Spain',
+            m_form_topic: "What's it about?",
+            m_form_talk: 'A talk or a podcast',
+            m_form_collab: 'A collaboration',
+            m_form_copilot: 'Analytics Copilot',
+            m_form_msg: 'Tell me more',
+            m_lead_a: 'At Product Hackers. ',
+            m_lead_b1: '',
+            m_lead_b2: '+ websites tracked',
+            m_cinta: 'Tools I work with',
+            m_lead_c: ' throughout my career.',
+            m_posts_note: 'with screenshots and no client data',
+            m_game_tag: 'Sample diagnosis',
+            m_game_title: 'Can you spot the bug just by looking at a chart?',
+            m_game_lead: 'Daily GA4 sessions for a made-up online store. Something broke and never came back. Click the day it started.',
+            m_game_note: 'click where it broke',
+            m_game_reveal: 'Show the answer',
+            m_game_aria: 'Daily sessions chart. Move through the days with the arrow keys and pick one with Enter.',
+            m_game_nojs: 'The chart needs JavaScript.',
+            m_ac_meta_a: 'Chrome extension, ',
+            m_ac_meta_b: 'free and open source',
+            m_blog_note: 'start with the GA4 one',
+            m_about_title_a: 'From junior to leading a measurement team in ',
+            m_about_title_b: 'under two years',
+            m_about_lead: 'I came from marketing and stayed for the data.',
+            m_tl1_date: 'Aug 2024',
+            m_tl1_role: 'Junior Digital Analyst',
+            m_tl2_date: 'Apr 2025',
+            m_tl2_role: 'Web & Data Analyst at Paraty Tech',
+            m_tl2_sub: 'Automated dashboards rolled out to 100+ clients',
+            m_tl3_date: 'May 2026',
+            m_tl3_role: 'Web Analytics Team Lead',
+            m_tl3_sub: 'A team of 3 and 1,000+ hotel websites',
+            m_tl4_date: 'Nov 2026',
+            m_tl4_role: 'Analytics Engineer at Product Hackers',
+            m_tl_note: 'and this is just the start',
 
             // Tools page (/herramientas/)
-            t_title: 'Web analytics tools with AI · Antonio Luis Pérez',
-            t_kicker: 'Tools · Web analytics and AI agents',
-            t_h1: "Web analytics tools I've built.",
-            t_lead: 'I use them every day measuring client websites. Some are products in production, others are free utilities you can use right now.',
-            t_prod_tag: '01 · In production',
-            t_prod_title: 'Live products.',
+            t_title: 'Web analytics tools | Antonio Luis Pérez',
+            t_h1: "Web analytics tools I've built",
+            t_lead: 'I built them because I needed them to audit and measure websites. Almost all of them are free and run locally.',
+            t_prod_tag: 'The ones I use most',
+            t_prod_title: 'An extension and a lab',
             t_rm_text: "It measures visits, sources, campaigns and sales without identifying anyone, so the site using it doesn't need a cookie banner. It runs on Cloudflare and measures this very page.",
             t_rm_cta: 'See Roometrics ↗',
-            t_ac_text: 'Ten tools from the popup or the DevTools panel, without opening the Network tab: Consent Mode signals, live GA4 session, Google Ads attribution and annotated full-page screenshots. All local.',
-            t_ac_cta: 'See Analytics Copilot →',
-            t_free_tag: '02 · Free utilities',
-            t_free_title: 'Ready to use.',
+            t_rm_tag: 'My lab for web analytics with no cookies and no consent banner.',
+            t_ac_tag: 'QA for GA4, GTM, Google Ads and Consent Mode from Chrome.',
+            t_ac_text: 'Ten tools from the popup or the DevTools panel, without opening the Network tab. Consent Mode signals, live GA4 session, Google Ads attribution and annotated full-page screenshots. All local.',
+            t_free_tag: 'Free utilities',
+            t_free_title: 'Ready to use',
             t_utm_tag: 'Build and validate UTM URLs, also in bulk from a CSV.',
             t_blurr_tag: 'Redact sensitive data in images and PDFs without uploading anything.',
-            t_free_meta: 'Web · Free · 100% local',
-            t_ag_tag: '03 · AI agents',
-            t_ag_title: 'Under construction.',
-            t_ag_lead: "I'm turning the agents I use to audit GTM and GA4, test tracking in the browser and analyse BigQuery data into tools. If you want to try them first, get in touch.",
-            t_ag_cta: 'I want to try them',
+            t_free_meta: 'Free web app, 100% local',
+            t_ag_tag: 'AI agents',
+            t_ag_title: 'Under construction',
+            t_ag_lead: "I'm turning the agents I use to audit GTM and GA4, test tracking in the browser and analyse BigQuery data into tools. I'll show them on LinkedIn as they get ready.",
 
             thankyou_title: 'Thanks for downloading my CV!',
-            thankyou_sub: 'Your download should start automatically. While you wait, take a look at the rest of the portfolio.',
-            thankyou_cta: 'Back to portfolio',
+            thankyou_sub: 'Your download should start automatically. While you wait, take a look at the rest of the site.',
+            thankyou_cta: 'Back to home',
             thankyou_retry: "Download didn't start? Click here."
         }
     };
@@ -1104,30 +982,50 @@
     };
 
     /* ---------- Aparicion al entrar en pantalla ---------- */
+    // El sistema de la web de José Siles (GSAP + ScrollTrigger) hecho a mano:
+    // cada bloque sube 40 px y aparece con la curva power3.out, que esta en
+    // el CSS. Las listas con data-reveal="stagger" entran hijo a hijo, 80 ms
+    // entre uno y otro. Con el mismo vistazo se pasa el fosforito (mark) y se
+    // escriben las notas a mano (.note).
+    //
+    // Antes habia una red de seguridad que a los 3 s lo mostraba todo: hacia
+    // que nada de lo que estaba por debajo llegara a animarse al bajar.
     const initReveal = () => {
-        const els = document.querySelectorAll('.reveal');
-        if (!els.length) return;
+        document.querySelectorAll('[data-reveal="stagger"]').forEach((lista) => {
+            Array.from(lista.children).forEach((hijo, i) => {
+                hijo.classList.add('reveal');
+                hijo.style.setProperty('--d', `${Math.min(i, 8) * 80}ms`);
+            });
+        });
 
-        const mostrarTodo = () => els.forEach((el) => el.classList.add('is-visible'));
+        const els = document.querySelectorAll('.reveal, mark, .note');
+        if (!els.length) return;
+        const ver = (el) => el.classList.add('is-visible', 'is-on');
 
         if (!('IntersectionObserver' in window) ||
             window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            mostrarTodo();
+            els.forEach(ver);
             return;
         }
+
+        // Las notas empiezan recortadas del todo y el navegador cuenta ese
+        // recorte: nunca estarian "en pantalla". Se vigila a su contenedor.
+        const vigilados = new Map();
+        els.forEach((el) => {
+            const objetivo = el.matches('.note') ? el.parentElement : el;
+            if (!vigilados.has(objetivo)) vigilados.set(objetivo, []);
+            vigilados.get(objetivo).push(el);
+        });
 
         const io = new IntersectionObserver((entries) => {
             entries.forEach((e) => {
                 if (!e.isIntersecting) return;
-                e.target.classList.add('is-visible');
+                vigilados.get(e.target).forEach(ver);
                 io.unobserve(e.target); // una vez visto, no se vuelve a esconder
             });
-        }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-        els.forEach((el) => io.observe(el));
-
-        // Red de seguridad: si algo fallara, a los 3s se muestra todo igual
-        window.setTimeout(mostrarTodo, 3000);
+        vigilados.forEach((_, objetivo) => io.observe(objetivo));
     };
 
     /* ---------- Rotacion de logos de clientes ---------- */
@@ -1219,7 +1117,9 @@
         const nums = document.querySelectorAll('[data-count]');
         if (!nums.length) return;
 
-        const formatear = (n) => n.toLocaleString(document.documentElement.lang || 'es');
+        // useGrouping 'always': en español el punto de los miles no sale
+        // por defecto hasta las cinco cifras, y 1000 se leia 1000
+        const formatear = (n) => n.toLocaleString(document.documentElement.lang || 'es', { useGrouping: 'always' });
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // Se mide el ancho del valor final y se reserva antes de contar: si no,
@@ -1262,133 +1162,6 @@
             });
         }, { threshold: 0.4 });
         nums.forEach((el) => io.observe(el));
-    };
-
-    /* ---------- Burbuja de contacto ---------- */
-    // Se inyecta desde aqui y no en cada HTML porque son trece paginas y el
-    // mismo bloque repetido trece veces se desincroniza a la primera.
-    // Ofrece los tres canales en vez de elegir uno: cada uno mide por separado,
-    // asi dentro de unas semanas los datos diran cual sobra.
-    const initFab = () => {
-        if (document.getElementById('fab')) return;
-
-        const canales = [
-            { id: 'whatsapp', txt: 'WhatsApp', href: 'https://wa.me/34601427159?text=Hola%20Antonio%20Luis%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s.', i18n: 'wa_href', fuera: true },
-            { id: 'linkedin', txt: 'LinkedIn', href: 'https://www.linkedin.com/in/antonio-luis-perez-carmona/', fuera: true },
-            { id: 'email', txt: 'Email', href: 'mailto:alpcmalaga@gmail.com?subject=Contacto%20desde%20el%20portfolio' }
-        ];
-
-        const fab = document.createElement('div');
-        fab.className = 'fab';
-        fab.id = 'fab';
-
-        const menu = document.createElement('div');
-        menu.className = 'fab__menu';
-        menu.id = 'fab-menu';
-        menu.hidden = true;
-
-        canales.forEach((c) => {
-            const a = document.createElement('a');
-            a.className = 'fab__item';
-            a.href = c.href;
-            a.textContent = c.txt;
-            if (c.fuera) { a.target = '_blank'; a.rel = 'noopener'; }
-            if (c.i18n) a.setAttribute('data-i18n-attr', 'href:' + c.i18n);
-            a.setAttribute('data-track', 'contact_intent_click');
-            a.setAttribute('data-track-location', 'fab_' + c.id);
-            menu.appendChild(a);
-        });
-
-        const btn = document.createElement('button');
-        btn.className = 'fab__btn';
-        btn.id = 'fab-btn';
-        btn.type = 'button';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-controls', 'fab-menu');
-        btn.setAttribute('aria-label', 'Contacto');
-        btn.setAttribute('data-i18n-attr', 'aria-label:fab_aria');
-        btn.innerHTML =
-            '<svg class="fab__ico fab__ico--open" viewBox="0 0 24 24" aria-hidden="true">' +
-            '<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.8-.4L3 21l1.6-4.7A8.2 8.2 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg>' +
-            '<svg class="fab__ico fab__ico--close" viewBox="0 0 24 24" aria-hidden="true">' +
-            '<path d="M6 6l12 12M18 6L6 18"/></svg>';
-
-        // Globo de aviso: aparece solo a los pocos segundos para que la
-        // burbuja no pase desapercibida. Con una X para cerrarlo, porque
-        // un aviso que no se puede callar molesta mas de lo que capta.
-        const globo = document.createElement('div');
-        globo.className = 'fab__hint';
-        globo.id = 'fab-hint';
-        globo.hidden = true;
-
-        const texto = document.createElement('span');
-        texto.setAttribute('data-i18n', 'fab_hint');
-        texto.textContent = '¿Necesitas ayuda?';
-
-        const cerrar = document.createElement('button');
-        cerrar.className = 'fab__hint-x';
-        cerrar.type = 'button';
-        cerrar.textContent = '\u00d7';
-        cerrar.setAttribute('aria-label', 'Cerrar aviso');
-        cerrar.setAttribute('data-i18n-attr', 'aria-label:fab_hint_close');
-
-        globo.appendChild(texto);
-        globo.appendChild(cerrar);
-
-        fab.appendChild(globo);
-        fab.appendChild(menu);
-        fab.appendChild(btn);
-        document.body.appendChild(fab);
-
-        const VISTO = 'alpc_fab_hint';
-        const ocultarGlobo = (recordar) => {
-            globo.hidden = true;
-            if (!recordar) return;
-            try { sessionStorage.setItem(VISTO, '1'); } catch (e) { /* modo privado */ }
-        };
-
-        const abrir = (si) => {
-            menu.hidden = !si;
-            fab.classList.toggle('is-open', si);
-            btn.setAttribute('aria-expanded', String(si));
-            if (si) ocultarGlobo(true);
-        };
-
-        // El globo solo asoma una vez por sesion y a los cuatro segundos:
-        // el tiempo justo para que el visitante haya leido el titular.
-        let yaVisto = false;
-        try { yaVisto = sessionStorage.getItem(VISTO) === '1'; } catch (e) { /* modo privado */ }
-        if (!yaVisto && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            window.setTimeout(() => {
-                if (menu.hidden) globo.hidden = false;
-            }, 4000);
-        }
-
-        // Pulsar el globo abre la burbuja, que es lo que se le pide al visitante
-        texto.addEventListener('click', () => {
-            ocultarGlobo(true);
-            abrir(true);
-            track('contact_fab_opened', { origen: 'hint' });
-        });
-
-        cerrar.addEventListener('click', (e) => {
-            e.stopPropagation();
-            ocultarGlobo(true);
-        });
-
-        btn.addEventListener('click', () => {
-            const abriendo = menu.hidden;
-            abrir(abriendo);
-            if (abriendo) track('contact_fab_opened');
-        });
-
-        // Se cierra al pulsar fuera o con Escape, como cualquier menu
-        document.addEventListener('click', (e) => {
-            if (!fab.contains(e.target)) abrir(false);
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !menu.hidden) { abrir(false); btn.focus(); }
-        });
     };
 
     /* ---------- Cabecera pegada ---------- */
@@ -1633,9 +1406,6 @@
 
     /* ---------- Boot ---------- */
     const boot = () => {
-        // La burbuja se construye antes de traducir para que entre en el barrido
-        initFab();
-
         applyTranslations(detectLang());
 
         document.querySelectorAll('[data-lang]').forEach((btn) => {
@@ -1659,14 +1429,6 @@
         initClients();
         initQuotes();
         initContactForm();
-
-        // Los tres caminos todavía no llevan a ninguna página, pero sí miden.
-        // Saber cuál pulsan los recruiters decide cuál merece construirse antes.
-        document.querySelectorAll('[data-path]').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                track('path_interest_click', { path_id: btn.getAttribute('data-path') });
-            });
-        });
     };
 
     if (document.readyState === 'loading') {

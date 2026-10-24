@@ -1,85 +1,113 @@
-/* -------- Fuente: Bricolage Grotesque, servida desde el dominio --------- */
-/* Antes venia de Google Fonts y la IP de cada visitante viajaba a Google en
-   cada carga, antes de aceptar o rechazar nada. Ahora los tres subconjuntos
-   viven en /fonts/ y el navegador descarga solo el que necesita gracias a
-   unicode-range: un visitante en español se lleva el latin (77 KB) y para.
-   Fuente variable, ejes opsz 12-96 y wght 300-800, licencia SIL OFL. Son los
-   mismos woff2 que servia Google, sin reconvertir. Rutas absolutas porque
-   el CSS lo cargan paginas en subcarpetas. */
+/* -------- Fuentes: IBM Plex Sans, Caveat e IBM Plex Mono -------------- */
+/* Servidas desde el dominio y no desde Google Fonts: asi la IP de cada
+   visitante no viaja a Google antes de aceptar o rechazar nada. Son los
+   mismos woff2 que sirve Google, sin reconvertir, en dos subconjuntos; con
+   unicode-range el navegador baja solo el que necesita y un visitante en
+   español se queda en el latin. Plex Sans y Caveat son variables, asi que un
+   fichero da todos los pesos. Licencia SIL OFL. Rutas absolutas porque el CSS
+   lo cargan paginas en subcarpetas. */
 @font-face {
-    font-family: 'Bricolage Grotesque';
+    font-family: 'IBM Plex Sans';
     font-style: normal;
-    font-weight: 300 800;
+    font-weight: 400 700;
     font-display: swap;
-    src: url('/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+    src: url('/fonts/ibm-plex-sans-latin.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-    font-family: 'Bricolage Grotesque';
+    font-family: 'IBM Plex Sans';
     font-style: normal;
-    font-weight: 300 800;
+    font-weight: 400 700;
     font-display: swap;
-    src: url('/fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    src: url('/fonts/ibm-plex-sans-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
-    font-family: 'Bricolage Grotesque';
+    font-family: 'Caveat';
     font-style: normal;
-    font-weight: 300 800;
+    font-weight: 400 700;
     font-display: swap;
-    src: url('/fonts/bricolage-grotesque-vietnamese.woff2') format('woff2');
-    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    src: url('/fonts/caveat-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('/fonts/caveat-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-mono-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ibm-plex-mono-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* =============================================================
-   Antonio Luis Pérez · Portfolio
-   Póster tipográfico: blanco, negro y gris. La jerarquía la
-   hacen la escala y el espacio, sin marcos, sin reglas,
-   sin cajas, sin sombras.
+   Antonio Luis Pérez
+   Identidad "apuntes": papel cuadriculado, tinta de boli azul y
+   fosforito. El fosforito marca lo que esta roto y la tinta es la
+   voz de Antonio. Sin degradados, sin sombras y sin etiquetas en
+   mayusculas.
    ============================================================= */
 
 /* -------- Tokens -------------------------------------------- */
 :root {
     --bg: #ffffff;
-    --black: #0a0a0a;
-    --gray-text: #595959;
-    --gray-meta: #969696;
-    --gray-ghost: #d9d9d9;
+    /* Lineas de 1 px de la cuadricula y bordes suaves */
+    --cuadricula: #dce4f0;
+    /* Texto principal. Se llama --black por herencia: lo usa todo el CSS */
+    --black: #141414;
+    --ink: #141414;
+    /* Texto secundario, 6,0:1 sobre blanco */
+    --gray-text: #5a6378;
+    /* Pies, fechas y metadatos, 4,9:1 sobre blanco */
+    --gray-meta: #687087;
+    --gray-ghost: var(--cuadricula);
+    /* Bordes de campos y chips. Mas oscuro que la cuadricula, que si no
+       se confunden con ella */
+    --linea: #b4bfd3;
 
-    /* Blanco, negro y UN color de marca: teal profundo. El color aparece
-       donde algo esta vivo o se puede tocar.
+    /* La tinta del boli: el color de marca. Notas, enlaces, la solucion y
+       las acciones. 10,9:1 sobre blanco, asi que vale para texto pequeño.
+       Sobre la tinta el texto va siempre en blanco. */
+    --marca: #1a2da0;
+    /* El mismo color en canales sueltos, para las transparencias */
+    --marca-rgb: 26, 45, 160;
 
-       Ningun color se lee bien sobre blanco Y sobre negro a la vez: el techo
-       matematico son 4,35:1 en cada uno, por debajo de AA. Por eso el mismo
-       color tiene dos tonos, y el claro se activa SOLO dentro de
-       .section--dark, sin que haya que tocar ningun componente:
-         --marca        #0F5F6B, sobre blanco 7,32:1
-         --marca-claro  #4EC5CF, sobre negro  9,63:1
+    /* El fosforito marca lo roto y el enfasis, una sola cosa por pagina.
+       Solo como fondo de resaltado: como color de texto no se lee. */
+    --fosforito: #e9ff4d;
 
-       Se eligio teal y no azul, verde ni rojo por el oficio: en un cuadro de
-       mando el rojo significa metrica mala y el verde metrica buena, asi que
-       una marca de analitica en esos tonos pelea contra la semantica de su
-       propio sector. El teal no colisiona con nada y no es el azul
-       corporativo que usan todas las consultoras.
+    --display: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+    --sans: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+    /* La nota a mano: una por pagina y de ocho palabras como mucho */
+    --hand: 'Caveat', 'Comic Sans MS', cursive;
+    /* Solo dentro de bloques de codigo */
+    --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
 
-       Sobre el teal oscuro el texto va en BLANCO, nunca en negro. */
-    --marca: #0f5f6b;
-    --marca-claro: #4ec5cf;
-    /* El mismo color en canales sueltos, para las sombras y halos que
-       necesitan transparencia: rgba(var(--marca-rgb), 0.4) */
-    --marca-rgb: 15, 95, 107;
-    /* Negro que NO se invierte dentro de .section--dark. Lo usa el bloque de
-       puntos clave de los articulos, que es una caja negra fuera de banda. */
-    --ink: #0a0a0a;
-
-    /* Una sola familia, dos papeles: los titulares en el peso mas gordo
-       y el texto en regular. Montserrat variable da los dos sin cargar
-       dos ficheros. */
-    --display: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
-    --sans: 'Bricolage Grotesque', Helvetica, Arial, sans-serif;
-
+    --grid: 24px;
+    /* Las hojas blancas sobre la libreta: el margen deja ver la cuadricula
+       a los lados y el hueco, entre una hoja y la siguiente */
+    --hoja-margen: clamp(10px, 3vw, 40px);
+    --hoja-hueco: clamp(18px, 2.6vw, 32px);
     --pad: clamp(20px, 4vw, 56px);
     --measure: 640px;
 }
@@ -115,7 +143,15 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--black);
-    background: var(--bg);
+    /* El papel cuadriculado de los apuntes: lineas de 1 px cada 24 px.
+       Va fijo al documento, no a la ventana, para que las secciones no
+       resbalen sobre la cuadricula al hacer scroll. */
+    background-color: var(--bg);
+    background-image:
+        linear-gradient(var(--cuadricula) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cuadricula) 1px, transparent 1px);
+    background-size: var(--grid) var(--grid);
+    background-position: -1px -1px;
     overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -176,8 +212,17 @@ button {
 }
 
 ::selection {
-    background: var(--marca);
-    color: #ffffff;
+    background: var(--fosforito);
+    color: var(--black);
+}
+
+/* El fosforito: lo roto o el enfasis, uno por seccion como mucho */
+mark {
+    background: linear-gradient(var(--fosforito), var(--fosforito)) no-repeat 0 0 / 100% 100%;
+    color: inherit;
+    padding: 0 0.15em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 :focus-visible {
@@ -188,17 +233,55 @@ button {
 /* -------- Aparicion al hacer scroll ---------------------------- */
 /* Solo se ocultan si hay JS. Sin JS, .has-js nunca se añade y el contenido
    se ve entero: nadie se queda mirando una pagina en blanco. */
+/* La curva es power3.out, la misma que usa GSAP en la web de José Siles:
+   sale rapido y frena suave, y es lo que da la sensacion de fluidez */
 .has-js .reveal {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translateY(40px);
 }
 
 .has-js .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition:
-        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms);
+        opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) var(--d, 0ms),
+        transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) var(--d, 0ms);
+}
+
+/* -------- Trazos que se dibujan --------------------------------- */
+/* El subrayado de boli de los titulos se dibuja de izquierda a derecha
+   cuando el titulo entra en pantalla */
+.has-js .section__title.reveal::after,
+.has-js .contact__title.reveal::after {
+    clip-path: inset(0 100% 0 0);
+}
+
+.has-js .section__title.reveal.is-visible::after,
+.has-js .contact__title.reveal.is-visible::after {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1) calc(var(--d, 0ms) + 0.35s);
+}
+
+/* El fosforito se pasa, como un subrayador */
+.has-js mark {
+    background-size: 0% 100%;
+}
+
+.has-js mark.is-on {
+    background-size: 100% 100%;
+    transition: background-size 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.3s;
+}
+
+/* Las notas a mano se escriben: se destapan de izquierda a derecha, con su
+   flecha. El margen negativo del recorte deja sitio a las flechas que
+   sobresalen de la caja. */
+.has-js .note {
+    clip-path: inset(-60px 100% -90px 0);
+}
+
+.has-js .note.is-on {
+    clip-path: inset(-60px -40px -90px -110px);
+    transition: clip-path 1.3s cubic-bezier(0.45, 0, 0.2, 1) 0.25s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -206,15 +289,23 @@ button {
         opacity: 1;
         transform: none;
     }
+
+    .has-js .section__title.reveal::after,
+    .has-js .contact__title.reveal::after,
+    .has-js .note {
+        clip-path: none;
+    }
+
+    .has-js mark {
+        background-size: 100% 100%;
+    }
 }
 
 /* -------- Type helpers --------------------------------------- */
 .section__label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--gray-meta);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--marca);
 }
 
 /* -------- Skip link ------------------------------------------- */
@@ -267,11 +358,10 @@ button {
 
 .consent__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.9rem, 6.5vw, 3.4rem);
     line-height: 1.1;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
 }
 
 .consent__lang {
@@ -465,7 +555,7 @@ body.consent-open {
     width: min(78vw, 320px);
     height: 100%;
     background: var(--bg);
-    border-right: 3px solid var(--black);
+    border-right: 2px solid var(--black);
     padding: 30px 26px;
     display: flex;
     flex-direction: column;
@@ -489,7 +579,7 @@ body.consent-open {
 
 .drawer__nav a {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -524,7 +614,6 @@ body.menu-open {
 .lang-switch__btn {
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
     color: var(--gray-meta);
     padding: 2px 1px;
 }
@@ -557,21 +646,19 @@ body.menu-open {
 
 .hero__name {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(2.1rem, 6.2vw, 5.2rem);
     line-height: 1.04;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
     margin-top: clamp(28px, 6vh, 72px);
 }
 
 .hero__role {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.3rem, 3.6vw, 2.9rem);
     line-height: 1.1;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
     color: var(--marca);
     margin-top: clamp(18px, 3.6vh, 44px);
 }
@@ -594,89 +681,12 @@ body.menu-open {
     color: var(--bg);
 }
 
-/* -------- Mapa de pings del hero ---------------------------------- */
-/* Mapamundi latiendo detrás del titular. Va DENTRO del hero, en
-   position absolute (nunca fixed: iOS lo suelta un frame en el
-   rubber-band), y el hero aisla su contexto de apilado para que el
-   canvas no se cuele por debajo del fondo del body. */
-.hero {
-    position: relative;
-    isolation: isolate;
-}
-
-.hero > * {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-map {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.38;
-}
-
-.hero-map canvas {
-    position: absolute;
-    top: 46%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: max(112%, 1150px);
-    height: auto;
-}
-
-/* Degradados que funden el mapa por los bordes: el texto siempre gana */
-.hero-map::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(58% 46% at 50% 42%, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 72%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 26%, rgba(255, 255, 255, 0) 68%, rgba(255, 255, 255, 0.9));
-}
-
-@media (max-width: 760px) {
-    .hero-map {
-        opacity: 0.3;
-    }
-
-    .hero-map canvas {
-        width: 1000px;
-    }
-}
-
-/* Malla de datos del hero de /recruiters/ (datamesh.js). Mismo tratamiento
-   que el mapa: opacidad baja y fundido por los bordes, el nombre siempre
-   gana. El lienzo se estira al hero entero, no tiene proporcion propia. */
-.hero-mesh {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.42;
-}
-
-.hero-mesh canvas {
-    position: absolute;
-    inset: 0;
-}
-
-.hero-mesh::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(55% 48% at 50% 40%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 74%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 22%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.92));
-}
-
-@media (max-width: 760px) {
-    .hero-mesh {
-        opacity: 0.32;
-    }
+.hero__line {
+    max-width: 36em;
+    margin-top: clamp(16px, 3vh, 28px);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.5;
+    color: var(--gray-text);
 }
 
 /* -------- Contadores del hero -------------------------------------- */
@@ -697,7 +707,7 @@ body.menu-open {
 
 .counter__num {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.6rem, 2.8vw, 2.4rem);
     line-height: 1.05;
     letter-spacing: 0.01em;
@@ -711,8 +721,6 @@ body.menu-open {
 .counter__lbl {
     font-size: 0.66rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
     color: var(--gray-meta);
     text-align: center;
 }
@@ -724,20 +732,18 @@ body.menu-open {
 
     .counter__lbl {
         font-size: 0.6rem;
-        letter-spacing: 0.12em;
     }
 }
 
 /* -------- Home de servicios -------------------------------------- */
-/* El claim sustituye al nombre gigante: promesa en Anton, mas corta de
+/* El claim sustituye al nombre gigante: promesa mas corta de
    cuerpo porque lleva mas caracteres que un nombre propio. */
 .hero__claim {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.9rem, 4.1vw, 3.5rem);
     line-height: 1.08;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
     margin-top: clamp(16px, 3vh, 32px);
     max-width: 19ch;
     margin-inline: auto;
@@ -761,10 +767,8 @@ body.menu-open {
     place-items: center;
     width: 66px;
     height: 66px;
-    border: 3px solid var(--marca);
-    /* Literal y no var(--black): dentro de la banda oscura ese token esta
-       invertido a casi blanco. */
-    background: #0a0a0a;
+    border: 2px solid var(--marca);
+    background: var(--bg);
 }
 
 .step__ico {
@@ -782,10 +786,10 @@ body.menu-open {
     top: -11px;
     left: -11px;
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 0.86rem;
     line-height: 1;
-    color: #0a0a0a;
+    color: #ffffff;
     background: var(--marca);
     padding: 4px 7px;
 }
@@ -895,7 +899,7 @@ body.menu-open {
     font-weight: 700;
     letter-spacing: 0.005em;
     color: var(--black);
-    border: 3px solid var(--black);
+    border: 2px solid var(--black);
     padding: clamp(14px, 1.6vw, 20px) clamp(20px, 2.4vw, 34px);
     transition: background 0.18s ease, border-color 0.18s ease;
 }
@@ -1031,9 +1035,11 @@ body.menu-open {
 /* Una reseña cada vez, en fundido. El escenario tiene altura fija para que
    el cambio de cita no mueva nada de alrededor. Sin JS se apilan todas. */
 .quotes {
-    padding: clamp(36px, 4.5vw, 64px) var(--pad) 0;
-    max-width: 1280px;
-    margin-inline: auto;
+    width: min(1280px, calc(100% - 2 * var(--hoja-margen)));
+    margin: var(--hoja-hueco) auto 0;
+    padding: clamp(32px, 4.5vw, 56px) var(--pad);
+    background: var(--bg);
+    border: 1px solid var(--linea);
     text-align: center;
 }
 
@@ -1133,9 +1139,7 @@ body.menu-open {
 .lp-pains__tag {
     margin-top: clamp(20px, 3vh, 36px);
     font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    font-weight: 700;
     color: var(--marca);
 }
 
@@ -1164,20 +1168,16 @@ body.menu-open {
     background: var(--marca);
 }
 
-/* La caja del plan es negra fuera de banda: los tokens no se invierten
-   solos, asi que el color de marca sube de tono a mano, como en .post__key */
+/* La caja del plan: hoja blanca con el borde en tinta */
 .lp-plan {
-    --marca: var(--marca-claro);
-    background: var(--ink);
-    color: #f5f5f5;
+    background: var(--bg);
+    border: 2px solid var(--marca);
     padding: clamp(24px, 3vw, 36px) clamp(24px, 3vw, 38px);
 }
 
 .lp-plan__tag {
     font-size: 0.68rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    font-weight: 700;
     color: var(--marca);
 }
 
@@ -1193,7 +1193,7 @@ body.menu-open {
     counter-increment: paso;
     position: relative;
     padding-left: 40px;
-    color: #d8d8d8;
+    color: var(--gray-text);
     line-height: 1.5;
 }
 
@@ -1207,9 +1207,9 @@ body.menu-open {
     display: grid;
     place-items: center;
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 0.82rem;
-    color: #0a0a0a;
+    color: #ffffff;
     background: var(--marca);
 }
 
@@ -1223,11 +1223,9 @@ body.menu-open {
 
 .lp-plan__btn {
     display: inline-block;
-    font-weight: 800;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 0.86rem;
+    color: #ffffff;
     background: var(--marca);
     border: 2px solid var(--marca);
     padding: 13px 24px;
@@ -1242,7 +1240,7 @@ body.menu-open {
 .lp-plan__wa {
     font-size: 0.74rem;
     font-weight: 700;
-    color: #d8d8d8;
+    color: var(--gray-text);
 }
 
 .lp-plan__wa:hover {
@@ -1252,7 +1250,7 @@ body.menu-open {
 .lp-plan__trust {
     margin-top: 18px;
     font-size: 0.74rem;
-    color: #8f8f8f;
+    color: var(--gray-meta);
 }
 
 @media (max-width: 880px) {
@@ -1317,18 +1315,35 @@ body.menu-open {
 
 /* -------- Sections ------------------------------------------------ */
 .section {
-    padding: clamp(110px, 16vw, 220px) var(--pad) 0;
-    max-width: 1280px;
+    position: relative;
+    width: min(1280px, calc(100% - 2 * var(--hoja-margen)));
+    margin: var(--hoja-hueco) auto 0;
+    padding: clamp(36px, 5vw, 72px) clamp(20px, 4.5vw, 72px);
+    background: var(--bg);
+    border: 1px solid var(--linea);
+}
+
+/* El subrayado a boli de los titulos: el mismo en toda la web */
+.section__title::after,
+.contact__title::after {
+    content: "";
+    display: block;
+    width: clamp(110px, 12vw, 170px);
+    height: 14px;
+    margin-top: 12px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' fill='none' stroke='%231a2da0' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M3 9c26-6 52 2 80-2s60-6 94 0'/%3E%3C/svg%3E") no-repeat left center / contain;
+}
+
+.lp-hero .section__title::after {
     margin-inline: auto;
 }
 
 .section__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: clamp(1.55rem, 3.4vw, 2.6rem);
-    line-height: 1.12;
-    letter-spacing: 0.005em;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     margin-top: 22px;
     max-width: 20ch;
 }
@@ -1376,10 +1391,9 @@ body.menu-open {
 
 .journey__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.35rem, 2.8vw, 2.1rem);
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
     margin-top: 20px;
 }
 
@@ -1396,14 +1410,13 @@ body.menu-open {
     align-items: center;
 }
 
-/* Logo de cada etapa: caja del estilo poster que se "enciende" al entrar
-   en pantalla: aparece deslizando, pasa de gris a color y le crece la
-   sombra con un halo del color de marca. */
+/* Logo de cada etapa. Al entrar en pantalla aparece deslizando, pasa de
+   gris a color y el borde se pasa a la tinta. */
 .journey__media {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid var(--black);
+    border: 2px solid var(--cuadricula);
     background: var(--bg);
     padding: 20px 24px;
     min-height: 116px;
@@ -1429,15 +1442,13 @@ body.menu-open {
     transition:
         opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.7s ease 0.15s;
+        border-color 0.7s ease 0.15s;
 }
 
 .has-js .reveal.journey__media.is-visible {
     opacity: 1;
     transform: none;
-    box-shadow:
-        7px 7px 0 var(--marca),
-        0 0 36px rgba(var(--marca-rgb), 0.4);
+    border-color: var(--marca);
 }
 
 .journey__media.is-visible img {
@@ -1454,7 +1465,7 @@ body.menu-open {
 }
 
 /* En movil el logo se queda, compacto y alineado con el texto, debajo
-   de cada etapa. La sombra baja de tamaño en proporcion. */
+   de cada etapa. */
 @media (max-width: 880px) {
     .journey__media {
         max-width: 240px;
@@ -1470,24 +1481,16 @@ body.menu-open {
         max-height: 44px;
         max-width: 160px;
     }
-
-    .has-js .reveal.journey__media.is-visible {
-        box-shadow:
-            5px 5px 0 var(--marca),
-            0 0 24px rgba(var(--marca-rgb), 0.35);
-    }
 }
 
 .journey__date {
     font-size: 0.72rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
     color: var(--gray-meta);
     padding-top: 6px;
 }
 
-/* Subrayado fluorescente: marca lo que esta vivo ahora mismo */
+/* Lo que esta vivo ahora mismo, en tinta */
 .journey__now {
     display: inline-block;
     background: var(--marca);
@@ -1563,9 +1566,10 @@ body.menu-open {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    border: 2px solid var(--gray-ghost);
+    border: 2px solid var(--linea);
+    background: var(--bg);
     padding: 5px 10px;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--gray-text);
     transition: border-color 0.15s ease, color 0.15s ease;
@@ -1686,18 +1690,15 @@ body.menu-open {
 .work__meta {
     font-size: 0.7rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
 .work__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.6rem, 3.8vw, 2.9rem);
     line-height: 1.1;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
     margin-top: 16px;
     max-width: 18ch;
 }
@@ -1718,7 +1719,7 @@ body.menu-open {
 
 .numbers__item dd {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.8rem, 3.4vw, 2.8rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -1758,11 +1759,10 @@ body.menu-open {
 
 .tool__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.55rem, 3.4vw, 2.6rem);
     line-height: 1.1;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.02em;
 }
 
 .tool__title a:hover {
@@ -1831,26 +1831,25 @@ body.menu-open {
 /* El listado reutiliza las tarjetas .work del one-page. Esto es solo el
    cuerpo de los articulos: medida de lectura y tipografia editorial. */
 .post {
-    max-width: var(--measure);
-    margin-inline: auto;
-    padding: clamp(40px, 7vw, 80px) var(--pad) 0;
+    max-width: calc(var(--measure) + 2 * var(--pad));
+    margin: clamp(24px, 4vw, 48px) auto 0;
+    padding: clamp(32px, 5vw, 64px) var(--pad) clamp(36px, 5vw, 56px);
+    background: var(--bg);
+    border: 1px solid var(--linea);
 }
 
 .post__meta {
     font-size: 0.7rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
 .post__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: clamp(1.6rem, 3.6vw, 2.5rem);
-    line-height: 1.14;
-    letter-spacing: 0.005em;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
     margin-top: 16px;
 }
 
@@ -1868,7 +1867,7 @@ body.menu-open {
 /* Parrilla de cards del listado del blog: la ilustracion arriba, borde
    grueso del estilo poster y la tarjeta entera clicable. */
 .blog-list {
-    padding-top: clamp(28px, 4vw, 48px);
+    margin-top: clamp(24px, 4vw, 48px);
 }
 
 .postcards {
@@ -1893,12 +1892,14 @@ body.menu-open {
 .postcard {
     display: flex;
     flex-direction: column;
-    border: 3px solid var(--black);
+    background: #fbfcfe;
+    border: 1px solid var(--linea);
     transition: transform 0.2s ease;
 }
 
 .postcard:hover {
     transform: translateY(-4px);
+    border-color: var(--marca);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1910,13 +1911,20 @@ body.menu-open {
 }
 
 .postcard__img {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    height: auto;
+    aspect-ratio: 16 / 9;
     flex-shrink: 0;
-    object-fit: cover;
-    border-bottom: 3px solid var(--black);
+    background: #eef2f8;
+    border-bottom: 1px solid var(--linea);
+}
+
+.postcard__img img {
+    width: 30%;
+    height: auto;
+    transform: rotate(-4deg);
 }
 
 .postcard__body {
@@ -1927,32 +1935,31 @@ body.menu-open {
 }
 
 .postcard__meta {
-    font-size: 0.56rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 600;
     color: var(--gray-meta);
 }
 
 .postcard__title {
     font-family: var(--display);
-    font-weight: 800;
-    font-size: 1rem;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     margin-top: 8px;
 }
 
 .postcard__text {
-    font-size: 0.76rem;
+    font-size: 0.88rem;
     line-height: 1.5;
     color: var(--gray-text);
     margin-top: 8px;
 }
 
 .postcard__go {
-    font-size: 0.6rem;
+    font-size: 0.82rem;
     font-weight: 700;
+    color: var(--marca);
     letter-spacing: 0.005em;
     margin-top: auto;
     padding-top: 12px;
@@ -1974,7 +1981,7 @@ body.menu-open {
 
 .post h2 {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.25rem, 2.4vw, 1.7rem);
     line-height: 1.2;
     letter-spacing: -0.015em;
@@ -2044,7 +2051,8 @@ body.menu-open {
 
 /* Cierre de articulo: el empujon al servicio, estilo poster */
 .post__cta {
-    border: 3px solid var(--black);
+    background: #fbfcfe;
+    border: 1px solid var(--linea);
     padding: clamp(20px, 3.5vw, 32px);
     margin-top: clamp(44px, 7vw, 64px);
 }
@@ -2097,7 +2105,7 @@ body.menu-open {
 /* Las capturas vienen sobre fondo slate oscuro: enmarcadas en el borde
    grueso del poster funcionan como tarjetas sobre blanco. */
 .ext-shot {
-    border: 3px solid var(--black);
+    border: 1px solid var(--linea);
     margin: 0;
 }
 
@@ -2114,7 +2122,7 @@ body.menu-open {
     color: var(--gray-meta);
     text-align: left;
     padding: 10px 14px;
-    border-top: 3px solid var(--black);
+    border-top: 1px solid var(--linea);
 }
 
 .ext-shot--hero {
@@ -2163,9 +2171,8 @@ body.menu-open {
 
 .release__tag {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 0.8rem;
-    letter-spacing: 0.04em;
     color: #ffffff;
     background: var(--marca);
     padding: 5px 10px;
@@ -2191,17 +2198,19 @@ body.menu-open {
 }
 
 .release__text code,
-.release__note code {
+.release__note code,
+.post code {
+    font-family: var(--mono);
     font-size: 0.88em;
     padding: 1px 5px;
-    background: #f0f0f0;
+    background: #eef2f8;
 }
 
 .release__note {
     margin-top: 22px;
     padding: 16px 20px;
     border-left: 4px solid var(--marca);
-    background: #f7f7f7;
+    background: var(--bg);
 }
 
 .release__note p {
@@ -2230,7 +2239,7 @@ body.menu-open {
 
 .release__shot {
     margin-top: 20px;
-    border: 3px solid var(--black);
+    border: 1px solid var(--linea);
     background: #1f2937;
 }
 
@@ -2254,16 +2263,14 @@ body.menu-open {
     vertical-align: middle;
     margin-left: 8px;
     font-size: 0.62rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-weight: 700;
     color: #ffffff;
     background: var(--marca);
     padding: 3px 7px;
 }
 
 .ext-flow {
-    border: 3px solid var(--black);
+    border: 1px solid var(--linea);
     padding: clamp(20px, 3.5vw, 32px);
     margin-top: clamp(28px, 4vw, 44px);
     max-width: var(--measure);
@@ -2321,20 +2328,15 @@ body.menu-open {
    lector que decide si sigue, y a los motores de respuesta, que levantan
    justo este tipo de bloque cuando resumen una pagina. */
 .post__key {
-    /* Caja negra fuera de .section--dark, asi que el token no se invierte
-       solo y hay que subir el tono aqui */
-    --marca: var(--marca-claro);
     margin: clamp(28px, 4vw, 40px) 0;
     padding: clamp(20px, 2.6vw, 26px) clamp(20px, 2.8vw, 30px);
-    background: var(--ink);
-    color: #f5f5f5;
+    background: var(--bg);
+    border: 2px solid var(--marca);
 }
 
 .post .post__key-tag {
     font-size: 0.68rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    font-weight: 700;
     color: var(--marca);
     margin-bottom: 14px;
 }
@@ -2350,7 +2352,7 @@ body.menu-open {
     padding-left: 22px;
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #d8d8d8;
+    color: var(--gray-text);
 }
 
 /* La marca de lista, dibujada a mano para que lleve el color de marca */
@@ -2375,7 +2377,7 @@ body.menu-open {
 
 .lp-plan__price b {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(2rem, 3.4vw, 2.8rem);
     line-height: 1;
     color: var(--marca);
@@ -2383,7 +2385,7 @@ body.menu-open {
 
 .lp-plan__price span {
     font-size: 0.78rem;
-    color: #b9b9b9;
+    color: var(--gray-meta);
 }
 
 /* El temario reutiliza el acordeon del FAQ; solo se aprieta un poco */
@@ -2413,7 +2415,7 @@ body.menu-open {
     padding: clamp(17px, 2.2vw, 23px) 0;
     cursor: pointer;
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(0.98rem, 1.8vw, 1.2rem);
     line-height: 1.32;
     letter-spacing: -0.01em;
@@ -2462,16 +2464,51 @@ body.menu-open {
 
 /* -------- Contact ------------------------------------------------------------ */
 .section--contact {
-    padding-bottom: clamp(50px, 8vw, 90px);
+    margin-bottom: var(--hoja-hueco);
 }
 
 .contact__title {
     font-family: var(--display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(1.9rem, 4.6vw, 3.6rem);
     line-height: 1.08;
     letter-spacing: -0.02em;
     margin-top: 24px;
+}
+
+.contact__email {
+    display: inline-block;
+    margin-top: clamp(22px, 3vw, 32px);
+    font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+    font-weight: 700;
+    color: var(--marca);
+    border-bottom: 2px solid currentColor;
+    overflow-wrap: anywhere;
+}
+
+.contact__email:hover {
+    color: var(--black);
+}
+
+.contact__channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin-top: 26px;
+}
+
+.contact__channels a {
+    font-weight: 700;
+}
+
+.contact__channels a:hover {
+    color: var(--marca);
+}
+
+.contact__note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--gray-meta);
 }
 
 /* El formulario manda, por eso se lleva la columna ancha */
@@ -2560,17 +2597,14 @@ body.menu-open {
 }
 
 .form__field label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--gray-meta);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--black);
 }
 
 .form__opt {
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-transform: none;
+    font-weight: 400;
+    color: var(--gray-meta);
 }
 
 .form input,
@@ -2580,8 +2614,8 @@ body.menu-open {
     font: inherit;
     font-size: 0.96rem;
     color: var(--black);
-    background: transparent;
-    border: 2px solid var(--gray-ghost);
+    background: var(--bg);
+    border: 2px solid var(--linea);
     border-radius: 0;
     padding: 13px 14px;
     transition: border-color 0.15s ease;
@@ -2601,8 +2635,8 @@ body.menu-open {
 }
 
 .form select option {
-    color: #0a0a0a;
-    background: #ffffff;
+    color: var(--black);
+    background: var(--bg);
 }
 
 .form textarea {
@@ -2626,7 +2660,7 @@ body.menu-open {
 /* Solo se marca en rojo despues de intentar enviar, nunca mientras se escribe */
 .form.is-checked input:invalid,
 .form.is-checked textarea:invalid {
-    border-color: #ff5a4d;
+    border-color: #b3261e;
 }
 
 /* Sin altura propia: cuando Turnstile no necesita nada, no ocupa nada. Si
@@ -2650,15 +2684,13 @@ body.menu-open {
 .form__send {
     justify-self: start;
     font: inherit;
-    font-weight: 800;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #0a0a0a;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #ffffff;
     background: var(--marca);
     border: 2px solid var(--marca);
     border-radius: 0;
-    padding: 15px 30px;
+    padding: 14px 28px;
     margin-top: 4px;
     cursor: pointer;
     transition: background 0.15s ease, color 0.15s ease;
@@ -2689,7 +2721,7 @@ body.menu-open {
 }
 
 .form__status.is-err {
-    color: #ff8a80;
+    color: #b3261e;
 }
 
 .form__legal {
@@ -2720,14 +2752,31 @@ body.menu-open {
 .footer {
     display: flex;
     justify-content: space-between;
-    gap: 10px 32px;
+    align-items: flex-end;
+    gap: 14px 32px;
     flex-wrap: wrap;
+    margin-top: clamp(40px, 5vw, 64px);
     padding: 28px var(--pad) 36px;
-    font-size: 0.68rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
+    border-top: 1px solid var(--cuadricula);
+    background: var(--bg);
+    font-size: 0.82rem;
     color: var(--gray-meta);
+}
+
+.footer a:hover {
+    color: var(--marca);
+}
+
+.footer__sign {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.footer__sign span {
+    font-weight: 400;
+    color: var(--gray-text);
 }
 
 /* -------- Alternancia izq/dcha (solo escritorio) ----------------------------------- */
@@ -2828,7 +2877,6 @@ body.menu-open {
 
     .counter__lbl {
         font-size: 0.58rem;
-        letter-spacing: 0.12em;
     }
 
     .clients {
@@ -2842,24 +2890,6 @@ body.menu-open {
 }
 
 @media (max-width: 640px) {
-    /* Anton es muy condensada. A tamaños grandes en pantallas anchas respira,
-       pero en móvil los caracteres se apelmazan y el título se lee como un
-       bloque. Se abre el interletraje solo aquí. */
-    .hero__name,
-    .hero__role,
-    .section__title,
-    .work__title,
-    .tool__title,
-    .journey__title,
-    .consent__title,
-    .contact__title {
-        letter-spacing: 0.045em;
-    }
-
-    .hero__name {
-        line-height: 1.04;
-    }
-
     /* Cabecera de una sola linea: la navegacion vive en el panel lateral
        y el selector de idioma tambien. Solo quedan burger, nombre y CV. */
     .topbar {
@@ -2898,82 +2928,20 @@ body.menu-open {
 
     .footer {
         flex-direction: column;
+        align-items: center;
         text-align: center;
     }
-}
 
-/* -------- Secciones en negativo --------------------------------- */
-/* Bandas negras a sangre completa: el fondo se pinta con box-shadow
-   gigante recortado con clip-path, asi la caja centrada de la seccion
-   no cambia y no hace falta tocar el HTML. Dentro, los tokens se
-   invierten y todos los componentes (bordes, enlaces, titulares) se
-   adaptan solos. */
-.section--dark {
-    /* El color de marca sube de tono: el mismo, legible sobre negro */
-    --marca: var(--marca-claro);
-    --black: #f5f5f5;
-    --gray-text: #b9b9b9;
-    --gray-meta: #8f8f8f;
-    --gray-ghost: #4a4a4a;
-    background: #0a0a0a;
-    color: #f5f5f5;
-    box-shadow: 0 0 0 100vmax #0a0a0a;
-    clip-path: inset(0 -100vmax);
-    /* El margen deja aire BLANCO antes de que empiece la banda: la
-       seccion anterior nunca muere pegada al borde negro */
-    margin-top: clamp(70px, 10vw, 140px);
-    padding-top: clamp(70px, 9vw, 130px);
-    padding-bottom: clamp(80px, 10vw, 150px);
-}
-
-/* El tono claro del color de marca, que sobre negro da 9,63:1 */
-.section--dark a:hover,
-.section--dark .work__links a:hover,
-.section--dark .contact-aside__social a:hover {
-    color: var(--marca);
-    border-color: var(--marca);
-}
-
-/* La seccion blanca que viene despues de una banda negra no necesita el
-   colchon gigante de seccion: el corte de color ya separa de sobra */
-.section--dark + .section {
-    padding-top: clamp(56px, 7vw, 96px);
-}
-
-/* La banda de reseñas es la mas fina: una cita no necesita un oceano
-   de negro alrededor */
-.quotes.section--dark {
-    margin-top: clamp(56px, 8vw, 100px);
-    padding-top: clamp(44px, 5.5vw, 68px);
-    padding-bottom: clamp(36px, 4.5vw, 56px);
-}
-
-.quotes.section--dark .quotes__stage {
-    margin-top: clamp(8px, 1.2vw, 14px);
-}
-
-.footer--dark {
-    background: #0a0a0a;
-    color: #8f8f8f;
-}
-
-/* Todos los enlaces del pie, no solo el de cookies: sin esto heredaban el
-   negro del texto y desaparecian sobre el fondo negro */
-.footer--dark a,
-.footer--dark .footer__cookies {
-    color: #8f8f8f;
-}
-
-.footer--dark a:hover,
-.footer--dark .footer__cookies:hover {
-    color: var(--marca-claro);
+    .footer__sign {
+        align-items: center;
+    }
 }
 
 /* -------- Seguir leyendo ---------------------------------------- */
 /* Enlaza cada articulo con los dos mas cercanos: reparte autoridad entre
    ellos y le da al lector el siguiente paso sin volver al listado. */
 .post__more {
-    border-top: 3px solid var(--black);
+    border-top: 2px solid var(--black);
     margin-top: clamp(44px, 7vw, 64px);
     padding-top: 22px;
 }
@@ -2981,8 +2949,6 @@ body.menu-open {
 .post__more-tag {
     font-size: 0.7rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
     color: var(--gray-meta);
 }
 
@@ -3007,164 +2973,12 @@ body.menu-open {
     color: var(--bg);
 }
 
-/* -------- Burbuja de contacto ---------------------------------- */
-/* Queda por debajo del consentimiento (z-index 1000) a proposito: mientras no
-   haya decision, el overlay opaco la tapa y no se puede pulsar. */
-.fab {
-    position: fixed;
-    right: clamp(16px, 3vw, 32px);
-    bottom: clamp(16px, 3vw, 32px);
-    z-index: 900;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-.fab__btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--black);
-    color: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 20px rgba(10, 10, 10, 0.28);
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.fab__btn:hover {
-    background: var(--marca);
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.fab__ico {
-    width: 25px;
-    height: 25px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.fab__ico--close,
-.fab.is-open .fab__ico--open {
-    display: none;
-}
-
-.fab.is-open .fab__ico--close {
-    display: block;
-}
-
-.fab__menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-}
-
-.fab__menu[hidden] {
-    display: none;
-}
-
-.fab__item {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 10px 16px;
-    background: var(--black);
-    color: var(--bg);
-    box-shadow: 0 4px 14px rgba(10, 10, 10, 0.22);
-    animation: fab-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.fab__item:nth-child(2) { animation-delay: 0.04s; }
-.fab__item:nth-child(3) { animation-delay: 0.08s; }
-
-.fab__item:hover {
-    background: var(--marca);
-    color: #ffffff;
-}
-
-/* Globo que invita a pulsar. Aparece solo, a los pocos segundos, y se va
-   para siempre en cuanto el visitante abre la burbuja o lo cierra: si
-   insistiera en cada pagina seria publicidad, no una ayuda. */
-.fab__hint {
-    position: absolute;
-    right: 68px;
-    bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    white-space: nowrap;
-    background: var(--marca);
-    color: #ffffff;
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 10px 14px;
-    box-shadow: 0 4px 14px rgba(10, 10, 10, 0.22);
-    animation: fab-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
-    cursor: pointer;
-}
-
-.fab__hint[hidden] {
-    display: none;
-}
-
-/* Pico del globo, apuntando al boton */
-.fab__hint::after {
-    content: "";
-    position: absolute;
-    right: -7px;
-    bottom: 16px;
-    width: 0;
-    height: 0;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 7px solid var(--marca);
-}
-
-.fab__hint-x {
-    font-size: 1rem;
-    line-height: 1;
-    opacity: 0.55;
-    padding: 0 2px;
-}
-
-.fab__hint-x:hover {
-    opacity: 1;
-}
-
-@media (max-width: 560px) {
-    .fab__hint {
-        font-size: 0.74rem;
-        padding: 8px 12px;
-    }
-}
-
-@keyframes fab-in {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .fab__item {
-        animation: none;
-    }
-}
-
 /* Vuelta al listado. La flecha va en ::before para que no la lea el lector
    de pantalla dos veces ni se quede suelta si el texto cambia de idioma. */
 .post__back {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
     color: var(--gray-meta);
     margin-bottom: 22px;
 }

@@ -10,6 +10,8 @@
     <meta name="description" content="Curso de Google Analytics 4 online, en español y a tu ritmo: eventos, conversiones, informes y Consent Mode, por 200 euros. Impartido por Antonio Luis Pérez Carmona." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/curso-ga4/" />
+    <!-- Oculta mientras la marca no venda servicios (23-10-2026). Fuera del menu y del sitemap -->
+    <meta name="robots" content="noindex, follow" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Antonio Luis Pérez" />
@@ -81,7 +83,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a2da0'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -121,7 +123,7 @@
     <script defer data-key="cm10_69ig8hjs2clo" src="https://roometrics.es/a.js"></script>
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>document.documentElement.classList.add('has-js');</script>
 </head>
@@ -140,7 +142,7 @@
             </div>
             <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
-            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre con las cookies y el consentimiento. Lo siento, soy Analytics Engineer y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">
                 <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
                 <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
@@ -270,7 +272,7 @@
             </div>
         </section>
 
-        <section id="contact" class="section section--contact section--dark">
+        <section id="contact" class="section section--contact">
             <h2 class="reveal contact__title" data-i18n="cur_c_title">¿Entras?</h2>
 
             <div class="contact-grid">
@@ -288,12 +290,12 @@
                         </li>
                         <li>
                             <svg class="contact-aside__ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.4s7.4-6.1 7.4-11.1a7.4 7.4 0 1 0-14.8 0c0 5 7.4 11.1 7.4 11.1z"/><circle cx="12" cy="10" r="2.6"/></svg>
-                            <span data-i18n="contact_place">Málaga, España · trabajo en remoto</span>
+                            <span data-i18n="contact_place">Málaga, España</span>
                         </li>
                     </ul>
 
                     <p class="contact-aside__social">
-                        <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a href="https://www.linkedin.com/in/antonioluisperez/" target="_blank" rel="noopener">LinkedIn ↗</a>
                         <a href="https://github.com/alpc-data-analyst" target="_blank" rel="noopener">GitHub ↗</a>
                     </p>
 
@@ -354,7 +356,8 @@
     </main>
 
     <footer class="footer">
-        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p class="footer__sign">Antonio Luis Pérez<span>Analytics Engineer</span></p>
+        <p>© <span id="current-year">2026</span></p>
         <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
     </footer>
 

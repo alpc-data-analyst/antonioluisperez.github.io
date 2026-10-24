@@ -81,7 +81,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a2da0'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -121,7 +121,7 @@
     <script defer data-key="cm10_69ig8hjs2clo" src="https://roometrics.es/a.js"></script>
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>document.documentElement.classList.add('has-js');</script>
 </head>
@@ -140,7 +140,7 @@
             </div>
             <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
-            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre con las cookies y el consentimiento. Lo siento, soy Analytics Engineer y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">
                 <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
                 <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
@@ -152,13 +152,13 @@
         <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
             <span></span><span></span><span></span>
         </button>
-        <a href="/" class="topbar__brand">Antonio Luis Pérez</a>
+        <a href="/" class="topbar__brand"><span class="topbar__brand-name">Antonio Luis Pérez</span><span class="topbar__brand-role">Analytics Engineer</span></a>
 
         <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-            <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-            <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
             <a href="./" data-i18n="nav_blog">Blog</a>
-            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/#contact" data-i18n="nav_contact">Contacto</a>
         </nav>
 
         <div class="topbar__aside">
@@ -167,7 +167,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <a href="../index.html#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="blog_post_topbar">Hablemos →</a>
+            <a href="https://www.linkedin.com/in/antonioluisperez/" class="topbar__cv" target="_blank" rel="noopener" data-track="linkedin_follow_click" data-track-location="blog_post_topbar">LinkedIn ↗</a>
         </div>
     </header>
 
@@ -179,22 +179,21 @@
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
             <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-                <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-                <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
                 <a href="./" data-i18n="nav_blog">Blog</a>
-                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+                <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
         </div>
     </div>
 
     <main id="home">
         <article class="post">
-            <a class="post__back" href="/" data-i18n="blog_back">Volver al blog</a>
-            <p class="post__meta">Blog · Dashboards · 12 ago 2026</p>
+            <a class="post__back" href="./" data-i18n="blog_back">Volver al blog</a>
+            <p class="post__meta">Dashboards, 12 ago 2026</p>
             <h1 class="post__title">Cómo montar un dashboard que la gente abra cada semana</h1>
-            <p class="post__byline">Por <a href="../recruiters/#about">Antonio Luis Pérez Carmona</a>, analista digital. Mantengo más de 100 dashboards en producción en Power BI y Looker Studio.</p>
+            <p class="post__byline">Por <a href="../recruiters/#about">Antonio Luis Pérez Carmona</a>, Analytics Engineer. En Paraty Tech montábamos dashboards automatizados que replicábamos a más de 100 clientes.</p>
 
-            <figure class="post__hero"><img src="img/dashboards-que-se-usan.webp" alt="Ilustración de un dashboard en tres niveles con una barra destacada en verde" width="1400" height="788" decoding="async" /></figure>
 
             <p><strong>Un dashboard funciona cuando alguien lo abre por voluntad propia y cambia una decisión con lo que ve.</strong> Mantengo más de cien en producción para equipos de Producto, Marketing y Operaciones, y la diferencia entre los que se consultan a diario y los que mueren en un marcador se decide antes de arrastrar el primer gráfico: en la pregunta que responden.</p>
 
@@ -281,14 +280,15 @@
                 </ul>
             </aside>
             <div class="post__cta">
-                <p><strong>¿Tu reporting se hace a mano cada lunes?</strong> Monto dashboards en Power BI y Looker Studio que se actualizan solos y se usan de verdad. Cuéntame qué informe te come la semana.</p>
-                <a href="../business-intelligence/" data-track="contact_intent_click" data-track-location="blog_post_cta">Ver el servicio de análisis de datos →</a>
+                <p><strong>¿Te ha servido?</strong> En LinkedIn publico diagnósticos reales de medición, paso a paso.</p>
+                <a href="https://www.linkedin.com/in/antonioluisperez/" target="_blank" rel="noopener" data-track="linkedin_follow_click" data-track-location="blog_post_cta">Sígueme en LinkedIn ↗</a>
             </div>
         </article>
     </main>
 
     <footer class="footer">
-        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p class="footer__sign">Antonio Luis Pérez<span>Analytics Engineer</span></p>
+        <p>© <span id="current-year">2026</span></p>
         <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
     </footer>
 

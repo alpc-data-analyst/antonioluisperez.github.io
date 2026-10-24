@@ -1,8 +1,9 @@
 /* =============================================================
-   Home · hero oscuro, fichas de herramientas y agentes de IA
-   Solo la carga index.html, detras de styles.css: reutiliza sus
-   tokens (--pad, --marca, --display...) y no toca al resto de
-   paginas. Lo que no esta aqui sale de styles.css tal cual.
+   Home y /herramientas/
+   El inicio con Chispa y los garabatos, lo que publico, el juego de
+   "Encuentra el fallo", las herramientas, el blog y la trayectoria.
+   Va detras de styles.css y reutiliza sus tokens (--pad, --marca,
+   --fosforito, --hand...). Cada bloque es una hoja (.section).
    ============================================================= */
 
 .visually-hidden {
@@ -14,194 +15,1162 @@
     white-space: nowrap;
 }
 
-/* -------- Barra superior en negro -------------------------------- */
-/* La barra continua el hero: negra, con el nombre y el rol apilados. */
-.home .topbar {
-    background: #0a0a0a;
-    color: #f5f5f5;
-}
-
-.home .topbar.is-stuck {
-    box-shadow: 0 1px 0 #262626;
-}
-
+/* -------- Barra superior: nombre y cargo apilados ----------------- */
 .home .topbar__brand {
     display: flex;
     flex-direction: column;
     line-height: 1.25;
-    color: #f5f5f5;
-}
-
-.home .topbar__brand:hover {
-    color: var(--marca-claro);
 }
 
 .home .topbar__brand-role {
     display: block;
     font-size: 0.72rem;
-    font-weight: 600;
-    color: #b9b9b9;
+    font-weight: 400;
+    color: var(--gray-text);
 }
 
-.home .topbar__nav a {
-    color: #b9b9b9;
-}
-
-.home .topbar__cv {
-    color: #f5f5f5;
-}
-
-.home .topbar__nav a:hover,
-.home .topbar__cv:hover {
-    color: var(--marca-claro);
-}
-
-.home .topbar .lang-switch {
-    color: #4a4a4a;
-}
-
-.home .topbar .lang-switch__btn {
-    color: #8f8f8f;
-}
-
-.home .topbar .lang-switch__btn.is-active {
-    color: #f5f5f5;
-}
-
-.home .topbar__burger span {
-    background: #f5f5f5;
-}
-
-/* -------- Hero oscuro ------------------------------------------- */
-/* Sin la altura de pantalla completa del hero de styles.css: aqui el
-   contenido va seguido y el borde inferior lo pisan las fichas */
-.hero--dark {
-    min-height: 0;
-    justify-content: flex-start;
-    background: #0a0a0a;
-    color: #f5f5f5;
-    text-align: center;
-    padding: clamp(40px, 7vh, 72px) var(--pad) clamp(190px, 22vh, 230px);
-}
-
-/* El mapa de pings, el mismo de siempre: los continentes grises leen bien
-   sobre negro; solo cambia el fundido de los bordes, ahora a negro */
-.hero--dark .hero-map {
-    opacity: 0.26;
-}
-
-.hero--dark .hero-map::after {
-    background:
-        radial-gradient(58% 46% at 50% 42%, rgba(10, 10, 10, 0.78), rgba(10, 10, 10, 0) 72%),
-        linear-gradient(180deg, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0) 26%, rgba(10, 10, 10, 0) 68%, rgba(10, 10, 10, 0.95));
-}
-
-.hero--dark .section__label {
-    color: #8f8f8f;
-}
-
-.hero-dark__title {
-    font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: clamp(2rem, 5vw, 4.4rem);
-    line-height: 1.04;
-    letter-spacing: 0.005em;
-    max-width: 16ch;
-    margin: 26px auto 0;
-}
-
-.hero-dark__lead {
-    max-width: 46ch;
-    margin: 30px auto 0;
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
-    font-weight: 700;
-    line-height: 1.55;
-    color: #b9b9b9;
-}
-
-.hero-dark__actions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 40px;
+@media (max-width: 640px) {
+    .home .topbar__brand-role {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--black);
+    }
 }
 
 /* -------- Botones ------------------------------------------------ */
-/* Mismo bloque de borde grueso que el resto de la web; el relleno teal
-   marca la accion principal */
+/* El relleno de tinta marca la accion principal; el de linea, la otra */
 .btn-solid,
 .btn-line {
     display: inline-block;
-    font-size: clamp(0.88rem, 1.15vw, 1rem);
-    font-weight: 800;
-    letter-spacing: 0.005em;
-    padding: clamp(14px, 1.6vw, 18px) clamp(22px, 2.4vw, 32px);
-    border: 3px solid;
-    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    font: inherit;
+    font-size: clamp(0.92rem, 1.15vw, 1rem);
+    font-weight: 700;
+    padding: 13px 24px;
+    border: 2px solid var(--marca);
+    border-radius: 6px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 0% 100%;
+    transition:
+        background-size 0.45s cubic-bezier(0.65, 0, 0.35, 1),
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-solid:hover,
+.btn-line:hover {
+    background-size: 100% 100%;
+    transform: translateY(-2px);
+}
+
+.btn-solid:active,
+.btn-line:active {
+    transform: translateY(0);
 }
 
 .btn-solid {
-    background: var(--marca-claro);
-    border-color: var(--marca-claro);
-    color: #0a0a0a;
+    background-color: var(--marca);
+    background-image: linear-gradient(#14237d, #14237d);
+    color: #ffffff;
 }
 
 .btn-solid:hover {
-    background: #7fd8df;
-    border-color: #7fd8df;
-    color: #0a0a0a;
+    border-color: #14237d;
+    color: #ffffff;
 }
 
 .btn-line {
-    background: var(--bg);
-    border-color: var(--black);
-    color: var(--black);
-    font-weight: 700;
-}
-
-.btn-line:hover {
-    border-color: var(--marca);
+    background-color: var(--bg);
+    background-image: linear-gradient(var(--marca), var(--marca));
     color: var(--marca);
 }
 
-.btn-line--light {
-    background: transparent;
-    border-color: #f5f5f5;
-    color: #f5f5f5;
+.btn-line:hover {
+    color: #ffffff;
 }
 
-.btn-line--light:hover {
-    border-color: var(--marca-claro);
-    color: var(--marca-claro);
+@media (prefers-reduced-motion: reduce) {
+    .btn-solid,
+    .btn-line {
+        transition: none;
+    }
+
+    .btn-solid:hover,
+    .btn-line:hover {
+        transform: none;
+    }
 }
 
-/* -------- Fichas de herramientas --------------------------------- */
-/* Suben sobre el borde inferior del hero negro */
-.tools-cards {
+/* -------- Etiquetas de herramientas, como en el banner ------------ */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: clamp(24px, 3.5vh, 32px);
+}
+
+.tags li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--marca);
+    background: var(--bg);
+    border: 2px solid var(--marca);
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.tags img {
+    width: 18px;
+    height: 18px;
+}
+
+/* La cifra que cuenta: ancho fijo por cifra para que el texto no baile */
+.count {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+/* -------- Notas a mano ------------------------------------------- */
+/* Una por seccion como mucho, de ocho palabras o menos. La flecha de boli
+   apunta a lo que comenta: a la izquierda o hacia abajo. */
+.note {
     position: relative;
-    z-index: 2;
+    display: inline-block;
+    font-family: var(--hand);
+    font-weight: 600;
+    font-size: clamp(1.45rem, 2.2vw, 1.8rem);
+    line-height: 1.1;
+    color: var(--marca);
+    transform: rotate(-2deg);
+}
+
+.note--left {
+    margin-top: 18px;
+    padding-left: 64px;
+}
+
+.note--left::before,
+.note--down::after {
+    content: "";
+    position: absolute;
+    background: no-repeat center / contain;
+}
+
+.note--left::before {
+    left: 0;
+    top: -6px;
+    width: 56px;
+    height: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 34' fill='none' stroke='%231a2da0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M53 25c-14 4-30 1-45-15'/%3E%3Cpath d='M7 9l1 10M7 9l10 2'/%3E%3C/svg%3E");
+}
+
+/* La flecha cae desde el final de la nota hacia lo de abajo */
+.note--down {
+    padding-bottom: 40px;
+}
+
+.note--down::after {
+    right: 18%;
+    bottom: 0;
+    width: 40px;
+    height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 44' fill='none' stroke='%231a2da0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M30 3c6 14 2 28-20 37'/%3E%3Cpath d='M10 40l9 1M10 40l3-8'/%3E%3C/svg%3E");
+}
+
+.note--plain {
+    margin-top: 22px;
+}
+
+/* Cabecera de bloque: titulo a la izquierda y la nota en el hueco de la derecha */
+.block__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 40px;
+    flex-wrap: wrap;
+}
+
+.block__head .note {
+    margin: 0 0 6px auto;
+}
+
+@media (max-width: 760px) {
+    .block__head .note {
+        margin-left: 0;
+    }
+
+    .note--down {
+        padding-bottom: 0;
+    }
+
+    .note--down::after {
+        display: none;
+    }
+}
+
+/* -------- Inicio ------------------------------------------------- */
+/* Texto a la izquierda y Chispa en el margen derecho. Los garabatos van
+   en position absolute dentro del inicio y nunca tocan el texto. */
+.intro {
+    position: relative;
     max-width: 1280px;
-    margin: clamp(-170px, -18vh, -140px) auto 0;
-    padding: 0 var(--pad);
+    margin-inline: auto;
+    padding: clamp(56px, 11vh, 128px) var(--pad) clamp(40px, 7vh, 72px);
 }
 
-.tools-cards__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-    gap: 48px 24px;
+.intro__body {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
 }
 
-.tcard {
-    min-width: 0;
+.intro__name {
+    font-family: var(--hand);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    line-height: 1;
+    color: var(--marca);
 }
 
-.tcard__shot {
-    display: block;
-    height: 240px;
+.intro__title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.7rem, 7.4vw, 5.6rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-top: 10px;
+}
+
+.intro__lead {
+    max-width: 34em;
+    margin-top: clamp(20px, 3vh, 28px);
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    line-height: 1.5;
+}
+
+.intro__sub {
+    max-width: 38em;
+    margin-top: 8px;
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    line-height: 1.55;
+    color: var(--gray-text);
+}
+
+.intro__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: clamp(28px, 4.5vh, 40px);
+}
+
+/* Chispa saluda desde el margen, abajo a la derecha, lejos del titular */
+.chispa {
+    position: absolute;
+    right: clamp(24px, 7vw, 120px);
+    bottom: clamp(36px, 8vh, 88px);
+    width: clamp(150px, 16vw, 220px);
+    height: auto;
+    rotate: 5deg;
+    translate: 0 var(--py, 0px);
+    animation: flotar 5s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.doodle {
+    position: absolute;
+    width: clamp(48px, 5vw, 68px);
+    height: auto;
+    pointer-events: none;
+    translate: 0 var(--py, 0px);
+}
+
+.doodle--barras {
+    top: clamp(28px, 6vh, 64px);
+    right: 34%;
+    rotate: -6deg;
+}
+
+.doodle--etiqueta {
+    top: clamp(48px, 9vh, 96px);
+    right: clamp(24px, 6vw, 96px);
+    rotate: 10deg;
+}
+
+.doodle--llaves {
+    top: 44%;
+    right: 27%;
+    rotate: -4deg;
+}
+
+.doodle--base {
+    bottom: clamp(40px, 9vh, 96px);
+    right: 37%;
+    rotate: 6deg;
+}
+
+/* Con la pantalla estrecha el texto ocupa todo el ancho: fuera los
+   garabatos y Chispa pasa a la esquina de arriba, al lado del nombre */
+@media (max-width: 1100px) {
+    .doodle--barras,
+    .doodle--llaves,
+    .doodle--base {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .doodle--etiqueta {
+        display: none;
+    }
+
+    .chispa {
+        top: clamp(28px, 5vh, 48px);
+        bottom: auto;
+        right: var(--pad);
+        width: clamp(84px, 16vw, 128px);
+    }
+}
+
+/* -------- Cinta de herramientas ------------------------------------ */
+/* Los logos oficiales pasan en bucle. La lista va dos veces seguidas y la
+   pista se desplaza la mitad de su ancho: cuando acaba, empieza igual. */
+.cinta {
+    width: min(1280px, calc(100% - 2 * var(--hoja-margen)));
+    margin: 0 auto;
+    padding: 6px 0 clamp(6px, 1.5vw, 12px);
+}
+
+.cinta__label {
+    padding: 0 clamp(20px, 4.5vw, 72px);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--gray-meta);
+}
+
+.cinta__window {
+    margin-top: 12px;
     overflow: hidden;
-    background: #f2f2f2;
+    background: var(--bg);
+    border: 1px solid var(--linea);
+}
+
+.cinta__track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    padding: 14px 0;
+}
+
+.cinta__track li {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px 8px 10px;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    background: #fbfcfe;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.cinta__track img {
+    width: 28px;
+    height: 28px;
+}
+
+.cinta.is-moving .cinta__track {
+    animation: cinta 46s linear infinite;
+}
+
+.cinta.is-moving .cinta__window:hover .cinta__track {
+    animation-play-state: paused;
+}
+
+@keyframes cinta {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 7px)); }
+}
+
+/* Sin movimiento, la lista se queda quieta y en varias filas */
+@media (prefers-reduced-motion: reduce) {
+    .cinta__track {
+        flex-wrap: wrap;
+        width: auto;
+        padding: 14px;
+    }
+
+    .chispa {
+        animation: none;
+    }
+}
+
+/* -------- Bloques de la home --------------------------------------- */
+.block__lead {
+    max-width: var(--measure);
+    margin-top: 18px;
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    line-height: 1.6;
+    color: var(--gray-text);
+}
+
+.block__cta {
+    margin-top: clamp(28px, 4vw, 40px);
+}
+
+.block__more {
+    margin-top: clamp(24px, 3.5vw, 36px);
+}
+
+.block__more a {
+    font-weight: 700;
+    color: var(--marca);
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 2px;
+}
+
+.block__more a:hover {
+    color: var(--black);
+}
+
+/* Lo que publico: cuatro tarjetas, cada una con el garabato de su tema */
+.topics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 20px);
+    margin-top: clamp(26px, 4vw, 40px);
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: clamp(16px, 2vw, 22px);
+    border: 1px solid var(--linea);
+    background: #fbfcfe;
+}
+
+.topic img {
+    flex: none;
+    width: clamp(48px, 5vw, 60px);
+    height: auto;
+}
+
+.topic p {
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+    .topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------- Encuentra el fallo ------------------------------------- */
+.fallo {
+    position: relative;
+    margin-top: 92px;
+}
+
+/* La nota se apoya en el borde de la grafica y su flecha baja hacia el
+   centro, no hacia la caida, para no regalar la respuesta */
+.fallo__note {
+    position: absolute;
+    z-index: 2;
+    left: calc(50% + 34px);
+    bottom: calc(100% + 6px);
+    white-space: nowrap;
+}
+
+.fallo__note::before {
+    content: "";
+    position: absolute;
+    left: -44px;
+    top: 10px;
+    width: 42px;
+    height: 54px;
+    background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 54' fill='none' stroke='%231a2da0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M39 5C20 6 9 20 9 49'/%3E%3Cpath d='M9 49l-6-9M9 49l6-8'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 760px) {
+    .fallo {
+        margin-top: 22px;
+    }
+
+    .fallo__note {
+        position: static;
+        display: block;
+        width: max-content;
+        margin: 0 0 12px;
+        white-space: normal;
+    }
+
+    .fallo__note::before {
+        display: none;
+    }
+}
+
+.fallo__chart {
+    position: relative;
+    border: 1px solid var(--linea);
+    background: #fbfcfe;
+    cursor: crosshair;
+    touch-action: manipulation;
+}
+
+.fallo__chart:focus-visible {
+    outline: 2px solid var(--marca);
+    outline-offset: 3px;
+}
+
+.fallo__chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+}
+
+.fallo__grid {
+    stroke: var(--cuadricula);
+    stroke-width: 1;
+}
+
+.fallo__axis {
+    font-family: var(--sans);
+    font-size: 12px;
+    fill: var(--gray-meta);
+}
+
+.fallo__line {
+    fill: none;
+    stroke: var(--marca);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* La solucion solo aparece cuando se encuentra el fallo */
+.fallo__solucion {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fallo.is-found .fallo__solucion {
+    opacity: 1;
+}
+
+/* fill-opacity y no opacity: la opacidad la gobierna .fallo__solucion */
+.fallo__band {
+    fill: var(--fosforito);
+    fill-opacity: 0.45;
+    transform-box: fill-box;
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.fallo.is-found .fallo__band {
+    transform: scaleX(1);
+}
+
+.fallo.is-found .fallo__chispa {
+    animation: salto 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes salto {
+    from { opacity: 0; transform: translateY(16px) scale(0.6); }
+    to { opacity: 1; transform: none; }
+}
+
+.fallo__expected {
+    fill: none;
+    stroke: var(--gray-meta);
+    stroke-width: 2;
+    stroke-dasharray: 6 6;
+}
+
+.fallo__expected-label {
+    font-family: var(--hand);
+    font-weight: 600;
+    font-size: 20px;
+    fill: var(--gray-text);
+}
+
+.fallo__cursor {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fallo__cursor.is-on {
+    opacity: 1;
+}
+
+.fallo__cursor-line {
+    stroke: var(--black);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+}
+
+.fallo__cursor-dot {
+    fill: var(--bg);
+    stroke: var(--marca);
+    stroke-width: 3;
+}
+
+.fallo__tip {
+    position: absolute;
+    z-index: 2;
+    padding: 6px 10px;
+    background: var(--black);
+    color: var(--bg);
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.fallo__tip[hidden] {
+    display: none;
+}
+
+/* Chispa aparece encima del dia en que se rompio */
+.fallo__chispa {
+    position: absolute;
+    z-index: 1;
+    width: clamp(56px, 7vw, 84px);
+    height: auto;
+    pointer-events: none;
+}
+
+.fallo__chispa[hidden] {
+    display: none;
+}
+
+.fallo__foot {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px 32px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+/* El mensaje de cada clic: una caja que se ve, con titulo en negrita */
+.fallo__msg {
+    flex: 1 1 420px;
+    max-width: 760px;
+    padding: 16px 20px 18px;
+    background: #eef2f8;
+    border-left: 5px solid var(--marca);
+    font-size: 1.02rem;
+    line-height: 1.6;
+}
+
+.fallo__msg:empty {
+    display: none;
+}
+
+.fallo__msg-title {
+    display: block;
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+    font-weight: 700;
+    color: var(--marca);
+}
+
+.fallo__msg p {
+    margin-top: 4px;
+    color: var(--black);
+}
+
+/* Al encontrarlo, la caja pasa a hoja blanca con el borde de tinta entero */
+.fallo__msg.is-ok {
+    background: var(--bg);
+    border: 2px solid var(--marca);
+    border-left-width: 5px;
+}
+
+.fallo__msg.is-in {
+    animation: fallo-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fallo-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Los dias que no eran, tachados a boli */
+.fallo__miss path {
+    fill: none;
+    stroke: var(--marca);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+}
+
+.fallo__msg a {
+    font-weight: 700;
+    color: var(--marca);
+    border-bottom: 2px solid currentColor;
+    white-space: nowrap;
+}
+
+.fallo__reveal[hidden] {
+    display: none;
+}
+
+.fallo__nojs {
+    padding: 24px;
+    color: var(--gray-text);
+}
+
+/* -------- Herramientas de la home --------------------------------- */
+.feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+    margin-top: clamp(32px, 5vw, 52px);
+    padding: clamp(20px, 3vw, 36px);
+    background: #fbfcfe;
+    border: 1px solid var(--linea);
+}
+
+.feature__shot {
+    display: flex;
+    justify-content: center;
+    height: clamp(260px, 30vw, 380px);
+    overflow: hidden;
+    padding-top: 28px;
+    background: #eef2f8;
+}
+
+.feature__shot img {
+    width: 70%;
+    max-width: 250px;
+    height: auto;
+    align-self: flex-start;
+}
+
+.feature__meta,
+.minitool__meta {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gray-meta);
+}
+
+.feature__meta mark {
+    color: var(--black);
+}
+
+.feature__title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-top: 8px;
+}
+
+.feature__title a:hover,
+.minitool__title a:hover {
+    color: var(--marca);
+}
+
+.feature__text {
+    max-width: 46ch;
+    margin-top: 14px;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--gray-text);
+}
+
+.feature__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.minitools {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    margin-top: clamp(36px, 5vw, 56px);
+}
+
+.minitool {
+    border-top: 2px solid var(--marca);
+    padding-top: 18px;
+}
+
+.minitool__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-top: 6px;
+}
+
+.minitool__text {
+    margin-top: 8px;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    color: var(--gray-text);
+}
+
+@media (max-width: 880px) {
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    .feature__shot {
+        height: 240px;
+    }
+
+    .minitools {
+        grid-template-columns: 1fr;
+    }
+
+    .note--left {
+        padding-left: 0;
+    }
+
+    .note--left::before {
+        display: none;
+    }
+}
+
+/* -------- Blog de la home ----------------------------------------- */
+/* Dos columnas de tarjetas con el garabato del tema a la izquierda */
+.guides {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 20px);
+    margin-top: clamp(26px, 4vw, 40px);
+}
+
+.guides li {
+    display: flex;
+}
+
+.guide {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border: 1px solid var(--linea);
+    background: #fbfcfe;
+    transition: border-color 0.18s ease;
+}
+
+.guide:hover {
+    border-color: var(--marca);
+}
+
+.guide__ico {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: clamp(84px, 9vw, 112px);
+    background: #eef2f8;
+    border-right: 1px solid var(--linea);
+}
+
+.guide__ico img {
+    width: 56%;
+    height: auto;
+    transform: rotate(-4deg);
+}
+
+.guide__body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: clamp(14px, 1.8vw, 20px);
+}
+
+.guide__meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--marca);
+}
+
+.guide__title {
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.guide:hover .guide__title {
+    color: var(--marca);
+}
+
+.guide__text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--gray-text);
+}
+
+.guide__text mark {
+    color: var(--black);
+}
+
+@media (max-width: 760px) {
+    .guides {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------- La trayectoria ------------------------------------------ */
+/* Cuatro etapas en ola. La linea discontinua la traza home.js por el punto
+   de cada etapa y se dibuja con el scroll; cada punto se rellena de tinta
+   cuando la linea llega a el. */
+.path {
+    --chispa: clamp(56px, 5vw, 72px);
+    position: relative;
+    margin-top: clamp(32px, 5vw, 56px);
+    padding: 20px 0 clamp(36px, 5vw, 56px);
+}
+
+.path__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.path__line {
+    fill: none;
+    stroke: var(--marca);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 9 9;
+    marker-end: url(#path-head);
+}
+
+.path__chispa {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: var(--chispa);
+    height: auto;
+    pointer-events: none;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.path.is-js .path__chispa.is-on {
+    opacity: 1;
+}
+
+.path__mask {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 16;
+    stroke-linecap: round;
+}
+
+/* Tres filas compartidas: el texto de las etapas altas va arriba, el de las
+   bajas abajo, y los puntos en la fila del medio. Asi la ola pasa por un
+   carril sin texto y la linea nunca pisa una etapa. */
+.path__list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto clamp(84px, 9vw, 116px) auto;
+    column-gap: clamp(20px, 3vw, 40px);
+}
+
+.path__step {
+    grid-row: 1 / span 3;
+    display: grid;
+    grid-template-rows: subgrid;
+}
+
+.path__dot {
+    grid-row: 2;
+    align-self: start;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--marca);
+    border-radius: 50%;
+    background: var(--marca);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Chispa pasa de pie por los puntos de arriba: el texto le deja su alto
+   (el dibujo ocupa el 93 % de la imagen) para que no lo tape */
+.path__txt {
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: calc(var(--chispa) * 0.93 - 4px);
+}
+
+/* La ola: las etapas pares bajan y su texto va debajo del punto */
+.path__step:nth-child(even) .path__dot {
+    align-self: end;
+}
+
+.path__step:nth-child(even) .path__txt {
+    grid-row: 3;
+    align-self: start;
+    padding: 16px 0 0;
+}
+
+.path__date {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--marca);
+}
+
+.path__role {
+    margin-top: 4px;
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.path__sub {
+    margin-top: 6px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--gray-text);
+}
+
+.path__note {
+    margin-top: 14px;
+}
+
+/* Con JS las etapas esperan apagadas a que llegue la linea */
+.path.is-js .path__step {
+    transition: opacity 0.4s ease;
+}
+
+.path.is-js .path__step:not(.is-on) {
+    opacity: 0.35;
+}
+
+.path.is-js .path__step:not(.is-on) .path__dot {
+    background: var(--bg);
+    transform: scale(0.85);
+}
+
+.path.is-js .path__note {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+}
+
+.path.is-js.is-done .path__note {
+    opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .path__list {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 34px;
+        padding-left: 46px;
+    }
+
+    .path__step {
+        grid-row: auto;
+        display: block;
+        position: relative;
+    }
+
+    .path__dot,
+    .path__step:nth-child(even) .path__dot {
+        position: absolute;
+        left: -40px;
+        top: 2px;
+    }
+
+    .path__txt,
+    .path__step:nth-child(even) .path__txt {
+        padding: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .path.is-js .path__step,
+    .path__dot,
+    .path.is-js .path__note,
+    .fallo__solucion {
+        transition: none;
+    }
+
+    .fallo__msg.is-in {
+        animation: none;
+    }
+}
+
+/* -------- Pagina de herramientas (/herramientas/) ----------------- */
+.tools-hero {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: clamp(56px, 10vh, 112px) var(--pad) clamp(24px, 4vw, 48px);
+}
+
+.tools-hero__title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5.4vw, 4.2rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+    margin-top: 14px;
+}
+
+.tools-hero__lead {
+    max-width: 44ch;
+    margin-top: 22px;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    line-height: 1.55;
+    color: var(--gray-text);
+}
+
+.tool-rows {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 6vw, 72px);
+    margin-top: clamp(32px, 5vw, 52px);
+}
+
+/* Dentro de la hoja ya no hace falta caja: la separacion la da el aire */
+.tool-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+}
+
+/* Alterna la captura a izquierda y derecha */
+.tool-row:nth-child(even) .tool-row__shot {
+    order: 2;
+}
+
+.tool-row__shot {
+    display: block;
+    height: clamp(240px, 26vw, 340px);
+    overflow: hidden;
+    background: #eef2f8;
+    border: 1px solid var(--linea);
 }
 
 .tcard__shot--panel {
@@ -221,241 +1190,19 @@
 }
 
 .tcard__shot--popup img {
-    width: 72%;
-    max-width: 220px;
+    width: 70%;
+    max-width: 230px;
     height: auto;
     align-self: flex-start;
 }
 
-/* Lo que hacen los agentes, en negro: tres tareas con su marca teal */
-.tcard__shot--agents {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 18px;
-    padding: 32px;
-    background: #0a0a0a;
-    color: #f5f5f5;
-    font-size: 1rem;
-    font-weight: 700;
-    border: 1px solid #262626;
-}
-
-.tcard__shot--agents span {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.tcard__shot--agents span::before {
-    content: "";
-    flex: none;
-    width: 14px;
-    height: 14px;
-    background: var(--marca-claro);
-}
-
-.tcard__title {
-    font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.25rem;
-    line-height: 1.15;
-    margin-top: 24px;
-}
-
-.tcard__title::before {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 6px;
-    background: var(--marca);
-    margin-bottom: 16px;
-}
-
-.tcard__title a:hover {
-    color: var(--marca);
-}
-
-.tcard__tag {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #3d3d3d;
-}
-
-.tcard__meta {
-    margin-top: 12px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #767676;
-}
-
-/* -------- Como trabajo: los pasos de los agentes ------------------ */
-.agent-steps {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-    gap: clamp(32px, 4vw, 48px);
-    margin-top: clamp(44px, 6vw, 64px);
-}
-
-.agent-steps__mark {
-    display: grid;
-    place-items: center;
-    width: 66px;
-    height: 66px;
-    border: 3px solid var(--marca);
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--marca);
-}
-
-/* El ultimo paso es el humano: relleno, para que se lea distinto */
-.agent-steps__mark--me {
-    background: var(--marca);
-    color: #ffffff;
-}
-
-.agent-steps h3 {
-    font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.2rem;
-    line-height: 1.15;
-    margin-top: 22px;
-}
-
-.agent-steps p {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    color: var(--gray-text);
-}
-
-.agent-steps__note {
-    margin-top: clamp(40px, 5vw, 64px);
-    max-width: 760px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #3d3d3d;
-}
-
-/* -------- Servicios ---------------------------------------------- */
-.svc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-    gap: clamp(32px, 4vw, 48px);
-    margin-top: clamp(44px, 6vw, 64px);
-}
-
-.svc__title {
-    font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.35rem;
-    line-height: 1.15;
-}
-
-.svc__title::before {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 6px;
-    background: var(--marca);
-    margin-bottom: 16px;
-}
-
-.svc__title a:hover {
-    color: var(--marca);
-}
-
-.svc p {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    color: var(--gray-text);
-}
-
-.svc-cta {
-    margin-top: clamp(40px, 5vw, 56px);
-}
-
-/* -------- Clientes ----------------------------------------------- */
-/* La parrilla rota por grupos (script.js); aqui va alineada a la
-   izquierda con el titulo de la seccion */
-#clientes .clients__grid {
-    justify-content: flex-start;
-    margin-left: 0;
-    margin-top: clamp(36px, 5vw, 56px);
-}
-
-#clientes .counters {
-    justify-content: flex-start;
-    margin-top: clamp(48px, 6vw, 80px);
-}
-
-/* -------- Contacto con reseñas ------------------------------------ */
-#contact .quotes__stage {
-    max-width: 680px;
-    margin: 0 auto clamp(70px, 9vw, 120px);
-    text-align: center;
-}
-
-.contact__label {
-    margin-top: 0;
-}
-
-/* -------- Pagina de herramientas (/herramientas/) ----------------- */
-.tools-hero {
-    background: #0a0a0a;
-    color: #f5f5f5;
-    text-align: center;
-    padding: clamp(56px, 9vh, 96px) var(--pad) clamp(64px, 10vh, 110px);
-}
-
-.tools-hero .section__label {
-    color: #8f8f8f;
-}
-
-.tools-hero__title {
-    max-width: 18ch;
-}
-
-.tool-rows {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(56px, 8vw, 96px);
-    margin-top: clamp(44px, 6vw, 64px);
-}
-
-.tool-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    gap: clamp(28px, 4vw, 56px);
-    align-items: center;
-}
-
-/* Alterna captura a izquierda y derecha, como la lista de la web antigua */
-.tool-row:nth-child(even) .tool-row__shot {
-    order: 2;
-}
-
-.tool-row__shot {
-    display: block;
-    height: clamp(240px, 28vw, 360px);
-    overflow: hidden;
-    background: #f2f2f2;
-}
-
 .tool-row__title {
     font-family: var(--display);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: clamp(1.55rem, 3vw, 2.3rem);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
     line-height: 1.1;
-    margin-top: 10px;
+    letter-spacing: -0.02em;
+    margin-top: 8px;
 }
 
 .tool-row__title a:hover {
@@ -463,15 +1210,16 @@
 }
 
 .tool-row__tag {
-    margin-top: 14px;
-    font-size: 1.02rem;
+    margin-top: 12px;
+    font-size: 1.05rem;
     font-weight: 600;
 }
 
 .tool-row__text {
     margin-top: 10px;
     max-width: 56ch;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
     color: var(--gray-text);
 }
 
@@ -480,23 +1228,67 @@
 }
 
 .tools-free {
-    margin-top: clamp(44px, 6vw, 64px);
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(24px, 3vw, 40px);
+    margin-top: clamp(32px, 5vw, 52px);
+}
+
+.tcard {
+    min-width: 0;
+    padding: clamp(16px, 2vw, 22px);
+    background: #fbfcfe;
+    border: 1px solid var(--linea);
+}
+
+.tcard__shot {
+    display: block;
+    height: 200px;
+    overflow: hidden;
+    background: #eef2f8;
+}
+
+.tcard__title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-top: 20px;
+}
+
+.tcard__title a:hover {
+    color: var(--marca);
+}
+
+.tcard__tag {
+    margin-top: 8px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--gray-text);
+}
+
+.tcard__meta {
+    margin-top: 10px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--gray-meta);
 }
 
 .tcard__shot--utm {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 28px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.55;
-    color: #3d3d3d;
+    padding: 24px;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--gray-text);
     overflow-wrap: anywhere;
 }
 
 .tcard__shot--utm b {
+    font-weight: 400;
     color: var(--marca);
 }
 
@@ -505,10 +1297,10 @@
     flex-direction: column;
     justify-content: center;
     gap: 16px;
-    padding: 28px;
+    padding: 24px;
     font-size: 0.95rem;
-    font-weight: 700;
-    color: #3d3d3d;
+    font-weight: 600;
+    color: var(--gray-text);
 }
 
 .tcard__shot--blurr span {
@@ -520,7 +1312,7 @@
 .tcard__shot--blurr i {
     flex: 1;
     height: 18px;
-    background: #0a0a0a;
+    background: var(--black);
 }
 
 .tcard__shot--blurr i.corto {
@@ -532,7 +1324,7 @@
 }
 
 .tools-agents__cta {
-    margin-top: 36px;
+    margin-top: 32px;
 }
 
 @media (max-width: 880px) {
@@ -542,149 +1334,5 @@
 
     .tool-row:nth-child(even) .tool-row__shot {
         order: 0;
-    }
-}
-
-/* -------- El agente (agent.js) ----------------------------------- */
-/* Vive en el documento, no en la pantalla: se desplaza con la pagina.
-   Por debajo de la barra superior (800) y sin recibir el puntero. */
-.agent {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 700;
-    width: 48px;
-    height: 56px;
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
-    will-change: transform;
-}
-
-.agent.is-on {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.25s ease;
-}
-
-/* Esperando al ratón: recibe el puntero y se balancea para llamar la atención */
-.agent.is-waiting {
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-/* Respira sin despegar los pies del suelo: se aplasta un poco desde abajo.
-   Va en el contenedor (no dentro del SVG) para que la anime la tarjeta
-   gráfica sin repintar la página en cada fotograma */
-.agent.is-waiting .agent__body {
-    animation: agente-espera 1.4s ease-in-out infinite;
-}
-
-@keyframes agente-espera {
-    0%, 100% { scale: 1 1; }
-    50% { scale: 1.04 0.95; }
-}
-
-/* Poses: de frente en reposo; ojos felices y brazo arriba al saltar y hablar */
-.agent__cara--juego,
-.agent__brazo--arriba {
-    display: none;
-}
-
-.agent.is-air .agent__cara--frente,
-.agent.is-talking .agent__cara--frente,
-.agent.is-air .agent__brazo--abajo,
-.agent.is-talking .agent__brazo--abajo {
-    display: none;
-}
-
-.agent.is-air .agent__cara--juego,
-.agent.is-talking .agent__cara--juego,
-.agent.is-air .agent__brazo--arriba,
-.agent.is-talking .agent__brazo--arriba {
-    display: inline;
-}
-
-.agent__body {
-    width: 100%;
-    height: 100%;
-    transform-origin: 50% 100%;
-    transition: transform 0.15s ease;
-}
-
-.agent__body svg {
-    display: block;
-    overflow: visible;
-    transition: transform 0.15s ease;
-}
-
-.agent__body.is-left svg {
-    transform: scaleX(-1);
-}
-
-/* Se estira en el aire y se aplasta al caer */
-.agent.is-air .agent__body {
-    transform: scale(0.92, 1.08);
-}
-
-.agent__body.is-land {
-    transform: scale(1.18, 0.82);
-}
-
-/* Parpadeo: agent.js pone .is-blink un instante cada 3,4 s mientras se ve
-   (una animación CSS infinita aquí repintaba la página en cada fotograma) */
-.agent__ojo {
-    transform-box: fill-box;
-    transform-origin: center;
-}
-
-.agent.is-blink .agent__ojo {
-    transform: scaleY(0.12);
-}
-
-/* El bocadillo: blanco con borde negro, como los botones de la web */
-.agent__say {
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 12px);
-    padding: 8px 12px;
-    background: #ffffff;
-    color: #0a0a0a;
-    border: 2px solid #0a0a0a;
-    font-family: var(--display);
-    font-size: 0.82rem;
-    font-weight: 700;
-    line-height: 1.2;
-    white-space: nowrap;
-    opacity: 0;
-    /* --say-dx lo pone agent.js para que no se salga por los lados */
-    transform: translateX(calc(-50% + var(--say-dx, 0px))) translateY(4px) scale(0.92);
-    transform-origin: 50% 100%;
-    transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
-.agent__say::after {
-    content: "";
-    position: absolute;
-    left: calc(50% - var(--say-dx, 0px));
-    top: 100%;
-    margin-left: -6px;
-    border: 6px solid transparent;
-    border-top-color: #0a0a0a;
-}
-
-.agent.is-talking .agent__say {
-    opacity: 1;
-    transform: translateX(calc(-50% + var(--say-dx, 0px))) translateY(0) scale(1);
-}
-
-@media (max-width: 880px) {
-    .home .topbar__brand-name {
-        display: block;
-    }
-
-    .tools-cards {
-        margin-top: -150px;
     }
 }

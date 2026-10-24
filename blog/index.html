@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light" />
 
-    <title>Blog de analítica web y datos · Antonio Luis Pérez</title>
+    <title>Guías de medición web | Antonio Luis Pérez</title>
     <meta name="description" content="Guías de analítica web, GA4, GTM y datos escritas desde la trinchera: lo que veo auditando y midiendo webs reales cada día. Por Antonio Luis Pérez Carmona." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/blog/" />
@@ -14,9 +14,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Antonio Luis Pérez" />
     <meta property="og:url" content="https://antonioluisperez.com/blog/" />
-    <meta property="og:title" content="Blog de analítica web y datos · Antonio Luis Pérez" />
+    <meta property="og:title" content="Guías de medición web | Antonio Luis Pérez" />
     <meta property="og:description" content="Guías de GA4, GTM y datos escritas desde la trinchera, sin humo." />
-    <meta property="og:image" content="https://antonioluisperez.com/og-image.png" />
+    <meta property="og:image" content="https://antonioluisperez.com/img/og-home.png" />
     <meta property="og:locale" content="es_ES" />
 
     <script type="application/ld+json">
@@ -32,7 +32,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a2da0'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -72,7 +72,7 @@
     <script defer data-key="cm10_69ig8hjs2clo" src="https://roometrics.es/a.js"></script>
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>document.documentElement.classList.add('has-js');</script>
 </head>
@@ -91,7 +91,7 @@
             </div>
             <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
-            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre con las cookies y el consentimiento. Lo siento, soy Analytics Engineer y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">
                 <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
                 <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
@@ -103,13 +103,13 @@
         <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
             <span></span><span></span><span></span>
         </button>
-        <a href="/" class="topbar__brand">Antonio Luis Pérez</a>
+        <a href="/" class="topbar__brand"><span class="topbar__brand-name">Antonio Luis Pérez</span><span class="topbar__brand-role">Analytics Engineer</span></a>
 
         <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-            <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-            <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
             <a href="./" aria-current="page" data-i18n="nav_blog">Blog</a>
-            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/#contact" data-i18n="nav_contact">Contacto</a>
         </nav>
 
         <div class="topbar__aside">
@@ -118,7 +118,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <a href="../index.html#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="blog_topbar">Hablemos →</a>
+            <a href="https://www.linkedin.com/in/antonioluisperez/" class="topbar__cv" target="_blank" rel="noopener" data-track="linkedin_follow_click" data-track-location="blog_topbar">LinkedIn ↗</a>
         </div>
     </header>
 
@@ -130,22 +130,24 @@
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
             <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-                <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-                <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
                 <a href="./" data-i18n="nav_blog">Blog</a>
-                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+                <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
         </div>
     </div>
 
     <main id="home">
         <section class="section blog-list" aria-label="Artículos">
-            <h1 class="reveal section__label" data-i18n="blog_h1">Blog de analítica web y datos</h1>
+            <p class="reveal section__label" data-i18n="nav_blog">Blog</p>
+            <h1 class="reveal section__title" data-i18n="blog_h1">Guías de medición web</h1>
+            <p class="reveal section__lead" data-i18n="m_blog_lead">En español, de momento.</p>
             <div class="postcards">
                 <a class="reveal postcard" href="auditoria-ga4" style="--d:0ms">
-                    <img class="postcard__img" src="img/thumb-auditoria-ga4.webp" alt="" width="800" height="600" loading="lazy" decoding="async" />
+                    <span class="postcard__img"><img src="../img/marca/garabato-lupa.png" alt="" width="161" height="161" loading="lazy" decoding="async" /></span>
                     <span class="postcard__body">
-                        <span class="postcard__meta">GA4 · 12 ago 2026</span>
+                        <span class="postcard__meta">GA4, 12 ago 2026</span>
                         <span class="postcard__title">Auditoría GA4: cómo saber si puedes fiarte de tus datos</span>
                         <span class="postcard__text">Los 7 fallos que encuentro en casi todas las cuentas y el checklist paso a paso para destaparlos.</span>
                         <span class="postcard__go">Leer el artículo →</span>
@@ -153,9 +155,9 @@
                 </a>
 
                 <a class="reveal postcard" href="consent-mode-v2" style="--d:60ms">
-                    <img class="postcard__img" src="img/thumb-consent-mode-v2.webp" alt="" width="800" height="600" loading="lazy" decoding="async" />
+                    <span class="postcard__img"><img src="../img/marca/garabato-escudo.png" alt="" width="149" height="149" loading="lazy" decoding="async" /></span>
                     <span class="postcard__body">
-                        <span class="postcard__meta">Privacidad · 12 ago 2026</span>
+                        <span class="postcard__meta">Privacidad, 12 ago 2026</span>
                         <span class="postcard__title">Implementar Consent Mode v2: guía sin humo</span>
                         <span class="postcard__text">Basic o Advanced, el orden de carga que decide si cumples y la validación de los cuatro escenarios.</span>
                         <span class="postcard__go">Leer el artículo →</span>
@@ -163,9 +165,9 @@
                 </a>
 
                 <a class="reveal postcard" href="gtm-server-side" style="--d:120ms">
-                    <img class="postcard__img" src="img/thumb-gtm-server-side.webp" alt="" width="800" height="600" loading="lazy" decoding="async" />
+                    <span class="postcard__img"><img src="../img/marca/garabato-rayo.png" alt="" width="163" height="163" loading="lazy" decoding="async" /></span>
                     <span class="postcard__body">
-                        <span class="postcard__meta">GTM · 12 ago 2026</span>
+                        <span class="postcard__meta">GTM, 12 ago 2026</span>
                         <span class="postcard__title">GTM server side: cuándo compensa y cuándo no</span>
                         <span class="postcard__text">Lo que arregla, lo que sigue igual y los costes mensuales que casi ningún vendedor menciona.</span>
                         <span class="postcard__go">Leer el artículo →</span>
@@ -173,9 +175,9 @@
                 </a>
 
                 <a class="reveal postcard" href="dashboards-que-se-usan" style="--d:180ms">
-                    <img class="postcard__img" src="img/thumb-dashboards-que-se-usan.webp" alt="" width="800" height="600" loading="lazy" decoding="async" />
+                    <span class="postcard__img"><img src="../img/marca/garabato-barras.png" alt="" width="165" height="165" loading="lazy" decoding="async" /></span>
                     <span class="postcard__body">
-                        <span class="postcard__meta">Dashboards · 12 ago 2026</span>
+                        <span class="postcard__meta">Dashboards, 12 ago 2026</span>
                         <span class="postcard__title">Cómo montar un dashboard que la gente abra cada semana</span>
                         <span class="postcard__text">La decisión antes que el gráfico, tres niveles de lectura y los errores que matan un panel.</span>
                         <span class="postcard__go">Leer el artículo →</span>
@@ -186,7 +188,8 @@
     </main>
 
     <footer class="footer">
-        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p class="footer__sign">Antonio Luis Pérez<span>Analytics Engineer</span></p>
+        <p>© <span id="current-year">2026</span></p>
         <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
     </footer>
 

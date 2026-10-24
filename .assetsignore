@@ -21,3 +21,7 @@ wrangler.jsonc
 # pinta nada y no hay motivo para servirlo.
 CNAME
 .dev.vars
+
+# Notas y herramientas para trabajar en la web, no para el visitante
+CLAUDE.md
+herramientas-dev/

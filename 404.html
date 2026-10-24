@@ -6,15 +6,15 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light" />
 
-    <title>Página no encontrada · Antonio Luis Pérez</title>
-    <meta name="description" content="Esta página no existe. Vuelve al portfolio de Antonio Luis Pérez." />
+    <title>Página no encontrada | Antonio Luis Pérez</title>
+    <meta name="description" content="Esta página no existe. Vuelve a la web de Antonio Luis Pérez." />
     <meta name="robots" content="noindex, follow" />
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a2da0'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
 
     <style>
@@ -29,23 +29,30 @@
             padding: clamp(48px, 10vh, 120px) var(--pad);
         }
 
-        .oops__code {
-            font-family: var(--display);
-            font-weight: 400;
-            font-size: clamp(5rem, 22vw, 16rem);
-            line-height: 0.9;
-            letter-spacing: 0.01em;
+        /* Chispa no sabe donde esta la pagina: la pose no-se */
+        .oops__chispa {
+            width: clamp(96px, 14vw, 140px);
+            height: auto;
+            margin-bottom: 8px;
         }
 
-        .oops__title {
+        .oops__code {
             font-family: var(--display);
-            font-weight: 400;
-            text-transform: uppercase;
-            font-size: clamp(1.4rem, 4vw, 2.6rem);
+            font-weight: 700;
+            font-size: clamp(5rem, 22vw, 14rem);
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+        }
+
+        /* La nota a mano de la pagina */
+        .oops__title {
+            font-family: var(--hand);
+            font-weight: 600;
+            font-size: clamp(1.9rem, 4.4vw, 2.8rem);
             line-height: 1.05;
-            letter-spacing: 0.01em;
-            color: var(--gray-ghost);
+            color: var(--marca);
             margin-top: 18px;
+            transform: rotate(-2deg);
         }
 
         .oops__text {
@@ -57,27 +64,26 @@
 
         .oops__back {
             margin-top: 36px;
-            font-size: 0.78rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            border-bottom: 2px solid var(--black);
-            padding-bottom: 4px;
+            color: var(--marca);
+            border-bottom: 2px solid currentColor;
+            padding-bottom: 2px;
         }
 
         .oops__back:hover {
-            color: var(--gray-meta);
-            border-color: var(--gray-meta);
+            color: var(--black);
         }
     </style>
 </head>
 
 <body>
     <main class="oops">
+        <img class="oops__chispa" src="/img/marca/chispa-no-se.png" alt="" width="232" height="232" aria-hidden="true" />
         <p class="oops__code">404</p>
-        <h1 class="oops__title" data-i18n="nf_title">Aquí no hay datos.</h1>
+        <h1 class="oops__title" data-i18n="nf_title">Aquí no hay datos</h1>
         <p class="oops__text" data-i18n="nf_text">Esta página no existe. O existió y ya no, que viene a ser lo mismo para ti. Vuelve al principio, que ahí sí hay cosas.</p>
-        <a class="oops__back" href="/" data-i18n="nf_back">Volver al portfolio</a>
+        <a class="oops__back" href="/" data-i18n="nf_back">Volver al inicio</a>
     </main>
 
     <script src="script.js" defer></script>

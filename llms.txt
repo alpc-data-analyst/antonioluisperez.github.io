@@ -1,28 +1,25 @@
 # Antonio Luis Pérez Carmona
 
-> Antonio Luis Pérez Carmona es Analytics Engineer en Málaga (España). Hace analítica web con agentes de IA: audita, implementa y analiza GA4, Google Tag Manager y BigQuery, con agentes que revisan contenedores, prueban el tracking y preparan informes, y con él decidiendo y firmando cada entrega. Ha medido más de 1300 webs. Creador de Roometrics (analítica web cookieless) y de Analytics Copilot (extensión de Chrome para QA de analítica). Disponible para proyectos: contacto en alpcmalaga@gmail.com.
+> Antonio Luis Pérez Carmona es Analytics Engineer en Product Hackers, en Málaga (España). Lleva más de 1.000 webs trackeadas a lo largo de su trayectoria con GA4, Google Tag Manager, Consent Mode y BigQuery. Es el creador de Analytics Copilot, una extensión de Chrome gratuita y de código abierto para auditar la medición. En LinkedIn publica diagnósticos reales de medición, paso a paso. Contacto para charlas, podcasts o colaboraciones en alpcmalaga@gmail.com.
 
-Sitio bilingüe español e inglés. El contenido del blog y las páginas de producto están en español.
+Sitio bilingüe español e inglés. El contenido del blog y la página de Analytics Copilot están en español.
 
 ## Páginas principales
 
-- [Analítica web con agentes de IA](https://antonioluisperez.com/): herramientas, cómo trabaja con agentes, servicios (auditoría GA4 y GTM, implementación, análisis e informes, BI), clientes y contacto
-- [Herramientas](https://antonioluisperez.com/herramientas/): Roometrics, Analytics Copilot, UTM Builder y Blurr, y los agentes de IA que está construyendo
-- [CV y trayectoria (recruiters)](https://antonioluisperez.com/recruiters/): quién es Antonio, trayectoria completa, stack, certificaciones y proyectos
-- [Analítica web](https://antonioluisperez.com/analitica-web/): auditoría e implementación de medición, GA4, GTM web y server side, Consent Mode y Meta CAPI
-- [Business intelligence](https://antonioluisperez.com/business-intelligence/): dashboards en Power BI y Looker Studio, SQL en BigQuery y reporting automatizado
-- [Data science](https://antonioluisperez.com/data-science/): clasificación, forecasting y explicabilidad, con el caso de fraude IEEE-CIS (590K transacciones, ROC-AUC 0.92)
-- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome open source con 10 herramientas de QA para analítica web, incluida captura de página completa con editor de anotaciones (v1.4.1). Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
+- [Inicio](https://antonioluisperez.com/): quién es, lo que publica, sus herramientas, el blog y el contacto
+- [Herramientas](https://antonioluisperez.com/herramientas/): Analytics Copilot, Roometrics, UTM Builder y Blurr, y los agentes de IA que está construyendo
+- [Analytics Copilot](https://antonioluisperez.com/analytics-copilot/): extensión de Chrome de código abierto con 10 herramientas de QA para analítica web, incluida la captura de página completa con editor de anotaciones (v1.4.1). Publicada en la Chrome Web Store: https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe
+- [CV y trayectoria](https://antonioluisperez.com/recruiters/): trayectoria completa, stack, certificaciones y proyectos personales
 
 ## Blog
 
 - [Auditoría GA4](https://antonioluisperez.com/blog/auditoria-ga4): los 7 fallos más comunes y el checklist paso a paso para saber si puedes fiarte de tus datos
-- [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2): Basic o Advanced, el orden de carga correcto y la validación de los cuatro escenarios
+- [Implementar Consent Mode v2](https://antonioluisperez.com/blog/consent-mode-v2): básico o avanzado, el orden de carga correcto y la validación de los cuatro escenarios
 - [GTM server side](https://antonioluisperez.com/blog/gtm-server-side): qué arregla, qué sigue igual, costes reales y criterio para decidir
 - [Dashboards que se usan](https://antonioluisperez.com/blog/dashboards-que-se-usan): método de tres niveles de lectura y errores que matan un panel
 
 ## Proyectos y enlaces
 
-- [Roometrics](https://roometrics.es): SaaS de analítica web cookieless y privacy-first, producto propio en producción
-- [GitHub](https://github.com/alpc-data-analyst): código de las herramientas y del proyecto de detección de fraude
-- [LinkedIn](https://www.linkedin.com/in/antonio-luis-perez-carmona/): perfil profesional
+- [Roometrics](https://roometrics.es): proyecto personal de analítica web sin cookies, que usa como laboratorio
+- [GitHub](https://github.com/alpc-data-analyst): código de sus herramientas
+- [LinkedIn](https://www.linkedin.com/in/antonioluisperez/): perfil profesional

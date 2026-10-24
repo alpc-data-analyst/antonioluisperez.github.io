@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light" />
 
-    <title>Analytics Copilot · Extensión de Chrome para QA de analítica</title>
+    <title>Analytics Copilot | Extensión de Chrome para QA de analítica</title>
     <meta name="description" content="10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome: sesión, atribución, conversiones y capturas anotadas. Gratis y open source." />
     <meta name="author" content="Antonio Luis Pérez Carmona" />
     <link rel="canonical" href="https://antonioluisperez.com/analytics-copilot/" />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Antonio Luis Pérez" />
     <meta property="og:url" content="https://antonioluisperez.com/analytics-copilot/" />
-    <meta property="og:title" content="Analytics Copilot · Extensión de Chrome para QA de analítica web" />
+    <meta property="og:title" content="Analytics Copilot | Extensión de Chrome para QA de analítica web" />
     <meta property="og:description" content="10 herramientas para auditar GA4, GTM, Google Ads y Consent Mode desde Chrome, con captura de página completa anotada. Gratis y open source." />
     <meta property="og:image" content="https://antonioluisperez.com/analytics-copilot/img/og.jpg" />
     <meta property="og:image:width" content="1200" />
@@ -54,7 +54,7 @@
     }
     </script>
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='49' font-family='Arial Black,Arial,sans-serif' font-size='44' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a2da0'/%3E%3Ctext x='32' y='48' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -94,7 +94,7 @@
     <script defer data-key="cm10_69ig8hjs2clo" src="https://roometrics.es/a.js"></script>
 
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>document.documentElement.classList.add('has-js');</script>
 </head>
@@ -113,7 +113,7 @@
             </div>
             <p class="consent__title" id="consent-title" data-i18n="consent_title">Cookies</p>
             <img class="consent__cat" src="../cookie-cat.jpg" alt="" width="360" height="379" decoding="async" />
-            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre: las cookies y el consentimiento. Lo siento, soy analista de datos, de los buenos, y necesito tenerlo todo medido y bajo control.</p>
+            <p class="consent__text" data-i18n="consent_text">Venga va, el mismo rollo de siempre con las cookies y el consentimiento. Lo siento, soy Analytics Engineer y necesito tenerlo todo medido y bajo control.</p>
             <div class="consent__actions">
                 <button type="button" class="consent__btn" id="consent-accept" data-i18n="consent_accept">Aceptar</button>
                 <button type="button" class="consent__btn" id="consent-reject" data-i18n="consent_reject">Rechazar</button>
@@ -125,13 +125,13 @@
         <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú" data-i18n-attr="aria-label:menu_aria">
             <span></span><span></span><span></span>
         </button>
-        <a href="/" class="topbar__brand">Antonio Luis Pérez</a>
+        <a href="/" class="topbar__brand"><span class="topbar__brand-name">Antonio Luis Pérez</span><span class="topbar__brand-role">Analytics Engineer</span></a>
 
         <nav class="topbar__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-            <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-            <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
             <a href="../blog/" data-i18n="nav_blog">Blog</a>
-            <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+            <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+            <a href="/#contact" data-i18n="nav_contact">Contacto</a>
         </nav>
 
         <div class="topbar__aside">
@@ -140,7 +140,7 @@
                 <span aria-hidden="true">/</span>
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
-            <a href="../index.html#contact" class="topbar__cv" data-i18n="nav_talk" data-track="contact_intent_click" data-track-location="ext_topbar">Hablemos →</a>
+            <a href="https://www.linkedin.com/in/antonioluisperez/" class="topbar__cv" target="_blank" rel="noopener" data-track="linkedin_follow_click" data-track-location="ext_topbar">LinkedIn ↗</a>
         </div>
     </header>
 
@@ -152,10 +152,10 @@
                 <button class="lang-switch__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
             </div>
             <nav class="drawer__nav" aria-label="Principal" data-i18n-attr="aria-label:nav_main_aria">
-                <a href="../index.html#servicios" data-i18n="nav_services">Servicios</a>
-                <a href="../recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/herramientas/" data-i18n="nav_tools">Herramientas</a>
                 <a href="../blog/" data-i18n="nav_blog">Blog</a>
-                <a href="../index.html#contact" data-i18n="nav_contact">Contacto</a>
+                <a href="/recruiters/" data-i18n="nav_about">Sobre mí</a>
+                <a href="/#contact" data-i18n="nav_contact">Contacto</a>
             </nav>
         </div>
     </div>
@@ -163,9 +163,9 @@
     <main id="home">
         <section class="section lp-hero">
             <img class="reveal ext-logo" src="img/logo.svg" alt="Logo de Analytics Copilot" width="88" height="88" decoding="async" />
-            <p class="reveal section__label">Herramienta · Extensión de Chrome</p>
+            <p class="reveal section__label">Extensión de Chrome gratuita y de código abierto</p>
             <h1 class="reveal section__title">Analytics Copilot</h1>
-            <p class="reveal section__lead">QA de analítica web en un clic: GA4, GTM, Google Ads y Consent Mode. 10 herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network. 100% local: no envía ningún dato a ningún servidor.</p>
+            <p class="reveal section__lead">QA de analítica web en un clic para GA4, GTM, Google Ads y Consent Mode. 10 herramientas desde el popup o el panel de DevTools, sin abrir la pestaña Network. Funciona 100 % en local y no envía ningún dato a ningún servidor.</p>
 
             <p class="reveal hero__cta">
                 <a class="ext-install" href="https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe" target="_blank" rel="noopener" data-track="extension_install_click" data-track-location="hero">Añadir a Chrome ↗</a>
@@ -179,7 +179,7 @@
 
         <section id="tools-ext" class="section">
             <p class="reveal section__label">Qué lleva dentro</p>
-            <h2 class="reveal section__title">Las 10 herramientas.</h2>
+            <h2 class="reveal section__title">Las 10 herramientas</h2>
 
             <div class="ext-grid">
                 <div class="reveal ext-item" style="--d:0ms">
@@ -227,7 +227,7 @@
 
         <section id="flow" class="section">
             <p class="reveal section__label">El flujo estrella</p>
-            <h2 class="reveal section__title">Audita un clic de anuncio real.</h2>
+            <h2 class="reveal section__title">Audita un clic de anuncio real</h2>
             <p class="reveal section__lead">La comprobación que en condiciones normales exige la pestaña Network, tres herramientas y paciencia, aquí es un recorrido guiado:</p>
 
             <div class="reveal ext-flow">
@@ -244,7 +244,7 @@
 
         <section id="novedades" class="section">
             <p class="reveal section__label">Novedades</p>
-            <h2 class="reveal section__title">Notas de versión.</h2>
+            <h2 class="reveal section__title">Notas de versión</h2>
 
             <article class="reveal release release--minor">
                 <p class="release__meta"><span class="release__tag">v1.4.1</span> <span class="release__date">Agosto de 2026</span></p>
@@ -273,7 +273,7 @@
 
         <section id="shots" class="section">
             <p class="reveal section__label">Capturas</p>
-            <h2 class="reveal section__title">Por dentro.</h2>
+            <h2 class="reveal section__title">Por dentro</h2>
 
             <div class="ext-shots">
                 <figure class="reveal ext-shot" style="--d:0ms">
@@ -297,13 +297,13 @@
 
         <section id="privacy" class="section">
             <p class="reveal section__label">Privacidad</p>
-            <h2 class="reveal section__title">100% local.</h2>
+            <h2 class="reveal section__title">100% local</h2>
             <p class="reveal section__lead">Sin cuentas, sin telemetría, sin servidores. Los permisos sensibles son opcionales y se piden al usarlos. El código es abierto y se puede leer entero: <a href="https://github.com/alpc-data-analyst/analytics-copilot/blob/main/PRIVACY.md" target="_blank" rel="noopener">política de privacidad ↗</a>.</p>
         </section>
 
         <section id="install" class="section">
             <p class="reveal section__label">Instalación</p>
-            <h2 class="reveal section__title">Un clic desde la Chrome Web Store.</h2>
+            <h2 class="reveal section__title">Un clic desde la Chrome Web Store</h2>
 
             <div class="reveal ext-flow">
                 <p>Está publicada en la tienda oficial: <a href="https://chromewebstore.google.com/detail/analytics-copilot/icnecmnkghkklcjmolmmcljdodeglfpe" target="_blank" rel="noopener" data-track="extension_install_click" data-track-location="install">Añadir a Chrome ↗</a>. Se actualiza sola con cada versión nueva.</p>
@@ -323,14 +323,15 @@
 
             <p class="reveal contact__channels">
                 <a href="https://github.com/alpc-data-analyst/analytics-copilot" target="_blank" rel="noopener">GitHub ↗</a>
-                <a href="https://www.linkedin.com/in/antonio-luis-perez-carmona/" target="_blank" rel="noopener">LinkedIn ↗</a>
-                <a href="/" data-i18n="lp_back">Volver al portfolio</a>
+                <a href="https://www.linkedin.com/in/antonioluisperez/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="/" data-i18n="lp_back">Volver al inicio</a>
             </p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>© <span id="current-year">2026</span> Antonio Luis Pérez</p>
+        <p class="footer__sign">Antonio Luis Pérez<span>Analytics Engineer</span></p>
+        <p>© <span id="current-year">2026</span></p>
         <p><a href="#" class="footer__cookies" data-consent-reopen data-i18n="footer_cookies">Preferencias de cookies</a></p>
     </footer>
 
