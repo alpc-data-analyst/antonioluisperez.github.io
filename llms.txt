@@ -21,5 +21,5 @@ Sitio bilingüe español e inglés. El contenido del blog y la página de Analyt
 ## Proyectos y enlaces
 
 - [Roometrics](https://roometrics.es): proyecto personal de analítica web sin cookies, que usa como laboratorio
-- [GitHub](https://github.com/alpc-data-analyst): código de sus herramientas
+- [GitHub](https://github.com/antonioluisperez): código de sus herramientas
 - [LinkedIn](https://www.linkedin.com/in/antonioluisperez/): perfil profesional
