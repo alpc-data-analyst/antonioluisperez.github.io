@@ -17,9 +17,6 @@ wrangler.jsonc
 .assetsignore
 .github/
 
-# Solo lo necesita GitHub Pages, que sigue de paracaidas. En Cloudflare no
-# pinta nada y no hay motivo para servirlo.
-CNAME
 .dev.vars
 
 # Notas y herramientas para trabajar en la web, no para el visitante

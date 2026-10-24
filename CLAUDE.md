@@ -5,7 +5,11 @@ Web personal de Antonio Luis Pérez (Analytics Engineer), en "modo marca": no ve
 ## Reglas
 
 - **Toca lo justo.** Abre solo los archivos de la tarea según el mapa de abajo. No leas la web entera antes de un cambio.
-- **Nunca hagas commit ni push.** Antonio revisa y despliega.
+- **Desplegar lo hace Claude, siempre preguntando antes** (decidido el 24-10-2026, porque Antonio no sabe desplegar).
+  - Antes de nada, `node herramientas-dev/comprobar.js` tiene que dar "Todo en orden".
+  - Después, commit en `main` con `git -c user.name="Antonio Luis Pérez" -c user.email="alpcmalaga@gmail.com"`, porque este PC no tiene identidad de git, y `git push origin main`.
+  - Cloudflare publica en unos 30 segundos. Se comprueba en antonioluisperez.com que las páginas responden.
+  - Nunca sin su OK a ese despliegue concreto.
 - **Dos idiomas.** Cada texto visible existe en español y en inglés (ver "Textos"). El cuerpo de los artículos del blog y la página de Analytics Copilot solo están en español.
 - **Textos visibles nuevos o cambiados:** carga el skill `marca-antonio` del proyecto de marca (`Z:\PROYECTOS CLAUDE\09. Linkedin`) y pásalos por `humanizer`. Para cambios de código, CSS o maquetación no hace falta.
 - **No cambies** el ID de GTM (`GTM-N23PS4MN`), el Consent Mode del `<head>` ni los nombres de `data-track`: el contenedor de GTM depende de ellos.
